@@ -21,11 +21,11 @@ $(".navbar-collapse ul li a").click(function() {
 
 function collapseNavbar() {
     if ($(".navbar").offset().top > 200) {
-       $(".navbar-fixed-top").addClass("na-collapse");
-      //$(".navbar-fixed-top").animate({backgroundColor : "#FFC107" },500);
+       // $(".navbar-fixed-top").addClass("na-collapse");
+      $(".navbar-fixed-top").animate({backgroundColor : "#FFC107" },500);
     } else {
-       $(".navbar-fixed-top").removeClass("na-collapse");
-       //$(".navbar-fixed-top").animate({backgroundColor : 'rgba(0,0,0,0)'},500);
+       // $(".navbar-fixed-top").removeClass("na-collapse");
+       $(".navbar-fixed-top").animate({backgroundColor : 'rgba(0,0,0,0)'},500);
     }
 }
 
