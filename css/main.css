@@ -68,16 +68,28 @@ a.project_list{
 
 }
 
+#PROJECTS{
+  height: auto;
+  /*overflow:auto;
+ background: none center center no-repeat rgba(0,0,0,0.5);
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background-size: cover;
+   -o-background-size: cover */
+   
+}
 #UKULELE{
+  height: auto;
   overflow:auto;
  background: url(../img/ukulele.jpg) center center no-repeat rgba(0,0,0,0.5);
    -webkit-background-size: cover;
-   -moz-background-size: contain;
+   -moz-background-size: cover;
    background-size: cover;
    -o-background-size: cover 
    
 }
 #PIXIV{
+  height: auto;
   overflow:auto;
  background: url(../img/pixiv_back.png) center center no-repeat rgba(0,0,0,0.5);
    -webkit-background-size: cover;
