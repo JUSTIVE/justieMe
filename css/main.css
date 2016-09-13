@@ -20,6 +20,7 @@ a:hover{
 }
 
 
+
 .navbar-custom .nav li a:active,
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:hover {
@@ -107,7 +108,7 @@ a.project_list{
 }
 
 section{
-   height: 55vh;
+   height: auto;
    
 }
 
@@ -223,10 +224,9 @@ h6{
 .navbar-fixed-bottom{
   
    /* negative value of footer height */
-  height: 100px;
+  height: 50px;
   
-  padding-top:10px;
-   color: #242424;
+  color: #242424;
    background-color: #e5e5e5;
 }
 
@@ -255,8 +255,8 @@ body {
 }
 .desc-right{
   vertical-align: center;
-  margin-top: 25px;
-  height: 75px;
+  margin-top: 10px;
+  /*height: px;*/
 }
 .desc-right a{
   padding-left: 7px;
@@ -270,13 +270,4 @@ a.location{
   font-size: 12px;
   line-height: 1.66667;
   color: #242424;
-}
-.footerLogos{
-  width: 20%;
-  height: 20%;
-}
-.footersns{
-  width: 5%;
-  height: 5%;
-  margin-left: 
 }
