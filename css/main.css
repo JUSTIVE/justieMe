@@ -108,7 +108,8 @@ a.project_list{
 }
 
 section{
-   height: auto;
+   height: 150%;
+   min-height: 250px;
    
 }
 
@@ -208,9 +209,14 @@ h6{
         border-bottom: 1px solid rgba(255, 255, 255, .3)
     }
 }
+@media(max-height:  768px){
+  #hero{
+    margin-top: 250px;
+  }
+}
 #header{
+  min-height: 300px;
   height: auto;
-  width: auto;
 }
 
 #desc a{

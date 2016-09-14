@@ -30,22 +30,28 @@ $(function () {
 });
 
 $("#twitter").hover(function(){
-    $(this).css("color","#1dcaff");
+    // $(this).css("color","#1dcaff");
+    $(this).animate({color : "#1dcaff"},300);
   },function(){
-    $(this).css("color","#424242");
+    $(this).animate({color : "#424242"},300);
+    // s$(this).css("color","#424242");
 });
 
 $("#github").hover(function(){
-    $(this).css("color","#848484");
+  $(this).animate({color : "#848484"},300);
+    // $(this).css("color","#848484");
   },function(){
-    $(this).css("color","#424242");
+    $(this).animate({color : "#424242"},300);
+    // $(this).css("color","#424242");
 });
 
 
 $("#soundcloud").hover(function(){
-    $(this).css("color","#ff3a00");
+    // $(this).css("color","#ff3a00");
+    $(this).animate({color : "#ff3a00"},300);
   },function(){
-    $(this).css("color","#424242");
+    $(this).animate({color : "#424242"},300);
+    // $(this).css("color","#424242");
 });
 
 $("#mailto").hover(function(){
@@ -53,4 +59,10 @@ $("#mailto").hover(function(){
   },function(){
     // $(this).css("color","#424242");
     $(this).animate({color: "#424242"},500);
+});
+
+$(".round").hover(function(){
+  $(this).animate({backgroundColor: "#ffa000"},300)
+},function(){
+  $(this).animate({backgroundColor: "#FFC107"},300)
 });
