@@ -217,6 +217,9 @@ h6{
   #hero{
     margin-top: 250px;
   }
+  .navbar-custom{
+    background-color: #FFC107;
+  }
 }
 #header{
   min-height: 300px;
