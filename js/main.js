@@ -20,7 +20,7 @@ $(".navbar-collapse ul li a").click(function() {
 });
 
 $(function () {
-    if ($(".navbar").offset().top > 50) {
+    if ($(".navbar").offset().top > 10) {
        $(".navbar-fixed-top").addClass("na-collapse");
       // $(".navbar-fixed-top").animate({backgroundColor : "#FFC107" },300);
     } else {
