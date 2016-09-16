@@ -85,12 +85,12 @@ a.project_list{
 }
 #UKULELE{
   height: auto;
-  overflow:auto;
- background: url(../img/ukulele.jpg) center center no-repeat rgba(0,0,0,0.5);
+  overflow:hidden;
+ background: url(../img/ukulele.jpg) center center no-repeat #FFF;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    background-size: cover;
-   -o-background-size: cover 
+   -o-background-size: cover; 
    
 }
 #PIXIV{
@@ -213,7 +213,7 @@ h6{
         border-bottom: 1px solid rgba(255, 255, 255, .3)
     }
 }
-@media(max-height:  768px){
+@media(max-height: 768px){
   #hero{
     margin-top: 250px;
   }
