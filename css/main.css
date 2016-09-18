@@ -121,11 +121,22 @@ a.project_list{
   padding-bottom:150px;
 }
 
+.card{
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+background-color: #efefef;
+
+}
+
+.none-button{
+  padding-left:45px; 
+}
 section{
    height: 150%;
    min-height: 250px;
-   
-}
+   padding-top:20px;
+ }
+
 
 h2{
   margin-top: 0px;
@@ -177,11 +188,13 @@ h6{
     box-shadow: none;
 }
 .round {
-   border-radius: 24px;
+   /*border-radius: 24px;*/
 }
 .btn-wrapper{
-   margin-top: 50px;
-   margin-bottom: 50px; 
+  padding-left: 45px;
+   padding-top: 20px;
+   padding-bottom: 20px; 
+   background-color: white;
 }
 
 
