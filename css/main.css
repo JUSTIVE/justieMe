@@ -58,6 +58,9 @@ a.project_list{
 }
 
 
+/*.container{
+  margin: 10px;
+}*/
 #INFO{
   height: auto;
   width: auto;
@@ -74,7 +77,7 @@ a.project_list{
 }
 
 #PROJECTS{
-  height: auto;
+  /*height: auto;*/
   /*overflow:auto;
  background: none center center no-repeat rgba(0,0,0,0.5);
    -webkit-background-size: cover;
@@ -122,10 +125,12 @@ a.project_list{
 }
 
 .card{
+  
   border-radius:4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-background-color: #efefef;
+  background-color: #EEEEEE;
+  
 
 }
 .card:hover{
@@ -133,13 +138,23 @@ background-color: #efefef;
 }
 
 .none-button{
+  margin:20px;
+  padding: 10px; 
   padding-left:45px; 
   padding-right:45px; 
+
 }
-section{
-   height: 150%;
-   min-height: 250px;
-   padding-top:20px;
+.section{
+   
+  /*height: 400px;*/
+  padding-top:0px;
+  margin:10px;
+  padding: 0px; 
+  display: inline;
+
+  height: 30vh;
+  min-height: 250px;
+  max-height: 350px;
  }
 
 
@@ -286,6 +301,7 @@ body {
 .section-title{
   color:#FFC107;
   margin-top: 79px;
+  font-size: 48px;
 }
 
 
