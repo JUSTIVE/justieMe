@@ -83,10 +83,20 @@ a.project_list{
    -o-background-size: cover */
    
 }
-#UKULELE{
+#ukulele_{
   height: auto;
   overflow:hidden;
  background: url(../img/ukulele.jpg) center center no-repeat #FFF;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background-size: cover;
+   -o-background-size: cover; 
+   
+}
+#news_{
+  height: auto;
+  overflow:hidden;
+ /*background: url(../img/ukulele.jpg) center center no-repeat #FFF;*/
    -webkit-background-size: cover;
    -moz-background-size: cover;
    background-size: cover;

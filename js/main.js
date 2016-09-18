@@ -29,26 +29,33 @@ $(".navbar-collapse ul li a").click(function() {
 //     }
 // });
 
-$("#twitter").hover(function(){
-    // $(this).css("color","#1dcaff");
-    $(this).animate({color : "#1dcaff"},300);
-  },function(){
-    $(this).animate({color : "#424242"},300);
-    // s$(this).css("color","#424242");
-});
+// $("#twitter").hover(function(){
+//     // $(this).css("color","#1dcaff");
+//     $(this).animate({color : "#1dcaff"},300);
+//   },function(){
+//     $(this).animate({color : "#424242"},300);
+//     // s$(this).css("color","#424242");
+// });
 
-$("#github").hover(function(){
-  $(this).animate({color : "#848484"},300);
-    // $(this).css("color","#848484");
-  },function(){
-    $(this).animate({color : "#424242"},300);
-    // $(this).css("color","#424242");
-});
+// $("#github").hover(function(){
+//   $(this).animate({color : "#848484"},300);
+//     // $(this).css("color","#848484");
+//   },function(){
+//     $(this).animate({color : "#424242"},300);
+//     // $(this).css("color","#424242");
+// });
 
 
-$("#soundcloud").hover(function(){
+// $("#soundcloud").hover(function(){
+//     // $(this).css("color","#ff3a00");
+//     $(this).animate({color : "#ff3a00"},300);
+//   },function(){
+//     $(this).animate({color : "#424242"},300);
+//     // $(this).css("color","#424242");
+// });
+$(".fa").hover(function(){
     // $(this).css("color","#ff3a00");
-    $(this).animate({color : "#ff3a00"},300);
+    $(this).animate({color : "#ffc107"},300);
   },function(){
     $(this).animate({color : "#424242"},300);
     // $(this).css("color","#424242");
