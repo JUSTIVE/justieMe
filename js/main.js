@@ -1,6 +1,6 @@
 // /////////////////////////////////////collapsing navbar
 // function collapseNavbar() {
-    
+
 // };
 // $(window).scroll(collapseNavbar);
 // $(document).ready(collapseNavbar);
@@ -53,7 +53,7 @@ $(".navbar-collapse ul li a").click(function() {
 //     $(this).animate({color : "#424242"},300);
 //     // $(this).css("color","#424242");
 // });
-$(".fa").hover(function(){
+$(".fa-2x").hover(function(){
     // $(this).css("color","#ff3a00");
     $(this).animate({color : "#ffc107"},300);
   },function(){

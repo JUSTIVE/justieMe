@@ -24,6 +24,7 @@ a:hover{
 }
 
 
+
 .navbar-custom .nav li a:active,
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:hover {
@@ -236,9 +237,12 @@ hr{
   .navbar-custom{
     /*background-color: #FFC107;*/
     background-color: #00FFC107;
+    margin-left: 10px;
   }
 
+  .navbar-nav{
 
+  }
 
 }
 #header{
@@ -282,6 +286,13 @@ body {
 }
 
 .fa-bars{
+  color: white;
+}
+.fa-bars:hover,
+.fa-bars:focus,
+.fa-bars:active,
+.fa-bars:disabled
+.fa-bars:enabled{
   color: white;
 }
 
