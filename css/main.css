@@ -173,7 +173,7 @@ h5{
 
    font-size:20px;
    line-height: 27px;
-   /*color: #5f5f5f;*/
+
 }
 h6{
   font-size: 10;
@@ -217,63 +217,29 @@ h6{
    border-radius: 0px 0px 4px 4px;
 }
 
-
-/*#navbar {
-    width: 75%;
-    text-align: justify;
-    min-width: 500px;
-    margin: 1% auto 0 auto;
-    padding: 0;
-    z-index: 10000000001;
-    position: fixed;
-    top: 0;
-}*/
-
-/*#navbar:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
+hr{
+  height: 2px;
+  width: 100%;
+  background-color: rgba(36, 36, 36, 0.5);;
+  margin:2px;
+  border: none;
+}
+#navi{
+  width: 92.2%;
+  margin-top:40px;
 }
 
-#navbar li {
-    display: inline-block;
-}*/
-/*//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////*/
-@media (min-width: 768px) {
-    /*.navbar-custom {
-        padding: 0px 0;
-        border-bottom: none;
-        letter-spacing: 1px;
-        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
-        transition: background .5s ease-in-out, padding .5s ease-in-out
-    }
-    .navbar-custom.top-nav-collapse {
-        padding: 0;
-        background: rgba(255,255,255,.7);
-        color: #242424;
-        border-bottom: 1px solid rgba(255, 255, 255, .3)
-    }*/
-    .nav-container{
-       margin-top: 30px;
-       margin-right: 119px;
-    }
-}
 @media(max-height: 768px){
   #hero{
     margin-top: 250px;
   }
   .navbar-custom{
-    background-color: #FFC107;
+    /*background-color: #FFC107;*/
+    background-color: #00FFC107;
   }
-  nav{
-    height: auto;
-  }
-  .nav-container{
-    margin-top:10px;
-    margin-right: 0px;
-  }
+
+
+
 }
 #header{
   min-height: 300px;
@@ -282,7 +248,8 @@ h6{
 
 #desc a{
   color:#242424;
-   font-family: 'Maven Pro' , sans-serif;
+   font-family: 'Maven Pro' , sans-ser
+   f;
    font-size: 18px;
    text-decoration: none;
    display: inline-block;
@@ -314,7 +281,9 @@ body {
   font-size: 48px;
 }
 
-
+.fa-bars{
+  color: white;
+}
 
 #desc{
   /*margin-top:5em; */
