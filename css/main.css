@@ -81,12 +81,12 @@ a.project_list{
 #pixiv_{
   height: auto;
   overflow:auto;
- background: url(../img/pixiv_back.png) center center no-repeat rgba(0,0,0,0.5);
+ background: url(../img/pixiv_back.png) center center no-repeat #FFF;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    background-size: cover;
    -o-background-size: cover
-
+   border-radius: 4px;
 }
 .main-wrapper{
   min-height: 100%;
