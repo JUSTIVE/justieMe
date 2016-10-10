@@ -6,4 +6,4 @@
 
 ##Drawing
 
-##'KPOP NEWS'
+'KPOP NEWS'
