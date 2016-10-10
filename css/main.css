@@ -85,7 +85,7 @@ a.project_list{
    -webkit-background-size: cover;
    -moz-background-size: cover;
    background-size: cover;
-   -o-background-size: cover
+   -o-background-size: cover;
    border-radius: 4px;
 }
 .main-wrapper{
@@ -145,7 +145,7 @@ header{
   /*min-width:300px;*/
   width: 90%;
   /*height: auto;*/
-  min-height: 250px;
+  min-height: 200px;
   /*max-height: 500px;*/
  }
 
