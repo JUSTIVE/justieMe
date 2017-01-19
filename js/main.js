@@ -4,6 +4,7 @@
 // };
 // $(window).scroll(collapseNavbar);
 // $(document).ready(collapseNavbar);
+window.scrollTo(0,1);
 
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
