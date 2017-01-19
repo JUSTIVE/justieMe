@@ -146,7 +146,8 @@ a:visited{
     font-size: 8px;
   }
   ul{
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   #HOME-UPPER{
     padding-left: 16px;
