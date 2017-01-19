@@ -149,6 +149,10 @@ a:visited{
     padding-left: 8px;
     padding-right: 8px;
   }
+  ul:last-child{
+  padding-bottom: 30vh;
+  border-radius: 0px 0px 4px 4px;
+}
   #HOME-UPPER{
     padding-left: 16px;
     background: url("../img/home_back.jpg") center center no-repeat #FFF;
