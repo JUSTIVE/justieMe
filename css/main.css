@@ -27,7 +27,7 @@ ul{
   width: auto;
 }
 ul:last-child{
-  padding-bottom: 450px;
+  padding-bottom: 40vh;
   border-radius: 0px 0px 4px 4px;
 }
 nav{
@@ -139,8 +139,14 @@ a:visited{
 
 
 @media(max-width: 768px){
+  .contents{
+    margin-left: 8px;
+  }
   a{
     font-size: 8px;
+  }
+  ul{
+    padding-right: 16px;
   }
   #HOME-UPPER{
     padding-left: 16px;
@@ -156,6 +162,13 @@ a:visited{
     font-family: 'Montserrat', sans-serif;
     font-size:18px;
     line-height: 160%;
+  }
+  #myBirthday{
+    
+    font-size:48px;
+    color: #FFF;
+    line-height: 70%;
+    margin-bottom: -20px;
   }
   .card{
     margin-left: 80px;
@@ -173,7 +186,7 @@ a:visited{
   .title{
     color:#212121;
     font-family: 'Montserrat', sans-serif;
-    font-size:48px;
+    font-size:32px;
   }
 }
 /*a{
