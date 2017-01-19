@@ -189,6 +189,10 @@ a:visited{
     font-family: 'Montserrat', sans-serif;
     font-size:32px;
   }
+  .aside{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /*a{
    color:white;
