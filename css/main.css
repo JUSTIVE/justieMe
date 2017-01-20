@@ -138,7 +138,17 @@ a:visited{
 }
 
 
-
+.triangle{
+  width: 0; 
+  height: 0; 
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent; 
+  border-right:50px solid #FFC107; 
+  transform: rotate(45deg);
+  border-radius: 4px 0px 0px 0px;
+  margin-left: -103px;
+  margin-top: -96px;
+}
 @media(max-width: 768px){
   .contents{
     margin-left: 8px;
