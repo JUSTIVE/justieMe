@@ -7,7 +7,7 @@
 window.scrollTo(0,1);
 
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
+    $('a').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
