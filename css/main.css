@@ -74,15 +74,19 @@ a:visited{
   background: url("../img/home_back.jpg") center center no-repeat #FFF;
   background-size: cover;
   border-radius: 2px 2px 0px 0px;
+  z-index: 0;
 }
 #HOME-UNDER{
   padding-left: 96px;
   padding-right: 96px;
-  padding-top:48px; 
+  padding-top: 48px;
+  margin-top:20px; 
   color:#212121;
   font-family: 'Montserrat', sans-serif;
   font-size:14px;
   line-height: 160%;
+  z-index: 1;
+  background-color: #FFF;
 }
 #HOME{
   
@@ -180,7 +184,9 @@ a:visited{
   border-right:50px solid #FFC107; 
   border-radius: 4px 0px 0px 0px;
   margin-left: 604px;
-  margin-top: -100px; 
+  margin-top: -50px;
+  margin-bottom:-70px; 
+  z-index: 2;
 }
 @media(max-width: 1024px){
   .contents{
