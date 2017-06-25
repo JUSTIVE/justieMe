@@ -256,9 +256,11 @@ a:visited{
     font-family: 'Montserrat', sans-serif;
     font-size:32px;
   }
-  .aside{
-    padding-left: 0px;
+  #aside{
+    padding-left: 8px;
     padding-right: 0px;
+    z-index: 99;
+    height: auto;
   }
 }
 /*a{
