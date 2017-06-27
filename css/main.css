@@ -199,6 +199,15 @@ a:visited{
   margin-bottom:-70px; 
   z-index: 2;
 }
+.project_icon{
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 8px; 
+  border-radius: 32px;
+  background: #FFC107;
+}
 @media(max-width: 1024px){
   .youtube_embedded{
   margin-right: 16px;
