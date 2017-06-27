@@ -63,10 +63,9 @@ a:visited{
   color: #FFF;
 }
 .sub_title{
-  margin-top: 72px;
+  margin-top: 24px;
   color: #FFC107;
   font-weight: bold;
-
 }
 .youtube_embedded{
   margin-right: 96px;
@@ -250,7 +249,7 @@ a:visited{
     margin-bottom: -20px;
   }
   .Email{
-    font-size: 18px;
+    font-size: 12px;
     line-height: 160%;
   }
   .card{
