@@ -269,6 +269,10 @@ a:visited{
     z-index: 99;
     height: auto;
   }
+  nav{
+  /*background-color: #FFC107;*/
+    margin-top: 32px;
+  }
 }
 /*a{
    color:white;
