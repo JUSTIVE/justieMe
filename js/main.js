@@ -5,7 +5,11 @@
 // $(window).scroll(collapseNavbar);
 // $(document).ready(collapseNavbar);
 window.scrollTo(0,1);
-document.documentElement.requestFullscreen();
+$(document).ready(function(){
+    document.documentElement.requestFullscreen();
+});
+
+
 $(function() {
     $('a').bind('click', function(event) {
         var $anchor = $(this);
