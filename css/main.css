@@ -102,9 +102,6 @@ a:visited{
   z-index: 1;
   background-color: #FFF;
 }
-#HOME{
-  
-}
 #myName{
   font-family: 'Montserrat', sans-serif;
   font-size:64px;
@@ -139,18 +136,6 @@ a:visited{
   color: #FFF;
   line-height: 70%;
   margin-bottom: -20px;
-}
-#aside{
-  /*border-radius:4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  background-color: #FFC107;
-  margin-top: 72px;
-  height: 80vh;
-  margin-right: 16px;
-  padding-left: 0px;
-  padding-right: 0px;*/
-  /*position: fixed;*/
 }
 .card{
   border-radius:4px;
