@@ -55,8 +55,8 @@ body {
 h1 {
   display: inline;
   vertical-align: middle;
-  line-height: 150px;
-  font-size: 1200%;
+  line-height: 9vw;
+  font-size: 9vw;
   font-family: 'Heebo', sans-serif;
   color: #ffffff;
   mix-blend-mode: unset;
