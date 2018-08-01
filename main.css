@@ -157,6 +157,9 @@ ul {
     font-size: 800%;
     line-height: 100px;
   }
+  h4 {
+    width: 80%;
+  }
   #pangea {
     display: block;
     margin: 0px;
@@ -168,7 +171,7 @@ ul {
             box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
   }
   #left-area {
-    position: absolute;
+    position: fixed;
     display: block;
     height: 70%;
     width: 95%;
@@ -176,8 +179,11 @@ ul {
   #right-area {
     display: block;
     position: relative;
-    margin-top: 140%;
+    margin-top: 70vh;
     width: 100%;
+  }
+  .item-card {
+    margin-left: 6%;
   }
 }
 /*# sourceMappingURL=main.css.map */
