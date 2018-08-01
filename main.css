@@ -33,7 +33,6 @@ body {
 #right-area {
   display: inline-block;
   width: 50%;
-  bckground: #ffffff;
   overflow: scroll;
 }
 
@@ -54,7 +53,7 @@ h1 {
   display: inline;
   vertical-align: middle;
   line-height: 150px;
-  font-size: 200px;
+  font-size: 1200%;
   font-family: 'Heebo', sans-serif;
   color: #ffffff;
   mix-blend-mode: unset;
@@ -151,5 +150,34 @@ a:visited {
 
 ul {
   -webkit-padding-start: 0;
+}
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 800%;
+    line-height: 100px;
+  }
+  #pangea {
+    display: block;
+    margin: 0px;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    height: auto;
+    overflow: hidden;
+    border-radius: 0px;
+    -webkit-box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
+            box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
+  }
+  #left-area {
+    position: absolute;
+    display: block;
+    height: 70%;
+    width: 95%;
+  }
+  #right-area {
+    display: block;
+    position: relative;
+    margin-top: 140%;
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
