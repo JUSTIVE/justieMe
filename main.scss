@@ -23,6 +23,7 @@ body{
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
 // #ocean{
@@ -36,12 +37,13 @@ body{
     // position: relative;;
     width: 50%;
     height:100%;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 #right-area{
     display: inline-block;
     width:50%;
-    // bckground:#ffffff;
     overflow: scroll;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 .left-container{
     display:flex;
@@ -54,16 +56,19 @@ body{
 h1{
     display: inline;
     vertical-align: middle;
-    line-height:150px;
-    font-size:1200%;
+    line-height:9vw;
+    font-size:9vw;
     font-family: 'Heebo', sans-serif;
     color:$text-color;
     mix-blend-mode: unset;
     -webkit-margin-before:0;
     -webkit-margin-after:0;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 h2{
     color:$text-dark-color;
+    font-family: 'Heebo', sans-serif; 
+    font-weight: 700; 
 }
 h4{
     font-family: 'Heebo', sans-serif;
@@ -74,6 +79,7 @@ h4{
     -webkit-margin-after:0px;
     -webkit-margin-before:12px;
     width:60%;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 hr{
     -webkit-margin-start: 0;
@@ -93,13 +99,14 @@ hr{
     box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
     margin-bottom:32px;
     margin-top:32px;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 a{
     color: $text-dark-color;
     text-decoration: none;
     font-family: 'Heebo', sans-serif;
-    font-weight:500;
-    font-size:16px;
+    font-weight:300;
+    font-size:1vw;
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 a:hover{
@@ -141,9 +148,11 @@ ul{
     h1{
         font-size:800%;
         line-height:100px;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     h4{
-        width: 80%;
+        width: 100%;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #pangea{
         display:block;
@@ -153,20 +162,24 @@ ul{
         overflow: hidden;
         border-radius: 0px;
         box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #left-area{
         position: fixed;
         display:block;
         height:70%;
         width: 95%;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #right-area{
         display:block;
         position: relative;
         margin-top:70vh;
         width: 100%;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     .item-card{
         margin-left:6%;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
 }
