@@ -103,9 +103,10 @@ hr {
 .item-card {
   padding: 16px;
   margin-left: 10%;
+  margin-right: 10%;
   border-radius: 4px;
   background: white;
-  width: 80%;
+  max-width: 80%;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.11);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.11);
   margin-bottom: 32px;
