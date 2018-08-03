@@ -16,7 +16,7 @@ var leftpaneAutoOpacity = ()=>{
     if(window.innerWidth<720){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = (bodyrect.top)/window.innerHeight;
-        targetvalue = vw(9);
+        targetvalue = 100;
     }
     else{
         targetvalue= Math.min(vw(9),vh(2)*vh(2)*0.4);
@@ -73,7 +73,7 @@ var ProjectData = [
         "Badminton training system"),
     new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline",
         "GRAPHICS-CATMULL-ROMSPLINE",
-        "a visualization Catmull-Rom Spline with OpenGL and GLUT library")
+        "a visualization Catmull-Rom Spline")
 ];
 
 

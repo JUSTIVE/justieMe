@@ -16,7 +16,7 @@ var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 720) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top / window.innerHeight;
-        targetvalue = vw(9);
+        targetvalue = 100;
     } else {
         targetvalue = Math.min(vw(9), vh(2) * vh(2) * 0.4);
         leftpane.style.opacity = 1;
@@ -38,7 +38,7 @@ class Myproject {
     }
 }
 
-var ProjectData = [new Myproject(link = "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER", name = "GLRERENDERER_LEGACYCHECKER", description = "Obj model viewers"), new Myproject(link = "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2", name = "PROJECT_GAMEMAKER-V2", description = "Game company simulation game"), new Myproject(link = "https://github.com/JUSTIVE/OS-ya-master---Copy", name = "OS-Ya", description = "Single thread CPU scheduling simulation"), new Myproject("https://github.com/JUSTIVE/ballRollPool", "ballRollPool", "2D rigid body pocketball simulation"), new Myproject("https://github.com/JUSTIVE/Daisy-Chain", "Daisy Chain", "A game made with Unity"), new Myproject("https://github.com/JUSTIVE/splay", "sPlay", "JAVA swing GUI based CS quiz program"), new Myproject("https://github.com/JUSTIVE/VIPMETHOD", "VIPMETHOD", "Smart scheduler using UWP on Raspberry Pi"), new Myproject("https://github.com/JUSTIVE/tictactoe", "TICTACTOE", "Android tic tac toe Game"), new Myproject("https://github.com/JUSTIVE/SmartBadmintonTrainingSystem", "SmartBadmintonTrainingSystem", "Badminton training system"), new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline", "GRAPHICS-CATMULL-ROMSPLINE", "a visualization Catmull-Rom Spline with OpenGL and GLUT library")];
+var ProjectData = [new Myproject(link = "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER", name = "GLRERENDERER_LEGACYCHECKER", description = "Obj model viewers"), new Myproject(link = "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2", name = "PROJECT_GAMEMAKER-V2", description = "Game company simulation game"), new Myproject(link = "https://github.com/JUSTIVE/OS-ya-master---Copy", name = "OS-Ya", description = "Single thread CPU scheduling simulation"), new Myproject("https://github.com/JUSTIVE/ballRollPool", "ballRollPool", "2D rigid body pocketball simulation"), new Myproject("https://github.com/JUSTIVE/Daisy-Chain", "Daisy Chain", "A game made with Unity"), new Myproject("https://github.com/JUSTIVE/splay", "sPlay", "JAVA swing GUI based CS quiz program"), new Myproject("https://github.com/JUSTIVE/VIPMETHOD", "VIPMETHOD", "Smart scheduler using UWP on Raspberry Pi"), new Myproject("https://github.com/JUSTIVE/tictactoe", "TICTACTOE", "Android tic tac toe Game"), new Myproject("https://github.com/JUSTIVE/SmartBadmintonTrainingSystem", "SmartBadmintonTrainingSystem", "Badminton training system"), new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline", "GRAPHICS-CATMULL-ROMSPLINE", "a visualization Catmull-Rom Spline")];
 
 var projectTemplate = document.querySelector("#project-template");
 var projectCard = document.getElementById("project-card");
