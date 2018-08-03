@@ -16,19 +16,30 @@ var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 720) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top / window.innerHeight;
-        targetvalue = 100;
+        console.log("aas");
     } else {
-        targetvalue = Math.min(vw(9), vh(2) * vh(2) * 0.4);
         leftpane.style.opacity = 1;
     }
-    nom.fontSize = targetvalue + 'px';
-    nom.lineHeight = targetvalue + 'px';
+};
+
+var nameAutoSize = () => {
+    if (window.innerWidth < 720) {
+        var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
+        leftpane.style.opacity = vh(70) / window.innerHeight;
+        fontsize = 140;
+        lineheight = 110;
+    } else {
+        fontsize = lineheight = Math.min(vw(9), vh(2) * vh(2) * 0.4);
+        leftpane.style.opacity = 1;
+    }
+    nom.fontSize = fontsize + 'px';
+    nom.lineHeight = lineheight + 'px';
 };
 
 window.onscroll = leftpaneAutoOpacity;
 // window.onresize = leftpaneAutoOpacity;
-window.addEventListener("resize", leftpaneAutoOpacity, "after");
-window.onload = leftpaneAutoOpacity;
+window.addEventListener("resize", nameAutoSize, "after");
+window.onload = nameAutoSize;
 
 class Myproject {
     constructor(link, name, description) {
