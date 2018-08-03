@@ -205,6 +205,8 @@ ul {
     font-size: 3vw;
   }
   h1 {
+    position: relative;
+    left: -2%;
     font-size: 800%;
     line-height: 100px;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -230,8 +232,11 @@ ul {
   #left-area {
     position: fixed;
     display: block;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 4%;
     height: 70%;
-    width: 95%;
+    width: 94%;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
