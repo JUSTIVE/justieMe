@@ -20,8 +20,8 @@ body {
   border-radius: 8px;
   -webkit-box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
           box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #left-area {
@@ -30,16 +30,20 @@ body {
   display: inline-flex;
   width: 50%;
   height: 100%;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #right-area {
   display: inline-block;
   width: 50%;
   overflow: scroll;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#education {
+  font-weight: 700;
 }
 
 .left-container {
@@ -58,15 +62,15 @@ body {
 h1 {
   display: inline;
   vertical-align: middle;
-  line-height: 9vh;
-  font-size: 9vh;
+  line-height: 9vw;
+  font-size: 9vw;
   font-family: 'Heebo', sans-serif;
   color: #ffffff;
   mix-blend-mode: unset;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 h2 {
@@ -87,8 +91,8 @@ h4 {
   -webkit-margin-after: 0px;
   -webkit-margin-before: 12px;
   width: 100%;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 hr {
@@ -111,8 +115,8 @@ hr {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.11);
   margin-bottom: 32px;
   margin-top: 32px;
-  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 a {
@@ -121,8 +125,8 @@ a {
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
   font-size: 1vw;
-  -webkit-transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 a:hover {
@@ -203,13 +207,13 @@ ul {
   h1 {
     font-size: 800%;
     line-height: 100px;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   h4 {
     width: 100%;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   #pangea {
     display: block;
@@ -220,30 +224,30 @@ ul {
     border-radius: 0px;
     -webkit-box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
             box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   #left-area {
     position: fixed;
     display: block;
     height: 70%;
     width: 95%;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   #right-area {
     display: block;
     position: relative;
     margin-top: 70vh;
     width: 100%;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   .item-card {
     margin-left: 6%;
     width: 80%;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 /*# sourceMappingURL=main.css.map */
