@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo:700');
 @import url("https://fonts.googleapis.com/css?family=Heebo:300");
-$primary-color:#dafffd;//rgba(255, 193, 7, 0.164);
+$primary-color:linear-gradient(120deg, #6fa6ff 0%, #c2e9fb 100%);
 $paper-background:#ffffff;
 // $theme-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 $theme-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 $text-color:#ffffff;
-$text-dark-color:#a2a2a2;
+$text-dark-color:#c2c2c2;
 
 ::-webkit-scrollbar{
     display: none;
@@ -67,6 +67,7 @@ h1{
 }
 h2{
     color:$text-dark-color;
+    -webkit-margin-before:0;
     font-family: 'Heebo', sans-serif; 
     font-weight: 700; 
 }
@@ -130,16 +131,23 @@ a:visited{
     fill:$text-color;
 }
 .project_icon{
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
+    border:solid;
+    border-width: 0px;
     vertical-align: middle;
     display: inline-block;
     margin-right: 8px; 
-    border-radius: 18px;
-    border-color: $primary-color;
-    border-width: 1px;
-    background:$primary-color;
+    border-radius: 24px;
+    border-image-slice: 1;
+    background: #f5f5ff;
+    box-shadow: 0px 2px 4px rgba(31, 34, 36, 0.08), 0 2px 4px rgba(2, 36, 56, 0.11);
 }
+.project-icon-path{
+    fill:#ffC107;
+}
+
+
 .project-text{
     vertical-align:middle;
     display: inline-flex;
@@ -151,13 +159,18 @@ a:visited{
 }
 .project-description{
     display: block;
+    width: 100%;
     text-overflow: ellipsis;
+    
 }
 ul{
     -webkit-padding-start:0;
 }
 
-@media(max-width:600px){ 
+@media(max-width:600px){
+    a{
+        font-size: 2vw;
+    }
     h1{
         font-size:800%;
         line-height:100px;
@@ -195,7 +208,5 @@ ul{
         margin-left:6%;
         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
-    a{
-        font-size: 2vw;
-    }
+    
 }

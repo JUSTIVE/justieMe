@@ -70,7 +70,8 @@ h1 {
 }
 
 h2 {
-  color: #a2a2a2;
+  color: #c2c2c2;
+  -webkit-margin-before: 0;
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
 }
@@ -115,7 +116,7 @@ hr {
 }
 
 a {
-  color: #a2a2a2;
+  color: #c2c2c2;
   text-decoration: none;
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
@@ -126,7 +127,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #dafffd;
+  color: linear-gradient(120deg, #6fa6ff 0%, #c2e9fb 100%);
   -webkit-transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -138,7 +139,7 @@ a:active {
 
 a.project_list:visited {
   text-decoration: none;
-  color: #a2a2a2;
+  color: #c2c2c2;
 }
 
 a:visited {
@@ -151,15 +152,22 @@ a:visited {
 }
 
 .project_icon {
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
+  border: solid;
+  border-width: 0px;
   vertical-align: middle;
   display: inline-block;
   margin-right: 8px;
-  border-radius: 18px;
-  border-color: #dafffd;
-  border-width: 1px;
-  background: #dafffd;
+  border-radius: 24px;
+  border-image-slice: 1;
+  background: #f5f5ff;
+  -webkit-box-shadow: 0px 2px 4px rgba(31, 34, 36, 0.08), 0 2px 4px rgba(2, 36, 56, 0.11);
+          box-shadow: 0px 2px 4px rgba(31, 34, 36, 0.08), 0 2px 4px rgba(2, 36, 56, 0.11);
+}
+
+.project-icon-path {
+  fill: #ffC107;
 }
 
 .project-text {
@@ -180,6 +188,7 @@ a:visited {
 
 .project-description {
   display: block;
+  width: 100%;
   text-overflow: ellipsis;
 }
 
@@ -188,6 +197,9 @@ ul {
 }
 
 @media (max-width: 600px) {
+  a {
+    font-size: 2vw;
+  }
   h1 {
     font-size: 800%;
     line-height: 100px;
@@ -231,9 +243,6 @@ ul {
     margin-left: 6%;
     -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  a {
-    font-size: 2vw;
   }
 }
 /*# sourceMappingURL=main.css.map */
