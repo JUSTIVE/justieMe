@@ -2,8 +2,11 @@ var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
 
 var leftpaneAutoOpacity = ()=>{
-    var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
-    leftpane.style.opacity = (bodyrect.top)/window.innerHeight
+    if(window.innerWidth<600){
+        var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
+
+        leftpane.style.opacity = (bodyrect.top)/window.innerHeight
+    }
 };
 
 window.onscroll = leftpaneAutoOpacity;
