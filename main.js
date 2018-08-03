@@ -48,8 +48,7 @@ var ProjectData = [
     new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline",
         "GRAPHICS-CATMULL-ROMSPLINE",
         "a visualization Catmull-Rom Spline with OpenGL and GLUT library")
-
-]
+];
 
 
 var projectTemplate = document.querySelector("#project-template");
