@@ -1,9 +1,13 @@
 var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
-window.onscroll = () => {
+
+var leftpaneAutoOpacity = () => {
     var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
     leftpane.style.opacity = bodyrect.top / window.innerHeight;
 };
+
+window.onscroll = leftpaneAutoOpacity;
+window.onresize = leftpaneAutoOpacity;
 
 class Myproject {
     constructor(link, name, description) {
