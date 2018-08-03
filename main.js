@@ -2,7 +2,7 @@ var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
 
 var leftpaneAutoOpacity = ()=>{
-    if(window.innerWidth<600){
+    if(window.innerWidth<720){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
 
         leftpane.style.opacity = (bodyrect.top)/window.innerHeight
