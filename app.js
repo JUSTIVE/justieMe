@@ -1,16 +1,33 @@
 var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
 
+function vh(v) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return v * h / 100;
+}
+
+function vw(v) {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return v * w / 100;
+}
+
 var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 720) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
-
         leftpane.style.opacity = bodyrect.top / window.innerHeight;
+    } else {
+        var nom = document.getElementById('nom').style;
+        targetvalue = Math.min(vw(9), vh(2) * vh(2) * 0.4);
+        nom.fontSize = targetvalue + 'px';
+        nom.lineHeight = targetvalue + 'px';
+        leftpane.style.opacity = 1;
     }
 };
 
 window.onscroll = leftpaneAutoOpacity;
-window.onresize = leftpaneAutoOpacity;
+// window.onresize = leftpaneAutoOpacity;
+window.addEventListener("resize", leftpaneAutoOpacity, "after");
+window.onload = leftpaneAutoOpacity;
 
 class Myproject {
     constructor(link, name, description) {

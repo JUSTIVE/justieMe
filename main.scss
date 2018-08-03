@@ -6,6 +6,7 @@ $paper-background:#ffffff;
 $theme-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 $text-color:#ffffff;
 $text-dark-color:#c2c2c2;
+$transition-speed:1.5s;
 
 ::-webkit-scrollbar{
     display: none;
@@ -23,7 +24,7 @@ body{
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
 #left-area{
@@ -31,13 +32,16 @@ body{
     // position: relative;;
     width: 50%;
     height:100%;
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 #right-area{
     display: inline-block;
     width:50%;
     overflow: scroll;
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#education{
+    font-weight:700;
 }
 .left-container{
     display:flex;
@@ -50,14 +54,14 @@ body{
 h1{
     display: inline;
     vertical-align: middle;
-    line-height:9vh;
-    font-size:9vh;
+    line-height:9vw;
+    font-size:9vw;
     font-family: 'Heebo', sans-serif;
     color:$text-color;
     mix-blend-mode: unset;
     -webkit-margin-before:0;
     -webkit-margin-after:0;
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 h2{
     color:$text-dark-color;
@@ -74,7 +78,7 @@ h4{
     -webkit-margin-after:0px;
     -webkit-margin-before:12px;
     width:100%;
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 hr{
     -webkit-margin-start: 0;
@@ -94,7 +98,7 @@ hr{
     box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.11);
     margin-bottom:32px;
     margin-top:32px;
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 a{
     color: $text-dark-color;
@@ -102,7 +106,7 @@ a{
     font-family: 'Heebo', sans-serif;
     font-weight:300;
     font-size:1vw;
-    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 a:hover{
     text-decoration: none;
@@ -167,11 +171,11 @@ ul{
     h1{
         font-size:800%;
         line-height:100px;
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     h4{
         width: 100%;
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #pangea{
         display:block;
@@ -181,26 +185,26 @@ ul{
         overflow: hidden;
         border-radius: 0px;
         box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #left-area{
         position: fixed;
         display:block;
         height:70%;
         width: 95%;
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #right-area{
         display:block;
         position: relative;
         margin-top:70vh;
         width: 100%;
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     .item-card{
         margin-left:6%;
         width: 80%;
-        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     
 }
