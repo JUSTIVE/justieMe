@@ -1,5 +1,6 @@
 var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
+var nom = document.getElementById('nom').style;
 
 function vh(v) {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -15,13 +16,13 @@ var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 720) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top / window.innerHeight;
+        targetvalue = vw(9);
     } else {
-        var nom = document.getElementById('nom').style;
         targetvalue = Math.min(vw(9), vh(2) * vh(2) * 0.4);
-        nom.fontSize = targetvalue + 'px';
-        nom.lineHeight = targetvalue + 'px';
         leftpane.style.opacity = 1;
     }
+    nom.fontSize = targetvalue + 'px';
+    nom.lineHeight = targetvalue + 'px';
 };
 
 window.onscroll = leftpaneAutoOpacity;
