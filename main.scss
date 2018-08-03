@@ -130,15 +130,27 @@ a:visited{
     fill:$text-color;
 }
 .project_icon{
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     vertical-align: middle;
     display: inline-block;
     margin-right: 8px; 
-    border-radius: 12px;
+    border-radius: 18px;
     border-color: $primary-color;
     border-width: 1px;
     background:$primary-color;
+}
+.project-text{
+    vertical-align:middle;
+    display: inline-flex;
+    flex-direction: column;
+}
+.project-name{
+    font-weight: 700;
+    display: block;
+}
+.project-description{
+    display: block;
 }
 ul{
     -webkit-padding-start:0;

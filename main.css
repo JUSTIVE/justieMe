@@ -103,10 +103,9 @@ hr {
 .item-card {
   padding: 16px;
   margin-left: 10%;
-  margin-right: 10%;
   border-radius: 4px;
   background: white;
-  max-width: 80%;
+  width: 80%;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.11);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.11);
   margin-bottom: 32px;
@@ -152,15 +151,35 @@ a:visited {
 }
 
 .project_icon {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   vertical-align: middle;
   display: inline-block;
   margin-right: 8px;
-  border-radius: 12px;
+  border-radius: 18px;
   border-color: #dafffd;
   border-width: 1px;
   background: #dafffd;
+}
+
+.project-text {
+  vertical-align: middle;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project-name {
+  font-weight: 700;
+  display: block;
+}
+
+.project-description {
+  display: block;
 }
 
 ul {
