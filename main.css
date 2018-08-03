@@ -180,6 +180,7 @@ a:visited {
 
 .project-description {
   display: block;
+  text-overflow: ellipsis;
 }
 
 ul {
