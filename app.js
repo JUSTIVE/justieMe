@@ -61,3 +61,41 @@ for (var i = 0; i < ProjectData.length; i++) {
     var clone = document.importNode(projectTemplate.content, true);
     projectCard.appendChild(clone);
 };
+
+class MyPaper {
+    constructor(doi, name, author, journal, quote) {
+        this.doi = doi;
+        this.name = name;
+        this.author = author;
+        this.journal = journal;
+        this.quote = quote;
+    }
+}
+////////////////////////////////////////////////////////////////////////
+var PaperIndex = 0;
+var PaperCategory = ["International Journal", "Domestic Journal", "International Conference", "Domestic Conference"];
+
+var PaperData = [[//International Journals
+new MyPaper(doi = "", name = "Parallel cloth simulation with effective collision detection for interactive AR application", author = "Minsang Kim, Nak-Jun Sung, Sang-Joon Kim, Yoo-Joo Choi, Min Hong", journal = "Multimedia Tools and Applications , 2018. 05.(SCIE)", quote = ""), new MyPaper(doi = "", name = "Parallel cloth simulation with effective collision detection for interactive AR application", author = "Minsang Kim, Nak-Jun Sung, Sang-Joon Kim, Yoo-Joo Choi, Min Hong", journal = "Multimedia Tools and Applications , 2018. 05.(SCIE)", quote = "")], [//Domestic Journal
+
+], [//International Conference
+
+], [//Domestic Conference
+
+]];
+
+var papercategoryButton = document.getElementById("paper-category");
+papercategoryButton.addEventListener("click", () => {
+    PaperIndex = PaperIndex + 1 > 3 ? 0 : PaperIndex + 1;
+    papercategoryButton.innerText = PaperCategory[PaperIndex];
+
+    var paperTemplate = document.querySelector("#paper-template");
+    var paperCard = document.getElementById("paper-card");
+    for (var i = 0; i < PaperData[PaperIndex].length; i++) {
+        paperTemplate.content.querySelector('a').href = PaperData[PaperIndex][i].doi;
+        paperTemplate.content.querySelector(".paper-name").innerHTML = PaperData[PaperIndex][i].name;
+        paperTemplate.content.querySelector(".paper-description").innerHTML = PaperData[PaperIndex][i].author;
+        var clone = document.importNode(paperTemplate.content, true);
+        paperCard.appendChild(clone);
+    };
+});

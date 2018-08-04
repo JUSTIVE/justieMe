@@ -74,6 +74,7 @@ h1 {
 }
 
 h2 {
+  display: inline;
   color: #c2c2c2;
   -webkit-margin-before: 0;
   font-family: 'Heebo', sans-serif;
@@ -89,7 +90,7 @@ h4 {
       -ms-flex-positive: 1;
           flex-grow: 1;
   -webkit-margin-after: 0px;
-  -webkit-margin-before: 12px;
+  -webkit-margin-before: 4px;
   width: 80%;
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -198,6 +199,21 @@ a:visited {
 
 ul {
   -webkit-padding-start: 0;
+}
+
+#paper-category {
+  display: inline;
+  background-color: white;
+  border-radius: 8px;
+  border-style: none;
+  color: #c2c2c2;
+  text-decoration: none;
+  border: none;
+  font-size: 12px;
+}
+
+button:focus {
+  outline: none;
 }
 
 @media (max-width: 720px) {
