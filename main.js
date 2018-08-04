@@ -100,6 +100,14 @@ for (var i=0;i<ProjectData.length;i++){
     projectCard.appendChild(clone);    
 };
 
+class Quote{
+    constructor(MLA,APA,ISO690){
+        this.MLA=MLA;
+        this.APA=APA;
+        this.ISO690=ISO690;
+    }
+}
+
 class MyPaper{
     constructor(doi,name,author,journal,quote){
         this.doi=doi;
@@ -109,6 +117,7 @@ class MyPaper{
         this.quote=quote;
     }
 }
+
 ////////////////////////////////////////////////////////////////////////
 var PaperIndex=0;
 var PaperCategory=[
@@ -142,7 +151,17 @@ var PaperData=[
         
     ],
     [//Domestic Conference
-        
+        new MyPaper(
+            doi="",
+            name="안드로이드 디자인 서포트 라이브러리를 이용한 음악 재생 어플리케이션 구현",
+            author="김민상, 엽효섭, 홍민",
+            journal="2015년도 한국인터넷정보학회 추계학술발표대회 논문집, 2015.10, 227-228",
+            quote=new Quote(
+                MLA='김민상, 염효섭, and 홍민. "안드로이드 디자인 서포트 라이브러리를 이용한 음악 재생 어플리케이션 구현." 한국인터넷정보학회 학술발표대회 논문집 (2015): 227-228.',
+                APA="김민상, 염효섭, & 홍민. (2015). 안드로이드 디자인 서포트 라이브러리를 이용한 음악 재생 어플리케이션 구현. 한국인터넷정보학회 학술발표대회 논문집, 227-228.",
+                ISO690 ="김민상; 염효섭; 홍민. 안드로이드 디자인 서포트 라이브러리를 이용한 음악 재생 어플리케이션 구현. 한국인터넷정보학회 학술발표대회 논문집, 2015, 227-228."
+            )
+        )
     ],
 ]
 
