@@ -1,3 +1,6 @@
+var leftpane = document.getElementById("left-area");
+var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
+var nom = document.getElementById('nom').style;
 
 function vh(v) {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
