@@ -16,7 +16,6 @@ var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 720) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top / window.innerHeight;
-        console.log("aas");
     } else {
         leftpane.style.opacity = 1;
     }
@@ -91,17 +90,26 @@ new MyPaper(doi = "https://doi.org/10.1007/978-981-10-5041-1_26", name = "Implem
 new MyPaper(doi = "https://doi.org/10.3745/KTSDE.2017.6.10.479", name = "OpenGL과 Unity간의 GPU를 이용한 Particle Simulation의 성능 비교", author = "김민상, 성낙준, 최유주, 홍민", journal = "정보처리학회논문지. 소프트웨어 및 데이터 공학, 6권 10호", quote = new Quote(AMA = "김민상, 성낙준, 최유주, & 홍민. (2017). OpenGL 과 Unity 간의 GPU 를 이용한 Particle Simulation 의 성능 비교. 정보처리학회논문지. 소프트웨어 및 데이터 공학, 6(10), 479-486.", MLA = '김민상, et al. "OpenGL 과 Unity 간의 GPU 를 이용한 Particle Simulation 의 성능 비교." 정보처리학회논문지. 소프트웨어 및 데이터 공학 6.10 (2017): 479-486.', ISO690 = "김민상, et al. OpenGL 과 Unity 간의 GPU 를 이용한 Particle Simulation 의 성능 비교. 정보처리학회논문지. 소프트웨어 및 데이터 공학, 2017, 6.10: 479-486."))]];
 
 var papercategoryButton = document.getElementById("paper-category");
-papercategoryButton.addEventListener("click", () => {
-    PaperIndex = PaperIndex + 1 > 3 ? 0 : PaperIndex + 1;
-    papercategoryButton.innerText = PaperCategory[PaperIndex];
+var paperTemplate = document.querySelector("#paper-template");
+var paperCard = document.getElementById("paper-card");
 
-    var paperTemplate = document.querySelector("#paper-template");
-    var paperCard = document.getElementById("paper-card");
+var paperInstanciate = function () {
+    paperCard.innerHTML = "";
     for (var i = 0; i < PaperData[PaperIndex].length; i++) {
+        console.log(i);
         paperTemplate.content.querySelector('a').href = PaperData[PaperIndex][i].doi;
         paperTemplate.content.querySelector(".paper-name").innerHTML = PaperData[PaperIndex][i].name;
-        paperTemplate.content.querySelector(".paper-description").innerHTML = PaperData[PaperIndex][i].author;
+        paperTemplate.content.querySelector(".paper-author").innerHTML = PaperData[PaperIndex][i].author;
+        paperTemplate.content.querySelector(".paper-description").innerHTML = PaperData[PaperIndex][i].description;
         var clone = document.importNode(paperTemplate.content, true);
         paperCard.appendChild(clone);
     };
+};
+
+papercategoryButton.addEventListener("click", () => {
+    PaperIndex = PaperIndex + 1 > 3 ? 0 : PaperIndex + 1;
+    papercategoryButton.innerText = PaperCategory[PaperIndex];
+    console.log(PaperIndex);
+    paperInstanciate();
 });
+paperInstanciate();

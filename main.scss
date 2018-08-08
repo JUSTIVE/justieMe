@@ -145,8 +145,6 @@ a:visited{
 .project-icon-path{
     fill:#ffC107;
 }
-
-
 .project-text{
     vertical-align:middle;
     display: inline-flex;
@@ -160,8 +158,52 @@ a:visited{
     display: block;
     width: 100%;
     text-overflow: ellipsis;
+   
+}
+///////////////////
+//paper area
+///////////////////
+.paper-icon{
+    width: 24px;
+    height: 24px;
+    border:solid;
+    border-width: 0px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 8px; 
+    border-radius: 24px;
+    border-image-slice: 1;
+    background: #fdfdff;
+    box-shadow: 0px 2px 4px rgba(31, 34, 36, 0.04), 0 2px 4px rgba(2, 36, 56, 0.06);
+}
+.paper-icon-path{
+    fill:rgba($color: #E91E63, $alpha: 0.5);
+}
+.paper-text{
+    vertical-align:middle;
+    display: inline-flex;
+    width: 80%;
+    font-size:0.8em;
+    flex-direction: column;
+}
+.paper-name{
+    color: $text-dark-color;
+    font-weight: 700;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.paper-description{
+    line-height: 0.4em;
+    color: $text-dark-color;
+    display: block;
+    width: 100%;
+    
+    text-overflow: ellipsis;
     
 }
+
 ul{
     -webkit-padding-start:0;
 }

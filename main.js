@@ -16,7 +16,6 @@ var leftpaneAutoOpacity = ()=>{
     if(window.innerWidth<720){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top/window.innerHeight;    
-        console.log("aas");
     }
     else{
         leftpane.style.opacity = 1;
@@ -196,20 +195,31 @@ var PaperData=[
 ]
 
 var papercategoryButton=document.getElementById("paper-category");
-papercategoryButton.addEventListener("click",()=>{
-    PaperIndex = PaperIndex+1>3?0:PaperIndex+1;
-    papercategoryButton.innerText = PaperCategory[PaperIndex];
-    
-    var paperTemplate = document.querySelector("#paper-template");
-    var paperCard = document.getElementById("paper-card");
+var paperTemplate = document.querySelector("#paper-template");
+var paperCard = document.getElementById("paper-card");
+
+var paperInstanciate=function(){
+    paperCard.innerHTML="";
     for (var i=0;i<PaperData[PaperIndex].length;i++){
+        console.log(i);
         paperTemplate.content.querySelector('a').href=PaperData[PaperIndex][i].doi;
         paperTemplate.content.querySelector(".paper-name").innerHTML =PaperData[PaperIndex][i].name;
-        paperTemplate.content.querySelector(".paper-description").innerHTML =PaperData[PaperIndex][i].author;
+        paperTemplate.content.querySelector(".paper-author").innerHTML =PaperData[PaperIndex][i].author;
+        paperTemplate.content.querySelector(".paper-description").innerHTML =PaperData[PaperIndex][i].description;
         var clone = document.importNode(paperTemplate.content,true);
         paperCard.appendChild(clone);    
     };
+}
+
+papercategoryButton.addEventListener("click",()=>{
+    PaperIndex = PaperIndex+1>3?0:PaperIndex+1;
+    papercategoryButton.innerText = PaperCategory[PaperIndex]; 
+    console.log(PaperIndex);
+    paperInstanciate();
 });
+paperInstanciate();
 
 
+    
+    
 
