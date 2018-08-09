@@ -41,14 +41,15 @@ window.addEventListener("resize", nameAutoSize, "after");
 window.onload = nameAutoSize;
 
 class Myproject {
-    constructor(link, name, description) {
+    constructor(link, name, description, language) {
         this.link = link;
         this.name = name;
         this.description = description;
+        this.language = language;
     }
 }
 
-var ProjectData = [new Myproject(link = "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER", name = "GLRERENDERER_LEGACYCHECKER", description = "Obj model viewers"), new Myproject(link = "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2", name = "PROJECT_GAMEMAKER-V2", description = "Game company simulation game"), new Myproject(link = "https://github.com/JUSTIVE/OS-ya-master---Copy", name = "OS-Ya", description = "Single thread CPU scheduling simulation"), new Myproject("https://github.com/JUSTIVE/ballRollPool", "ballRollPool", "2D rigid body pocketball simulation"), new Myproject("https://github.com/JUSTIVE/Daisy-Chain", "Daisy Chain", "A game made with Unity"), new Myproject("https://github.com/JUSTIVE/splay", "sPlay", "JAVA swing GUI based CS quiz program"), new Myproject("https://github.com/JUSTIVE/VIPMETHOD", "VIPMETHOD", "Smart scheduler using UWP on Raspberry Pi"), new Myproject("https://github.com/JUSTIVE/tictactoe", "TICTACTOE", "Android tic tac toe Game"), new Myproject("https://github.com/JUSTIVE/SmartBadmintonTrainingSystem", "SmartBadmintonTrainingSystem", "Badminton training system"), new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline", "GRAPHICS-CATMULL-ROMSPLINE", "a visualization Catmull-Rom Spline")];
+var ProjectData = [new Myproject(link = "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER", name = "GLRERENDERER_LEGACYCHECKER", description = "Obj model viewers", language = ["c"]), new Myproject(link = "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2", name = "PROJECT_GAMEMAKER-V2", description = "Game company simulation game", language = ["cpp"]), new Myproject(link = "https://github.com/JUSTIVE/OS-ya-master---Copy", name = "OS-Ya", description = "Single thread CPU scheduling simulation", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/ballRollPool", "ballRollPool", "2D rigid body pocketball simulation", language = ["cpp"]), new Myproject("https://github.com/JUSTIVE/Daisy-Chain", "Daisy Chain", "A game made with Unity", language = ["csharp", "shaderlab", "hlsl"]), new Myproject("https://github.com/JUSTIVE/splay", "sPlay", "JAVA swing GUI based CS quiz program", language = ["java"]), new Myproject("https://github.com/JUSTIVE/VIPMETHOD", "VIPMETHOD", "Smart scheduler using UWP on Raspberry Pi", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/tictactoe", "TICTACTOE", "Android tic tac toe Game", language = ["java"]), new Myproject("https://github.com/JUSTIVE/SmartBadmintonTrainingSystem", "SmartBadmintonTrainingSystem", "Badminton training system", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline", "GRAPHICS-CATMULL-ROMSPLINE", "a visualization Catmull-Rom Spline", language = ["cpp"]), new Myproject("https://github.com/JUSTIVE/framelessCounter", "FramelessCounter", "a frameless wpf timer always on top", language = ["csharp"])];
 
 var projectTemplate = document.querySelector("#project-template");
 var projectCard = document.getElementById("project-card");
@@ -57,8 +58,20 @@ for (var i = 0; i < ProjectData.length; i++) {
     projectTemplate.content.querySelector('a').href = ProjectData[i].link;
     projectTemplate.content.querySelector(".project-name").innerHTML = ProjectData[i].name;
     projectTemplate.content.querySelector(".project-description").innerHTML = ProjectData[i].description;
+    var langs = projectTemplate.content.querySelector(".project-lang");
+    for (var j = 0; j < ProjectData[i].language.length; j++) {
+        var tempLang = document.createElement("div");
+        tempLang.className = "language " + ProjectData[i].language[j] + "-lang";
+        langs.appendChild(tempLang);
+
+        var tempLang = document.createElement("div");
+        tempLang.innerText = ProjectData[i].language[j];
+        tempLang.className = "lang-text";
+        langs.appendChild(tempLang);
+    }
     var clone = document.importNode(projectTemplate.content, true);
     projectCard.appendChild(clone);
+    langs.innerHTML = "";
 };
 
 class Quote {
@@ -98,7 +111,6 @@ var paperCard = document.getElementById("paper-card");
 var paperInstanciate = function () {
     paperCard.innerHTML = "";
     for (var i = 0; i < PaperData[PaperIndex].length; i++) {
-        console.log(i);
         paperTemplate.content.querySelector('a').href = PaperData[PaperIndex][i].doi;
         paperTemplate.content.querySelector(".paper-name").innerHTML = PaperData[PaperIndex][i].name;
         paperTemplate.content.querySelector(".paper-author").innerHTML = PaperData[PaperIndex][i].author;
