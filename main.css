@@ -117,8 +117,8 @@ hr {
   border-radius: 4px;
   background: white;
   width: 70%;
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 6px 10px rgba(0, 0, 0, 0.11);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 6px 10px rgba(0, 0, 0, 0.11);
+  -webkit-box-shadow: 0 3px 7px rgba(24, 24, 96, 0.08), 0 4px 10px rgba(24, 24, 96, 0.11);
+          box-shadow: 0 3px 7px rgba(24, 24, 96, 0.08), 0 4px 10px rgba(24, 24, 96, 0.11);
   margin-bottom: 32px;
   margin-top: 32px;
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -361,7 +361,7 @@ button:focus {
   border-radius: 5px;
   margin-right: 4px;
   font-size: 4px;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 .lang-text {
