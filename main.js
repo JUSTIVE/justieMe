@@ -139,17 +139,6 @@ var PaperData=[
                 ISO690="KIM, Minsang, et al. Parallel cloth simulation with effective collision detection for interactive AR application. Multimedia Tools and Applications, 2018, 1-18."
             )
         ), 
-        new MyPaper( 
-            doi="", 
-            name="Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity",
-            author="Min-Hyung Choi, Min Sang Kim, Nak-Jun Sung, Yoo-Joo Choi, Min Hong", 
-            journal="KSII The 9th International Conference on Internet (ICONI) 2017 Symposium.", 
-            quote=new Quote(
-                AMA="Choi, M. H., Kim, M. S., Sung, N. J., Choi, Y. J., & Hong, M. (2017). Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity.",
-                MLA='Choi, Min-Hyung, et al. "Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity." (2017).',
-                ISO690="CHOI, Min-Hyung, et al. Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity. 2017."
-            )
-        ),
         
     ], 
     [//Domestic Journal 
@@ -167,7 +156,7 @@ var PaperData=[
        
     ], 
     [//International Conference 
-        new MyPaper( 
+        new MyPaper(//CUTE
             doi="https://doi.org/10.1007/978-981-10-5041-1_26", 
             name="Implementation of Sitting Posture Monitoring System with Kinect",
             author="Dong-Jun Shin, Min-Sang Kim, Wook Song, Se Dong Min, Min Hong", 
@@ -178,9 +167,20 @@ var PaperData=[
                 ISO690="SHIN, Dong-Jun, et al. Implementation of Sitting Posture Monitoring System with Kinect. In: Advanced Multimedia and Ubiquitous Engineering. Springer, Singapore, 2017. p. 144-150."
             )
         ),
+        new MyPaper(//ICONI
+            doi="", 
+            name="Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity",
+            author="Min-Hyung Choi, Min Sang Kim, Nak-Jun Sung, Yoo-Joo Choi, Min Hong", 
+            journal="KSII The 9th International Conference on Internet (ICONI) 2017 Symposium.", 
+            quote=new Quote(
+                AMA="Choi, M. H., Kim, M. S., Sung, N. J., Choi, Y. J., & Hong, M. (2017). Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity.",
+                MLA='Choi, Min-Hyung, et al. "Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity." (2017).',
+                ISO690="CHOI, Min-Hyung, et al. Comparison in Performance of Parallel Deformable Object Simulation between OpenGL and Unity. 2017."
+            )
+        ),
     ], 
     [//Domestic Conference 
-        new MyPaper( 
+        new MyPaper(//KTSDE
             doi="https://doi.org/10.3745/KTSDE.2017.6.10.479", 
             name="OpenGL과 Unity간의 GPU를 이용한 Particle Simulation의 성능 비교",
             author="김민상, 성낙준, 최유주, 홍민", 
@@ -197,7 +197,6 @@ var PaperData=[
 var papercategoryButton=document.getElementById("paper-category");
 var paperTemplate = document.querySelector("#paper-template");
 var paperCard = document.getElementById("paper-card");
-
 var paperInstanciate=function(){
     paperCard.innerHTML="";
     for (var i=0;i<PaperData[PaperIndex].length;i++){
@@ -205,7 +204,7 @@ var paperInstanciate=function(){
         paperTemplate.content.querySelector('a').href=PaperData[PaperIndex][i].doi;
         paperTemplate.content.querySelector(".paper-name").innerHTML =PaperData[PaperIndex][i].name;
         paperTemplate.content.querySelector(".paper-author").innerHTML =PaperData[PaperIndex][i].author;
-        paperTemplate.content.querySelector(".paper-description").innerHTML =PaperData[PaperIndex][i].description;
+        paperTemplate.content.querySelector(".paper-journal").innerHTML =PaperData[PaperIndex][i].journal;
         var clone = document.importNode(paperTemplate.content,true);
         paperCard.appendChild(clone);    
     };
