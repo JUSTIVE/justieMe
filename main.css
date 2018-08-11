@@ -423,6 +423,7 @@ button:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 16px;
   }
   #right-container {
     -webkit-box-orient: horizontal;
