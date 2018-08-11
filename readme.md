@@ -1,9 +1,6 @@
-#Justie.me
+# JUSTIEME
 
-##Projects
+source code for my github page  
+made by HTML/ SCSS/ JS(with babel)
 
-##Music
-
-##Drawing
-
-`KPOP NEWS`
+previous page : justie.me/index2.html
