@@ -26,7 +26,9 @@ body{
     margin:10vh;
     background: $theme-color;
     height:80vh;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
     border-radius: 8px;
     box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
@@ -35,13 +37,27 @@ body{
 #left-area{
     display: inline-flex;
     // position: relative;;
-    width: 50%;
+    width: 30%;
     height:100%;
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#right-container{
+    width:70%;
+    display:inline-flex;
+    flex-direction: row;
+    overflow-y:scroll;
+    overflow-x:hidden;
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 #right-area{
     display: inline-block;
-    width:50%;
+    width:30vw;
+    overflow: scroll;
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#right-area2{
+    display: inline-block;
+    width:30vw;
     overflow: scroll;
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
@@ -54,7 +70,6 @@ body{
     padding:16px; 
     width:auto;
     height: auto;
-    // overflow: hidden;
 }
 h1{
     display: inline;
@@ -97,10 +112,11 @@ hr{
 }
 .item-card{
     padding:16px;
-    margin-left:10%;
+    margin-left:5%;
+    margin-right:5%;
     border-radius: 4px;
     background: white;
-    width:70%;
+    // width:70%;
     box-shadow: 0 3px 7px rgba(24,24,96,0.08), 0 4px 10px rgba(24,24,96,0.11);
     margin-bottom:32px;
     margin-top:32px;
@@ -251,7 +267,7 @@ button:focus{
 }
 
 
-@media(max-width:720px){
+@media(max-width:1024px){
     a{
         font-size: 3vw;
     }
@@ -288,6 +304,11 @@ button:focus{
         
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
+    #right-container{
+        // display:inline-flex;
+        flex-direction: row;
+        width: 100%;
+    }
     #right-area{
         display:block;
         position: relative;
@@ -295,8 +316,16 @@ button:focus{
         width: 100%;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
+    #right-area2{
+        display:block;
+        position:relative;
+        width:100%;
+        margin-top:70vh;
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+    }
     .item-card{
         margin-left:6%;
+        margin-right:6%;
         width: 80%;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
@@ -310,6 +339,15 @@ button:focus{
         font-size:10px;
     }
 }
+@media(max-width:768px){
+    #right-container{
+        flex-direction: column;
+    }
+    #right-area2{
+        margin-top:-32px;
+    }
+}
+
 .language{
     width:10px;
     height:10px;
