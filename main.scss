@@ -263,6 +263,7 @@ button:focus{
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     h4{
+        font-size: 12px;
         width: 100%;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
@@ -299,7 +300,15 @@ button:focus{
         width: 80%;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
-    
+    .project-text{
+        font-size:12px;
+    }
+    .paper-author{
+        font-size:10px;
+    }
+    .paper-journal{
+        font-size:10px;
+    }
 }
 .language{
     width:10px;

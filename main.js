@@ -38,7 +38,6 @@ var nameAutoSize = ()=>{
 };
 
 window.onscroll = leftpaneAutoOpacity;
-// window.onresize = leftpaneAutoOpacity;
 window.addEventListener("resize",nameAutoSize,"after");
 window.onload = nameAutoSize;
 
