@@ -40,6 +40,10 @@ body {
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+#left-container {
+  padding: 16px;
+}
+
 #right-container {
   width: 70%;
   display: -webkit-inline-box;
@@ -304,6 +308,50 @@ a:visited {
   text-overflow: ellipsis;
 }
 
+.techies_list {
+  margin-bottom: 32px;
+}
+
+.techies-icon {
+  background: rgba(139, 195, 74, 0.7);
+}
+
+.techies-icon-path {
+  fill: white;
+}
+
+.techies-text {
+  vertical-align: middle;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 75%;
+  font-size: 0.8em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.techies-name {
+  color: rgba(158, 158, 177, 0.84);
+  font-weight: 700;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.techies-date {
+  font-size: 0.4em;
+  color: rgba(158, 158, 177, 0.84);
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 ul {
   -webkit-padding-start: 0;
 }
@@ -353,6 +401,9 @@ button:focus {
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+  #hero {
+    width: 50%;
+  }
   #left-area {
     position: fixed;
     display: block;
@@ -364,17 +415,26 @@ button:focus {
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+  #left-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   #right-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-top: 70vh;
     width: 100%;
   }
   #right-area {
     display: block;
     position: relative;
-    margin-top: 70vh;
     width: 100%;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -383,7 +443,6 @@ button:focus {
     display: block;
     position: relative;
     width: 100%;
-    margin-top: 70vh;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -406,6 +465,12 @@ button:focus {
 }
 
 @media (max-width: 768px) {
+  #left-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   #right-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

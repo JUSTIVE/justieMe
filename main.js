@@ -13,7 +13,7 @@ function vw(v) {
 }
 
 var leftpaneAutoOpacity = ()=>{
-    if(window.innerWidth<720){
+    if(window.innerWidth<1024){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = bodyrect.top/window.innerHeight;    
     }
@@ -265,7 +265,7 @@ papercategoryButton.addEventListener("click",()=>{
 paperInstanciate();
 
 
-
-    
-    
-
+var TechiesData=[];
+var fs = require('file-system');
+var techieslist=fs.readdirSync('techies/');
+console.log(techieslist);
