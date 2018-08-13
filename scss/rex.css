@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:800");
+@import url("https://fonts.googleapis.com/css?family=Heebo:300");
+@import url("https://fonts.googleapis.com/css?family=Heebo:400");
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.rex_list {
+  margin-bottom: 32px;
+}
+
+.rex-icon {
+  background: rgba(255, 112, 67, 0.7);
+}
+
+.rex-icon-path {
+  fill: white;
+}
+
+.rex-text {
+  vertical-align: middle;
+  color: rgba(158, 158, 177, 0.84);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 75%;
+  font-size: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.rex-place {
+  font-weight: 700;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rex-duration {
+  display: block;
+  width: 100%;
+  white-space: wrap;
+}
+/*# sourceMappingURL=rex.css.map */

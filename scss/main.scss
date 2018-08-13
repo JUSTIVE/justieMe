@@ -63,6 +63,10 @@ hr{
     border-color: $text-color;
     width: 20%;
 }
+.card-title{
+    display: inline-block;
+    -webkit-margin-after:0px;
+}
 .item-card{
     padding:16px;
     margin-left:5%;
@@ -232,16 +236,27 @@ a:visited{
 ul{
     -webkit-padding-start:0;
 }
-
+#paper-header{
+    justify-content: flex-start;
+    // display:flex;
+}
 #paper-category{
-    display: inline;
+    padding:8px;
+    height: auto;
+    display: inline-block;
+    vertical-align: text-top;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 2px;
     border-style: none;
-    color: $text-dark-color;
+    color: #6fa6ff;
     text-decoration: none;
     border: none;
     font-size:12px;
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#paper-category:hover{
+    background-color: #eee;
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 button:focus{
     outline: none;

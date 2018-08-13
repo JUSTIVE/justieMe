@@ -94,6 +94,11 @@ hr {
   width: 20%;
 }
 
+.card-title {
+  display: inline-block;
+  -webkit-margin-after: 0px;
+}
+
 .item-card {
   padding: 16px;
   margin-left: 5%;
@@ -302,15 +307,32 @@ ul {
   -webkit-padding-start: 0;
 }
 
+#paper-header {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 #paper-category {
-  display: inline;
+  padding: 8px;
+  height: auto;
+  display: inline-block;
+  vertical-align: text-top;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 2px;
   border-style: none;
-  color: rgba(158, 158, 177, 0.84);
+  color: #6fa6ff;
   text-decoration: none;
   border: none;
   font-size: 12px;
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#paper-category:hover {
+  background-color: #eee;
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 button:focus {

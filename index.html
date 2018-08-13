@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="scss/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="scss/lang.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="scss/skills.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="scss/rex.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="scss/left-area.css" />
 </head>
 <body>
@@ -16,15 +17,15 @@
             <div id="left-container">
                 <div id="hero">
                     <h1 id="nom">KIM<br>MIN<br>SANG</h1>
-                    <hr>
                 </div>
+                <hr>
                 <div id="hero-description">
                     <h4 id="education">
                         2014~2017<br>
                         B.S in Dept of Computer Software Engineering in Soonchunhyang University.<br>
                         2017~Current<br>
                         M.S Course in Dept of Computer Science in Soonchunhyang University.<br>
-                        
+                        <br>
                         His research interests are in computer graphics, physically-based modeling and simulation, and android applications. 
                     </h4>
                     <div id="footer">
@@ -61,8 +62,10 @@
                     </template>
                 </div>
                 <div class="item-card" >
-                    <h2 class="card-title">PUBLICATIONS</h2>
-                    <button id="paper-category">International Journal</button>
+                    <div id="paper-header">
+                        <h2 class="card-title">PUBLICATIONS</h2>
+                        <button id="paper-category">International Journal</button>
+                    </div>
                     <div id="paper-card">
                         <template type="paperTemplateType" id="paper-template">
                             <ul class="paper_list"><a class="paper_list" href="">
@@ -79,20 +82,28 @@
                     </div>
                 </div>
                 <div class="item-card" >
-                    <h2 class="card-title">RESEARCH EXPERIENCE</h2>
-                    <div id="paper-card">
-                        <template type="paperTemplateType" id="paper-template">
-                            <ul class="paper_list"><a class="paper_list" href="">
-                                <svg viewBox="-6 -6 36 36" class="badge-icon paper-icon">
-                                    <path class="paper-icon-path" d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z"/>
-                                </svg>
-                                <div class="paper-text">
-                                    <div class="paper-author"></div>
-                                    <div class="paper-name"></div>
-                                    <div class="paper-journal"></div>
-                                </div>
-                            </a></ul>
-                        </template>
+                    <h2 class="card-title">EXPERIENCE</h2>
+                    <div id="rex-card">
+                        <ul class="rex_list"><a class="rex_list" href="">
+                            <svg viewBox="-6 -6 36 36" class="badge-icon rex-icon">
+                                <path class="rex-icon-path"  d="M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L13,8.35V4H11V8.35L5.18,18.43C5.07,18.59 5,18.79 5,19M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M13,16L14.34,14.66L16.27,18H7.73L10.39,13.39L13,16M12.5,12A0.5,0.5 0 0,1 13,12.5A0.5,0.5 0 0,1 12.5,13A0.5,0.5 0 0,1 12,12.5A0.5,0.5 0 0,1 12.5,12Z"/>
+                            </svg>
+                            <div class="rex-text">
+                                <div class="rex-place">Pison Contents</div>
+                                <div class="rex-position">intern</div>
+                                <div class="rex-duration">2016.07 ~ 2016.08</div>
+                            </div>
+                        </a></ul>
+                        <ul class="rex_list"><a class="rex_list" href="">
+                            <svg viewBox="-6 -6 36 36" class="badge-icon rex-icon">
+                                <path class="rex-icon-path"  d="M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L13,8.35V4H11V8.35L5.18,18.43C5.07,18.59 5,18.79 5,19M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M13,16L14.34,14.66L16.27,18H7.73L10.39,13.39L13,16M12.5,12A0.5,0.5 0 0,1 13,12.5A0.5,0.5 0 0,1 12.5,13A0.5,0.5 0 0,1 12,12.5A0.5,0.5 0 0,1 12.5,12Z"/>
+                            </svg>
+                            <div class="rex-text">
+                                <div class="rex-place">Computer Graphics Laboratory</div>
+                                <div class="rex-position">étudiant</div>
+                                <div class="rex-duration">2014.03 ~ 2019.02</div>
+                            </div>
+                        </a></ul>
                     </div>
                 </div>
             </div>
@@ -114,7 +125,7 @@
                             </svg>
                             <div class="skill-text">
                                 <div class="skill-name">Human Languages</div>
-                                <div class="skill-lang">Korean (native), English</div>
+                                <div class="skill-lang">Korean (native)<br>English<br>Japanese(ひらがな, カタカナ)</div>
                             </div>
                         </a></ul>
                 </div>

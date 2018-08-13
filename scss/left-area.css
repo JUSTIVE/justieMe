@@ -82,7 +82,10 @@ h1 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 16px;
+    padding: 8px;
+  }
+  #hero-description {
+    padding-left: 4px;
   }
 }
 

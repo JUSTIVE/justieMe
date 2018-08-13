@@ -49,7 +49,10 @@ h1 {
     #left-container{
         display:flex;
         flex-direction: row;
-        padding:16px;
+        padding:8px;
+    }
+    #hero-description{
+        padding-left:4px;
     }
 }
 @media(max-width:768px){

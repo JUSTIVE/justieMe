@@ -1,15 +1,15 @@
 @import "variables.scss";
-.skill_list{
+.rex_list{
     margin-bottom:32px;
 }
-.skill-icon{
-     background:rgba($color: #ab47bc, $alpha: 0.7);
+.rex-icon{
+     background:rgba($color:#ff7043, $alpha: 0.7);
     //background:linear-gradient(120deg, #ab47bc 0%, #7b288a 100%);
 }
-.skill-icon-path{
+.rex-icon-path{
     fill:white;
 }
-.skill-text{
+.rex-text{
     vertical-align:middle;
     color: $text-dark-color;
     display: inline-flex;
@@ -17,14 +17,14 @@
     font-size:12px;
     flex-direction: column;
 }
-.skill-name{
+.rex-place{
     font-weight: 700;
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-.skill-lang{
+.rex-duration{
     display: block;
     width: 100%;
     white-space: wrap;
