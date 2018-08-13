@@ -128,6 +128,5 @@ papercategoryButton.addEventListener("click", () => {
 paperInstanciate();
 
 var TechiesData = [];
-var fs = require('file-system');
-var techieslist = fs.readdirSync('techies/');
+var fs = require('fs');
 console.log(techieslist);
