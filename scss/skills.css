@@ -9,10 +9,6 @@
   display: none;
 }
 
-.skill_list {
-  margin-bottom: 32px;
-}
-
 .skill-icon {
   background: rgba(171, 71, 188, 0.7);
 }
@@ -23,7 +19,7 @@
 
 .skill-text {
   vertical-align: middle;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;

@@ -11,7 +11,7 @@ body{
     // overflow: hidden;
     overflow-y: hidden;
     overflow-x: scroll;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
@@ -68,10 +68,10 @@ hr{
     -webkit-margin-after:0px;
 }
 .item-card{
-    padding:16px;
+    padding:24px;
     margin-left:5%;
     margin-right:5%;
-    border-radius: 4px;
+    border-radius: 16px;
     background: white;
     // width:70%;
     box-shadow: 0 3px 7px rgba(24,24,96,0.08), 0 4px 10px rgba(24,24,96,0.11);
@@ -105,9 +105,6 @@ a:visited{
     text-decoration: none;
     color: #FFF;
 }
-.project_list{
-    margin-bottom:32px;
-}
 
 .badge-icon{
     width: $icon-size;
@@ -116,8 +113,8 @@ a:visited{
     border-width: 0px;
     vertical-align: middle;
     display: inline-block;
-    margin-right: 8px; 
-    border-radius: 17px;
+    margin-right: 16px; 
+    border-radius: 20px;
     border-image-slice: 1;
     //box-shadow: 0px 2px 4px rgba(31, 34, 36, 0.06), 0 2px 4px rgba(2, 36, 56, 0.12);
 }
@@ -157,9 +154,7 @@ a:visited{
 ///////////////////
 //paper area
 ///////////////////
-.paper_list{
-    margin-bottom:32px;
-}
+
 .paper-icon{
     background:rgba($color: #E91E63, $alpha: 0.7);
 }
@@ -204,9 +199,6 @@ a:visited{
 /////////////////////////////
 //techies area
 /////////////////////////////
-.techies_list{
-    margin-bottom:32px;
-}
 .techies-icon{
     background:rgba($color: #8bc34a, $alpha: 0.7);
 }
@@ -235,6 +227,8 @@ a:visited{
 }
 ul{
     -webkit-padding-start:0;
+    -webkit-margin-before:24px;
+    -webkit-margin-after:24px;
 }
 #paper-header{
     justify-content: flex-start;
@@ -264,6 +258,10 @@ button:focus{
 
 
 @media(max-width:1024px){
+    ul{
+        -webkit-margin-after:24px;
+        -webkit-margin-before:24px;
+    }
     a{
         font-size: 3vw;
     }
@@ -314,7 +312,8 @@ button:focus{
     .item-card{
         margin-left:6%;
         margin-right:6%;
-        width: 80%;
+        // width: 76%;
+        width:auto;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     .project-text{

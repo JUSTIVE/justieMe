@@ -9,10 +9,6 @@
   display: none;
 }
 
-.rex_list {
-  margin-bottom: 32px;
-}
-
 .rex-icon {
   background: rgba(255, 112, 67, 0.7);
 }
@@ -23,7 +19,7 @@
 
 .rex-text {
   vertical-align: middle;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;

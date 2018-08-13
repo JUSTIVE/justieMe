@@ -23,7 +23,7 @@ body {
   height: 80vh;
   overflow-y: hidden;
   overflow-x: scroll;
-  border-radius: 8px;
+  border-radius: 16px;
   -webkit-box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
           box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -63,7 +63,7 @@ body {
 
 h2 {
   display: inline;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   -webkit-margin-before: 0;
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
@@ -100,10 +100,10 @@ hr {
 }
 
 .item-card {
-  padding: 16px;
+  padding: 24px;
   margin-left: 5%;
   margin-right: 5%;
-  border-radius: 4px;
+  border-radius: 16px;
   background: white;
   -webkit-box-shadow: 0 3px 7px rgba(24, 24, 96, 0.08), 0 4px 10px rgba(24, 24, 96, 0.11);
           box-shadow: 0 3px 7px rgba(24, 24, 96, 0.08), 0 4px 10px rgba(24, 24, 96, 0.11);
@@ -114,7 +114,7 @@ hr {
 }
 
 a {
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   text-decoration: none;
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
@@ -137,16 +137,12 @@ a:active {
 
 a.project_list:visited {
   text-decoration: none;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
 }
 
 a:visited {
   text-decoration: none;
   color: #FFF;
-}
-
-.project_list {
-  margin-bottom: 32px;
 }
 
 .badge-icon {
@@ -156,8 +152,8 @@ a:visited {
   border-width: 0px;
   vertical-align: middle;
   display: inline-block;
-  margin-right: 8px;
-  border-radius: 17px;
+  margin-right: 16px;
+  border-radius: 20px;
   border-image-slice: 1;
 }
 
@@ -210,10 +206,6 @@ a:visited {
   vertical-align: middle;
 }
 
-.paper_list {
-  margin-bottom: 32px;
-}
-
 .paper-icon {
   background: rgba(233, 30, 99, 0.7);
 }
@@ -236,7 +228,7 @@ a:visited {
 }
 
 .paper-name {
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   font-weight: 700;
   display: block;
   text-overflow: ellipsis;
@@ -246,7 +238,7 @@ a:visited {
 
 .paper-author {
   font-size: 0.4em;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   display: block;
   width: 100%;
   overflow: hidden;
@@ -256,16 +248,12 @@ a:visited {
 
 .paper-journal {
   font-size: 0.4em;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
   display: block;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.techies_list {
-  margin-bottom: 32px;
 }
 
 .techies-icon {
@@ -287,7 +275,7 @@ a:visited {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: rgba(158, 158, 177, 0.84);
+  color: rgba(159, 159, 178, 0.84);
 }
 
 .techies-name {
@@ -305,6 +293,8 @@ a:visited {
 
 ul {
   -webkit-padding-start: 0;
+  -webkit-margin-before: 24px;
+  -webkit-margin-after: 24px;
 }
 
 #paper-header {
@@ -340,6 +330,10 @@ button:focus {
 }
 
 @media (max-width: 1024px) {
+  ul {
+    -webkit-margin-after: 24px;
+    -webkit-margin-before: 24px;
+  }
   a {
     font-size: 3vw;
   }
@@ -397,7 +391,7 @@ button:focus {
   .item-card {
     margin-left: 6%;
     margin-right: 6%;
-    width: 80%;
+    width: auto;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
