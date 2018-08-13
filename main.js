@@ -264,7 +264,8 @@ papercategoryButton.addEventListener("click",()=>{
 });
 paperInstanciate();
 
-
 var TechiesData=[];
-var fs= require('fs');
-console.log(techieslist);
+var url = new URL(document.location.href+"/techies/");
+
+var temp =new URLSearchParams(url.search.slice(1));
+console.log(temp);
