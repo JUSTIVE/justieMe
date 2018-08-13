@@ -157,12 +157,12 @@ a:visited {
   border-image-slice: 1;
 }
 
-.project-icon {
-  background: #ffC107;
+.icon-path {
+  fill: white;
 }
 
-.project-icon-path {
-  fill: white;
+.project-icon {
+  background: #ffC107;
 }
 
 .project-text {
@@ -210,10 +210,6 @@ a:visited {
   background: rgba(233, 30, 99, 0.7);
 }
 
-.paper-icon-path {
-  fill: white;
-}
-
 .paper-text {
   vertical-align: middle;
   display: -webkit-inline-box;
@@ -258,10 +254,6 @@ a:visited {
 
 .techies-icon {
   background: rgba(139, 195, 74, 0.7);
-}
-
-.techies-icon-path {
-  fill: white;
 }
 
 .techies-text {
@@ -314,7 +306,7 @@ ul {
   color: #6fa6ff;
   text-decoration: none;
   border: none;
-  font-size: 12px;
+  font-size: 10px;
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
