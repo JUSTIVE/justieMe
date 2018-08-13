@@ -277,15 +277,15 @@ a:visited {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 75%;
-  font-size: 0.8em;
+  font-size: 12px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: rgba(158, 158, 177, 0.84);
 }
 
 .techies-name {
-  color: rgba(158, 158, 177, 0.84);
   font-weight: 700;
   display: block;
   text-overflow: ellipsis;
@@ -294,13 +294,8 @@ a:visited {
 }
 
 .techies-date {
-  font-size: 0.4em;
-  color: rgba(158, 158, 177, 0.84);
   display: block;
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 ul {

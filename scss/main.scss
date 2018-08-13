@@ -213,11 +213,12 @@ a:visited{
     vertical-align:middle;
     display: inline-flex;
     width: 75%;
-    font-size:0.8em;
+    font-size:12px;
     flex-direction: column;
+    color: $text-dark-color;
 }
 .techies-name{
-    color: $text-dark-color;
+    
     font-weight: 700;
     display: block;
     text-overflow: ellipsis;
@@ -225,14 +226,8 @@ a:visited{
     white-space: nowrap;
 }
 .techies-date{
-    font-size: 0.4em;
-    //line-height: 0.7em;
-    color: $text-dark-color;
     display: block;
     width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 ul{
     -webkit-padding-start:0;

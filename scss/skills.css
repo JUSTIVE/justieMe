@@ -28,7 +28,7 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 75%;
-  font-size: 0.8em;
+  font-size: 12px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

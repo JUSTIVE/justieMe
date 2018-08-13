@@ -15,7 +15,7 @@ function vw(v) {
 var leftpaneAutoOpacity = () => {
     if (window.innerWidth < 1024) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
-        leftpane.style.opacity = max(bodyrect.top / window.innerHeight, 0);
+        leftpane.style.opacity = Math.max(bodyrect.top / window.innerHeight, 0);
     } else {
         leftpane.style.opacity = 1;
     }
