@@ -1,0 +1,59 @@
+
+@import "variables.scss";
+
+#left-area{
+    display: inline-flex;
+    width: 30%;
+    height:100%;
+    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+#left-container{
+    padding:16px;
+    display: flex;
+    flex-direction: column;
+}
+#hero-description{
+    display:flex;
+    flex-direction: column;
+    font-weight:600;
+    flex-grow:1;
+}
+.contact-icons{
+    fill:$text-color;
+}
+h1 {
+    display: inline;
+    vertical-align: middle;
+    line-height: 9vw;
+    font-size: 9vw;
+    font-family: 'Heebo', sans-serif;
+    color: #ffffff;
+    mix-blend-mode: unset;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media(max-width:1024px){
+    #left-area{
+        position: fixed;
+        display:block;
+        padding-left: 3%;
+        padding-right:3%;
+        padding-top: 4%;
+        height:70%;
+        width: 94%;
+        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
+    }
+    #left-container{
+        display:flex;
+        flex-direction: row;
+        padding:16px;
+    }
+}
+@media(max-width:768px){
+    #left-container{
+        flex-direction: column;
+    }
+}

@@ -1,22 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:800');
-@import url("https://fonts.googleapis.com/css?family=Heebo:300");
-@import url("https://fonts.googleapis.com/css?family=Heebo:400");
-$primary-color:linear-gradient(120deg, #6fa6ff 0%, #c2e9fb 100%);
-$paper-background:#ffffff;
-// $theme-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-$theme-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-//$theme-color: linear-gradient( 125deg, #c1f0d8 20%, rgb(168, 182, 216) 100%);
-$text-color:#ffffff;
-$text-dark-color:rgba(#9e9eb1,0.84);
-$transition-speed:1.5s;
-$icon-size:40px;
-
-*{
-    -webkit-font-smoothing:antialiased;
-}
-::-webkit-scrollbar{
-    display: none;
-}
+@import "variables.scss";
 body{
     background:$paper-background;
     margin:0;
@@ -34,16 +16,6 @@ body{
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
-#left-area{
-    display: inline-flex;
-    // position: relative;;
-    width: 30%;
-    height:100%;
-    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
-}
-#left-container{
-    padding:16px;
-}
 #right-container{
     width:70%;
     display:inline-flex;
@@ -64,28 +36,6 @@ body{
     overflow: scroll;
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
-#education{
-    font-weight:600;
-}
-.left-container{
-    display:flex;
-    flex-direction: column;
-    padding:16px; 
-    width:auto;
-    height: auto;
-}
-h1{
-    display: inline;
-    vertical-align: middle;
-    line-height:9vw;
-    font-size:9vw;
-    font-family: 'Heebo', sans-serif;
-    color:$text-color;
-    mix-blend-mode: unset;
-    -webkit-margin-before:0;
-    -webkit-margin-after:0;
-    transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
-}
 h2{
     display: inline;
     color:$text-dark-color;
@@ -96,7 +46,7 @@ h2{
 h4{
     font-family: 'Heebo', sans-serif;
     font-weight: 400;
-    font-size:1vw;
+    font-size:0.7vw;
     color:$text-color;
     flex-grow: 1;
     -webkit-margin-after:0px;
@@ -154,9 +104,7 @@ a:visited{
 .project_list{
     margin-bottom:32px;
 }
-.contact-icons{
-    fill:$text-color;
-}
+
 .badge-icon{
     width: $icon-size;
     height: $icon-size;
@@ -213,7 +161,6 @@ a:visited{
 }
 .paper-icon-path{
     fill:white;
-    
 }
 .paper-text{
     vertical-align:middle;
@@ -261,7 +208,6 @@ a:visited{
 }
 .techies-icon-path{
     fill:white;
-    
 }
 .techies-text{
     vertical-align:middle;
@@ -336,21 +282,7 @@ button:focus{
     #hero{
         width:50%;
     }
-    #left-area{
-        position: fixed;
-        display:block;
-        padding-left: 3%;
-        padding-right:3%;
-        padding-top: 4%;
-        height:70%;
-        width: 94%;
-        transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
-    }
-    #left-container{
-        display:flex;
-        flex-direction: row;
-        padding:16px;
-    }
+    
     #right-container{
         // display:inline-flex;
         flex-direction: row;
@@ -386,43 +318,11 @@ button:focus{
     }
 }
 @media(max-width:768px){
-    #left-container{
-        flex-direction: column;
-    }
+    
     #right-container{
         flex-direction: column;
     }
     #right-area2{
         margin-top:-32px;
     }
-}
-
-.language{
-    width:10px;
-    height:10px;
-    border-radius: 5px;
-    margin-right: 4px;
-    font-size:4px;
-    margin-top: 5px;
-}
-.lang-text{
-    margin-right: 4px;
-}
-.c-lang{
-    background:#555555;
-}
-.cpp-lang{
-    background:#f34b7d;
-}
-.csharp-lang{
-    background:#178600;
-}
-.java-lang{
-    background:#b07219;
-}
-.shaderlab-lang{
-    background:#cccccc;
-}
-.hlsl-lang{
-    background:#cccccc;
 }

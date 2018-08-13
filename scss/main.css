@@ -30,20 +30,6 @@ body {
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#left-area {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 30%;
-  height: 100%;
-  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-#left-container {
-  padding: 16px;
-}
-
 #right-container {
   width: 70%;
   display: -webkit-inline-box;
@@ -75,37 +61,6 @@ body {
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#education {
-  font-weight: 600;
-}
-
-.left-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 16px;
-  width: auto;
-  height: auto;
-}
-
-h1 {
-  display: inline;
-  vertical-align: middle;
-  line-height: 9vw;
-  font-size: 9vw;
-  font-family: 'Heebo', sans-serif;
-  color: #ffffff;
-  mix-blend-mode: unset;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
 h2 {
   display: inline;
   color: rgba(158, 158, 177, 0.84);
@@ -117,7 +72,7 @@ h2 {
 h4 {
   font-family: 'Heebo', sans-serif;
   font-weight: 400;
-  font-size: 1vw;
+  font-size: 0.7vw;
   color: #ffffff;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -187,10 +142,6 @@ a:visited {
 
 .project_list {
   margin-bottom: 32px;
-}
-
-.contact-icons {
-  fill: #ffffff;
 }
 
 .badge-icon {
@@ -404,27 +355,6 @@ button:focus {
   #hero {
     width: 50%;
   }
-  #left-area {
-    position: fixed;
-    display: block;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 4%;
-    height: 70%;
-    width: 94%;
-    -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  #left-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 16px;
-  }
   #right-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -466,12 +396,6 @@ button:focus {
 }
 
 @media (max-width: 768px) {
-  #left-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   #right-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -481,42 +405,5 @@ button:focus {
   #right-area2 {
     margin-top: -32px;
   }
-}
-
-.language {
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  margin-right: 4px;
-  font-size: 4px;
-  margin-top: 5px;
-}
-
-.lang-text {
-  margin-right: 4px;
-}
-
-.c-lang {
-  background: #555555;
-}
-
-.cpp-lang {
-  background: #f34b7d;
-}
-
-.csharp-lang {
-  background: #178600;
-}
-
-.java-lang {
-  background: #b07219;
-}
-
-.shaderlab-lang {
-  background: #cccccc;
-}
-
-.hlsl-lang {
-  background: #cccccc;
 }
 /*# sourceMappingURL=main.css.map */
