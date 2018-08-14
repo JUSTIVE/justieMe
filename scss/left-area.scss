@@ -8,9 +8,10 @@
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 #left-container{
-    padding:16px;
+    padding:64px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 #hero-description{
     display:flex;

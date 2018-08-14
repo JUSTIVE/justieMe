@@ -12,7 +12,7 @@ body{
     overflow-y: hidden;
     overflow-x: scroll;
     border-radius: 16px;
-    box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.11);
+    box-shadow: 130px 130px 130px 130px rgba(31, 34, 36, 0.08), 0 30px 30px rgba(2, 36, 56, 0.16);
     transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
@@ -155,14 +155,6 @@ a:visited{
 ///////////////////
 //paper area
 ///////////////////
-@keyframes quoteDetailIn{
-    from{margin-left:0px;}
-    to{margin-left:-40px;}
-}
-@keyframes quoteDetailOut{
-    from{margin-left:-40px;}
-    to{margin-left:0px;}
-}
 .paper-list{
     display:flex;
     flex-direction: row;
@@ -176,7 +168,7 @@ a:visited{
     font-size:0.8em;
     flex-direction: column;
     flex-grow: 1;
-    width: 60%;
+    width: 70%;
 }
 .paper-name{
     color: $text-dark-color;
@@ -202,50 +194,26 @@ a:visited{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.paper-quote-container{
-    vertical-align: middle;
-    display: inline-flex;
-    flex-direction: row;
-    overflow: hidden;
-    width: 40px;
-    align-items: center;
-}
-.paper-quote-container:hover{
-    animation:quoteDetailOut;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    
-}
-.paper-quote-container:left{
-    animation:quoteDetailIn;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
 .paper-quote-detail-container{
-    margin-left:4px;
+    margin-top: 3px;
     display:inline-flex;
-    flex-direction: column;
-    width:40px;
+    flex-direction: row;
+    width:32px;
     align-items: center;
 }
 .paper-quote-detail{
+    padding:2px;
+    margin-right:6px;
     font-size:8px;
     color:#6fa6ff;
 }
-.paper-quote-detail-cancel{
-    color:#ec4747;
+.paper-quote-detail:hover{
+    background:#eee;
 }
-.paper-quote-icon{
-    fill:$text-dark-color;
+.paper-hide{
+    position:absolute;
+    left:-9999px;
 }
-.paper-quote-button{
-    display:inline-block;
-    width:32px;
-    height:32px;
-    border-radius: 16px;
-    vertical-align: middle;
-}
-
 
 /////////////////////////////
 //techies area
@@ -338,6 +306,9 @@ button:focus{
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
     #hero{
+        width:50vw;
+    }
+    #hero-description{
         width:50%;
     }
     
@@ -359,6 +330,7 @@ button:focus{
         width:100%;
         transition: $transition-speed cubic-bezier(0.075, 0.82, 0.165, 1); 
     }
+    
     .item-card{
         margin-left:6%;
         margin-right:6%;
@@ -383,5 +355,8 @@ button:focus{
     }
     #right-area2{
         margin-top:-32px;
+    }
+    #hero-description{
+        width:100%;
     }
 }

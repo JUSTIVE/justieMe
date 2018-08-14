@@ -20,7 +20,7 @@
 }
 
 #left-container {
-  padding: 16px;
+  padding: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,6 +28,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #hero-description {
