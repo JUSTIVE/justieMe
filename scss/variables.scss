@@ -13,7 +13,14 @@ $icon-size:40px;
 
 *{
     -webkit-font-smoothing:antialiased;
+    -ms-overflow-style: none;
+    overflow: hidden;
 }
+
+html{
+    -ms-overflow-style: none;
+}
+
 ::-webkit-scrollbar{
     display: none;
 }
