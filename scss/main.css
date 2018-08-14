@@ -206,6 +206,52 @@ a:visited {
   vertical-align: middle;
 }
 
+@-webkit-keyframes quoteDetailIn {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -40px;
+  }
+}
+
+@keyframes quoteDetailIn {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: -40px;
+  }
+}
+
+@-webkit-keyframes quoteDetailOut {
+  from {
+    margin-left: -40px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes quoteDetailOut {
+  from {
+    margin-left: -40px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+.paper-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .paper-icon {
   background: rgba(233, 30, 99, 0.7);
 }
@@ -215,12 +261,15 @@ a:visited {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 75%;
   font-size: 0.8em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 60%;
 }
 
 .paper-name {
@@ -236,7 +285,6 @@ a:visited {
   font-size: 0.4em;
   color: rgba(159, 159, 178, 0.84);
   display: block;
-  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -246,10 +294,79 @@ a:visited {
   font-size: 0.4em;
   color: rgba(159, 159, 178, 0.84);
   display: block;
-  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.paper-quote-container {
+  vertical-align: middle;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+  width: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paper-quote-container:hover {
+  -webkit-animation: quoteDetailOut;
+          animation: quoteDetailOut;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.paper-quote-container:left {
+  -webkit-animation: quoteDetailIn;
+          animation: quoteDetailIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.paper-quote-detail-container {
+  margin-left: 4px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paper-quote-detail {
+  font-size: 8px;
+  color: #6fa6ff;
+}
+
+.paper-quote-detail-cancel {
+  color: #ec4747;
+}
+
+.paper-quote-icon {
+  fill: rgba(159, 159, 178, 0.84);
+}
+
+.paper-quote-button {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  vertical-align: middle;
 }
 
 .techies-icon {
@@ -295,14 +412,17 @@ ul {
           justify-content: flex-start;
 }
 
+button {
+  border-style: none;
+  background-color: white;
+}
+
 #paper-category {
   padding: 8px;
   height: auto;
   display: inline-block;
   vertical-align: text-top;
-  background-color: white;
   border-radius: 2px;
-  border-style: none;
   color: #6fa6ff;
   text-decoration: none;
   border: none;

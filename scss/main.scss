@@ -155,16 +155,28 @@ a:visited{
 ///////////////////
 //paper area
 ///////////////////
-
+@keyframes quoteDetailIn{
+    from{margin-left:0px;}
+    to{margin-left:-40px;}
+}
+@keyframes quoteDetailOut{
+    from{margin-left:-40px;}
+    to{margin-left:0px;}
+}
+.paper-list{
+    display:flex;
+    flex-direction: row;
+}
 .paper-icon{
     background:rgba($color: #E91E63, $alpha: 0.7);
 }
 .paper-text{
     vertical-align:middle;
     display: inline-flex;
-    width: 75%;
     font-size:0.8em;
     flex-direction: column;
+    flex-grow: 1;
+    width: 60%;
 }
 .paper-name{
     color: $text-dark-color;
@@ -176,24 +188,65 @@ a:visited{
 }
 .paper-author{
     font-size:0.4em; 
-    //line-height: 0.7em;
     color: $text-dark-color;
     display: block;
-    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .paper-journal{
     font-size: 0.4em;
-    //line-height: 0.7em;
     color: $text-dark-color;
     display: block;
-    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.paper-quote-container{
+    vertical-align: middle;
+    display: inline-flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 40px;
+    align-items: center;
+}
+.paper-quote-container:hover{
+    animation:quoteDetailOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+.paper-quote-container:left{
+    animation:quoteDetailIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.paper-quote-detail-container{
+    margin-left:4px;
+    display:inline-flex;
+    flex-direction: column;
+    width:40px;
+    align-items: center;
+}
+.paper-quote-detail{
+    font-size:8px;
+    color:#6fa6ff;
+}
+.paper-quote-detail-cancel{
+    color:#ec4747;
+}
+.paper-quote-icon{
+    fill:$text-dark-color;
+}
+.paper-quote-button{
+    display:inline-block;
+    width:32px;
+    height:32px;
+    border-radius: 16px;
+    vertical-align: middle;
+}
+
+
 /////////////////////////////
 //techies area
 /////////////////////////////
@@ -229,14 +282,16 @@ ul{
     justify-content: flex-start;
     // display:flex;
 }
+button{
+    border-style: none;
+    background-color: white;
+}
 #paper-category{
     padding:8px;
     height: auto;
     display: inline-block;
     vertical-align: text-top;
-    background-color: white;
     border-radius: 2px;
-    border-style: none;
     color: #6fa6ff;
     text-decoration: none;
     border: none;
