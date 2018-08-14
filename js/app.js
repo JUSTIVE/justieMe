@@ -131,7 +131,7 @@ var paperCard = document.getElementById("paper-card");
 var paperInstanciate = function () {
     paperCard.innerHTML = "";
     for (var i = 0; i < PaperData[PaperIndex].length; i++) {
-        paperTemplate.content.querySelector(".paper-icon").href = PaperData[PaperIndex][i].doi;
+        paperTemplate.content.querySelector(".paper_link").href = PaperData[PaperIndex][i].doi;
         paperTemplate.content.querySelector(".paper-name").innerHTML = PaperData[PaperIndex][i].name;
         paperTemplate.content.querySelector(".paper-author").innerHTML = PaperData[PaperIndex][i].author;
         paperTemplate.content.querySelector(".paper-journal").innerHTML = PaperData[PaperIndex][i].journal;
@@ -144,7 +144,6 @@ var paperInstanciate = function () {
 
     for (var j = 0; j < quotelist.length; j++) {
         var templist = document.getElementsByClassName(quotelist[j]);
-        console.log(templist);
         for (var i = 0; i < templist.length; i++) {
             templist[i].addEventListener("click", e => {
                 quoteAction(PaperIndex, (e.target.id + "").slice(1), (e.target.id + "")[0]);
@@ -152,7 +151,6 @@ var paperInstanciate = function () {
         };
     };
 };
-
 papercategoryButton.addEventListener("click", () => {
     PaperIndex = PaperIndex + 1 > 3 ? 0 : PaperIndex + 1;
     papercategoryButton.innerText = PaperCategory[PaperIndex];
@@ -160,8 +158,22 @@ papercategoryButton.addEventListener("click", () => {
 });
 paperInstanciate();
 
-var TechiesData = [];
-var url = new URL(document.location.href + "/techies/");
+var getHTML = function (url, callback) {
+    // Feature detection
+    if (!window.XMLHttpRequest) return;
+    // Create new request
+    var xhr = new XMLHttpRequest();
+    // Setup callback
+    xhr.onload = function () {
+        if (callback && typeof callback === 'function') {
+            callback(this.responseXML);
+        }
+    };
+    // Get the HTML
+    xhr.open('GET', url);
+    xhr.responseType = 'document';
+    xhr.send();
+};
 
-var temp = new URLSearchParams(url.search.slice(1));
-console.log(temp);
+var techieslink = [];
+var TechiesData = [];
