@@ -184,7 +184,9 @@ var PaperData=[
             author="Min Sang Kim, Wook Song, Yoo-Joo Choi, Min Hong",
             journal="Journal of Theoretical and Applied Information Technology(Under Review)",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(
@@ -193,7 +195,9 @@ var PaperData=[
             author="Nak-Jun Sung, Shane Transue, Min Sang Kim, Yoo-Joo Choi, Min-Hyung Choi and Min Hong",
             journal="KSII TRANSACTIONS ON INTERNET AND INFORMATION SYSTEMS(Accepted)",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         )
     ], 
@@ -226,7 +230,9 @@ var PaperData=[
             author="김민상, 홍 민",
             journal="Journal of Internet Computing and Services(JICS) 2014. Apr.: 14(0): 1-10",
             quote={
-                
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(
@@ -235,7 +241,9 @@ var PaperData=[
             author="김민상, 성낙준, 최유주, 홍 민",
             journal="정보처리학회지 특집원고-실감미디어 기술 및 서비스",
             quote={
-                
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         )
     ], 
@@ -246,7 +254,9 @@ var PaperData=[
             author="Kim Min Sang, Nak-Jun Sung, Min Hong, Yoo-Joo Choi",
             journal="KSII The 12th Asia Pacific International Conference on Information Science and Technology(APIC-IST) 2017.",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(//CUTE
@@ -277,7 +287,9 @@ var PaperData=[
             author="Nak-Jun Sung, Min Hong, Min Sang Kim and Yoo-Joo Choi",
             journal="KSII The 9th International Conference on Internet (ICONI) 2017 Symposium.",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         )
     ], 
@@ -310,7 +322,9 @@ var PaperData=[
             author="김민상, 성낙준, 최유주, 홍 민",
             journal="2017년도 정보처리학회 춘계학술대회",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(
@@ -319,7 +333,9 @@ var PaperData=[
             author="성낙준, 김민상, 홍 민",
             journal="2017년도 한국인터넷정보학회 추계학술발표대회 논문집 제18권2호",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(
@@ -328,7 +344,9 @@ var PaperData=[
             author="김민상, 문준영, 홍 민",
             journal="2017년도 한국인터넷정보학회 추계학술발표대회 논문집 제18권2호",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         ),
         new MyPaper(
@@ -337,7 +355,9 @@ var PaperData=[
             author="이성진, 김민상, 홍 민",
             journal="2018년도 한국인터넷정보학회 춘계학술발표대회 논문집 제19권1호",
             quote={
-
+                APA:"",
+                MLA:"",
+                ISO690:""
             }
         )
     ],
