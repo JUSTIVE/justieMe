@@ -12,7 +12,7 @@ function vw(v) {
     return v * w / 100;
 }
 
-var leftpaneAutoOpacity = () => {
+var leftpaneAutoOpacity = function () {
     if (window.innerWidth < 1024) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = Math.max(bodyrect.top / window.innerHeight, 0);
@@ -21,7 +21,7 @@ var leftpaneAutoOpacity = () => {
     }
 };
 
-var nameAutoSize = () => {
+var nameAutoSize = function () {
     if (window.innerWidth < 1024) {
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = vh(70) / window.innerHeight;
@@ -39,13 +39,11 @@ window.onscroll = leftpaneAutoOpacity;
 window.addEventListener("resize", nameAutoSize, "after");
 window.onload = nameAutoSize;
 
-class Myproject {
-    constructor(link, name, description, language) {
-        this.link = link;
-        this.name = name;
-        this.description = description;
-        this.language = language;
-    }
+function Myproject(link, name, description, language) {
+    this.link = link;
+    this.name = name;
+    this.description = description;
+    this.language = language;
 }
 
 var ProjectData = [new Myproject(link = "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER", name = "GLRERENDERER_LEGACYCHECKER", description = "Obj model viewers", language = ["c"]), new Myproject(link = "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2", name = "PROJECT_GAMEMAKER-V2", description = "Game company simulation game", language = ["cpp"]), new Myproject(link = "https://github.com/JUSTIVE/OS-ya-master---Copy", name = "OS-Ya", description = "Single thread CPU scheduling simulation", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/ballRollPool", "ballRollPool", "2D rigid body pocketball simulation", language = ["cpp"]), new Myproject("https://github.com/JUSTIVE/Daisy-Chain", "Daisy Chain", "A game made with Unity", language = ["csharp", "shaderlab", "hlsl"]), new Myproject("https://github.com/JUSTIVE/splay", "sPlay", "JAVA swing GUI based CS quiz program", language = ["java"]), new Myproject("https://github.com/JUSTIVE/VIPMETHOD", "VIPMETHOD", "Smart scheduler using UWP on Raspberry Pi", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/tictactoe", "TICTACTOE", "Android tic tac toe Game", language = ["java"]), new Myproject("https://github.com/JUSTIVE/SmartBadmintonTrainingSystem", "SmartBadmintonTrainingSystem", "Badminton training system", language = ["csharp"]), new Myproject("https://github.com/JUSTIVE/graphics-Catmull-RomSpline", "GRAPHICS-CATMULL-ROMSPLINE", "a visualization Catmull-Rom Spline", language = ["cpp"]), new Myproject("https://github.com/JUSTIVE/framelessCounter", "FramelessCounter", "a frameless wpf timer always on top", language = ["csharp"])];
@@ -73,14 +71,12 @@ for (var i = 0; i < ProjectData.length; i++) {
     langs.innerHTML = "";
 };
 
-class MyPaper {
-    constructor(doi, name, author, journal, quote) {
-        this.doi = doi;
-        this.name = name;
-        this.author = author;
-        this.journal = journal;
-        this.quote = quote;
-    }
+function MyPaper(doi, name, author, journal, quote) {
+    this.doi = doi;
+    this.name = name;
+    this.author = author;
+    this.journal = journal;
+    this.quote = quote;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -197,13 +193,13 @@ var paperInstanciate = function () {
     for (var j = 0; j < quotelist.length; j++) {
         var templist = document.getElementsByClassName(quotelist[j]);
         for (var i = 0; i < templist.length; i++) {
-            templist[i].addEventListener("click", e => {
+            templist[i].addEventListener("click", function (e) {
                 quoteAction(PaperIndex, (e.target.id + "").slice(1), (e.target.id + "")[0]);
             });
         };
     };
 };
-papercategoryButton.addEventListener("click", () => {
+papercategoryButton.addEventListener("click", function () {
     PaperIndex = PaperIndex + 1 > 3 ? 0 : PaperIndex + 1;
     papercategoryButton.innerText = PaperCategory[PaperIndex];
     paperInstanciate();

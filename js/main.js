@@ -12,7 +12,7 @@ function vw(v) {
     return (v * w) / 100;
 }
 
-var leftpaneAutoOpacity = ()=>{
+var leftpaneAutoOpacity = function(){
     if(window.innerWidth<1024){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = Math.max(bodyrect.top/window.innerHeight,0);    
@@ -22,7 +22,7 @@ var leftpaneAutoOpacity = ()=>{
     }
 };
 
-var nameAutoSize = ()=>{
+var nameAutoSize = function(){
     if(window.innerWidth<1024){
         var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
         leftpane.style.opacity = vh(70)/window.innerHeight;
@@ -42,13 +42,11 @@ window.addEventListener("resize",nameAutoSize,"after");
 window.onload = nameAutoSize;
 
 
-class Myproject{
-    constructor(link,name,description,language){
-        this.link=link;
-        this.name=name;
-        this.description=description;
-        this.language=language;
-    }
+function Myproject(link,name,description,language){
+    this.link=link;
+    this.name=name;
+    this.description=description;
+    this.language=language;
 }
 
 var ProjectData = [
@@ -146,14 +144,12 @@ for (var i=0;i<ProjectData.length;i++){
     langs.innerHTML="";
 };
 
-class MyPaper{
-    constructor(doi,name,author,journal,quote){
-        this.doi=doi;
-        this.name=name;
-        this.author=author;
-        this.journal=journal;
-        this.quote=quote;
-    }
+function MyPaper(doi,name,author,journal,quote){
+    this.doi=doi;
+    this.name=name;
+    this.author=author;
+    this.journal=journal;
+    this.quote=quote;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -392,14 +388,14 @@ var paperInstanciate=function(){
     for(var j=0;j<quotelist.length;j++){
         var templist=document.getElementsByClassName(quotelist[j]);
         for(var i=0;i<templist.length;i++){
-            templist[i].addEventListener("click",(e)=>{
+            templist[i].addEventListener("click",function(e){
                 quoteAction(PaperIndex,(e.target.id+"").slice(1),(e.target.id+"")[0]);
             });
         };
     };
 
 }
-papercategoryButton.addEventListener("click",()=>{
+papercategoryButton.addEventListener("click",function(){
     PaperIndex = PaperIndex+1>3?0:PaperIndex+1;
     papercategoryButton.innerText = PaperCategory[PaperIndex]; 
     paperInstanciate();
