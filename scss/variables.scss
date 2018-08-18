@@ -14,11 +14,11 @@ $icon-size:40px;
 *{
     -webkit-font-smoothing:antialiased;
     -ms-overflow-style: none;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 html{
-    -ms-overflow-style: none;
+    // -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar{
