@@ -486,7 +486,7 @@ button:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin-top: 70vh;
+    margin-top: 85vh;
     width: 100%;
   }
   #right-area {
