@@ -1,7 +1,6 @@
 @import "variables";
 .rex-icon{
      background:rgba($color:#ff7043, $alpha: 0.7);
-    //background:linear-gradient(120deg, #ab47bc 0%, #7b288a 100%);
 }
 
 .rex-text{
@@ -9,7 +8,7 @@
     color: $text-dark-color;
     display: inline-flex;
     width: 75%;
-    font-size:12px;
+    font-size:$desktop-font-size-small;
     flex-direction: column;
 }
 .rex-place{
@@ -22,5 +21,4 @@
 .rex-duration{
     display: block;
     width: 100%;
-    white-space: wrap;
 }

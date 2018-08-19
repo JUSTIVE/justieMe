@@ -4,10 +4,16 @@
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
+  font-family: 'Heebo', sans-serif;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.non-clickable {
+  pointer-events: none;
+  display: block;
 }
 
 #left-area {
@@ -52,12 +58,11 @@
   fill: #ffffff;
 }
 
-h1 {
+#nom {
   display: inline;
   vertical-align: middle;
   line-height: 9vw;
   font-size: 9vw;
-  font-family: 'Heebo', sans-serif;
   color: #ffffff;
   mix-blend-mode: unset;
   -webkit-margin-before: 0;

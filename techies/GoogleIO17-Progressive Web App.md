@@ -13,7 +13,7 @@ what could be better?
 
 Forbes / +43% session/user / +100% session duration
 
-##maifest.json
+## maifest.json
 name: for splash screen
 short_name : for android systems: homescreen, drawer
 icon: png, at least 144dp

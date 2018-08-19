@@ -1,15 +1,13 @@
 @import "variables";
 .skill-icon{
      background:rgba($color: #ab47bc, $alpha: 0.7);
-    //background:linear-gradient(120deg, #ab47bc 0%, #7b288a 100%);
 }
-
 .skill-text{
     vertical-align:middle;
     color: $text-dark-color;
     display: inline-flex;
     width: 75%;
-    font-size:12px;
+    font-size:$desktop-font-size-small;
     flex-direction: column;
 }
 .skill-name{
@@ -22,5 +20,4 @@
 .skill-lang{
     display: block;
     width: 100%;
-    white-space: wrap;
 }

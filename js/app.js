@@ -256,8 +256,10 @@ var techiesContent = document.getElementById("techies-content");
 
 function techiesInContentInit(response) {
     techiesContent.innerHTML = "";
+    var md = window.markdownit();
+    var result = md.render(response);
     techiesSubTemplate.content.querySelector("#techies-subcontent-title").innerText = "";
-    techiesSubTemplate.content.querySelector("#techies-subcontent-content").innerHTML = response;
+    techiesSubTemplate.content.querySelector("#techies-subcontent-content").innerHTML = result;
     var clone = document.importNode(techiesSubTemplate.content, true);
     techiesContent.appendChild(clone);
 }

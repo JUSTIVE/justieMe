@@ -4,6 +4,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
+  font-family: 'Heebo', sans-serif;
 }
 
 ::-webkit-scrollbar {

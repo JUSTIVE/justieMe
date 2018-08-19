@@ -4,10 +4,16 @@
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
+  font-family: 'Heebo', sans-serif;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.non-clickable {
+  pointer-events: none;
+  display: block;
 }
 
 .rex-icon {
@@ -39,6 +45,5 @@
 .rex-duration {
   display: block;
   width: 100%;
-  white-space: wrap;
 }
 /*# sourceMappingURL=rex.css.map */

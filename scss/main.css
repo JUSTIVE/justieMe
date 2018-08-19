@@ -1,13 +1,20 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Heebo:800");
 @import url("https://fonts.googleapis.com/css?family=Heebo:300");
 @import url("https://fonts.googleapis.com/css?family=Heebo:400");
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
+  font-family: 'Heebo', sans-serif;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.non-clickable {
+  pointer-events: none;
+  display: block;
 }
 
 body {
@@ -66,15 +73,13 @@ h2 {
   display: inline;
   color: rgba(159, 159, 178, 0.84);
   -webkit-margin-before: 0;
-  font-family: 'Heebo', sans-serif;
   font-weight: 700;
   font-size: 18px;
 }
 
 h4 {
-  font-family: 'Heebo', sans-serif;
   font-weight: 400;
-  font-size: 0.7vw;
+  font-size: 12px;
   color: #ffffff;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -118,9 +123,7 @@ hr {
 a {
   color: rgba(159, 159, 178, 0.84);
   text-decoration: none;
-  font-family: 'Heebo', sans-serif;
   font-weight: 300;
-  font-size: 1vw;
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -179,7 +182,7 @@ a:visited {
           flex-direction: column;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.8vw;
+  font-size: 12px;
 }
 
 .project-name {
@@ -223,11 +226,12 @@ a:visited {
 }
 
 .paper-text {
+  color: rgba(159, 159, 178, 0.84);
   vertical-align: middle;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 0.8em;
+  font-size: 12px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -239,10 +243,7 @@ a:visited {
 }
 
 .paper-name {
-  font-size: 10px;
-  color: rgba(159, 159, 178, 0.84);
   font-weight: 700;
-  font-family: 'Heebo', sans-serif;
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -250,9 +251,6 @@ a:visited {
 }
 
 .paper-author {
-  font-size: 10px;
-  font-family: 'Heebo', sans-serif;
-  color: rgba(159, 159, 178, 0.84);
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -260,9 +258,6 @@ a:visited {
 }
 
 .paper-journal {
-  font-size: 10px;
-  font-family: 'Heebo', sans-serif;
-  color: rgba(159, 159, 178, 0.84);
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -287,7 +282,7 @@ a:visited {
 .paper-quote-detail {
   padding: 2px;
   margin-right: 6px;
-  font-size: 8px;
+  font-size: 12px;
   color: #6fa6ff;
 }
 
@@ -321,7 +316,6 @@ a:visited {
   color: rgba(159, 159, 178, 0.84);
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: 'Heebo', sans-serif;
 }
 
 .techies-name {
@@ -354,7 +348,47 @@ a:visited {
   text-overflow: ellipsis;
 }
 
+#techies-subcontent-content {
+  color: rgba(159, 159, 178, 0.84);
+}
+
+#techies-subcontent-content h1 {
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+#techies-subcontent-content h2 {
+  font-size: 12px;
+}
+
+#techies-subcontent-content h3 {
+  font-size: 12px;
+}
+
+#techies-subcontent-content p {
+  font-size: 12px;
+  color: rgba(159, 159, 178, 0.84);
+}
+
+#techies-subcontent-content li {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+  font-size: 12px;
+}
+
+#techies-subcontent-content li:before {
+  content: "🔖";
+}
+
+#techies-subcontent-content ul {
+  -webkit-margin-before: 0px;
+}
+
 #techies-back-button {
+  display: inline-block;
+  line-height: 24px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -389,7 +423,7 @@ button {
   color: #6fa6ff;
   text-decoration: none;
   border: none;
-  font-size: 10px;
+  font-size: 12px;
   -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -409,10 +443,7 @@ button:focus {
     -webkit-margin-after: 24px;
     -webkit-margin-before: 24px;
   }
-  a {
-    font-size: 3vw;
-  }
-  h1 {
+  #nom {
     position: relative;
     left: -2%;
     font-size: 800%;
@@ -421,7 +452,7 @@ button:focus {
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   h4 {
-    font-size: 10px;
+    font-size: 12px;
     width: 100%;
     -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -475,12 +506,6 @@ button:focus {
   }
   .project-text {
     font-size: 12px;
-  }
-  .paper-author {
-    font-size: 10px;
-  }
-  .paper-journal {
-    font-size: 10px;
   }
 }
 
