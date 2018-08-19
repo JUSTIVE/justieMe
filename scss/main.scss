@@ -272,10 +272,12 @@ a:visited{
 
 
 #techies-back-button{
-    display: inline-flex;
+    display: flex;
+    line-height: 24px;
     height:24px;
     justify-content: center;
     vertical-align: middle;
+    align-items: center;
     text-align: center;
     color:$text-dark-color;
 }
