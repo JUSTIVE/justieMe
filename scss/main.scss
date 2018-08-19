@@ -42,6 +42,7 @@ h2{
     -webkit-margin-before:0;
     font-family: 'Heebo', sans-serif; 
     font-weight: 700; 
+    font-size:18px;
 }
 h4{
     font-family: 'Heebo', sans-serif;
@@ -227,23 +228,41 @@ a:visited{
 }
 .techies-text{
     vertical-align:middle;
+    justify-content: center;
     display: inline-flex;
     width: 75%;
     font-size:12px;
     flex-direction: column;
     color: $text-dark-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Heebo', sans-serif;
 }
-.techies-name{
-    
+.techies-name{    
     font-weight: 700;
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-.techies-date{
+.techies_list-item{
+    display:inline-flex;
+    flex-direction: row;
+    align-items:unset;
+    text-align: start;
+    width:100%;
+}
+.techies-tag{
+    font-weight: 300;
     display: block;
     width: 100%;
+    text-overflow: ellipsis;
+}
+#techies-back-button{
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    color:$text-dark-color;
 }
 ul{
     -webkit-padding-start:0;

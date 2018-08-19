@@ -68,6 +68,7 @@ h2 {
   -webkit-margin-before: 0;
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
+  font-size: 18px;
 }
 
 h4 {
@@ -305,6 +306,9 @@ a:visited {
 
 .techies-text {
   vertical-align: middle;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -315,6 +319,9 @@ a:visited {
       -ms-flex-direction: column;
           flex-direction: column;
   color: rgba(159, 159, 178, 0.84);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Heebo', sans-serif;
 }
 
 .techies-name {
@@ -325,9 +332,35 @@ a:visited {
   white-space: nowrap;
 }
 
-.techies-date {
+.techies_list-item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  text-align: start;
+  width: 100%;
+}
+
+.techies-tag {
+  font-weight: 300;
   display: block;
   width: 100%;
+  text-overflow: ellipsis;
+}
+
+#techies-back-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  color: rgba(159, 159, 178, 0.84);
 }
 
 ul {

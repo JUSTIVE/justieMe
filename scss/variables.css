@@ -9,4 +9,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.non-clickable {
+  pointer-events: none;
+  display: block;
+}
 /*# sourceMappingURL=variables.css.map */

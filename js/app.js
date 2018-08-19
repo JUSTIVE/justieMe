@@ -223,5 +223,78 @@ var getHTML = function (url, callback) {
     xhr.send();
 };
 
+function Techies(title, link, tag) {
+    this.title = title;
+    this.link = link;
+    this.tag = tag;
+};
+
 var techieslink = [];
-var TechiesData = [];
+var TechiesData = [new Techies(title = "Progressive Web App", link = "GoogleIO17-Progressive Web App", tag = ["GoogleIO17", "PWA"]), new Techies(title = "ConstraintLayout 2.0", link = "GoogleIO18-ConstraintLayout 2.0", tag = ["GoogleIO18", "Android", "ConstraintLayout"]), new Techies(title = "GoogleIO18-GwangMyeong", link = "GoogleIO18-GwangMyeong", tag = ["GoogleIO18E"]), new Techies(title = "Unity Post Processing Stack V2", link = "Unity Post Processing Stack V2", tag = ["Unity", "PostProcessing"]), new Techies(title = "Unity Unite Berlin 2018 keynote", link = "Unity Unite Berlin 2018 keynote", tag = ["Unity", "Unity Unite"])];
+
+var techiesPrefix = "/techies/";
+var techiesSuffix = ".md";
+
+function makeHttpObject() {
+    try {
+        return new XMLHttpRequest();
+    } catch (error) {}
+    try {
+        return new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (error) {}
+    try {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (error) {}
+
+    throw new Error("Could not create HTTP request object.");
+}
+
+var techiesTemplate = document.querySelector("#techies-template");
+var techiesSubTemplate = document.querySelector("#techies-subcontent-template");
+var techiesCard = document.getElementById("techies-card");
+var techiesContent = document.getElementById("techies-content");
+
+function techiesInContentInit(response) {
+    techiesContent.innerHTML = "";
+    techiesSubTemplate.content.querySelector("#techies-subcontent-title").innerText = "";
+    techiesSubTemplate.content.querySelector("#techies-subcontent-content").innerHTML = response;
+    var clone = document.importNode(techiesSubTemplate.content, true);
+    techiesContent.appendChild(clone);
+}
+
+function techiesInContent(index) {
+    var request = makeHttpObject();
+    request.open("GET", techiesPrefix + TechiesData[index].link + techiesSuffix, true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+            techiesInContentInit(request.responseText + "");
+        }
+    };
+}
+function techiesBackButton(e) {
+    // console.log(e.target);
+    techiesListInit();
+}
+
+function techiesListInit() {
+    techiesContent.innerHTML = "";
+    for (var i = 0; i < TechiesData.length; i++) {
+        techiesTemplate.content.querySelector('button').id = i;
+        techiesTemplate.content.querySelector(".techies-name").innerHTML = TechiesData[i].title;
+        techiesTemplate.content.querySelector(".techies-tag").innerHTML = TechiesData[i].tag;
+        var clone = document.importNode(techiesTemplate.content, true);
+        techiesContent.appendChild(clone);
+    };
+    techiesButtonList = document.getElementsByClassName("techies_list-item");
+    for (var i = 0; i < TechiesData.length; i++) {
+        techiesButtonList[i].onclick = function (e) {
+            techiesInContent(e.target.id);
+        };
+        techiesButtonList[i].children.onclick = function (e) {
+            e.stopPropagation();
+        };
+    }
+}
+
+techiesListInit();

@@ -24,3 +24,8 @@ html{
 ::-webkit-scrollbar{
     display: none;
 }
+
+.non-clickable{
+    pointer-events: none;
+    display: block;
+}
