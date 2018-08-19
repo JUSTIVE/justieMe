@@ -414,8 +414,10 @@ a:visited {
 }
 
 #techies-back-button {
-  display: inline-block;
-  line-height: 24px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 24px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -533,12 +535,6 @@ button:focus {
   }
   .project-text {
     font-size: 12px;
-  }
-  .paper-author {
-    font-size: 10px;
-  }
-  .paper-journal {
-    font-size: 10px;
   }
 }
 
