@@ -352,7 +352,142 @@ a:visited {
   color: rgba(159, 159, 178, 0.84);
 }
 
+#techies-subcontent-content h1, #techies-subcontent-content h2, #techies-subcontent-content h3, #techies-subcontent-content h4, #techies-subcontent-content h5, #techies-subcontent-content h6, #techies-subcontent-content p, #techies-subcontent-content blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+#techies-subcontent-content body {
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+  line-height: 18px;
+  color: #737373;
+  background-color: white;
+  margin: 10px 13px 10px 13px;
+}
+
+#techies-subcontent-content table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+#techies-subcontent-content td, #techies-subcontent-content th {
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+}
+
+#techies-subcontent-content th {
+  padding: 5px 10px;
+}
+
+#techies-subcontent-content a {
+  color: #0069d6;
+}
+
+#techies-subcontent-content a:hover {
+  color: #0050a3;
+  text-decoration: none;
+}
+
+#techies-subcontent-content a img {
+  border: none;
+}
+
+#techies-subcontent-content p {
+  margin-bottom: 9px;
+}
+
+#techies-subcontent-content h1, #techies-subcontent-content h2, #techies-subcontent-content h3, #techies-subcontent-content h4, #techies-subcontent-content h5, #techies-subcontent-content h6 {
+  line-height: 36px;
+}
+
+#techies-subcontent-content hr {
+  margin: 0 0 19px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#techies-subcontent-content blockquote {
+  padding: 13px 13px 21px 15px;
+  margin-bottom: 18px;
+  font-family: georgia,serif;
+  font-style: italic;
+}
+
+#techies-subcontent-content blockquote:before {
+  content: "\201C";
+  font-size: 40px;
+  margin-left: -10px;
+  font-family: georgia,serif;
+  color: #eee;
+}
+
+#techies-subcontent-content blockquote p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+#techies-subcontent-content code, #techies-subcontent-content pre {
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+
+#techies-subcontent-content code {
+  background-color: #fee9cc;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 1px 3px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+#techies-subcontent-content pre {
+  display: block;
+  padding: 14px;
+  margin: 0 0 18px;
+  line-height: 16px;
+  font-size: 11px;
+  border: 1px solid #d9d9d9;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+#techies-subcontent-content pre code {
+  background-color: #fff;
+  color: #737373;
+  font-size: 11px;
+  padding: 0;
+}
+
+#techies-subcontent-content sup {
+  font-size: 0.83em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+#techies-subcontent-content * {
+  -webkit-print-color-adjust: exact;
+}
+
+@media screen and (min-width: 914px) {
+  #techies-subcontent-content body {
+    width: 854px;
+    margin: 10px auto;
+  }
+}
+
+@media print {
+  #techies-subcontent-content body, #techies-subcontent-content code, #techies-subcontent-content pre code, #techies-subcontent-content h1, #techies-subcontent-content h2, #techies-subcontent-content h3, #techies-subcontent-content h4, #techies-subcontent-content h5, #techies-subcontent-content h6 {
+    color: black;
+  }
+  #techies-subcontent-content table, #techies-subcontent-content pre {
+    page-break-inside: avoid;
+  }
+}
+
 #techies-subcontent-content h1 {
+  color: rgba(139, 195, 74, 0.7);
   font-size: 18px;
   word-wrap: break-word;
 }
@@ -400,7 +535,9 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  color: rgba(159, 159, 178, 0.84);
+  color: #6fa6ff;
+  font-size: 12px;
+  padding: 0px;
 }
 
 ul {
