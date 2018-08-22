@@ -534,5 +534,19 @@ function techiesListInit(){
         }
     }
 }
-
 techiesListInit();
+/*
+Computer Graphics Lab / 연구원 / 2014.03. - 현재
+순천향대학교 IoT 탐사대 / 조원 / 2016.02 - 2016.02
+창업동아리 YogaeWatch / 조원 / 2016.03 - 2016.12
+Fab Lab 아이디어 팩토리 메이커톤 / 조원 / 2016.06 - 2016.06
+글로벌인턴십 2nd / 인턴 / 2016.06 - 2016.08
+충남 창의공학캠프 / 팀장 / 201?????
+
+*/
+function Activities(name,position,duration){
+    this.name=name;
+    this.position=position;
+    this.duration=duration;
+}
+
