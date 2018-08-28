@@ -151,16 +151,21 @@
                 </div>
                 <div class="item-card" id="activity-card">
                     <h2 class="card-title">ACTIVITIES</h2>
-                    <ul class="activity_list"><a class="activity_list">
-                        <svg viewBox="-12 -12 48 48" class="badge-icon activity-icon">
-                            <path class="icon-path"  d="M20,2A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H6L2,22V4C2,2.89 2.9,2 4,2H20M4,4V17.17L5.17,16H20V4H4M6,7H18V9H6V7M6,11H15V13H6V11Z"></path>
-                        </svg>
-                        <div class="activity-text">
-                            <div class="activity-name"></div>
-                            <div class="activity-role"></div>
-                            <div class="activity-duration"></div>
-                        </div>
-                    </a></ul>
+                    <template type="activityTemplateType" id="activity-template">
+                        <ul class="activity_list"><a class="activity_list">
+                            <svg viewBox="-12 -12 48 48" class="badge-icon activity-icon">
+                                <path class="icon-path"  d="M20,2A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H6L2,22V4C2,2.89 2.9,2 4,2H20M4,4V17.17L5.17,16H20V4H4M6,7H18V9H6V7M6,11H15V13H6V11Z"></path>
+                            </svg>
+                            <div class="activity-text">
+                                <div class="activity-name"></div>
+                                <div class="activity-role"></div>
+                                <div class="activity-duration"></div>
+                            </div>
+                        </a></ul>
+                    </template>
+                    <div id="activity-content">
+                       
+                    </div>
                 </div>
                 <div class="item-card" id="techies-card">
                     <h2 class="card-title">TECHIES</h2>

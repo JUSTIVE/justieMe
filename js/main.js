@@ -576,3 +576,16 @@ var ActivityData=[
         duration=["2016.06","2016.06"]
     ),
 ]
+var activityTemplate = document.querySelector("#activity-template");
+var activityCard = document.getElementById("activity-card");
+var activityContent= document.getElementById("activity-content");
+
+function ActivityInit(){
+    for(var i=0;i<ActivityData.length;i++){
+        activityTemplate.content.querySelector(".activity-name").innerHTML =ActivityData[i].name;
+        activityTemplate.content.querySelector(".activity-role").innerHTML =TechiesData[i].role;
+        var clone = document.importNode(activityTemplate.content,true);
+        activityContent.appendChild(clone);
+    }
+}
+ActivityInit();
