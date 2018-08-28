@@ -575,6 +575,4 @@ var ActivityData=[
         role="조원",
         duration=["2016.06","2016.06"]
     ),
-  
-
 ]

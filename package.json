@@ -1,6 +1,7 @@
 {
     "devDependencies": {
-        "babel-cli": "^6.26.0"
+        "babel-cli": "^6.26.0",
+        "babel-preset-minify": "^0.4.3"
     },
     "scripts": {
         "start": "babel main.js --watch --out-file app.js"
