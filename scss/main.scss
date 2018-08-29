@@ -404,6 +404,30 @@ a:visited{
     font-size:$desktop-font-size-small;
     padding:0px;
 }
+/* acitivite areas */
+.activity-icon{
+    background-color: #6fa6ff
+}
+.activity-text{
+   vertical-align:middle;
+   color: $text-dark-color;
+   display: inline-flex;
+   width: 75%;
+   font-size:$desktop-font-size-small;
+   flex-direction: column;
+}
+.activity-name{
+   font-weight: 700;
+   display: block;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+.activity-duration{
+   display: block;
+   width: 100%;
+}
+
 ul{
     -webkit-padding-start:0;
     -webkit-margin-before:24px;

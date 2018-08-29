@@ -583,7 +583,8 @@ var activityContent= document.getElementById("activity-content");
 function ActivityInit(){
     for(var i=0;i<ActivityData.length;i++){
         activityTemplate.content.querySelector(".activity-name").innerHTML =ActivityData[i].name;
-        activityTemplate.content.querySelector(".activity-role").innerHTML =TechiesData[i].role;
+        activityTemplate.content.querySelector(".activity-role").innerHTML =ActivityData[i].role;
+        activityTemplate.content.querySelector(".activity-duration").innerHTML =ActivityData[i].duration;
         var clone = document.importNode(activityTemplate.content,true);
         activityContent.appendChild(clone);
     }
