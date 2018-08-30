@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JUSTIE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JUSTIE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+        
+    </head>
 
-<body>
-    <div id="pangea">
-        <div id="decorator">
-                <div class="deco-rect" id="deco-rect1"></div>
-                <div class="deco-rect" id="deco-rect2"></div>
-                <div class="deco-rect" id="deco-rect3"></div>
-        </div>
-        <div id="pangea-container">
-            <div id="left-area">
-                <ul id="activity_list">
-                    <li v-for="activity in ActivityData">
-                        <svg viewBox="-12 -12 48 48" class="badge-icon activity-icon">
-                            <path class="icon-path"  d="M20,2A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H6L2,22V4C2,2.89 2.9,2 4,2H20M4,4V17.17L5.17,16H20V4H4M6,7H18V9H6V7M6,11H15V13H6V11Z"></path>
-                        </svg>
-                        <div class="activity-text">
-                            <div class="activity-name">{{activity.name}}</div>
-                            <div class="activity-role">{{activity.role}}</div>
-                            <div class="activity-duration"></div>
-                        </div>
-                    </a>
-                </ul>
+    <body>
+        <div id="pangea">
+            <div id="decorator">
+                    <div class="deco-rect" id="deco-rect1"></div>
+                    <div class="deco-rect" id="deco-rect2"></div>
+                    <div class="deco-rect" id="deco-rect3"></div>
             </div>
-            <div id="right-area"></div>
+            <div id="pangea-container">
+                <div id="left-area">
+                    
+                </div>
+                <div id="right-area"></div>
+            </div>
         </div>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/main.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="module" src="js/app.js"></script>
+    </body>
 </html>
