@@ -1,0 +1,82 @@
+<template>
+  <div class="pangea"> 
+    <div id="decorator">
+      <div class="deco-rect" id="deco-rect1"/>
+      <div class="deco-rect" id="deco-rect2"/>
+      <div class="deco-rect" id="deco-rect3"/>
+    </div>
+    <div id="pangea-container">
+        <leftarea/>
+        <div id="right-area"/>
+    </div>
+  </div>
+  
+</template>
+
+<script>
+import leftarea from "./leftarea.vue";
+export default {
+  name: "pangea",
+  components: {
+    leftarea
+  }
+};
+</script>
+
+
+<style scoped lang="scss">
+.pangea {
+  // eslint-disable-next-line
+  background: linear-gradient(
+    160deg,
+    rgba(113, 94, 94, 1) 0%,
+    rgb(51, 42, 42) 100%
+  );
+  margin-top: 10vh;
+  margin-left: 10vw;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+#decorator {
+  height: 100%;
+  display: block;
+  float: left;
+}
+.deco-rect {
+  float: left;
+  width: 40vw;
+  height: 40vw;
+  // eslint-disable-next-line
+  background: linear-gradient(
+    to right top,
+    rgba(236, 202, 101, 1) 65%,
+    rgba(255, 193, 7, 1) 100%
+  );
+  border-radius: 32px;
+}
+#deco-rect1 {
+  transform: translateX(-5vw) translateY(-30vw) rotate(60deg);
+}
+#deco-rect2 {
+  transform: translateX(-60vw) translateY(35vw) rotate(240deg);
+}
+#deco-rect3 {
+  transform: translateX(75vw) translateY(-15vw) rotate(150deg);
+}
+#pangea-container {
+  position: relative;
+  top: -80vh;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.rightarea {
+  background: green;
+  display: inline-flex;
+  width: 50%;
+  height: 100%;
+}
+</style>

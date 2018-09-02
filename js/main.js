@@ -187,7 +187,7 @@ var PaperData=[
             }
         ),
         new MyPaper(
-            doi="",
+            doi="http://doi.org/10.3837/tiis.2018.08.029",
             name="Optimization of Material Properties for Coherent Behavior across Multi-resolution Cloth Models",
             author="Nak-Jun Sung, Shane Transue, Min Sang Kim, Yoo-Joo Choi, Min-Hyung Choi and Min Hong",
             journal="KSII TRANSACTIONS ON INTERNET AND INFORMATION SYSTEMS(Accepted)",
