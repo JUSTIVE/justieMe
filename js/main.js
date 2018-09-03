@@ -72,7 +72,8 @@ var ProjectData = [
         language=[
             "csharp",
         ]),
-    new Myproject("https://github.com/JUSTIVE/ballRollPool",
+    new Myproject(
+        "https://github.com/JUSTIVE/ballRollPool",
         "ballRollPool",
         "2D rigid body pocketball simulation",language=[
             "cpp",

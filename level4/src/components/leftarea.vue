@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 h1 {
   color: white;
   font-family: "Source Code Pro", monospace;
@@ -51,6 +50,7 @@ h4 {
   font-weight: 300;
   font-size: 12px;
 }
+
 li {
   list-style: none;
 }

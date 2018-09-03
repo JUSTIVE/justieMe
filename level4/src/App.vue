@@ -16,6 +16,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+a {
+  text-decoration: none !important;
+  text-decoration-style: none !important;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
 body {
   margin: 0px;
 }
