@@ -1,5 +1,7 @@
 <template>
   <div class="rightarea">
+    <div class="rightarea-container">
+    </div>
   </div>
 </template>
 
@@ -14,5 +16,11 @@ export default {
   display: inline-flex;
   width: 50%;
   height: 100%;
+}
+@media (max-width: 768px) {
+  .rightarea {
+    width: 100%;
+    height: 50%;
+  }
 }
 </style>

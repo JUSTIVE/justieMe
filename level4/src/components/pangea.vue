@@ -8,7 +8,6 @@
     <div id="pangea-container">
         <leftarea/>
         <rightarea/>
-        <div id="right-area"/>
     </div>
   </div>
   
@@ -29,8 +28,10 @@ export default {
 
 
 <style scoped lang="scss">
+* {
+  -webkit-font-smoothing: antialiased;
+}
 .pangea {
-  // eslint-disable-next-line
   background: linear-gradient(160deg, rgb(88, 69, 69) 0%, rgb(56, 44, 44) 100%);
   margin-top: 5vh;
   margin-left: 5vw;
@@ -49,7 +50,6 @@ export default {
   float: left;
   width: 40vw;
   height: 40vw;
-  // eslint-disable-next-line
   background: linear-gradient(
     135deg,
     rgba(236, 202, 101, 1) 20%,
@@ -68,9 +68,21 @@ export default {
 }
 #pangea-container {
   position: relative;
-  top: -80vh;
+  top: -90vh;
   display: flex;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 768px) {
+  .pangea {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+  }
+  #pangea-container {
+    flex-direction: column;
+    top: -100vh;
+  }
 }
 </style>
