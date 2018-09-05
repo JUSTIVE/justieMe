@@ -123,16 +123,13 @@ ul {
 .projects {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 90%;
   margin-left: 5%;
   margin-right: 5%;
 }
 .frame {
-  padding:8px;
+  padding: 8px;
   width: 50%;
-  border-width: 3px;
-  border: white;
-  border-style: solid;
 }
 </style>

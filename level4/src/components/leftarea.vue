@@ -3,10 +3,10 @@
     <div id="hero">
         <h1>{{name}}</h1>
         <li v-for="desc in description" :key="desc.id">
-            <h4>
-                {{desc.duration}}<br>
-                {{desc.spec}}
-            </h4>
+            
+            <h4 class="duration">{{desc.duration}}</h4>
+            <h4 class="spec">{{desc.spec}}</h4>
+            <br>
         </li>
         <h4>{{interests}}</h4>
     </div>
@@ -42,31 +42,41 @@ export default {
 h1 {
   color: white;
   font-family: "Source Code Pro", monospace;
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 48px;
+  -webkit-margin-before: 0px;
 }
 h4 {
-  color: white;
+  color: #9aa0bf;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
   font-size: 12px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
 }
-
 li {
   list-style: none;
 }
 #hero {
   margin: 20%;
-  margin-top: 50%;
+  // margin-top: 35%;
+}
+.duration {
+  color: #c78de5;
+}
+.spec {
+  color: #b9e879;
 }
 .leftarea {
-  justify-content: center;
   display: inline-flex;
+  justify-content: center;
+  align-content: center;
   width: 50%;
   height: 100%;
 }
 @media (max-width: 768px) {
   #hero {
-    margin-top: 20%;
+    margin-top: 20px;
   }
   .leftarea {
     justify-content: center;

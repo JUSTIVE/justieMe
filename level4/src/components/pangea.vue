@@ -1,10 +1,5 @@
 <template>
   <div class="pangea"> 
-    <div id="decorator">
-      <div class="deco-rect" id="deco-rect1"/>
-      <div class="deco-rect" id="deco-rect2"/>
-      <div class="deco-rect" id="deco-rect3"/>
-    </div>
     <div id="pangea-container">
         <leftarea/>
         <rightarea/>
@@ -32,7 +27,7 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .pangea {
-  background: linear-gradient(160deg, rgb(88, 69, 69) 0%, rgb(56, 44, 44) 100%);
+  background: #292d3e;
   margin-top: 5vh;
   margin-left: 5vw;
   width: 90vw;
@@ -55,7 +50,7 @@ export default {
     rgba(236, 202, 101, 1) 20%,
     rgba(255, 193, 7, 1) 100%
   );
-  border-radius: 32px;
+  border-radius: 15vw;
 }
 #deco-rect1 {
   transform: translateX(5vw) translateY(-30vw) rotate(60deg);
@@ -68,7 +63,7 @@ export default {
 }
 #pangea-container {
   position: relative;
-  top: -90vh;
+  // top: -90vh;
   display: flex;
   width: 100%;
   height: 100%;
@@ -82,7 +77,6 @@ export default {
   }
   #pangea-container {
     flex-direction: column;
-    top: -100vh;
   }
 }
 </style>
