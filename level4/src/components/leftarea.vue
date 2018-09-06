@@ -2,6 +2,7 @@
   <div class="leftarea">
     <div id="hero">
         <h1>{{name}}</h1>
+        <br>
         <li v-for="desc in description" :key="desc.id">
             <h4 class="duration">{{desc.duration}}</h4>
             <h4 class="spec">{{desc.spec}}</h4>
@@ -44,13 +45,12 @@ h1 {
   font-weight: 700;
   font-size: 48px;
   -webkit-margin-before: 0px;
-  -webkit-margin-after: 10px;
 }
 h4 {
   color: #9aa0bf;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 12px;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
 }
@@ -59,7 +59,7 @@ li {
 }
 #hero {
   margin: 20%;
-  margin-top: 30vh;
+  margin-top: 10vh;
 }
 .duration {
   color: #c78de5;
