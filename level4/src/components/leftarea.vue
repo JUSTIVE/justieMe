@@ -45,6 +45,7 @@ h1 {
   font-weight: 700;
   font-size: 48px;
   -webkit-margin-before: 0px;
+  -webkit-margin-after: 10px;
 }
 h4 {
   color: #9aa0bf;
@@ -59,7 +60,7 @@ li {
 }
 #hero {
   margin: 20%;
-  // margin-top: 35%;
+  margin-top: 35%;
 }
 .duration {
   color: #c78de5;
@@ -76,6 +77,7 @@ li {
 }
 @media (max-width: 768px) {
   #hero {
+    margin: 10%;
     margin-top: 20px;
   }
   .leftarea {

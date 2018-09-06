@@ -1,7 +1,10 @@
 <template>
   <div class="rightarea">
     <div id="tab">
-      <button v-for="tab in tabs" :key="tab.id">{{tab}}</button>
+      <div class=tab-item v-for="tab in tabs" :key="tab.id">
+        <div class="tab-icon" v-bind:style="tab.style"></div>
+        <button>{{tab.title}}</button>
+      </div>
     </div>
     <projects/>
     <!-- <div class="rightarea-container">
@@ -18,12 +21,42 @@ export default {
   data: function() {
     return {
       tabs: [
-        "projects",
-        "publications",
-        "experiences",
-        "skills",
-        "activities",
-        "techies"
+        {
+          title: "personal projects",
+          style: {
+            background: "#ffC107"
+          }
+        },
+        {
+          title: "publications",
+          style: {
+            background: "#e25282"
+          }
+        },
+        {
+          title: "experiences",
+          style: {
+            background: "#fa8764"
+          }
+        },
+        {
+          title: "skills",
+          style: {
+            background: "#ce76dd"
+          }
+        },
+        {
+          title: "activities",
+          style: {
+            background: "#6fa6ff"
+          }
+        },
+        {
+          title: "techies",
+          style: {
+            background: "#ade46e"
+          }
+        }
       ]
     };
   },
@@ -54,6 +87,12 @@ button:focus {
   outline-style: none;
   cursor: pointer;
 }
+.tab-icon {
+  background: red;
+  width: 12px;
+  height: 12px;
+  border-radius: 8px;
+}
 .rightarea {
   display: inline-flex;
   flex-direction: column;
@@ -64,12 +103,20 @@ button:focus {
   background: #151827;
   border-radius: 16px;
 }
+.tab-item {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
 #tab {
+  display: inline-flex;
   height: 56px;
   // background: red;
   width: 90%;
   align-items: baseline;
-  justify-content: space-around;
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 @media (max-width: 768px) {
   .rightarea {

@@ -5,8 +5,12 @@
         </div>
         
         <ul id="project-list">
-            <li v-for="project in projects" :key="project.id" >
-                <h6>{{project.name}}</h6>
+            <li class="project-list-item" v-for="project in projects" :key="project.id" >
+                <h6 class="project-name">{{project.name}}</h6>
+                <h6 class="project-description">{{project.description}}</h6>
+                <div>
+                  <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
+                </div>
             </li>
         </ul>
     </div>            
@@ -103,16 +107,18 @@ u {
   width: 0px;
 }
 h1 {
-  color: white;
+  color: #769ecd;
   font-family: "Source Code Pro", monospace;
 }
 h6 {
   -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
   font-size: 12px;
 }
 ul {
   list-style: none;
   -webkit-margin-before: 0px;
+  -webkit-padding-start: 0px;
 }
 #project-list {
   -webkit-padding-start: 10px;
@@ -127,9 +133,23 @@ ul {
   height: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  align-items: center;
+}
+.project-list-item {
+  margin-bottom: 16px;
+}
+.project-name {
+  color: #769ecd;
+}
+.project-description {
+  color: #9aa0bf;
+}
+.project-lang {
+  color: #fcd970;
 }
 .frame {
   padding: 8px;
-  width: 50%;
+  width: 80%;
+  height: 100%;
 }
 </style>
