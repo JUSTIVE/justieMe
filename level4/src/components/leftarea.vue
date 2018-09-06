@@ -3,7 +3,6 @@
     <div id="hero">
         <h1>{{name}}</h1>
         <li v-for="desc in description" :key="desc.id">
-            
             <h4 class="duration">{{desc.duration}}</h4>
             <h4 class="spec">{{desc.spec}}</h4>
             <br>
@@ -51,7 +50,7 @@ h4 {
   color: #9aa0bf;
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 17px;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
 }
@@ -60,7 +59,7 @@ li {
 }
 #hero {
   margin: 20%;
-  margin-top: 35%;
+  margin-top: 30vh;
 }
 .duration {
   color: #c78de5;
@@ -76,6 +75,9 @@ li {
   height: 100%;
 }
 @media (max-width: 768px) {
+  h4 {
+    font-size: 12px;
+  }
   #hero {
     margin: 10%;
     margin-top: 20px;
