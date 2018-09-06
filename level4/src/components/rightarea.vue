@@ -111,7 +111,6 @@ button:focus {
 #tab {
   display: inline-flex;
   height: 56px;
-  // background: red;
   width: 90%;
   align-items: baseline;
   justify-content: space-between;
@@ -119,6 +118,9 @@ button:focus {
   overflow-x: scroll;
 }
 @media (max-width: 768px) {
+  #tab {
+    padding-top: 8px;
+  }
   .rightarea {
     width: 100%;
     height: 50%;
