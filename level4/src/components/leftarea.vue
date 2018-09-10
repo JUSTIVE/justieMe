@@ -3,11 +3,13 @@
     <div id="hero">
         <h1>{{name}}</h1>
         <br>
-        <li v-for="desc in description" :key="desc.id">
-            <h4 class="duration">{{desc.duration}}</h4>
-            <h4 class="spec">{{desc.spec}}</h4>
-            <br>
-        </li>
+        <ul id="hero-desc">
+          <li v-for="desc in description" :key="desc.id">
+              <h4 class="duration">{{desc.duration}}</h4>
+              <h4 class="spec">{{desc.spec}}</h4>
+              <br>
+          </li>
+        </ul>
         <h4>{{interests}}</h4>
     </div>
   </div>
@@ -54,12 +56,19 @@ h4 {
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
 }
+ul {
+  -webkit-margin-start: 0px;
+  -webkit-padding-start: 0px;
+}
 li {
   list-style: none;
 }
 #hero {
   margin: 20%;
   margin-top: 10vh;
+}
+#hero-desc {
+  overflow-y: scroll;
 }
 .duration {
   color: #c78de5;

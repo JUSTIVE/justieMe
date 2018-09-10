@@ -1,67 +1,37 @@
 <template>
   <div class="rightarea">
     <div id="tab">
-      <div class=tab-item v-for="tab in tabs" :key="tab.id">
-        <div class="tab-icon" v-bind:style="tab.style"></div>
-        <button>{{tab.title}}</button>
-      </div>
+      <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/>
+      <!-- <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"> -->
+        <!-- <div class="tab-icon" v-bind:style="tab.style"></div> -->
+        <!-- <span>{{tab.title}}</span> -->
+      <!-- </div> -->
     </div>
-    <projects/>
-    <!-- <div class="rightarea-container">
-      
-    </div> -->
-    
+    <template v-if="currenttab=='0'">
+      <projects/>
+    </template> 
   </div>
 </template>
 
 <script>
 import projects from "./rightarea/projects.vue";
+import tabitem from "./rightarea/tab.vue";
 export default {
   name: "rightarea",
   data: function() {
     return {
-      tabs: [
-        {
-          title: "personal projects",
-          style: {
-            background: "#ffC107"
-          }
-        },
-        {
-          title: "publications",
-          style: {
-            background: "#e25282"
-          }
-        },
-        {
-          title: "experiences",
-          style: {
-            background: "#fa8764"
-          }
-        },
-        {
-          title: "skills",
-          style: {
-            background: "#ce76dd"
-          }
-        },
-        {
-          title: "activities",
-          style: {
-            background: "#6fa6ff"
-          }
-        },
-        {
-          title: "techies",
-          style: {
-            background: "#ade46e"
-          }
-        }
-      ]
+      currenttab: 0
     };
   },
+  methods: {
+    tab_click: function(event) {
+      alert(event.target);
+      this.currenttab = event.target.index;
+    }
+  },
   components: {
-    projects
+    projects,
+    tabitem
   }
 };
 </script>
@@ -72,7 +42,7 @@ ul {
   -webkit-margin-after: 0px;
   -webkit-padding-start: 0px;
 }
-button {
+span {
   width: auto;
   height: auto;
   border: 0px;
@@ -83,7 +53,7 @@ button {
   font-weight: 500;
   cursor: pointer;
 }
-button:focus {
+span:focus {
   outline-style: none;
   cursor: pointer;
 }
