@@ -54,6 +54,9 @@
     }
 }
 @media(max-width:768px){
+    #nom{
+        margin-bottom: 30px;
+    }
     #left-container{
         flex-direction: column;
     }

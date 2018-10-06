@@ -99,6 +99,9 @@
 }
 
 @media (max-width: 768px) {
+  #nom {
+    margin-bottom: 30px;
+  }
   #left-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

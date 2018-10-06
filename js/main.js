@@ -1,6 +1,7 @@
 var leftpane = document.getElementById("left-area");
 var bodyrect = document.getElementsByClassName("item-card")[0].getBoundingClientRect();
 var nom= document.getElementById('nom').style;
+var themeBar = document.getElementById('theme_bar')
 
 
 function vh(v) {
@@ -591,3 +592,10 @@ function ActivityInit(){
     }
 }
 ActivityInit();
+status=true;
+function ThemeChanger(){
+    status!=status;
+    
+}
+themeBar.addEventListener("mouseup",ThemeChanger);
+themeBar.addEventListener("touchstart",ThemeChanger);

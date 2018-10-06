@@ -2,10 +2,10 @@
   <div class="rightarea">
     <div id="tab">
       <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/>
-      <!-- <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"> -->
-        <!-- <div class="tab-icon" v-bind:style="tab.style"></div> -->
-        <!-- <span>{{tab.title}}</span> -->
-      <!-- </div> -->
+      <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)">
+        <div class="tab-icon" v-bind:style="tab.style"></div>
+        <span>{{tab.title}}</span>
+      </div>
     </div>
     <template v-if="currenttab=='0'">
       <projects/>
