@@ -329,9 +329,10 @@ function ActivityInit() {
     }
 }
 ActivityInit();
-status = true;
+Themestatus = true;
 function ThemeChanger() {
-    status != status;
+    Themestatus = !Themestatus;
+    console.log(Themestatus + "");
 }
 themeBar.addEventListener("mouseup", ThemeChanger);
 themeBar.addEventListener("touchstart", ThemeChanger);
