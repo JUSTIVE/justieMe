@@ -115,7 +115,7 @@ a:visited{
     fill:white;
 }
 .project-icon{
-    background:#ffC107
+    background:rgb(255, 210, 76)
 }
 .project-text{
     vertical-align:middle;
@@ -206,7 +206,7 @@ a:visited{
 //techies area
 /////////////////////////////
 .techies-icon{
-    background:rgba($color: #ade46e, $alpha: 0.7);
+    background:rgba($color: #8ccc42, $alpha: 0.7);
 }
 .techies-text{
     vertical-align:middle;
@@ -435,7 +435,7 @@ ul{
     -webkit-margin-after:24px;
 }
 #paper-header{
-    justify-content: flex-start;
+    justify-content: space-between;
     // display:flex;
 }
 button{
@@ -532,7 +532,9 @@ button:focus{
 @media(max-width:768px){
     #hero{
         width:90vw;
-        
+    }
+    #footer1{
+        margin-top:8px;   
     }
     #right-container{
         flex-direction: column;
