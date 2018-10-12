@@ -771,6 +771,10 @@ button:focus {
   background: #cccccc;
 }
 
+.dart-lang {
+  background: #00b4ab;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
