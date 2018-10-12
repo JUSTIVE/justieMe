@@ -128,12 +128,46 @@ var ProjectData = [
             "dart"
         ])
 ];
+var projectStatus = false;
+var projectMorePath= document.getElementById("project-more-path");
 
+function extendProject(){
+    if(projectStatus){
+        for(var i=0;i<ProjectData.length-5;i++)
+        projectCard.removeChild(projectCard.children[projectCard.children.length-1]);
+        projectMorePath.setAttribute("d","M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z");
+    }
+    else{   
+        for (var i=5;i<ProjectData.length;i++){
+            projectTemplate.content.querySelector('a').href=ProjectData[i].link;
+            projectTemplate.content.querySelector(".project-name").innerHTML =ProjectData[i].name;
+            projectTemplate.content.querySelector(".project-description").innerHTML =ProjectData[i].description;
+            var langs =projectTemplate.content.querySelector(".project-lang");
+            for(var j=0;j<ProjectData[i].language.length;j++){
+                var tempLang= document.createElement("div");
+                tempLang.className="language "+ProjectData[i].language[j]+"-lang";
+                langs.appendChild(tempLang);
+        
+                var tempLang= document.createElement("div");
+                tempLang.innerText=ProjectData[i].language[j];
+                tempLang.className="lang-text";
+                langs.appendChild(tempLang);
+            }
+            var clone = document.importNode(projectTemplate.content,true);
+            projectCard.appendChild(clone);    
+            langs.innerHTML="";
+        };
+        projectMorePath.setAttribute("d","M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z");    
+    }
+    console.log(projectMorePath);
+    projectStatus=!projectStatus;
+    document.getElementById('project-card').scrollIntoView();
+}
 
 var projectTemplate = document.querySelector("#project-template");
-var projectCard = document.getElementById("project-card");
-
-for (var i=0;i<ProjectData.length;i++){
+var projectCard = document.getElementById("project-list-inner");
+var moreProjectButton = document.getElementsByClassName("project-more-button");
+for (var i=0;i<5;i++){
     projectTemplate.content.querySelector('a').href=ProjectData[i].link;
     projectTemplate.content.querySelector(".project-name").innerHTML =ProjectData[i].name;
     projectTemplate.content.querySelector(".project-description").innerHTML =ProjectData[i].description;
@@ -152,6 +186,7 @@ for (var i=0;i<ProjectData.length;i++){
     projectCard.appendChild(clone);    
     langs.innerHTML="";
 };
+// moreProjectButton.onclick="extendProject()";
 
 function MyPaper(doi,name,author,journal,quote){
     this.doi=doi;

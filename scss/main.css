@@ -578,6 +578,10 @@ ul {
   -webkit-margin-after: 24px;
 }
 
+#project-card {
+  padding-bottom: 16px;
+}
+
 #paper-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -587,6 +591,37 @@ ul {
 button {
   border-style: none;
   background-color: white;
+}
+
+.project-more-button {
+  background-color: white;
+  width: 100%;
+  height: 24px;
+  border-radius: 2px;
+  color: #6fa6ff;
+  display: inline-block;
+  vertical-align: text-top;
+  border: none;
+  font-size: 12px;
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.project-more-button:hover {
+  background-color: #eee;
+  -webkit-transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.project-more-badge {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  color: #6fa6ff;
+}
+
+.project-more-icon {
+  background: white;
 }
 
 #paper-category {

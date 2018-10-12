@@ -57,6 +57,7 @@
             <div id="right-area">
                 <div class="item-card" id="project-card">
                     <h2 class="card-title">PERSONAL PROJECTS</h2>
+                    <div id="project-list-inner"></div>
                     <template type="projectTemplateType" id="project-template">
                         <ul class="project_list"><a class="project_list" href="">
                             <svg viewBox="-12 -12 48 48" class="badge-icon project-icon">
@@ -69,6 +70,12 @@
                             </div>
                         </a></ul>
                     </template>
+                    <button class="project-more-button" onclick="extendProject()" href="#project-card">
+                        <svg viewBox="0 0 24 24" class="project-more-badge">
+                            <path id="project-more-path" class="icon-path" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" style="fill:#6fa6ff" ></path>
+                        </svg>
+                    </button>
+                    
                 </div>
                 <div class="item-card" >
                     <div id="paper-header">
