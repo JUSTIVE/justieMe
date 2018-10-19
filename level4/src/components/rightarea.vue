@@ -1,37 +1,72 @@
 <template>
   <div class="rightarea">
-    <div id="tab">
-      <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/>
-      <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)">
-        <div class="tab-icon" v-bind:style="tab.style"></div>
-        <span>{{tab.title}}</span>
+    <div class="rightarea-inner">
+      <div id="tab">
+        <!-- <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/> -->
+        <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="currenttab=index;">
+          <div class="tab-icon" v-bind:style="tab.style">
+            <span>{{tab.title}}</span>
+          </div>
+        </div>
+      </div>
+      <div id="rightarea-content">
+        <template v-if="currenttab=='0'">
+          <projects/>
+        </template> 
       </div>
     </div>
-    <template v-if="currenttab=='0'">
-      <projects/>
-    </template> 
   </div>
 </template>
 
 <script>
 import projects from "./rightarea/projects.vue";
-import tabitem from "./rightarea/tab.vue";
 export default {
   name: "rightarea",
   data: function() {
     return {
-      currenttab: 0
+      currenttab: 0,
+      tabs: [
+        {
+          title: "projects",
+          style: {
+            background: "#ffC107"
+          }
+        },
+        {
+          title: "publications",
+          style: {
+            background: "#e25282"
+          }
+        },
+        {
+          title: "experiences",
+          style: {
+            background: "#fa8764"
+          }
+        },
+        {
+          title: "skills",
+          style: {
+            background: "#ce76dd"
+          }
+        },
+        {
+          title: "activities",
+          style: {
+            background: "#6fa6ff"
+          }
+        },
+        {
+          title: "techies",
+          style: {
+            background: "#ade46e"
+          }
+        }
+      ]
     };
   },
-  methods: {
-    tab_click: function(event) {
-      alert(event.target);
-      this.currenttab = event.target.index;
-    }
-  },
   components: {
-    projects,
-    tabitem
+    projects
   }
 };
 </script>
@@ -52,40 +87,54 @@ span {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
+  top: -12px;
 }
 span:focus {
   outline-style: none;
   cursor: pointer;
 }
 .tab-icon {
+  // display: inline-flex;
   background: red;
-  width: 12px;
-  height: 12px;
-  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  padding: 4px;
+  border-radius: 4px;
 }
 .rightarea {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+  width: 75%;
   height: 100%;
   background: #151827;
-  border-radius: 16px;
+  border-radius: 4px;
 }
-.tab-item {
+.rightarea-inner {
+  width: 100%;
+  height: 100%;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+#rightarea-content {
+  width: 85%;
+  height: 100%;
+}
+.tab-item {
+  // width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  vertical-align: baseline;
 }
 #tab {
+  padding-left: 16px;
   display: inline-flex;
-  height: 56px;
-  width: 90%;
+  flex-direction: column;
+  height: 90%;
+  width: 15%;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-evenly;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 @media (max-width: 768px) {
   #tab {

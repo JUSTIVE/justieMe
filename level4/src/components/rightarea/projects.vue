@@ -1,18 +1,19 @@
 <template>
     <div class="projects">
-        <div class="frame">
-            <h1>TITLE</h1>
+      <ul id="project-list">
+          <li class="project-list-item" v-for="project in projects" :key="project.id" >
+              <h6 class="project-name">{{project.name}}</h6>
+              <h6 class="project-description">{{project.description}}</h6>
+              <div>
+                <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
+              </div>
+          </li>
+        </ul>
+        <div class="project-leftarea">
+            <h1 style="webkit-margin-before:0px;">TITLE</h1>
         </div>
         
-        <ul id="project-list">
-            <li class="project-list-item" v-for="project in projects" :key="project.id" >
-                <h6 class="project-name">{{project.name}}</h6>
-                <h6 class="project-description">{{project.description}}</h6>
-                <div>
-                  <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
-                </div>
-            </li>
-        </ul>
+        
     </div>            
 </template>
 
@@ -87,6 +88,12 @@ export default {
           name: "FramelessCounter",
           description: "a frameless wpf timer always on top",
           language: ["csharp"]
+        },
+        {
+          link: "https://github.com/JUSTIVE/Flutters",
+          name: "Flutters",
+          description: "flutter challenges, tests, and so on",
+          language: ["dart"]
         }
       ]
     };
@@ -122,21 +129,26 @@ ul {
 }
 #project-list {
   -webkit-padding-start: 10px;
-  height: 70%;
+  height: 100%;
   overflow: hidden;
   overflow-y: scroll;
 }
 .projects {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  align-items: center;
+  height: 100%;
+  // margin-left: 5%;
+  // margin-right: 5%;
+  // align-items: center;
 }
 .project-list-item {
+  border-width: 4px;
+  border-radius: 4px;
+  padding: 8px;
   margin-bottom: 16px;
+}
+.project-list-item:hover {
+  background: hsl(230, 28%, 26%);
 }
 .project-name {
   color: #769ecd;
@@ -147,9 +159,8 @@ ul {
 .project-lang {
   color: #fcd970;
 }
-.frame {
-  padding: 8px;
-  width: 80%;
+.project-leftarea {
+  width: 90%;
   height: 100%;
 }
 </style>

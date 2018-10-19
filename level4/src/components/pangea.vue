@@ -32,7 +32,7 @@ export default {
   margin-left: 5vw;
   width: 90vw;
   height: 90vh;
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
   overflow: hidden;
 }

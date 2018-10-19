@@ -34,7 +34,7 @@ export default {
         }
       ],
       interests:
-        "His research interests are in computer graphics, physically-based modeling and simulation, and android applications."
+        "His research interests are in computer graphics, physically-based modeling and simulation, android applications, and deep learning"
     };
   }
 };
@@ -80,7 +80,7 @@ li {
   display: inline-flex;
   justify-content: center;
   align-content: center;
-  width: 50%;
+  width: 25%;
   height: 100%;
 }
 @media (max-width: 768px) {
