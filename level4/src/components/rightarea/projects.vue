@@ -1,19 +1,20 @@
 <template>
     <div class="projects">
       <ul id="project-list">
-          <li class="project-list-item" v-for="project in projects" :key="project.id" >
-              <h6 class="project-name">{{project.name}}</h6>
-              <h6 class="project-description">{{project.description}}</h6>
-              <div>
-                <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
-              </div>
-          </li>
-        </ul>
-        <div class="project-leftarea">
-            <h1 style="webkit-margin-before:0px;">TITLE</h1>
-        </div>
-        
-        
+        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);">
+            <h6 class="project-name">{{project.name}}</h6>
+            <h6 class="project-description">{{project.description}}</h6>
+            <div>
+              <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
+            </div>
+        </li>
+      </ul>
+      <div class="project-content">
+          <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1>
+          <p class="project-description">
+            {{projectDescription}}
+          </p>
+      </div>
     </div>            
 </template>
 
@@ -22,6 +23,9 @@ export default {
   name: "projects",
   data: function() {
     return {
+      projectTitle: "TITLE",
+      currentProject: 0,
+      projectDescription: "",
       projects: [
         {
           link: "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",
@@ -97,6 +101,12 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    clickProject: function(id) {
+      this.projectTitle = this.projects[id].name;
+      this.projectDescription = this.projects[id].description;
+    }
   }
 };
 </script>
@@ -114,8 +124,10 @@ u {
   width: 0px;
 }
 h1 {
+  display: inline-block;
   color: #769ecd;
   font-family: "Source Code Pro", monospace;
+  overflow: hidden;
 }
 h6 {
   -webkit-margin-before: 0px;
@@ -159,8 +171,14 @@ ul {
 .project-lang {
   color: #fcd970;
 }
-.project-leftarea {
+.project-content {
+  margin-left: 16px;
   width: 90%;
   height: 100%;
+  overflow: hidden;
+}
+.project-description {
+  font-family: "Source Code Pro", monospace;
+  color: #9aa0bf;
 }
 </style>

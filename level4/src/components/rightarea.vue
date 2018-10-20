@@ -102,8 +102,9 @@ span:focus {
   border-radius: 4px;
 }
 .rightarea {
+  padding: 32px 32px 32px 0px;
   width: 75%;
-  height: 100%;
+  height: calc(100%-32px);
   background: #151827;
   border-radius: 4px;
 }
@@ -130,7 +131,7 @@ span:focus {
   display: inline-flex;
   flex-direction: column;
   height: 90%;
-  width: 15%;
+  width: 10%;
   align-items: baseline;
   justify-content: space-evenly;
   overflow: hidden;
