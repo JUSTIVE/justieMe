@@ -20,6 +20,7 @@
 
 <script>
 import projects from "./rightarea/projects.vue";
+import publications from "./rightarea/publications.vue";
 export default {
   name: "rightarea",
   data: function() {
@@ -66,7 +67,8 @@ export default {
     };
   },
   components: {
-    projects
+    projects,
+    publications
   }
 };
 </script>

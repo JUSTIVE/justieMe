@@ -25,7 +25,7 @@ export default {
     return {
       projectTitle: "TITLE",
       currentProject: 0,
-      projectDescription: "",
+      projectDescription: "click any project to view description",
       projects: [
         {
           link: "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",
