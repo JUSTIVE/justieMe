@@ -4,14 +4,18 @@
       <div id="tab">
         <!-- <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/> -->
         <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="currenttab=index;">
-          <div class="tab-icon" v-bind:style="tab.style">
+          <div class="tab-icon" >
             <span>{{tab.title}}</span>
+            <div class="underbar" v-bind:style="tab.style"/>
           </div>
         </div>
       </div>
       <div id="rightarea-content">
         <template v-if="currenttab=='0'">
           <projects/>
+        </template> 
+        <template v-if="currenttab=='1'">
+          <publications/>
         </template> 
       </div>
     </div>
@@ -97,16 +101,21 @@ span:focus {
 }
 .tab-icon {
   // display: inline-flex;
-  background: red;
   width: 100%;
   height: 25px;
   padding: 4px;
   border-radius: 4px;
 }
+.tab-icon:hover {
+  background: hsl(230, 30%, 16%);
+}
+.underbar {
+  width: 100%;
+  height: 2px;
+}
 .rightarea {
-  padding: 32px 32px 32px 0px;
   width: 75%;
-  height: calc(100%-32px);
+  height: 100%;
   background: #151827;
   border-radius: 4px;
 }
@@ -115,12 +124,13 @@ span:focus {
   height: 100%;
   display: inline-flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   justify-content: center;
 }
 #rightarea-content {
-  width: 85%;
-  height: 100%;
+  padding: 32px 32px 32px 0px;
+  width: 90%;
+  height: calc(100%-64px);
 }
 .tab-item {
   // width: 100%;
@@ -129,10 +139,11 @@ span:focus {
   vertical-align: baseline;
 }
 #tab {
+  background: hsl(228, 33%, 9%);
   padding-left: 16px;
   display: inline-flex;
   flex-direction: column;
-  height: 90%;
+  height: 100%;
   width: 10%;
   align-items: baseline;
   justify-content: space-evenly;
