@@ -2,7 +2,6 @@
   <div class="rightarea">
     <div class="rightarea-inner">
       <div id="tab">
-        <!-- <tabitem v-for="(tab, index) in tabs" :key="index" v-on:click="tab_click($event)"/> -->
         <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="currenttab=index;">
           <div class="tab-icon" >
             <span>{{tab.title}}</span>
@@ -114,10 +113,13 @@ span:focus {
   height: 2px;
 }
 .rightarea {
+  position: relative;
+  left: -32px;
   width: 75%;
   height: 100%;
   background: #151827;
-  border-radius: 4px;
+  border-radius: 16px;
+  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
 }
 .rightarea-inner {
   width: 100%;
@@ -126,9 +128,11 @@ span:focus {
   flex-direction: row;
   align-items: left;
   justify-content: center;
+  overflow: hidden;
 }
 #rightarea-content {
   padding: 32px 32px 32px 0px;
+  overflow: hidden;
   width: 90%;
   height: calc(100%-64px);
 }
@@ -139,16 +143,17 @@ span:focus {
   vertical-align: baseline;
 }
 #tab {
+  padding-left: 64px;
   background: hsl(228, 33%, 9%);
-  padding-left: 16px;
   display: inline-flex;
   flex-direction: column;
   height: 100%;
-  width: 10%;
+  width: 20%;
   align-items: baseline;
   justify-content: space-evenly;
   overflow: hidden;
   overflow-y: scroll;
+  border-radius: 16px;
 }
 @media (max-width: 768px) {
   #tab {
@@ -156,7 +161,8 @@ span:focus {
   }
   .rightarea {
     width: 100%;
-    height: 50%;
+    height: 70%;
+    border-radius: 0px;
   }
 }
 </style>

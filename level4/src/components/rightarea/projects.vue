@@ -1,7 +1,7 @@
 <template>
     <div class="projects">
       <ul id="project-list">
-        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);">
+        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD(project.link+'/blob/master/README.md')">
             <h6 class="project-name">{{project.name}}</h6>
             <h6 class="project-description">{{project.description}}</h6>
             <div>
@@ -106,6 +106,18 @@ export default {
     clickProject: function(id) {
       this.projectTitle = this.projects[id].name;
       this.projectDescription = this.projects[id].description;
+    },
+    getMD: function(link,callback) {
+      if ( !window.XMLHttpRequest ) return;
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if ( callback && typeof( callback ) === 'function' ) {
+          callback( this.responseXML );
+        }
+      }
+      xhr.open('GET',link);
+      xhr.response='document';
+      xhr.send();
     }
   }
 };
@@ -128,6 +140,8 @@ h1 {
   color: #769ecd;
   font-family: "Source Code Pro", monospace;
   overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 h6 {
   -webkit-margin-before: 0px;

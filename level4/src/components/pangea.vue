@@ -27,13 +27,13 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .pangea {
-  background: #292d3e;
+  background: transparent;
   margin-top: 5vh;
   margin-left: 5vw;
   width: 90vw;
   height: 90vh;
   border-radius: 4px;
-  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
+  // box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
   overflow: hidden;
 }
 #decorator {
@@ -67,6 +67,7 @@ export default {
   display: flex;
   width: 100%;
   height: 100%;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .pangea {

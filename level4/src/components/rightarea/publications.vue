@@ -1,11 +1,16 @@
 <template>
 <div class="publication">
+  <textarea id="dummy"></textarea>
   <ul class="publication-list" v-for="(paperCategory,index) in papers" :key="index"><!--should be called 4 times-->
-    <h6 class="publication-category">{{paperCategory.name}}</h6>
-    <ul class="publication-sublist" v-for="(paperInstance,subindex) in paperCategory.data" :key="subindex" v-on:click="currentPublications=(index, subindex)">
-      <h6 class="publication-name">{{paperInstance.name}}</h6>
-      <h6 class="publication"></h6>
-    </ul>
+    <h1 class="publication-category">{{paperCategory.name}}</h1>
+    <li class="publication-sublist" v-for="(paperInstance,subindex) in paperCategory.data" :key="subindex" v-on:click="currentPublications=(index, subindex)">
+      <h5 class="publication-name">{{paperInstance.name}}</h5>
+      <h6 class="publication-author">{{paperInstance.author}}</h6>
+      <h6 class="publication-journal">{{paperInstance.journal}}</h6>
+      <ul class="publication-quote-list" style="padding:0px;">
+        <li class="quotes" v-for="(quotes,quoteindex) in paperInstance.quote" :key="quoteindex" v-on:click="copyUrl(quotes)"><h6>{{quoteindex}}</h6></li>
+      </ul>
+    </li>
   </ul>
 </div>
 </template>
@@ -15,6 +20,7 @@ export default {
   data: function() {
     return {
       currentPublications: (0, 0),
+      dummyText: "",
       papers: [
         {
           name: "International Journals",
@@ -276,6 +282,81 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    copyUrl: function(url) {
+      var dummyTextArea = document.getElementById("dummy");
+      dummyTextArea.value = url;
+      dummyTextArea.select();
+      document.execCommand("copy");
+    }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+h1,
+h6,
+h5 {
+  font-family: "Source Code Pro", monospace;
+  color: #9aa0bf;
+}
+h1 {
+  margin-block-start: 48px;
+}
+h1:first-child {
+  margin-block-start: 4px;
+}
+h1,
+h5 {
+  color: #769ecd;
+}
+h6 {
+  margin-block-start: 4px;
+  margin-block-end: 4px;
+}
+ul {
+  padding-left: 16px;
+}
+li {
+  list-style: none;
+  padding: 8px;
+}
+li:hover {
+  background: hsl(230, 28%, 26%);
+  border-radius: 8px;
+}
+#dummy {
+  position: absolute;
+  left: -9999px;
+}
+.publication-sublist {
+  padding: 16px;
+}
+.publication-name {
+  margin-block-start: 4px;
+  margin-block-end: 4px;
+}
+.publication-author {
+  margin-block-start: 4px;
+  margin-block-end: 4px;
+}
+.publication-journal {
+  margin-block-start: 4px;
+  margin-block-end: 4px;
+  color: #fcd970;
+}
+.publication {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.quotes {
+  margin-block-end: 4px;
+  margin-block-end: 4px;
+  display: inline-block;
+}
+.quotes:first-child {
+  padding-left: 0px;
+}
+</style>
