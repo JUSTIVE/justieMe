@@ -107,16 +107,16 @@ export default {
       this.projectTitle = this.projects[id].name;
       this.projectDescription = this.projects[id].description;
     },
-    getMD: function(link,callback) {
-      if ( !window.XMLHttpRequest ) return;
+    getMD: function(link, callback) {
+      if (!window.XMLHttpRequest) return;
       var xhr = new XMLHttpRequest();
-      xhr.onload = function(){
-        if ( callback && typeof( callback ) === 'function' ) {
-          callback( this.responseXML );
+      xhr.onload = function() {
+        if (callback && typeof callback === "function") {
+          callback(this.responseXML);
         }
-      }
-      xhr.open('GET',link);
-      xhr.response='document';
+      };
+      xhr.open("GET", link);
+      xhr.response = "document";
       xhr.send();
     }
   }

@@ -143,12 +143,12 @@ span:focus {
   vertical-align: baseline;
 }
 #tab {
-  padding-left: 64px;
+  padding-left: 48px;
   background: hsl(228, 33%, 9%);
   display: inline-flex;
   flex-direction: column;
   height: 100%;
-  width: 20%;
+  width: 15%;
   align-items: baseline;
   justify-content: space-evenly;
   overflow: hidden;

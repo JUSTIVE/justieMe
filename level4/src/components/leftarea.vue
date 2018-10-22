@@ -11,14 +11,16 @@
         </ul>
         <h4>{{interests}}</h4>
     </div>
-    
-    <div class="contacts">
+    <contacts>
+    </contacts>
+    <!-- <div class="contacts">
       
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
+import contacts from "./leftarea/contacts.vue";
 export default {
   name: "leftarea",
   data: function() {
@@ -39,6 +41,9 @@ export default {
       interests:
         "His research interests are in computer graphics, physically-based modeling and simulation, android applications, and deep learning"
     };
+  },
+  components: {
+    contacts
   }
 };
 </script>
@@ -93,16 +98,7 @@ li {
   border-radius: 16px;
   z-index: 4;
 }
-.contacts {
-  height: 64px;
-  width: 100%;
-  background-color: hsl(229, 20%, 10%);
-  z-index: 2;
-  margin-top: auto;
-  border-radius: 8px;
-  display: inline-flex;
-  justify-content: space-between;
-}
+
 @media (max-width: 768px) {
   h1 {
     margin-block-end: 8px;
