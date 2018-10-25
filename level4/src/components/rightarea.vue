@@ -114,9 +114,8 @@ span:focus {
 }
 .rightarea {
   position: relative;
-  left: -32px;
   width: 75%;
-  height: 100%;
+  height: 70%;
   background: #151827;
   border-radius: 16px;
   box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
@@ -137,18 +136,18 @@ span:focus {
   height: calc(100%-64px);
 }
 .tab-item {
-  // width: 100%;
   display: inline-flex;
   flex-direction: row;
   vertical-align: baseline;
 }
 #tab {
-  padding-left: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
   background: hsl(228, 33%, 9%);
   display: inline-flex;
   flex-direction: column;
   height: 100%;
-  width: 15%;
+  width: auto;
   align-items: baseline;
   justify-content: space-evenly;
   overflow: hidden;
@@ -157,12 +156,29 @@ span:focus {
 }
 @media (max-width: 768px) {
   #tab {
+    flex-direction: row;
+    height: auto;
     padding-top: 8px;
+    padding-bottom: 8px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    justify-content: flex-start;
+  }
+  .tab-icon {
+    margin-right: 16px;
   }
   .rightarea {
     width: 100%;
-    height: 70%;
+    height: 60%;
     border-radius: 0px;
+  }
+  .rightarea-inner {
+    width: 100%;
+    flex-direction: column;
+  }
+  #rightarea-content {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

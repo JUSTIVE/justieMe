@@ -1,21 +1,20 @@
 <template>
   <div class="leftarea">
     <div id="hero">
+      <div id="hero-title">
+        <img id="hero-image" src="../assets/hero.jpg">
         <h1>{{name}}</h1>
-        <ul id="hero-desc">
-          <li v-for="desc in description" :key="desc.id">
-              <h4 class="duration">{{desc.duration}}</h4>
-              <h4 class="spec">{{desc.spec}}</h4>
-              <br>
-          </li>
-        </ul>
+      </div>
+      <ul id="hero-desc">
+        <li v-for="desc in description" :key="desc.id">
+            <h4 class="duration">{{desc.duration}}</h4>
+            <h4 class="spec">{{desc.spec}}</h4>
+            <br>
+        </li>
         <h4>{{interests}}</h4>
+      </ul>
     </div>
-    <contacts>
-    </contacts>
-    <!-- <div class="contacts">
-      
-    </div> -->
+    <contacts/>
   </div>
 </template>
 
@@ -50,11 +49,13 @@ export default {
 
 <style scoped lang="scss">
 h1 {
+  display: inline-block;
   color: white;
   font-family: "Source Code Pro", monospace;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 32px;
   -webkit-margin-before: 0px;
+  margin-block-end: 0px;
 }
 h4 {
   color: #9aa0bf;
@@ -71,9 +72,20 @@ ul {
 li {
   list-style: none;
 }
+#hero-title {
+  display: inline-flex;
+  align-items: center;
+}
 #hero {
   display: inline-flex;
   flex-direction: column;
+}
+#hero-image {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  margin-right: 32px;
 }
 #hero-desc {
   overflow-y: scroll;
@@ -86,7 +98,6 @@ li {
 }
 .leftarea {
   backdrop-filter: blur(calc(12px));
-  background: #292d3e;
   padding: 48px;
   display: inline-flex;
   flex-direction: column;
@@ -94,7 +105,6 @@ li {
   align-content: center;
   width: 25%;
   height: 60%;
-  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
   border-radius: 16px;
   z-index: 4;
 }
@@ -107,14 +117,28 @@ li {
     font-size: 12px;
   }
   #hero {
-    margin: 10%;
-    margin-top: 20px;
+    margin: 5%;
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+  #hero-title {
+    display: inline-flex;
+    height: 64px;
+    margin-bottom: 8px;
+  }
+  #hero-desc {
+    display: inline-block;
+    overflow-y: scroll;
+    height: auto;
+    margin-bottom: 0px;
   }
   .leftarea {
     justify-content: center;
     display: inline-flex;
     width: 100vw;
-    height: 30%;
+    height: 40%;
+    padding: 0px;
+    padding-bottom: 16px;
   }
 }
 </style>

@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 a,
 li,
 u {
@@ -78,6 +78,7 @@ h6 {
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
   font-size: 12px;
+  font-weight: 500;
 }
 ul {
   list-style: none;
@@ -113,6 +114,7 @@ p {
 }
 .project-name {
   color: #769ecd;
+  font-weight: 700;
 }
 .project-description {
   color: #9aa0bf;
@@ -125,14 +127,28 @@ p {
   width: 90%;
   height: 100%;
   overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 8px;
 }
 .project-description {
-  * {
-    
-    color: #9aa0bf;
-  }
   font-family: "Source Code Pro", monospace;
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4,
+  h5,
+  h6 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
   
-
 }
 </style>

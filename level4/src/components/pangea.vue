@@ -1,5 +1,5 @@
 <template>
-  <div class="pangea"> 
+  <div class="pangea">
     <div id="pangea-container">
         <leftarea/>
         <rightarea/>
@@ -27,14 +27,17 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .pangea {
-  background: transparent;
+  left: -32px;
+  // background: transparent;
+  background: #292d3e;
   margin-top: 5vh;
   margin-left: 5vw;
   width: 90vw;
   height: 90vh;
-  border-radius: 4px;
-  // box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  padding-right: 32px;
 }
 #decorator {
   height: 100%;
@@ -74,6 +77,7 @@ export default {
     margin: 0px;
     width: 100vw;
     height: 100vh;
+    padding: 0px;
     border-radius: 0px;
   }
   #pangea-container {

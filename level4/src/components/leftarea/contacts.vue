@@ -38,4 +38,11 @@ export default {
   justify-content: space-evenly;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .contacts {
+    width: 90%;
+    height: 48px;
+    margin-left: 5%;
+  }
+}
 </style>
