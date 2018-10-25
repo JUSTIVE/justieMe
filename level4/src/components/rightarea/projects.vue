@@ -1,7 +1,7 @@
 <template>
     <div class="projects">
       <ul id="project-list">
-        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD(project.link+'/blob/master/README.md')">
+        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD('https://raw.githubusercontent.com/JUSTIVE/'+project.name+'/master/README.md')">
             <h6 class="project-name">{{project.name}}</h6>
             <h6 class="project-description">{{project.description}}</h6>
             <div>
@@ -10,15 +10,16 @@
         </li>
       </ul>
       <div class="project-content">
-          <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1>
-          <p class="project-description">
-            {{projectDescription}}
-          </p>
+          <!-- <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1> -->
+          <VueMarkdown class="project-description" v-bind:source="projectDescription"/>
       </div>
     </div>            
 </template>
 
 <script>
+import projectDataJson from "./project.json";
+import axios from "axios";
+import VueMarkdown from "vue-markdown";
 export default {
   name: "projects",
   data: function() {
@@ -26,80 +27,8 @@ export default {
       projectTitle: "TITLE",
       currentProject: 0,
       projectDescription: "click any project to view description",
-      projects: [
-        {
-          link: "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",
-          name: "GLRERENDERER_LEGACYCHECKER",
-          description: "Obj model viewers",
-          language: ["c"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/PROJECT_GAMEMAKER-V2",
-          name: "PROJECT_GAMEMAKER-V2",
-          description: "Game company simulation game",
-          language: ["cpp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/OS-ya-master---Copy",
-          name: "OS-Ya",
-          description: "Single thread CPU scheduling simulation",
-          language: ["csharp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/ballRollPool",
-          name: "ballRollPool",
-          description: "2D rigid body pocketball simulation",
-          language: ["cpp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/Daisy-Chain",
-          name: "Daisy Chain",
-          description: "A game made with Unity",
-          language: ["csharp", "shaderlab", "hlsl"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/splay",
-          name: "sPlay",
-          description: "JAVA swing GUI based CS quiz program",
-          language: ["java"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/VIPMETHOD",
-          name: "VIPMETHOD",
-          description: "Smart scheduler using UWP on Raspberry Pi",
-          language: ["csharp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/tictactoe",
-          name: "TICTACTOE",
-          description: "Android tic tac toe Game",
-          language: ["java"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/SmartBadmintonTrainingSystem",
-          name: "SmartBadmintonTrainingSystem",
-          description: "Badminton training system",
-          language: ["csharp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/graphics-Catmull-RomSpline",
-          name: "GRAPHICS-CATMULL-ROMSPLINE",
-          description: "a visualization Catmull-Rom Spline",
-          language: ["cpp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/framelessCounter",
-          name: "FramelessCounter",
-          description: "a frameless wpf timer always on top",
-          language: ["csharp"]
-        },
-        {
-          link: "https://github.com/JUSTIVE/Flutters",
-          name: "Flutters",
-          description: "flutter challenges, tests, and so on",
-          language: ["dart"]
-        }
-      ]
+      projects: projectDataJson,
+      status: ""
     };
   },
   methods: {
@@ -107,18 +36,20 @@ export default {
       this.projectTitle = this.projects[id].name;
       this.projectDescription = this.projects[id].description;
     },
-    getMD: function(link, callback) {
-      if (!window.XMLHttpRequest) return;
-      var xhr = new XMLHttpRequest();
-      xhr.onload = function() {
-        if (callback && typeof callback === "function") {
-          callback(this.responseXML);
+    getMD: function(link) {
+      axios.get(link).then(
+        response => {
+          this.projectDescription = response.data;
+        },
+        error => {
+          this.projectDescription = "seem to be private repo";
+          this.status = error;
         }
-      };
-      xhr.open("GET", link);
-      xhr.response = "document";
-      xhr.send();
+      );
     }
+  },
+  components: {
+    VueMarkdown
   }
 };
 </script>
@@ -152,6 +83,10 @@ ul {
   list-style: none;
   -webkit-margin-before: 0px;
   -webkit-padding-start: 0px;
+}
+p {
+  word-break: break-all;
+  word-wrap: break-word;
 }
 #project-list {
   -webkit-padding-start: 10px;
@@ -192,7 +127,12 @@ ul {
   overflow: hidden;
 }
 .project-description {
+  * {
+    
+    color: #9aa0bf;
+  }
   font-family: "Source Code Pro", monospace;
-  color: #9aa0bf;
+  
+
 }
 </style>
