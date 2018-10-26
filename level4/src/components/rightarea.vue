@@ -163,6 +163,7 @@ span:focus {
     overflow-x: scroll;
     overflow-y: hidden;
     justify-content: flex-start;
+    border-radius: 0px;
   }
   .tab-icon {
     margin-right: 16px;

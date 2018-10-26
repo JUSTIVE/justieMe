@@ -56,6 +56,7 @@ h1 {
   font-size: 32px;
   -webkit-margin-before: 0px;
   margin-block-end: 0px;
+  word-break: keep-all;
 }
 h4 {
   color: #9aa0bf;
