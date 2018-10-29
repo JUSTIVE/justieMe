@@ -16,6 +16,9 @@
         <template v-if="currenttab=='1'">
           <publications/>
         </template> 
+        <template v-if="currenttab=='2'">
+          <experiences/>
+        </template> 
       </div>
     </div>
   </div>
@@ -24,6 +27,7 @@
 <script>
 import projects from "./rightarea/projects.vue";
 import publications from "./rightarea/publications.vue";
+import experiences from "./rightarea/experiences.vue";
 export default {
   name: "rightarea",
   data: function() {
@@ -71,7 +75,8 @@ export default {
   },
   components: {
     projects,
-    publications
+    publications,
+    experiences
   }
 };
 </script>
