@@ -51,16 +51,16 @@ export default {
 h1 {
   display: inline-block;
   color: white;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 48px;
   -webkit-margin-before: 0px;
   margin-block-end: 0px;
   word-break: keep-all;
 }
 h4 {
   color: #9aa0bf;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   font-weight: 300;
   font-size: 12px;
   -webkit-margin-before: 0px;
@@ -76,6 +76,7 @@ li {
 #hero-title {
   display: inline-flex;
   align-items: center;
+  margin-bottom: 32px;
 }
 #hero {
   display: inline-flex;
@@ -105,7 +106,7 @@ li {
   justify-content: center;
   align-content: center;
   width: 25%;
-  height: 60%;
+  height: 50%;
   border-radius: 16px;
   z-index: 4;
 }

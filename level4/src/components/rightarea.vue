@@ -93,7 +93,7 @@ span {
   border: 0px;
   background: transparent;
   color: #f8f1f1;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -104,8 +104,9 @@ span:focus {
   cursor: pointer;
 }
 .tab-icon {
-  // display: inline-flex;
-  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  // width: 100%;
   height: 25px;
   padding: 4px;
   border-radius: 4px;
@@ -119,11 +120,11 @@ span:focus {
 }
 .rightarea {
   position: relative;
-  width: 75%;
-  height: 70%;
+  width: 65%;
+  height: 90%;
   background: #151827;
-  border-radius: 16px;
   box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
+  border-radius: 32px;
 }
 .rightarea-inner {
   width: 100%;
@@ -136,18 +137,20 @@ span:focus {
 }
 #rightarea-content {
   padding: 32px 32px 32px 0px;
+  padding-left:16px;
   overflow: hidden;
   width: 90%;
   height: calc(100%-64px);
 }
 .tab-item {
-  display: inline-flex;
+  display: inline-block;
   flex-direction: row;
   vertical-align: baseline;
+  margin: 0px 8px 0px 8px;
 }
 #tab {
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 32px;
   background: hsl(228, 33%, 9%);
   display: inline-flex;
   flex-direction: column;
@@ -155,9 +158,9 @@ span:focus {
   width: auto;
   align-items: baseline;
   justify-content: space-evenly;
-  overflow: hidden;
+  // overflow: hidden;
   overflow-y: scroll;
-  border-radius: 16px;
+  border-radius: 32px 0px 0px 32px;
 }
 @media (max-width: 768px) {
   #tab {
@@ -168,7 +171,6 @@ span:focus {
     overflow-x: scroll;
     overflow-y: hidden;
     justify-content: flex-start;
-    border-radius: 0px;
   }
   .tab-icon {
     margin-right: 16px;

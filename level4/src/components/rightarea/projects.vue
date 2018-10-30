@@ -60,7 +60,7 @@ li,
 u {
   text-decoration-style: none;
   text-decoration: none !important;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   color: white;
 }
 ::-webkit-scrollbar {
@@ -69,7 +69,7 @@ u {
 h1 {
   display: inline-block;
   color: #769ecd;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   overflow: hidden;
   word-break: break-all;
   word-wrap: break-word;
@@ -90,7 +90,7 @@ p {
   word-wrap: break-word;
 }
 #project-list {
-  -webkit-padding-start: 10px;
+  // -webkit-padding-start: 10px;
   height: 100%;
   overflow: hidden;
   overflow-y: scroll;
@@ -131,7 +131,7 @@ p {
   padding-right: 8px;
 }
 .project-description {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   h1 {
     font-size: 20px;
   }

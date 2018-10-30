@@ -298,7 +298,7 @@ export default {
 h1,
 h6,
 h5 {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source code Pro", monospace;
   color: #9aa0bf;
 }
 h1 {
@@ -329,6 +329,9 @@ li:hover {
 #dummy {
   position: absolute;
   left: -9999px;
+}
+.publication-list {
+  padding: 0px;
 }
 .publication-sublist {
   padding: 16px;

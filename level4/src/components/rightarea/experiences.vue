@@ -1,14 +1,13 @@
 <template>
   <div id ="experience">
-    <h1>experience
-    </h1>
+    <h1>experience</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name:'experiences'
-}
+  name: "experiences"
+};
 </script>
 
 <style>

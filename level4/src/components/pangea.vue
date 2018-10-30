@@ -27,17 +27,18 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .pangea {
-  left: -32px;
+  
   // background: transparent;
   background: #292d3e;
-  margin-top: 5vh;
-  margin-left: 5vw;
-  width: 90vw;
-  height: 90vh;
-  border-radius: 16px;
+  // margin-top: 5vh;
+  // margin-left: 5vw;
+  // width: 90vw;
+  // height: 90vh;
+  // border-radius: 16px;
+  width:100vw;
+  height:100vh;
   box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  padding-right: 32px;
 }
 #decorator {
   height: 100%;
@@ -68,9 +69,11 @@ export default {
   position: relative;
   // top: -90vh;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   align-items: center;
+  margin-left: 10%;
+  margin-top: 5%;
 }
 @media (max-width: 768px) {
   .pangea {
