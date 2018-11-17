@@ -53,6 +53,20 @@ function Myproject(link,name,description,language){
 
 var ProjectData = [
     new Myproject(
+        link="https://github.com/JUSTIVE/GPU-Cloth-Simulation",
+        name="GPU Cloth Simulation",
+        description="GPU Mass-Spring Simulation Cloth in Unity",
+        language=[
+            "csharp","shaderlab"
+        ]),
+    new Myproject(
+        link="https://github.com/JUSTIVE/ElectronTube-Music",
+        name="Electotube Music",
+        description="Electron version of YouTubeMusic",
+        langauge=[
+            "javascript","html"
+        ]),
+    new Myproject(
         link="https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",
         name="GLRERENDERER_LEGACYCHECKER",
         description="Obj model viewers",

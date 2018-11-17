@@ -810,6 +810,14 @@ button:focus {
   background: #00b4ab;
 }
 
+.javascript-lang {
+  background: #f1e05a;
+}
+
+.html-lang {
+  background: #e34c26;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
