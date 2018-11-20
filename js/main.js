@@ -232,20 +232,10 @@ var PaperData=[
                 ISO690:"KIM, Minsang, et al. Parallel cloth simulation with effective collision detection for interactive AR application. Multimedia Tools and Applications, 2018, 1-18."
             }
         ), 
-        new MyPaper(
-            doi="",
-            name="REAL-TIME COLLISION RESPONSE BETWEEN CLOTH AND SPHERE OBJECT IN UNITY",
-            author="Min Sang Kim, Wook Song, Yoo-Joo Choi, Min Hong",
-            journal="Journal of Theoretical and Applied Information Technology(Under Review)",
-            quote={
-                AMA:"",
-                MLA:"",
-                ISO690:""
-            }
-        ),
-        new MyPaper(
+        
+        new MyPaper(//TIIS
             doi="http://doi.org/10.3837/tiis.2018.08.029",
-            name="Optimization of Material Properties for Coherent Behavior across Multi-resolution Cloth Models",
+            name="Coherent Behavior Method with Various Resolutions in Cloth Simulation",
             author="Nak-Jun Sung, Shane Transue, Min Sang Kim, Yoo-Joo Choi, Min-Hyung Choi and Min Hong",
             journal="KSII TRANSACTIONS ON INTERNET AND INFORMATION SYSTEMS(Accepted)",
             quote={
@@ -255,7 +245,18 @@ var PaperData=[
             }
         )
     ], 
-    [//Domestic Journal 
+    [//Domestic Journal
+        new MyPaper(
+            doi="",
+            name="REAL-TIME COLLISION RESPONSE BETWEEN CLOTH AND SPHERE OBJECT IN UNITY",
+            author="Min Sang Kim, Wook Song, Yoo-Joo Choi, Min Hong",
+            journal="Journal of Internet Computing and Services(Under Review)",
+            quote={
+                AMA:"",
+                MLA:"",
+                ISO690:""
+            }
+        ),
         new MyPaper(//KTSDE
             doi="https://doi.org/10.3745/KTSDE.2017.6.10.479", 
             name="OpenGL과 Unity간의 GPU를 이용한 Particle Simulation의 성능 비교",
