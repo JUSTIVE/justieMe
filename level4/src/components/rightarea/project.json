@@ -1,5 +1,11 @@
 [
   {
+    "link":"https://github.com/JUSTIVE/Position-Based-Dynamics",
+    "name":"Position Based Dynamics",
+    "description":"Position Based Dynamics in Unity, but with GPGPU approach",
+    "language":["csharp"]
+  },
+  {
     "link":"https://github.com/JUSTIVE/GPU-Cloth-Simulation",
     "name":"GPU-Cloth-Simulation",
     "description":"GPU Mass-Spring Simulation in Unity",

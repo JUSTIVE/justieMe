@@ -1,7 +1,7 @@
 <template>
     <div class="projects">
       <ul id="project-list">
-        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD('https://raw.githubusercontent.com/JUSTIVE/'+project.name+'/master/README.md')">
+        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD('https://raw.githubusercontent.com/JUSTIVE/'+project.name)">
             <h6 class="project-name">{{project.name}}</h6>
             <h6 class="project-description">{{project.description}}</h6>
             <div>
@@ -37,15 +37,26 @@ export default {
       this.projectDescription = this.projects[id].description;
     },
     getMD: function(link) {
-      axios.get(link).then(
-        response => {
-          this.projectDescription = response.data;
-        },
-        error => {
-          this.projectDescription = "seem to be private repo";
-          this.status = error;
-        }
-      );
+      axios
+        .get(link + "/master/README.md")
+        .then(
+          response => {
+            this.projectDescription = response.data;
+          },
+          error => {
+            this.projectDescription = "seem to be private repo";
+            this.status = error;
+          }
+        )
+        .then(function() {
+          var imgs = document
+            .getElementsByClassName("project-content")[0]
+            .getElementsByTagName("img");
+          for (var i = 0; i < imgs.length; i++) {
+            console.log(imgs[i].src);
+            imgs[i].src = link + imgs[i].src;
+          }
+        });
     }
   },
   components: {
