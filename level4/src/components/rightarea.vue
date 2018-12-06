@@ -33,7 +33,7 @@ export default {
   name: "rightarea",
   data: function() {
     return {
-      currentitem: "",
+      currentitem: "projects",
       currenttab: 0,
       tabs: [
         {
@@ -118,7 +118,7 @@ span:focus {
   border-radius: 4px;
 }
 .tab-icon:hover {
-  background: hsl(230, 30%, 16%);
+  background: hsla(230, 30%, 16%, 0.2);
 }
 .underbar {
   width: 100%;
@@ -129,7 +129,7 @@ span:focus {
   width: 80%;
   height: 90%;
   background: #364069;
-  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.3);
   border-radius: 32px;
 }
 .rightarea-inner {
@@ -187,7 +187,7 @@ span:focus {
     height: 24px;
   }
   .tab-icon {
-    margin-right: 16px;
+    margin-right: 4px;
   }
   .rightarea {
     width: 100%;

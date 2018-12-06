@@ -1,5 +1,5 @@
 <template>
-  <div class="pangea">
+  <div class="pangea" v-on:scroll="onscroll">
     <div id="pangea-container">
         <leftarea/>
         <rightarea/>
@@ -19,6 +19,12 @@ export default {
     leftarea,
     rightarea,
     contacts
+  },
+  methods: {
+    onscroll: function() {
+      var pangea = document.getElementsByClassName("pangea")[0];
+      pangea.style.height = "100vh";
+    }
   }
 };
 </script>

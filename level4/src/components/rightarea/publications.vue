@@ -362,6 +362,8 @@ li:hover {
   margin-block-end: 4px;
   margin-block-end: 4px;
   display: inline-block;
+  padding: 2px;
+  padding-right: 8px;
 }
 .quotes:first-child {
   padding-left: 0px;
