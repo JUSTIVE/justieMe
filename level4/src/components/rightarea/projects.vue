@@ -11,7 +11,7 @@
       </ul>
       <div class="project-content">
           <!-- <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1> -->
-          <VueMarkdown class="project-description" v-bind:source="projectDescription"/>
+          <VueMarkdown class="project-description-content" v-bind:source="projectDescription"/>
       </div>
     </div>            
 </template>
@@ -78,6 +78,7 @@ u {
   width: 0px;
 }
 h1 {
+  margin-block-start: 0px;
   display: inline-block;
   color: #769ecd;
   font-family: "Source code Pro", monospace;
@@ -141,7 +142,8 @@ p {
   overflow-y: scroll;
   padding-right: 8px;
 }
-.project-description {
+.project-description-content {
+  color: #9aa0bf;
   font-family: "Source code Pro", monospace;
   h1 {
     font-size: 20px;
@@ -159,6 +161,42 @@ p {
   }
   p {
     font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .projects {
+    width: calc(100%-32px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  #project-list {
+    width: 30%;
+  }
+  .project-content {
+    width: 60%;
+  }
+  .project-description {
+    visibility: hidden;
+    height: 0px;
+  }
+  .project-list-item {
+    margin-bottom: 4px;
+  }
+  .project-description-content {
+    word-wrap: break-word;
+    * {
+      word-break: break-all;
+    }
+    td:first-child {
+      color: #fcd970;
+      width: 30%;
+    }
+    td {
+      font-size: 12px;
+    }
+    li {
+      font-size: 12px;
+    }
   }
 }
 </style>

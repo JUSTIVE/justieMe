@@ -2,7 +2,7 @@
   <div class="rightarea">
     <div class="rightarea-inner">
       <div id="tab">
-        <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="currenttab=index;">
+        <div class=tab-item v-for="(tab, index) in tabs" :key="index" v-on:click="currenttab=index;currentitem=tab.title;">
           <div class="tab-icon" >
             <span>{{tab.title}}</span>
             <div class="underbar" v-bind:style="tab.style"/>
@@ -10,6 +10,7 @@
         </div>
       </div>
       <div id="rightarea-content">
+        <h1>{{currentitem.toUpperCase()}}</h1>
         <template v-if="currenttab=='0'">
           <projects/>
         </template> 
@@ -32,6 +33,7 @@ export default {
   name: "rightarea",
   data: function() {
     return {
+      currentitem: "",
       currenttab: 0,
       tabs: [
         {
@@ -82,6 +84,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h1 {
+  color: white;
+  padding-left: 8px;
+}
 ul {
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
@@ -120,10 +126,10 @@ span:focus {
 }
 .rightarea {
   position: relative;
-  width: 65%;
+  width: 80%;
   height: 90%;
-  background: #151827;
-  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.35);
+  background: #364069;
+  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.2);
   border-radius: 32px;
 }
 .rightarea-inner {
@@ -136,8 +142,10 @@ span:focus {
   overflow: hidden;
 }
 #rightarea-content {
+  display: inline-flex;
+  flex-direction: column;
   padding: 32px 32px 32px 0px;
-  padding-left:16px;
+  padding-left: 16px;
   overflow: hidden;
   width: 90%;
   height: calc(100%-64px);
@@ -151,7 +159,7 @@ span:focus {
 #tab {
   padding-left: 16px;
   padding-right: 32px;
-  background: hsl(228, 33%, 9%);
+  // background: hsl(228, 33%, 9%);
   display: inline-flex;
   flex-direction: column;
   height: 100%;
@@ -163,14 +171,20 @@ span:focus {
   border-radius: 32px 0px 0px 32px;
 }
 @media (max-width: 768px) {
+  h1 {
+    padding-left: 24px;
+  }
   #tab {
     flex-direction: row;
-    height: auto;
+    height: 48px;
     padding-top: 8px;
     padding-bottom: 8px;
     overflow-x: scroll;
     overflow-y: hidden;
     justify-content: flex-start;
+  }
+  .tab-item {
+    height: 24px;
   }
   .tab-icon {
     margin-right: 16px;
@@ -185,6 +199,9 @@ span:focus {
     flex-direction: column;
   }
   #rightarea-content {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 8px;
     width: 100%;
     height: 100%;
   }

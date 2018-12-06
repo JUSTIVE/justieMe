@@ -14,12 +14,11 @@
         <h4>{{interests}}</h4>
       </ul>
     </div>
-    <contacts/>
+    
   </div>
 </template>
 
 <script>
-import contacts from "./leftarea/contacts.vue";
 export default {
   name: "leftarea",
   data: function() {
@@ -40,26 +39,22 @@ export default {
       interests:
         "His research interests are in computer graphics, physically-based modeling and simulation, android applications, and deep learning"
     };
-  },
-  components: {
-    contacts
   }
 };
 </script>
-
 <style scoped lang="scss">
 h1 {
   display: inline-block;
-  color: white;
+  color: #364069;
   font-family: "Source code Pro", monospace;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 24px;
   -webkit-margin-before: 0px;
   margin-block-end: 0px;
   word-break: keep-all;
 }
 h4 {
-  color: #9aa0bf;
+  color: hsl(228, 12%, 50%);
   font-family: "Source code Pro", monospace;
   font-weight: 300;
   font-size: 12px;
@@ -77,6 +72,7 @@ li {
   display: inline-flex;
   align-items: center;
   margin-bottom: 32px;
+  // flex-direction: column;
 }
 #hero {
   display: inline-flex;
@@ -84,10 +80,9 @@ li {
 }
 #hero-image {
   display: inline-block;
-  width: 64px;
-  height: 64px;
+  width: 80px;
   border-radius: 16px;
-  margin-right: 32px;
+  margin-right: 12px;
 }
 #hero-desc {
   overflow-y: scroll;
@@ -96,43 +91,48 @@ li {
   color: #c78de5;
 }
 .spec {
-  color: #b9e879;
+  color: hsl(85, 80%, 45%);
 }
 .leftarea {
-  backdrop-filter: blur(calc(12px));
+  // backdrop-filter: blur(calc(12px));
   padding: 48px;
   display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  // justify-content: center;
+  align-content: flex-start;
   width: 25%;
-  height: 50%;
+  height: 90%;
   border-radius: 16px;
   z-index: 4;
 }
-
 @media (max-width: 768px) {
   h1 {
-    margin-block-end: 8px;
+    margin-bottom: 0px;
+    font-size: 32px;
   }
   h4 {
     font-size: 12px;
   }
   #hero {
-    margin: 5%;
-    margin-top: 32px;
+    margin-left: 24px;
+    margin-right: 24px;
     margin-bottom: 8px;
   }
   #hero-title {
     display: inline-flex;
     height: 64px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
   #hero-desc {
     display: inline-block;
     overflow-y: scroll;
     height: auto;
     margin-bottom: 0px;
+  }
+  #hero-image {
+    width: 64px;
+    border-radius: 50%;
+    margin-right: 8px;
   }
   .leftarea {
     justify-content: center;

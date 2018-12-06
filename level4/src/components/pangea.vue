@@ -3,6 +3,7 @@
     <div id="pangea-container">
         <leftarea/>
         <rightarea/>
+        <contacts/>
     </div>
   </div>
   
@@ -11,12 +12,13 @@
 <script>
 import leftarea from "./leftarea.vue";
 import rightarea from "./rightarea.vue";
-
+import contacts from "./leftarea/contacts.vue";
 export default {
   name: "pangea",
   components: {
     leftarea,
-    rightarea
+    rightarea,
+    contacts
   }
 };
 </script>
@@ -27,17 +29,17 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .pangea {
-  
   // background: transparent;
-  background: #292d3e;
-  // margin-top: 5vh;
-  // margin-left: 5vw;
+  // background: #292d3e;
+  background: white;
+  margin-top: 5vh;
+  margin-left: 5vw;
   // width: 90vw;
   // height: 90vh;
-  // border-radius: 16px;
-  width:100vw;
-  height:100vh;
-  box-shadow: 0px 16px 64px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  width: 90vw;
+  height: 90vh;
+  // box-shadow: 0px 16px 64px 8px rgba(71, 60, 138, 0.35);
   overflow: hidden;
 }
 #decorator {
@@ -69,10 +71,10 @@ export default {
   position: relative;
   // top: -90vh;
   display: flex;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   align-items: center;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 5%;
 }
 @media (max-width: 768px) {
@@ -85,6 +87,10 @@ export default {
   }
   #pangea-container {
     flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0%;
+    height: 100%;
   }
 }
 </style>

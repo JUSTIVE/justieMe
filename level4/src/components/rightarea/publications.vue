@@ -2,7 +2,7 @@
 <div class="publication">
   <textarea id="dummy"></textarea>
   <ul class="publication-list" v-for="(paperCategory,index) in papers" :key="index"><!--should be called 4 times-->
-    <h1 class="publication-category">{{paperCategory.name}}</h1>
+    <h2 class="publication-category">{{paperCategory.name}}</h2>
     <li class="publication-sublist" v-for="(paperInstance,subindex) in paperCategory.data" :key="subindex" v-on:click="currentPublications=(index, subindex)">
       <h5 class="publication-name">{{paperInstance.name}}</h5>
       <h6 class="publication-author">{{paperInstance.author}}</h6>
@@ -296,6 +296,7 @@ export default {
 
 <style lang="scss" scoped>
 h1,
+h2,
 h6,
 h5 {
   font-family: "Source code Pro", monospace;
@@ -306,6 +307,9 @@ h1 {
 }
 h1:first-child {
   margin-block-start: 4px;
+}
+h2 {
+  padding-left: 16px;
 }
 h1,
 h5 {
@@ -361,5 +365,15 @@ li:hover {
 }
 .quotes:first-child {
   padding-left: 0px;
+}
+@media (max-width: 768px) {
+  // h2 {
+  //   padding-left: 12px;
+  // }
+  .publication-list {
+    width: calc(100%-16px);
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 </style>

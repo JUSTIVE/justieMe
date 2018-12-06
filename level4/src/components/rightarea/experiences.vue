@@ -1,6 +1,6 @@
 <template>
   <div id ="experience">
-    <h1>experience</h1>
+    
   </div>
 </template>
 
@@ -11,5 +11,4 @@ export default {
 </script>
 
 <style>
-
 </style>

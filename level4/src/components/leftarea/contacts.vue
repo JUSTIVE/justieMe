@@ -28,21 +28,25 @@ export default {
   fill: hsl(0, 0%, 80%);
 }
 .contacts {
+  position: absolute;
+  top: 95%;
   height: 64px;
-  width: 100%;
-  background-color: hsl(229, 20%, 10%);
-  z-index: 2;
+  width: 300px;
+  background: #364069;
+  z-index: 0;
   margin-top: auto;
   border-radius: 8px;
   display: inline-flex;
   justify-content: space-evenly;
+  box-shadow: 0px 5px 15px hsla(228, 32%, 15%, 0.3);
   align-items: center;
 }
 @media (max-width: 768px) {
   .contacts {
-    width: 90%;
+    width: 60%;
     height: 48px;
-    margin-left: 5%;
+    background-color: hsl(228, 32%, 20%);
+    // margin-left: 5%;
   }
 }
 </style>
