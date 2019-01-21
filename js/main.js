@@ -20,7 +20,7 @@ var leftpaneAutoOpacity = function(){
         leftpane.style.opacity = Math.max(bodyrect.top/window.innerHeight,0);    
     }
     else{
-        leftpane.style.opacity = 1;
+        leftpane.style.opacity = 1; 
     }
 };
 
