@@ -1,19 +1,24 @@
 <template>
-    <div class="projects">
-      <ul id="project-list">
-        <li class="project-list-item" v-for="(project,index) in projects" :key="index" v-on:click ="currentProject=index;clickProject(index);getMD('https://raw.githubusercontent.com/JUSTIVE/'+project.name)">
-            <h6 class="project-name">{{project.name}}</h6>
-            <h6 class="project-description">{{project.description}}</h6>
-            <div>
-              <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
-            </div>
-        </li>
-      </ul>
-      <div class="project-content">
-          <!-- <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1> -->
-          <VueMarkdown class="project-description-content" v-bind:source="projectDescription"/>
-      </div>
-    </div>            
+  <div class="projects">
+    <ul id="project-list">
+      <li
+        class="project-list-item"
+        v-for="(project,index) in projects"
+        :key="index"
+        v-on:click="currentProject=index;clickProject(index);getMD('https://raw.githubusercontent.com/JUSTIVE/'+project.name)"
+      >
+        <h6 class="project-name">{{project.name}}</h6>
+        <h6 class="project-description">{{project.description}}</h6>
+        <div>
+          <h6 class="project-lang" v-for="lang in project.language" :key="lang.id">{{lang}}</h6>
+        </div>
+      </li>
+    </ul>
+    <div class="project-content">
+      <!-- <h1 style="webkit-margin-before:0px;" >{{projectTitle}}</h1> -->
+      <VueMarkdown class="project-description-content" v-bind:source="projectDescription"/>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -53,7 +58,6 @@ export default {
             .getElementsByClassName("project-content")[0]
             .getElementsByTagName("img");
           for (var i = 0; i < imgs.length; i++) {
-            console.log(imgs[i].src);
             imgs[i].src = link + imgs[i].src;
           }
         });

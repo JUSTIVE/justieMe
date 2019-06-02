@@ -16,25 +16,18 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-@import url("https://fonts.googleapis.com/css?family=Jura");
-a {
-  text-decoration: none !important;
-  text-decoration-style: none !important;
-}
-a:hover {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+* {
+  font-family: "Oswald", sans-serif;
 }
 body {
+  width: 100%;
+  height: 100vh;
   margin: 0px;
-  background: #364069;
 }
 #app {
-  // font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0px;
+  background: #efefef;
+  width: 100%;
+  height: 100%;
 }
 </style>
