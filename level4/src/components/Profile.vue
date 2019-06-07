@@ -7,13 +7,18 @@
         <div class="specDesc">{{spec.spec}}</div>
       </div>
     </div>
+    <contacts/>
   </div>
 </template>
 
 <script>
 import Profile from "./profile.json";
+import contacts from "./leftarea/contacts.vue";
 export default {
   name: "Profile",
+  components:{
+    contacts
+  },
   data: () => {
     return {
       labels: String

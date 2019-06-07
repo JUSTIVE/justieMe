@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "npm": "^6.9.0",
     "vue": "^2.5.17",
     "vue-markdown": "^2.2.4"
   },

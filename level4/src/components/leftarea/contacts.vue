@@ -28,13 +28,12 @@ export default {
   fill: hsl(0, 0%, 80%);
 }
 .contacts {
-  position: absolute;
-  top: 95%;
+  
+  bottom:16px;
   height: 64px;
   width: 300px;
-  background: #364069;
   z-index: 0;
-  margin-top: auto;
+  margin-bottom: 16px;
   border-radius: 8px;
   display: inline-flex;
   justify-content: space-evenly;
