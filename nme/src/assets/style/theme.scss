@@ -1,0 +1,13 @@
+:root {
+  --accent: #fa7268;
+}
+[data-theme^='dark'] {
+  --text-color: white;
+  --background: #121212;
+}
+[data_theme^='light'] {
+  --text-color: #121212;
+  --background: white;
+}
+@import './theme/dark.scss';
+@import './theme/light.scss';
