@@ -70,6 +70,7 @@ export default {}
   height: 36px !important;
   background: var(--accent);
   border-radius: 5px;
+  z-index: 1;
   &:hover {
     .focuser {
       width: 36px;
@@ -82,7 +83,7 @@ export default {}
     margin: 6px;
   }
   .contact-icons {
-    fill: var(--text-color);
+    fill: white;
   }
 }
 </style>
