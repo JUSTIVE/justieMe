@@ -6,16 +6,19 @@
   <div class="root" :data-theme="theme">
     <Arctail />
     <router-view />
-    <Dock />
+    <MainPane :paneopen="activatePane" />
+    <Dock @activatePane="openPane" :activated="activatePane" />
   </div>
 </template>
 <script>
 import Arctail from './components/Arctail.vue'
 import Dock from './components/Dock.vue'
+import MainPane from './components/MainPane.vue'
 export default {
   components: {
     Arctail,
-    Dock
+    Dock,
+    MainPane
   },
   created() {
     this.updateTheme()
@@ -29,12 +32,16 @@ export default {
   data() {
     return {
       themeValue: false,
-      theme: 'dark'
+      theme: 'light',
+      activatePane: false
     }
   },
   methods: {
     updateTheme() {
       document.documentElement.setAttribute('data-theme', this.theme)
+    },
+    openPane() {
+      this.activatePane = !this.activatePane
     }
   }
 }
