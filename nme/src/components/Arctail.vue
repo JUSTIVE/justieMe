@@ -1,6 +1,6 @@
 <template>
   <div class="Arctail_container">
-    <canvas ref="canvas" class="Arctail" id="arctail" width="4000" height="4000"> </canvas>
+    <canvas ref="canvas" class="Arctail" id="arctail" width="3000" height="3000"> </canvas>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
       canvasContext.stroke()
 
       canvasContext.beginPath()
-      canvasContext.strokeStyle = '#fa726888'
+      canvasContext.strokeStyle = '#618BFF88'
       canvasContext.lineCap = 'round'
       canvasContext.arc(
         1000,
@@ -76,8 +76,8 @@ export default {
 <style>
 .Arctail_container {
   position: absolute;
-  width: 4000px;
-  height: 4000px;
+  width: 3000px;
+  height: 3000px;
   left: 0px;
   overflow: hidden;
 }
