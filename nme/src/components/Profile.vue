@@ -14,9 +14,9 @@
     </div>
     <div class="career">
       <strong>2014~2017</strong><br />
-      B.S in Dept of Computer Software Engineering in Soonchunhyang University.<br /><br />
+      B.S in Dept of Computer Software Engineering<br />in Soonchunhyang University.<br /><br />
       <strong>2017~2019</strong><br />
-      M.S Course in Dept of Computer Science in Soonchunhyang University.<br /><br />
+      M.S Course in Dept of Computer Science<br />in Soonchunhyang University.<br /><br />
       <strong>2019~Current</strong><br />
       Software Engineer at CODEMIND<br /><br />
       <br />
@@ -32,8 +32,6 @@ export default {
   name: 'Profile'
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 p {
   margin: 0px;
@@ -61,7 +59,7 @@ p {
   text-align: start;
   font-size: 48px;
   line-height: 0.8;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 20px;
   .eng {
     color: white;
