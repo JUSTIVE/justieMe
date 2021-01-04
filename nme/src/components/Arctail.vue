@@ -16,13 +16,14 @@ export default {
     }
   },
   created() {
-    this.stars = []
-    this.speed = []
-    this.position = []
-    for (var i = 0; i < 500; i++) {
-      this.stars.push(Math.random() * 1)
-      this.speed.push(Math.random() * 0.005)
-      this.position.push(0)
+    const size = 500
+    this.stars = Array(size)
+    this.speed = Array(size)
+    this.position = Array(size)
+    for (var i = 0; i < size; i++) {
+      this.stars[i] = Math.random() * Math.PI
+      this.speed[i] = Math.random() * 0.008
+      this.position[i] = 0
     }
   },
   mounted() {
@@ -30,44 +31,54 @@ export default {
     this.ctx = self.$refs.canvas.getContext('2d')
     setInterval(() => {
       this.doRender()
-    }, 7)
+    }, 1)
   },
   methods: {
-    render(canvasContext, index) {
+    render(index) {
       const speed = 1
-      canvasContext.beginPath()
-      canvasContext.lineWidth = this.speed[index] * 1000
-      canvasContext.strokeStyle = '#88888822'
-      canvasContext.lineCap = 'round'
-      canvasContext.arc(
+      this.ctx.beginPath()
+      this.ctx.lineWidth = this.speed[index] * 500
+      this.ctx.strokeStyle = '#88888811'
+      this.ctx.lineCap = 'round'
+      this.ctx.arc(
         1000,
         1000,
         index * 4.5,
         this.position[index] + Math.PI * speed,
         this.stars[index] + this.position[index] + Math.PI * speed
       )
-      canvasContext.stroke()
+      this.ctx.stroke()
 
-      canvasContext.beginPath()
-      canvasContext.strokeStyle = '#618BFF88'
-      canvasContext.lineCap = 'round'
-      canvasContext.arc(
+      this.ctx.beginPath()
+      this.ctx.strokeStyle = '#618BFF88'
+      this.ctx.lineCap = 'round'
+      this.ctx.arc(
         1000,
         1000,
         index * 4.5,
         this.position[index] + Math.PI * speed + this.stars[index],
         this.stars[index] + 0.02 + this.position[index] + Math.PI * speed
       )
-      canvasContext.stroke()
+      this.ctx.stroke()
       this.position[index] += this.speed[index]
-      // this.position[index] = this.position[index]
+    },
+    constellation() {
+      this.ctx.beginPath()
+      this.ctx.moveTo(1000, 1000)
+      for (var i = 0; i < 500; i++) {
+        this.ctx.lineTo(Math.cos(this.position[i]) * i * 4 + 1000, Math.sin(this.position[i]) * i * 4 + 1000)
+        // console.log(Math.sin(i - 1000) * i)
+      }
+      this.ctx.lineWidth = 1
+      this.ctx.strokeStyle = '#ffffff05'
+      this.ctx.stroke()
     },
     doRender() {
-      this.ctx.clearRect(0, 0, this.ctx.canvas.clientWidth * 4, this.ctx.canvas.clientHeight * 4)
-
+      this.ctx.clearRect(0, 0, 3000, 3000)
       for (var i = 0; i < 500; i++) {
-        this.render(this.ctx, i)
+        this.render(i)
       }
+      this.constellation()
     }
   }
 }
@@ -84,8 +95,5 @@ export default {
 .Arctail {
   position: absolute;
   left: 0px;
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* opacity: 0.1; */
 }
 </style>
