@@ -20,7 +20,7 @@ export default {
   left: 450px;
   border-radius: 4px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: 1;
+  opacity: 0.99;
   transform-origin: bottom left;
   &.hidden {
     opacity: 0;

@@ -64,7 +64,6 @@ p {
   .eng {
     color: white;
     font-size: 0.5em;
-    // transform: translateX(16px);
     margin-left: 5px;
   }
   .highlight {

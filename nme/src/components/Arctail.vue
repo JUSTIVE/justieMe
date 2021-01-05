@@ -21,7 +21,7 @@ export default {
     this.speed = Array(size)
     this.position = Array(size)
     for (var i = 0; i < size; i++) {
-      this.stars[i] = Math.random() * Math.PI
+      this.stars[i] = Math.random() * Math.PI * 1.5
       this.speed[i] = Math.random() * 0.008
       this.position[i] = 0
     }
@@ -67,7 +67,6 @@ export default {
       this.ctx.moveTo(1000, 1000)
       for (var i = 0; i < 500; i++) {
         this.ctx.lineTo(Math.cos(this.position[i]) * i * 4 + 1000, Math.sin(this.position[i]) * i * 4 + 1000)
-        // console.log(Math.sin(i - 1000) * i)
       }
       this.ctx.lineWidth = 1
       this.ctx.strokeStyle = '#ffffff05'
@@ -78,7 +77,7 @@ export default {
       for (var i = 0; i < 500; i++) {
         this.render(i)
       }
-      this.constellation()
+      // this.constellation()
     }
   }
 }
