@@ -1,7 +1,7 @@
 <template>
   <div class="link">
-    <div class="focuser"></div>
-    <a href="https://github.com/JUSTIVE" id="github">
+    <div class="focuser" :class="hoverItem"></div>
+    <a href="https://github.com/JUSTIVE" id="github" @mouseover="hover('github')">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           class="contact-icons"
@@ -9,7 +9,7 @@
         ></path>
       </svg>
     </a>
-    <a href="https://www.facebook.com/ben.kim.37" id="facebook">
+    <a href="https://www.facebook.com/ben.kim.37" id="facebook" @mouseover="hover('facebook')">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           class="contact-icons"
@@ -17,7 +17,7 @@
         ></path>
       </svg>
     </a>
-    <a href="https://www.linkedin.com/in/minsang-kim-7b1512117/" id="linkedin">
+    <a href="https://www.linkedin.com/in/minsang-kim-7b1512117/" id="linkedin" @mouseover="hover('linkedin')">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           class="contact-icons"
@@ -25,7 +25,7 @@
         ></path>
       </svg>
     </a>
-    <a href="mailto:ben399399@gmail.com" id="mail">
+    <a href="mailto:ben399399@gmail.com" id="mail" @mouseover="hover('mail')">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           class="contact-icons"
@@ -33,11 +33,11 @@
         ></path>
       </svg>
     </a>
-    <a href="https://unsplash.com/@justive_" id="unsplash">
+    <a href="https://unsplash.com/@justive_" id="unsplash" @mouseover="hover('unsplash')">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           class="contact-icons"
-          style="transform:scale(0.66)"
+          style="transform:scale(0.65)"
           d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
         ></path>
       </svg>
@@ -46,7 +46,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      hoverItem: ''
+    }
+  },
+  methods: {
+    hover(value) {
+      this.hoverItem = value
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +69,23 @@ export default {}
   height: 0px;
   transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform-origin: bottom center;
+  transition-delay: 1s;
   border-radius: 7px;
+  &.github {
+    transform: translateX(0px);
+  }
+  &.facebook {
+    transform: translateX(36px);
+  }
+  &.linkedin {
+    transform: translateX(72px);
+  }
+  &.mail {
+    transform: translateX(108px);
+  }
+  &.unsplash {
+    transform: translateX(144px);
+  }
 }
 
 .link {
@@ -68,7 +95,6 @@ export default {}
   color: white;
   margin: 6px;
   height: 36px !important;
-  background: var(--accent);
   border-radius: 5px;
   z-index: 1;
   &:hover {
