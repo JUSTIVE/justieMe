@@ -51,13 +51,13 @@ export default {
   display: flex;
   justify-content: space-between;
   width: calc(100% - 900px);
-  left: 450px;
+  transform: translateX(450px);
   position: absolute;
   height: 48px;
   top: calc(100vh - 60px);
   border-radius: 4px;
   overflow: hidden;
-
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   .tint {
     position: absolute;
     background: var(--accent-dark);
@@ -67,10 +67,16 @@ export default {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   .dock {
-    left: 0px;
+    width: calc(100% - 300px);
+    transform: translateX(150px);
+  }
+}
+@media (max-width: 768px) {
+  .dock {
     width: calc(100% - 20px);
+    transform: translateX(10px);
   }
 }
 </style>

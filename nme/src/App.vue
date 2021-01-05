@@ -70,16 +70,16 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-@media (max-width: 1200px) {
-  .root {
-    width: 100%;
-    transform: translateX(10px);
-  }
-}
-@media (max-width: 768px) {
-  .root {
-    width: 100%;
-    transform: translateX(10px);
-  }
-}
+// @media (max-width: 1200px) {
+//   .root {
+//     width: 100%;
+//     transform: translateX(10px);
+//   }
+// }
+// @media (max-width: 768px) {
+//   .root {
+//     width: 100%;
+//     transform: translateX(10px);
+//   }
+// }
 </style>

@@ -37,7 +37,7 @@ p {
   margin: 0px;
 }
 .profile {
-  width: calc(100% - 900px);
+  width: 1200px;
   transform: translateX(450px) translateY(150px);
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0.9;
@@ -88,10 +88,10 @@ p {
     font-weight: bold;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   .profile {
-    width: 100%;
-    transform: translateX(10px) translateY(150px);
+    width: calc(100% - 300px);
+    transform: translateX(150px) translateY(150px);
   }
 }
 @media (max-width: 768px) {
