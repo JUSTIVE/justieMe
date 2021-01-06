@@ -19,14 +19,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Install Dependencies
-        run: cd nme && npm install
-
-      # Runs a set of commands using the runners shell
       - name: Build Page
         run: |
           cd nme
+          npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
 
@@ -35,6 +31,7 @@ jobs:
           git config --global user.name 'Minsang'
           git config --global user.email 'ben399399@gmail.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add *
           git commit -am "build page"
           git push
           
