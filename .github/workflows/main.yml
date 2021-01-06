@@ -22,7 +22,7 @@ jobs:
       - name: Build Page
         run: |
           cd nme
-          npm install
+          npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
 
