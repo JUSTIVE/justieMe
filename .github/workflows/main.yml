@@ -21,16 +21,20 @@ jobs:
 
       - name: Build Page
         run: |
+          git checkout deploy
+          git merge master
           cd nme
           npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
 
       - name: Commit report
-        uses: Automattic/action-commit-to-branch@master
-        with:
-          branch: "deploy"
-          commit_message: "Deploying"
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
+        run: |
+          git config --global user.name 'Minsang'
+          git config --global user.email 'ben399399@gmail.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add *
+          git commit -am "build page"
+          git push
+          
           
