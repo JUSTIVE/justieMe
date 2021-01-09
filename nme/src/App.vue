@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       themeValue: false,
-      theme: 'light',
+      theme: 'dark',
       activatePane: false
     }
   },
