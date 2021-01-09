@@ -21,8 +21,6 @@ jobs:
 
       - name: Build Page
         run: |
-          git checkout deploy
-          git merge master
           cd nme
           npm ci
           npm run build
