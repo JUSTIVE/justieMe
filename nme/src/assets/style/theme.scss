@@ -3,6 +3,38 @@
   --accent: #3369ff;
   --accent-dark: #0a4bff;
   --accent-darker: #000b29;
+
+  //langue
+  .c-lang {
+    background: #555555;
+  }
+  .cpp-lang {
+    background: #f34b7d;
+  }
+  .csharp-lang {
+    background: #178600;
+  }
+  .scala-lang {
+    background: #c22d40;
+  }
+  .java-lang {
+    background: #b07219;
+  }
+  .shaderlab-lang {
+    background: #cccccc;
+  }
+  .hlsl-lang {
+    background: #cccccc;
+  }
+  .dart-lang {
+    background: #00b4ab;
+  }
+  .javascript-lang {
+    background: #f1e05a;
+  }
+  .html-lang {
+    background: #e34c26;
+  }
 }
 [data-theme^='dark'] {
   --text-color: white;
