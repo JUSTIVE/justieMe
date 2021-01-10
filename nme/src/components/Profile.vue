@@ -41,6 +41,7 @@ p {
   transform: translateX(450px) translateY(150px);
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0.9;
+  user-select: none;
 }
 .slogan {
   color: var(--text-color);
@@ -51,6 +52,9 @@ p {
   transform: scale(1, 0.9);
   span {
     color: var(--accent);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--accent);
   }
   margin-bottom: 24px;
 }
@@ -60,7 +64,7 @@ p {
   font-size: 48px;
   line-height: 0.8;
   font-weight: bolder;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   .eng {
     color: white;
     font-size: 0.5em;

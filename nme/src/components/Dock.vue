@@ -1,19 +1,25 @@
 <template>
   <div class="dock">
     <div class="tint" />
-    <div class="activator" @click="activate" :class="{ activated: activated }">〈</div>
+    <div class="row">
+      <Introduction />
+      <div class="activator" @click="activate" :class="{ activated: activated }">
+        〈
+      </div>
+    </div>
     <Contact />
   </div>
 </template>
-
 <script>
 import Contact from './dock/contact.vue'
+import Introduction from './dock/Introduction.vue'
 export default {
   props: {
     activated: Boolean
   },
   components: {
-    Contact
+    Contact,
+    Introduction
   },
   methods: {
     activate() {
@@ -27,7 +33,8 @@ export default {
 .activator {
   width: 36px;
   height: 36px;
-  margin: 6px;
+  margin: 12px;
+  margin-left: 0px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -43,9 +50,12 @@ export default {
   }
   &:hover {
     background-color: var(--accent-light);
-    border-radius: 4px;
+    border-radius: var(--global-radius);
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
+}
+.row {
+  display: inline-flex;
 }
 .dock {
   display: flex;
@@ -53,14 +63,17 @@ export default {
   width: calc(100% - 900px);
   transform: translateX(450px);
   position: absolute;
-  height: 48px;
-  top: calc(100vh - 60px);
-  border-radius: 4px;
+  height: 60px;
+  top: calc(100vh - 72px);
+  border-radius: var(--global-radius);
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(8px);
   .tint {
     position: absolute;
-    background: var(--accent-dark);
+    background: #fff;
+    opacity: 0.2;
+
     width: 100%;
     height: 100%;
     // z-index: -1;

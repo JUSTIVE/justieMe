@@ -4,6 +4,9 @@
   --accent-dark: #0a4bff;
   --accent-darker: #000b29;
 
+  --global-radius: 7px;
+  --elevation1: 0 1px 2px hsla(var(--hue), 10%, 0%, 0.3), 0 2px 3px rgba(0, 0, 0, 0.88);
+
   //langue
   .c-lang {
     background: #555555;
