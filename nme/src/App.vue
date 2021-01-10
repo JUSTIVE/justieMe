@@ -69,17 +69,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  border-radius: var(--global-radius);
 }
-// @media (max-width: 1200px) {
-//   .root {
-//     width: 100%;
-//     transform: translateX(10px);
-//   }
-// }
-// @media (max-width: 768px) {
-//   .root {
-//     width: 100%;
-//     transform: translateX(10px);
-//   }
-// }
 </style>

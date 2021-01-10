@@ -12,7 +12,9 @@ export default {
       stars: undefined,
       speed: undefined,
       position: undefined,
-      ctx: undefined
+      color: undefined,
+      ctx: undefined,
+      dynamicPalette: ['#FF4A4A', '#FFD14A', '#FFFFFA', '#1C1C5C', '#05050F']
     }
   },
   created() {
@@ -20,10 +22,12 @@ export default {
     this.stars = Array(size)
     this.speed = Array(size)
     this.position = Array(size)
+    this.color = Array(size)
     for (var i = 0; i < size; i++) {
       this.stars[i] = Math.random() * Math.PI * 1.5
       this.speed[i] = Math.random() * 0.008
       this.position[i] = 0
+      this.color[i] = Math.floor(Math.random() * 4)
     }
   },
   mounted() {
@@ -50,7 +54,7 @@ export default {
       this.ctx.stroke()
 
       this.ctx.beginPath()
-      this.ctx.strokeStyle = '#618BFF88'
+      this.ctx.strokeStyle = this.dynamicPalette[this.color[index]]
       this.ctx.lineCap = 'round'
       this.ctx.arc(
         1000,
