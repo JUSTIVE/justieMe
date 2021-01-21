@@ -42,10 +42,10 @@
 [data-theme^='dark'] {
   --text-color: white;
   --background: #121212;
+  --dock-tint: #fff;
 }
-[data_theme^='light'] {
+[data-theme^='light'] {
   --text-color: #121212;
   --background: white;
+  --dock-tint: #222;
 }
-@import './theme/dark.scss';
-@import './theme/light.scss';

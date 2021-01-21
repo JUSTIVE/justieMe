@@ -71,7 +71,7 @@ export default {
   backdrop-filter: blur(8px);
   .tint {
     position: absolute;
-    background: #fff;
+    background: var(--dock-tint);
     opacity: 0.2;
 
     width: 100%;
