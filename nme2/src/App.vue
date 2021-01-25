@@ -4,7 +4,7 @@
     <router-link to="/about">About</router-link>
   </div> -->
   <div class="root" :data-theme="theme">
-    <Dock @activatePane="openPane" />
+    <Dock />
 
     <router-view />
   </div>
@@ -40,12 +40,16 @@ export default {
 
 <style lang="scss">
 @import './assets/style/theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 html {
   background: var(--background);
   overflow: hidden;
 }
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  user-select: none;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-align: center;
 

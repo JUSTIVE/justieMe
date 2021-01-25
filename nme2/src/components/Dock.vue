@@ -12,9 +12,7 @@ export default {
     Hero
   },
   methods: {
-    activate() {
-      this.$emit('activatePane')
-    }
+    activate() {}
   }
 }
 </script>

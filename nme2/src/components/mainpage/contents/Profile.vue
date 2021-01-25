@@ -37,8 +37,6 @@ p {
   margin: 0px;
 }
 .profile {
-  width: 1200px;
-  // transform: translateX(450px) translateY(150px);
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0.9;
   user-select: none;
@@ -90,18 +88,6 @@ p {
   strong {
     color: var(--accent);
     font-weight: bold;
-  }
-}
-@media (max-width: 1500px) {
-  .profile {
-    width: calc(100% - 300px);
-    transform: translateX(150px);
-  }
-}
-@media (max-width: 768px) {
-  .profile {
-    width: 100%;
-    transform: translateX(10px);
   }
 }
 </style>
