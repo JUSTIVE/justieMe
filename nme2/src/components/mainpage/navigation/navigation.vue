@@ -1,12 +1,6 @@
 <template>
   <div class="navigation">
-    <NavigationItem
-      v-for="(item, index) of navigations"
-      :key="index"
-      @click="ItemClick()"
-      :icon="item.icon"
-      :name="item.name"
-    />
+    <NavigationItem v-for="(item, index) of navigations" :key="index" :item="item" />
   </div>
 </template>
 
@@ -18,11 +12,6 @@ export default {
   },
   props: {
     navigations: Array
-  },
-  methods: {
-    ItemClick(item) {
-      this.$emit('navigationClick', { item })
-    }
   }
 }
 </script>
@@ -37,5 +26,6 @@ export default {
   border-radius: var(--global-radius);
   background: var(--foreground);
   overflow: hidden;
+  box-shadow: var(--elevation1);
 }
 </style>

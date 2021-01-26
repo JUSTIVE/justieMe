@@ -37,6 +37,8 @@ p {
   margin: 0px;
 }
 .profile {
+  background: var(--foreground);
+  border-radius: var(--global-radius);
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0.9;
   user-select: none;

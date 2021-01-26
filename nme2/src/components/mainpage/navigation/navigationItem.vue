@@ -1,15 +1,20 @@
 <template>
-  <div class="navigationItem">
-    <IconM :type="icon" :size="16" />
-    <span>{{ name }}</span>
+  <div class="navigationItem" @click="navigateTo">
+    <IconM :type="item.icon" :size="16" />
+    <span>{{ item.name }}</span>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    icon: String,
-    name: String
+    item: Object
+  },
+  methods: {
+    navigateTo() {
+      console.log('navigationClick', this.item)
+      this.$router.push(this.item.path)
+    }
   }
 }
 </script>

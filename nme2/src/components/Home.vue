@@ -1,12 +1,14 @@
 <template>
   <div class="home row">
-    <NavigationList :navigations="naviationTabs" @navigationClick="navigate" />
-    <router-view class="content" />
+    <NavigationList :navigations="naviationTabs" />
+    <transition name="fade" mode="out-in">
+      <router-view class="content" />
+    </transition>
   </div>
 </template>
 
 <script>
-import NavigationList from '@/components/mainpage/navigation.vue'
+import NavigationList from '@/components/mainpage/navigation/navigation.vue'
 export default {
   name: 'Home',
   components: {
@@ -15,21 +17,26 @@ export default {
   data() {
     return {
       naviationTabs: [
-        { name: 'Profile', icon: 'person' },
-        { name: 'Contact', icon: 'alternate_email' }
+        { name: 'Profile', icon: 'person', path: 'profile' },
+        { name: 'Contact', icon: 'alternate_email', path: 'contact' }
       ]
-    }
-  },
-  methods: {
-    navigate(name) {
-      console.log(name)
-      this.$router.push(name)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
 .home {
   width: calc(100% - 800px);
   transform: translateX(400px);
