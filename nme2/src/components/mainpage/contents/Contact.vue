@@ -62,6 +62,7 @@
 
 <script>
 // import githubLogo from 'super-tiny-icons/images/svg/github.svg'
+// const CONTACTS = [{}]
 export default {
   data() {
     return {

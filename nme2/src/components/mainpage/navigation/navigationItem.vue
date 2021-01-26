@@ -12,8 +12,9 @@ export default {
   },
   methods: {
     navigateTo() {
-      console.log('navigationClick', this.item)
-      this.$router.push(this.item.path)
+      if (this.$router.history.current.name != this.item.path) {
+        this.$router.push(this.item.path)
+      }
     }
   }
 }

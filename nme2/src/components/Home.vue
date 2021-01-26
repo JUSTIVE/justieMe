@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       naviationTabs: [
+        { name: 'Overview', icon: 'scatter_plot', path: 'overview' },
         { name: 'Profile', icon: 'person', path: 'profile' },
         { name: 'Contact', icon: 'alternate_email', path: 'contact' }
       ]
@@ -39,31 +40,31 @@ export default {
 }
 .home {
   width: calc(100% - 800px);
-  transform: translateX(400px);
+  transform: translateX(400px) translateY(104px);
   height: 100%;
-  padding-top: 104px;
+  // top: 104px;
   display: flex;
 }
 .content {
   flex: 1;
-  padding: 0px 36px;
+  padding: 12px 36px;
 }
 @media (max-width: 1500px) {
   .home {
     width: calc(100% - 400px);
-    transform: translateX(200px);
+    transform: translateX(200px) translateY(104px);
   }
 }
 @media (max-width: 1200px) {
   .home {
     width: calc(100% - 100px);
-    transform: translateX(50px);
+    transform: translateX(50px) translateY(104px);
   }
 }
 @media (max-width: 768px) {
   .home {
     width: 100%;
-    transform: translateX(0px);
+    transform: translateX(0px) translateY(104px);
   }
 }
 </style>

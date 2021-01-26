@@ -77,8 +77,8 @@ export default {
 }
 @media (max-width: 768px) {
   .dock {
-    width: 100%;
-    padding: 0px 0px;
+    width: calc(100% - 24px);
+    padding: 0px 12px;
   }
 }
 </style>
