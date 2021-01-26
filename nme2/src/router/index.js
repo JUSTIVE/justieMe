@@ -34,8 +34,6 @@ const routes = [
 
 const router = new Router({
   routes: routes,
-
-  mode: "history",
   // other options could be: 'reload', 'throw' and default to `throw` to avoid breaking changes
   duplicateNavigationPolicy: "ignore"
 });
