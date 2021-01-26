@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Page
         run: |
-          cd nme
+          cd nme2
           npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
