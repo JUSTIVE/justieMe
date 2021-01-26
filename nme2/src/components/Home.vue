@@ -16,7 +16,7 @@ export default {
     return {
       naviationTabs: [
         { name: 'Profile', icon: 'person' },
-        { name: 'Contact', icon: 'person' }
+        { name: 'Contact', icon: 'alternate_email' }
       ]
     }
   },

@@ -1,5 +1,6 @@
 <template>
-  <img class="selfie" src="./../../assets/image/profile.jpg" />
+  <div class="Hero">KIM MIN SANG</div>
+  <!-- <img class="selfie" src="./../../assets/image/profile.jpg" /> -->
 </template>
 
 <script>
@@ -7,11 +8,12 @@ export default {}
 </script>
 
 <style>
-.selfie {
+.Hero {
   margin: 12px;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--global-radius);
+  color: var(--text-color);
   z-index: 1;
+  height: fit-content;
+  font-size: var(--font-size4);
+  font-weight: bold;
 }
 </style>

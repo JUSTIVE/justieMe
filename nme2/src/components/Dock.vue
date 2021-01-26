@@ -1,15 +1,20 @@
 <template>
   <div class="dock">
-    <div class="row">
+    <div class="left row">
       <Hero />
+    </div>
+    <div class="right row">
+      <ThemeChanger />
     </div>
   </div>
 </template>
 <script>
 import Hero from './dock/Hero.vue'
+import ThemeChanger from './dock/ThemeChanger.vue'
 export default {
   components: {
-    Hero
+    Hero,
+    ThemeChanger
   },
   methods: {
     activate() {}
@@ -48,12 +53,32 @@ export default {
 .dock {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  width: calc(100% - 800px);
   position: absolute;
   height: 80px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   background: var(--foreground);
   margin-bottom: 10px;
+  padding: 0px 400px;
+}
+@media (max-width: 1500px) {
+  .dock {
+    width: calc(100% - 400px);
+    padding: 0px 200px;
+  }
+}
+@media (max-width: 1200px) {
+  .dock {
+    width: calc(100% - 100px);
+    padding: 0px 50px;
+  }
+}
+@media (max-width: 768px) {
+  .dock {
+    width: 100%;
+    padding: 0px 0px;
+  }
 }
 </style>

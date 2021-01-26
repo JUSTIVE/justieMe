@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
-  <div class="root" :data-theme="theme">
+  <div class="root" :data-theme="$store.state.theme">
     <Dock />
 
     <router-view />
@@ -61,6 +61,7 @@ body {
   margin: 0px;
 }
 .root {
+  background: var(--background);
   width: 100vw;
   height: 100vh;
   overflow: hidden;

@@ -1,7 +1,7 @@
 <template>
   <div class="navigationItem">
-    <IconM :type="icon" />
-    {{ name }}
+    <IconM :type="icon" :size="16" />
+    <span>{{ name }}</span>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .navigationItem {
   width: 200px;
-  display: flex;
+  display: inline-flex;
 
   background: var(--foreground);
   color: var(--text-color);
@@ -31,9 +31,10 @@ export default {
     background: var(--foreground-hover);
   }
   /deep/span {
+    margin: 6px;
     margin-right: 10px;
   }
-  /deep/i {
+  i {
     color: var(--text-color);
   }
 }
