@@ -5,7 +5,7 @@
   --accent-darker: #000b29;
 
   --global-radius: 7px;
-  --elevation1: 0 1px 2px hsla(var(--hue), 10%, 0%, 0.3), 0 2px 3px rgba(0, 0, 0, 0.88);
+  --elevation1: 0 1px 2px hsla(0, 10%, 0%, 0.03), 0 2px 3px rgba(0, 0, 0, 0.08);
 
   //langue
   .c-lang {
@@ -44,10 +44,14 @@
   --background: #121212;
   --dock-tint: #fff;
   --foreground: #242424;
+  --foreground-hover: #363636;
 }
 [data-theme^='light'] {
   --text-color: #121212;
   --background: #f2f2f2;
   --dock-tint: #222;
   --foreground: white;
+  --foreground-hover: #f2f2f2;
 }
+
+@import './fonts.scss';

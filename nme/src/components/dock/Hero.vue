@@ -9,8 +9,8 @@ export default {}
 <style>
 .selfie {
   margin: 12px;
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--global-radius);
   z-index: 1;
 }

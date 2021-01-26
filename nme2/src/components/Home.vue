@@ -1,0 +1,70 @@
+<template>
+  <div class="home row">
+    <NavigationList :navigations="naviationTabs" />
+    <transition name="fade" mode="out-in">
+      <router-view class="content" />
+    </transition>
+  </div>
+</template>
+
+<script>
+import NavigationList from '@/components/mainpage/navigation/navigation.vue'
+export default {
+  name: 'Home',
+  components: {
+    NavigationList
+  },
+  data() {
+    return {
+      naviationTabs: [
+        { name: 'Overview', icon: 'scatter_plot', path: 'overview' },
+        { name: 'Profile', icon: 'person', path: 'profile' },
+        { name: 'Contact', icon: 'alternate_email', path: 'contact' }
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.home {
+  width: calc(100% - 800px);
+  transform: translateX(400px) translateY(104px);
+  height: 100%;
+  // top: 104px;
+  display: flex;
+}
+.content {
+  flex: 1;
+  padding: 12px 36px;
+}
+@media (max-width: 1500px) {
+  .home {
+    width: calc(100% - 400px);
+    transform: translateX(200px) translateY(104px);
+  }
+}
+@media (max-width: 1200px) {
+  .home {
+    width: calc(100% - 100px);
+    transform: translateX(50px) translateY(104px);
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    width: 100%;
+    transform: translateX(0px) translateY(104px);
+  }
+}
+</style>
