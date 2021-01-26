@@ -25,6 +25,11 @@ jobs:
           npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
+          
+      - name: Resolve Route
+        run: |
+          cd nme2
+          cp ./dist/index.html ./dist/404.html
 
       - name: Commit report
         run: |
