@@ -13,13 +13,8 @@ export default {
   mounted() {
     console.log('activated')
     let axios = require('axios')
-    // const instance = axios.create({
-    //   url: 'http://github-calendar.herokuapp.com/commits/JUSTIVE',
-    //   baseURL: 'http://github-calendar.herokuapp.com/commits/JUSTIVE',
-    //   timeout: 5000,
 
-    // })
-    axios.get('http://github-calendar.herokuapp.com/commits/JUSTIVE').then((response) => {
+    axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE').then((response) => {
       console.log(response.data)
     })
   },

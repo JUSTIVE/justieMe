@@ -1,5 +1,5 @@
 <template>
-  <div class="Hero">KIM MIN SANG</div>
+  <div class="Hero">{{ $store.state.langpack[$store.state.language].name }}</div>
   <!-- <img class="selfie" src="./../../assets/image/profile.jpg" /> -->
 </template>
 

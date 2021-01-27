@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .navigationItem {
-  width: 200px;
+  width: 176px;
   display: inline-flex;
 
   background: var(--foreground);

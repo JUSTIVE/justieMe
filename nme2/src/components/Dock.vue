@@ -3,7 +3,8 @@
     <div class="left row">
       <Hero />
     </div>
-    <div class="right row">
+    <div class="right column">
+      <LocaleChanger />
       <ThemeChanger />
     </div>
   </div>
@@ -11,10 +12,12 @@
 <script>
 import Hero from './dock/Hero.vue'
 import ThemeChanger from './dock/ThemeChanger.vue'
+import LocaleChanger from './dock/LocaleChanger.vue'
 export default {
   components: {
     Hero,
-    ThemeChanger
+    ThemeChanger,
+    LocaleChanger
   },
   methods: {
     activate() {}
@@ -50,6 +53,7 @@ export default {
 .row {
   display: inline-flex;
 }
+
 .dock {
   display: flex;
   justify-content: space-between;
