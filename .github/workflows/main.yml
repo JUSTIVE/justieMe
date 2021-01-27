@@ -23,6 +23,7 @@ jobs:
         run: |
           cd nme2
           npm ci
+          rm -r ./dist
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
           
