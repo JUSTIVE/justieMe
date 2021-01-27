@@ -19,6 +19,7 @@ export default {
       naviationTabs: [
         { name: 'Overview', icon: 'scatter_plot', path: 'overview' },
         { name: 'Profile', icon: 'person', path: 'profile' },
+        { name: 'Project', icon: 'laptop', path: 'project' },
         { name: 'Contact', icon: 'alternate_email', path: 'contact' }
       ]
     }
@@ -47,7 +48,8 @@ export default {
 }
 .content {
   flex: 1;
-  padding: 12px 36px;
+  // padding: 12px 36px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (max-width: 1500px) {
   .home {

@@ -1,3 +1,8 @@
 {
-  "name": "김민상"
+  "name": "김민상",
+  "Contacts": {
+    "Github": "깃허브",
+    "GMail": "지메일",
+    "Unsplash": "언스플래시"
+  }
 }

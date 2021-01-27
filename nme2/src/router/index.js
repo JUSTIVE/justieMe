@@ -4,6 +4,7 @@ import Home from "../components/Home.vue";
 
 import Overview from "../components/mainpage/contents/Overview.vue";
 import Profile from "../components/mainpage/contents/Profile.vue";
+import Project from "../components/mainpage/contents/Project.vue";
 import Contact from "../components/mainpage/contents/Contact.vue";
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ const routes = [
         path: "profile",
         name: "profile",
         component: Profile
+      },
+      {
+        path: "project",
+        name: "project",
+        component: Project
       },
       {
         path: "contact",
