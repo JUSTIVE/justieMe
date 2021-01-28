@@ -4,7 +4,7 @@
       <Hero />
     </div>
     <div class="right row ">
-      <ThemeChanger />
+      <ThemeChanger style="margin-right:8px;" />
       <LocaleChanger />
     </div>
   </div>

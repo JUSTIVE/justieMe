@@ -1,6 +1,6 @@
 <template>
   <div class="home row">
-    <NavigationList :navigations="naviationTabs" />
+    <NavigationList :navigations="this.$store.state.navigationTabs" />
     <transition name="fade" mode="out-in">
       <router-view class="content" />
     </transition>
@@ -13,16 +13,6 @@ export default {
   name: 'Home',
   components: {
     NavigationList
-  },
-  data() {
-    return {
-      naviationTabs: [
-        { name: 'Overview', icon: 'scatter_plot', path: 'overview' },
-        { name: 'Profile', icon: 'person', path: 'profile' },
-        { name: 'Project', icon: 'laptop', path: 'project' },
-        { name: 'Contact', icon: 'alternate_email', path: 'contact' }
-      ]
-    }
   }
 }
 </script>
@@ -43,12 +33,10 @@ export default {
   width: calc(100% - 800px);
   transform: translateX(400px) translateY(104px);
   height: 100%;
-  // top: 104px;
   display: flex;
 }
 .content {
   flex: 1;
-  // padding: 12px 36px;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (max-width: 1500px) {

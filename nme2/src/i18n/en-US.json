@@ -4,5 +4,11 @@
     "Github": "Github",
     "GMail": "Gmail",
     "Unsplash": "Unsplash"
+  },
+  "Navigation": {
+    "overview": "Overview",
+    "profile": "Profile",
+    "project": "Project",
+    "contact": "Contact"
   }
 }

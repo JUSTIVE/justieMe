@@ -4,5 +4,11 @@
     "Github": "깃허브",
     "GMail": "지메일",
     "Unsplash": "언스플래시"
+  },
+  "Navigation": {
+    "overview": "개요",
+    "profile": "프로필",
+    "project": "프로젝트",
+    "contact": "연락처"
   }
 }

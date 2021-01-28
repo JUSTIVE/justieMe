@@ -1,32 +1,34 @@
 <template>
   <div class="Overview">
     <Card />
+    <Card>
+      <Calendar slot="content" />
+    </Card>
   </div>
 </template>
 
 <script>
-import Card from '../card.vue'
+import Card from '../Card/card.vue'
+import Calendar from './Overview/Calendar.vue'
 export default {
   components: {
-    Card
+    Card,
+    Calendar
   },
-  mounted() {
+  async mounted() {
     console.log('activated')
     let axios = require('axios')
 
-    axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE').then((response) => {
-      console.log(response.data)
-    })
-  },
-  activated() {}
+    let response = await axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE')
+    console.log(response.data)
+    this.$store.commit('UPDATE_CALENDAR', response.data)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .Overview {
-  background: var(--foreground);
   border-radius: var(--global-radius);
-  box-shadow: var(--elevation1);
   height: fit-content;
 }
 </style>

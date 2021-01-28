@@ -45,6 +45,11 @@
   --dock-tint: #fff;
   --foreground: #242424;
   --foreground-hover: #363636;
+  --github0: hsl(0, 0%, 26%);
+  --github1: hsl(168, 34%, 32%);
+  --github2: hsl(162, 43%, 46%);
+  --github3: hsl(165, 43%, 63%);
+  --github4: hsl(168, 52%, 78%);
 }
 [data-theme^='light'] {
   --text-color: #121212;
@@ -52,6 +57,11 @@
   --dock-tint: #222;
   --foreground: white;
   --foreground-hover: #f2f2f2;
+  --github0: #f0f0f0;
+  --github1: #9bcebf;
+  --github2: #43aa8b;
+  --github3: #347766;
+  --github4: #254441;
 }
 
 @import './fonts.scss';
