@@ -3,9 +3,9 @@
     <div class="left row">
       <Hero />
     </div>
-    <div class="right column">
-      <LocaleChanger />
+    <div class="right row ">
       <ThemeChanger />
+      <LocaleChanger />
     </div>
   </div>
 </template>

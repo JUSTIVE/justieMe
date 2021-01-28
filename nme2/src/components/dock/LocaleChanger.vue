@@ -1,12 +1,17 @@
 <template>
-  <div class="localeChanger" @click="updateLocale">{{ locales[$store.state.language] }}</div>
+  <div class="localeChanger" @click="updateLocale"><img class="locale" :src="locales[$store.state.language]" /></div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      locales: ['🇺🇸', '🇰🇷', '🇯🇵', '🇫🇷']
+      locales: [
+        'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/joypixels/275/flag-united-states_1f1fa-1f1f8.png',
+        'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/joypixels/275/flag-south-korea_1f1f0-1f1f7.png',
+        '🇯🇵',
+        '🇫🇷'
+      ]
     }
   },
   methods: {
@@ -22,5 +27,9 @@ export default {
   cursor: pointer;
   color: var(--text-color);
   font-size: var(--font-size5);
+}
+.locale {
+  width: 28px;
+  height: 28px;
 }
 </style>
