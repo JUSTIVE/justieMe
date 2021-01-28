@@ -1,5 +1,7 @@
 <template>
-  <div class="Card"></div>
+  <div class="Card">
+    <slot name="content"> </slot>
+  </div>
 </template>
 
 <script>
@@ -17,6 +19,8 @@ export default {
 .Card {
   background: var(--foreground);
   border-radius: var(--global-radius);
+  box-shadow: var(--elevation1);
   padding: 12px;
+  margin-bottom: 12px;
 }
 </style>

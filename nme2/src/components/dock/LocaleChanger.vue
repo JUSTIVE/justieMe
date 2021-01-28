@@ -29,7 +29,7 @@ export default {
   font-size: var(--font-size5);
 }
 .locale {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 </style>
