@@ -19,51 +19,61 @@
         </svg>
       </a>
     </SimpleCard>
-    <a href="mailto:ben399399@gmail.com" id="mail" @mouseover="hover('mail')" class="contact-icons">
-      <svg viewBox="0 0 24 24" class="contact-icons">
-        <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#fff" />
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          style="transform:scale(0.046875)"
-          d="M158 391v-142l-82-63V361q0 30 30 30"
-          fill="#4285f4"
-        />
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          style="transform:scale(0.046875)"
-          d="M 154 248l102 77l102-77v-98l-102 77l-102-77"
-          fill="#ea4335"
-        />
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          style="transform:scale(0.046875)"
-          d="M354 391v-142l82-63V361q0 30-30 30"
-          fill="#34a853"
-        />
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          style="transform:scale(0.046875)"
-          d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26"
-          fill="#c5221f"
-        />
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          style="transform:scale(0.046875)"
-          d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26"
-          fill="#fbbc04"
-        />
-      </svg>
-    </a>
-    <a href="https://unsplash.com/@justive_" id="unsplash" @mouseover="hover('unsplash')" class="contact-icons">
-      <svg viewBox="0 0 24 24">
-        <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#1B1817" />
-        <path
-          fill="#fff"
-          style="transform:scale(0.5) translate(8px,8px)"
-          d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
-        ></path>
-      </svg>
-    </a>
+    <SimpleCard :title="$store.state.langpack[$store.state.language].Contacts.GMail" subtitle="Ben Kim">
+      <a href="mailto:ben399399@gmail.com" id="mail" @mouseover="hover('mail')" class="contact-icons" slot="cardHero">
+        <svg viewBox="0 0 24 24" class="contact-icons">
+          <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#fff" />
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform:scale(0.046875)"
+            d="M158 391v-142l-82-63V361q0 30 30 30"
+            fill="#4285f4"
+          />
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform:scale(0.046875)"
+            d="M 154 248l102 77l102-77v-98l-102 77l-102-77"
+            fill="#ea4335"
+          />
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform:scale(0.046875)"
+            d="M354 391v-142l82-63V361q0 30-30 30"
+            fill="#34a853"
+          />
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform:scale(0.046875)"
+            d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26"
+            fill="#c5221f"
+          />
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            style="transform:scale(0.046875)"
+            d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26"
+            fill="#fbbc04"
+          />
+        </svg>
+      </a>
+    </SimpleCard>
+    <SimpleCard :title="$store.state.langpack[$store.state.language].Contacts.Unsplash" subtitle="JUSTIVE">
+      <a
+        href="https://unsplash.com/@justive_"
+        id="unsplash"
+        @mouseover="hover('unsplash')"
+        class="contact-icons"
+        slot="cardHero"
+      >
+        <svg viewBox="0 0 24 24">
+          <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#1B1817" />
+          <path
+            fill="#fff"
+            style="transform:scale(0.5) translate(8px,8px)"
+            d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
+          ></path>
+        </svg>
+      </a>
+    </SimpleCard>
   </div>
 </template>
 
@@ -86,12 +96,10 @@ export default {
 
 <style lang="scss" scoped>
 .link {
-  background: var(--foreground);
   border-radius: var(--global-radius);
   display: flex;
   flex-direction: column;
   text-align: start;
-  margin: 6px;
   height: fit-content;
   border-radius: 5px;
   z-index: 1;
@@ -103,8 +111,9 @@ export default {
     width: 36px;
     margin: 6px;
   }
-  .contact-icons {
-    box-shadow: var(--elevation1);
-  }
+}
+.contact-icons {
+  width: 48px;
+  height: 48px;
 }
 </style>

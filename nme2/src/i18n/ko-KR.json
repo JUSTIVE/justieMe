@@ -1,5 +1,8 @@
 {
   "name": "김민상",
+  "Overview": {
+    "yearCommit": "일년간의 커밋 수"
+  },
   "Contacts": {
     "Github": "깃허브",
     "GMail": "지메일",

@@ -62,7 +62,7 @@ export default {
   position: absolute;
   height: 80px;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background: var(--foreground);
   margin-bottom: 10px;
   padding: 0px 400px;
@@ -83,6 +83,9 @@ export default {
   .dock {
     width: calc(100% - 24px);
     padding: 0px 12px;
+  }
+  .right {
+    margin-right: 12px;
   }
 }
 </style>

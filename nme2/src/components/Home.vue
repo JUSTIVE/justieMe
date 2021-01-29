@@ -1,5 +1,5 @@
 <template>
-  <div class="home row">
+  <div class="home">
     <NavigationList :navigations="this.$store.state.navigationTabs" />
     <transition name="fade" mode="out-in">
       <router-view class="content" />
@@ -31,30 +31,39 @@ export default {
 }
 .home {
   width: calc(100% - 800px);
-  transform: translateX(400px) translateY(104px);
+  transform: translateX(400px) translateY(92px);
   height: 100%;
   display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .content {
   flex: 1;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  // overflow: scroll;
 }
 @media (max-width: 1500px) {
   .home {
     width: calc(100% - 400px);
-    transform: translateX(200px) translateY(104px);
+    transform: translateX(200px) translateY(92px);
   }
 }
 @media (max-width: 1200px) {
   .home {
     width: calc(100% - 100px);
-    transform: translateX(50px) translateY(104px);
+    transform: translateX(50px) translateY(92px);
   }
 }
 @media (max-width: 768px) {
   .home {
     width: 100%;
-    transform: translateX(0px) translateY(104px);
+    flex-direction: column;
+    transform: translateX(0px) translateY(80px);
   }
 }
 </style>

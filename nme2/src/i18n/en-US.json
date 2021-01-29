@@ -1,5 +1,8 @@
 {
   "name": "KIM MIN SANG",
+  "Overview": {
+    "yearCommit": "Commits since year ago"
+  },
   "Contacts": {
     "Github": "Github",
     "GMail": "Gmail",

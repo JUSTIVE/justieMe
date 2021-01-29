@@ -18,8 +18,10 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
+  position: sticky;
+  top: 0px;
   width: 200px;
-  margin-right: 24px;
+  margin-right: 12px;
   display: inline-flex;
   flex-direction: column;
   height: fit-content;
@@ -27,5 +29,13 @@ export default {
   background: var(--foreground);
   overflow: hidden;
   box-shadow: var(--elevation1);
+}
+@media (max-width: 768px) {
+  .navigation {
+    width: 100%;
+    border-radius: 0px;
+    flex-direction: row;
+    margin-bottom: 12px;
+  }
 }
 </style>

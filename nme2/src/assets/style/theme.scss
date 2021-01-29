@@ -1,11 +1,12 @@
 :root {
   --accent-light: #618bff;
-  --accent: #3369ff;
+  --accent: #ffc107;
   --accent-dark: #0a4bff;
   --accent-darker: #000b29;
 
   --global-radius: 7px;
   --elevation1: 0 1px 2px hsla(0, 10%, 0%, 0.03), 0 2px 3px rgba(0, 0, 0, 0.08);
+  --elevation8: 0 2px 4px hsla(0, 10%, 0%, 0.24), 0 4px 6px rgba(0, 0, 0, 0.32);
 
   //langue
   .c-lang {
@@ -45,11 +46,16 @@
   --dock-tint: #fff;
   --foreground: #242424;
   --foreground-hover: #363636;
+
+  --sky: hsl(251, 23%, 36%);
+  --star: #ffc107;
+
+  --github-hue: 135;
   --github0: hsl(0, 0%, 26%);
-  --github1: hsl(168, 34%, 32%);
-  --github2: hsl(162, 43%, 46%);
-  --github3: hsl(165, 43%, 63%);
-  --github4: hsl(168, 52%, 78%);
+  --github1: hsl(var(--github-hue), 34%, 32%);
+  --github2: hsl(var(--github-hue), 43%, 46%);
+  --github3: hsl(var(--github-hue), 43%, 63%);
+  --github4: hsl(var(--github-hue), 52%, 78%);
 }
 [data-theme^='light'] {
   --text-color: #121212;
@@ -57,11 +63,16 @@
   --dock-tint: #222;
   --foreground: white;
   --foreground-hover: #f2f2f2;
-  --github0: #f0f0f0;
-  --github1: #9bcebf;
-  --github2: #43aa8b;
-  --github3: #347766;
-  --github4: #254441;
+
+  --sky: hsl(215, 100%, 70%);
+  --star: #ffd75e;
+
+  --github-hue: 125;
+  --github0: hsl(0, 0%, 94%);
+  --github1: hsl(var(--github-hue), 50%, 71%);
+  --github2: hsl(var(--github-hue), 50%, 52%);
+  --github3: hsl(var(--github-hue), 50%, 42%);
+  --github4: hsl(var(--github-hue), 50%, 21%);
 }
 
 @import './fonts.scss';

@@ -27,9 +27,10 @@ export default {
   cursor: pointer;
   color: var(--text-color);
   font-size: var(--font-size5);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .locale {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
 }
 </style>
