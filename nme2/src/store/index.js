@@ -38,6 +38,11 @@ export default new Vuex.Store({
   getters: {
     calendar(state) {
       return state.calendar;
+    },
+    todayCommit(state) {
+      let lastWeek =
+        state.calendar.contributions[state.calendar.contributions.length - 1];
+      return lastWeek[lastWeek.length - 1].count > 0;
     }
   },
   mutations: {

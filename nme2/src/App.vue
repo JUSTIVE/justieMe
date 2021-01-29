@@ -67,6 +67,5 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: var(--global-radius);
 }
 </style>

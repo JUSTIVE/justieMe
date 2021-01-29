@@ -1,9 +1,9 @@
 <template>
   <div class="Overview">
-    <Card />
     <Card>
       <Calendar slot="content" />
     </Card>
+    <Card style="height:2000px" />
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
     let response = await axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE')
     console.log(response.data)
     this.$store.commit('UPDATE_CALENDAR', response.data)
+    console.log(this.$route)
   }
 }
 </script>
@@ -30,5 +31,11 @@ export default {
 .Overview {
   border-radius: var(--global-radius);
   height: fit-content;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 </style>

@@ -16,4 +16,9 @@ export default {}
   font-size: var(--font-size4);
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .Hero {
+    font-size: var(--font-size3);
+  }
+}
 </style>

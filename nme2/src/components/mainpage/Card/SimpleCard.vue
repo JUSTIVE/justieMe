@@ -27,6 +27,10 @@ export default {
 .simpleCard {
   display: flex;
   padding: 12px;
+  margin-bottom: 12px;
+  background: var(--foreground);
+  border-radius: var(--global-radius);
+  box-shadow: var(--elevation1);
 }
 .cardHero {
   width: 48px;
@@ -35,6 +39,9 @@ export default {
 .cardTextArea {
   display: flex;
   flex-direction: column;
+  margin-left: 12px;
+  line-height: 18px;
+  justify-content: center;
 }
 .cardTitle {
   font-size: var(--font-size5);
@@ -43,5 +50,6 @@ export default {
 .cardSubTitle {
   font-size: var(--font-size5);
   color: var(--text-color);
+  opacity: 0.8;
 }
 </style>
