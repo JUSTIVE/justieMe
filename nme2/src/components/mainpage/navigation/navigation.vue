@@ -20,7 +20,7 @@ export default {
 .navigation {
   position: sticky;
   top: 0px;
-  width: 200px;
+  width: 180px;
   margin-right: 12px;
   display: inline-flex;
   flex-direction: column;
@@ -33,6 +33,7 @@ export default {
 @media (max-width: 768px) {
   .navigation {
     width: 100%;
+    height: 51px;
     border-radius: 0px;
     flex-direction: row;
     margin-bottom: 12px;

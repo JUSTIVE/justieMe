@@ -5,7 +5,9 @@ import Home from "../components/Home.vue";
 import Overview from "../components/mainpage/contents/Overview.vue";
 import Profile from "../components/mainpage/contents/Profile.vue";
 import Project from "../components/mainpage/contents/Project.vue";
+import Publication from "../components/mainpage/contents/Publication.vue";
 import Contact from "../components/mainpage/contents/Contact.vue";
+
 Vue.use(Router);
 
 const routes = [
@@ -28,6 +30,11 @@ const routes = [
         path: "project",
         name: "project",
         component: Project
+      },
+      {
+        path: "publication",
+        name: "publication",
+        component: Publication
       },
       {
         path: "contact",

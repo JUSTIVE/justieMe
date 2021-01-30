@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <NavigationList :navigations="this.$store.state.navigationTabs" />
+    <NavigationList :navigations="this.$store.state.navigationTabs" class="navigation" />
     <transition name="fade" mode="out-in">
       <router-view class="content" />
     </transition>
@@ -42,12 +42,15 @@ export default {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.navigation {
+  z-index: 1;
+}
 .content {
   flex: 1;
   transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   // overflow: scroll;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .home {
     width: calc(100% - 400px);
     transform: translateX(200px) translateY(92px);
@@ -64,6 +67,9 @@ export default {
     width: 100%;
     flex-direction: column;
     transform: translateX(0px) translateY(80px);
+  }
+  .content {
+    height: calc(100% - 100px);
   }
 }
 </style>

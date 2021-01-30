@@ -1,9 +1,17 @@
 <template>
-  <div class="simpleCard row">
+  <div class="PublicationCard row">
     <slot name="cardHero" class="cardHero" />
     <div class="cardTextArea">
-      <div class="cardTitle">{{ title }}</div>
-      <div class="cardSubTitle">{{ subtitle }}</div>
+      <div class="cardTitle">{{ publication.name }}</div>
+      <div class="cardSubTitle">{{ publication.journal }}</div>
+      <div class="cardSubTitle">{{ publication.author }}</div>
+      <div>
+        <span v-for="(quoteItem, index) in Object.entries(publication.quote)" :key="index" class="quotelink">
+          <span class="quote" v-if="quoteItem[1] !== ''">
+            {{ quoteItem[0] }}
+          </span>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -11,21 +19,14 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    subtitle: {
-      type: String,
-      default: ''
-    }
+    publication: Object
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/style/theme.scss';
-.simpleCard {
+.PublicationCard {
   @include cardy();
   display: flex;
   padding: 12px;
@@ -46,6 +47,15 @@ export default {
   font-size: var(--font-size5);
   color: var(--text-color);
   font-weight: bold;
+}
+.quotelink {
+  text-decoration: none;
+}
+.quote {
+  color: var(--accent);
+  font-size: var(--font-size6);
+  font-weight: normal;
+  margin-right: 8px;
 }
 .cardSubTitle {
   font-size: var(--font-size6);

@@ -5,3 +5,13 @@
 .row {
   display: flex;
 }
+
+@mixin cardy() {
+  background: var(--foreground);
+  border-radius: var(--global-radius);
+  box-shadow: var(--elevation1);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    background: var(--foreground-hover);
+  }
+}
