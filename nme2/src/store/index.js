@@ -71,6 +71,12 @@ export default new Vuex.Store({
     publicationAll(state) {
       return state.publicationTab.publications.data
         .filter((x, i) => state.publicationTab.publicationFilter[i])
+        .map((x, i) => {
+          return x.map(y => {
+            y.category = i;
+            return y;
+          });
+        })
         .flatMap(x => x);
     },
     publicationFilters(state) {
