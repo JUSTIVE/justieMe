@@ -1,22 +1,35 @@
 <template>
   <div class="calendar">
-    {{ $store.state.langpack[$store.state.language].Overview.yearCommit }}{{ calendar.total }}
+    <div class="calendarHeader">
+      {{ `${$store.state.langpack[$store.state.language].Overview.yearCommit}\t` }}
+      <span class="yearCommitCount">{{ calendar.total }}</span>
+    </div>
+
     <div class="calendarTable">
-      <div>
-        <div class="dayTag">M</div>
-        <div class="dayTag">W</div>
-        <div class="dayTag">F</div>
-        <div class="dayTag">S</div>
+      <div class="calendarContent">
+        <div>
+          <div class="dayTag">M</div>
+          <div class="dayTag">W</div>
+          <div class="dayTag">F</div>
+          <div class="dayTag">S</div>
+        </div>
+        <div class="week" v-for="(weekItem, index) in calendar.contributions" :key="index">
+          <div
+            class="day"
+            v-for="(dayItem, dayIndex) in weekItem"
+            :class="'d' + dayItem.intensity.toString()"
+            :key="dayIndex + 'd'"
+            @mouseover="hover(dayItem)"
+            @mouseleave="clear"
+          />
+        </div>
       </div>
-      <div class="week" v-for="(weekItem, index) in calendar.contributions" :key="index">
-        <div
-          class="day"
-          v-for="(dayItem, dayIndex) in weekItem"
-          :class="'d' + dayItem.intensity.toString()"
-          :key="dayIndex + 'd'"
-        />
+      <div v-if="current !== undefined" class="currentDayCommit">
+        <div class="date">{{ current.date }}</div>
+        <div class="commits">{{ current.count }}</div>
       </div>
     </div>
+
     {{ todayCommit }}
   </div>
 </template>
@@ -30,6 +43,19 @@ export default {
     todayCommit() {
       return this.$store.getters.todayCommit
     }
+  },
+  data() {
+    return {
+      current: undefined
+    }
+  },
+  methods: {
+    hover(dayItem) {
+      this.current = dayItem
+    },
+    clear() {
+      this.current = undefined
+    }
   }
 }
 </script>
@@ -40,10 +66,21 @@ export default {
   flex-direction: column;
   color: var(--text-color);
 }
+.yearCommitCount {
+  display: inline-block;
+  color: var(--accent);
+}
 .calendarTable {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 12px 0px;
+}
+.calendarContent {
+  display: inline-flex;
+  width: fit-content;
+  justify-content: flex-start;
+  margin: 0px auto;
 }
 .dayTag {
   font-size: 8px;
@@ -76,18 +113,23 @@ export default {
   }
   &.d0 {
     background: var(--github0);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   &.d1 {
     background: var(--github1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   &.d2 {
     background: var(--github2);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   &.d3 {
     background: var(--github3);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   &.d4 {
     background: var(--github4);
+    transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 }
 @media (max-width: 2000px) {

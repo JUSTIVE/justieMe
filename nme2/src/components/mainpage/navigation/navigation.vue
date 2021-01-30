@@ -20,7 +20,7 @@ export default {
 .navigation {
   position: sticky;
   top: 0px;
-  width: 200px;
+  width: 180px;
   margin-right: 12px;
   display: inline-flex;
   flex-direction: column;

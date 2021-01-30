@@ -12,8 +12,9 @@
 export default {
   methods: {
     themeChange() {
-      if (this.$store.state.theme == 'light') this.$store.commit('UPDATE_THEME', 'dark')
-      else this.$store.commit('UPDATE_THEME', 'light')
+      let themeValue = this.$store.state.theme == 'light' ? 'dark' : 'light'
+      localStorage.setItem('theme', themeValue)
+      this.$store.commit('UPDATE_THEME', themeValue)
     }
   }
 }

@@ -16,24 +16,14 @@ export default {
     Dock
   },
   created() {
-    this.updateTheme()
-  },
-  watch: {
-    themeValue(newValue) {
-      this.theme = newValue ? 'light' : 'dark'
-      this.updateTheme()
-    }
-  },
-  data() {
-    return {
-      themeValue: false,
-      theme: 'dark'
-    }
-  },
-  methods: {
-    updateTheme() {
-      document.documentElement.setAttribute('data-theme', this.theme)
-    }
+    let themeValue = localStorage.getItem('theme') ?? 'light'
+    let language = localStorage.getItem('language') ?? 0
+
+    this.$store.commit('UPDATE_THEME', themeValue)
+    this.$store.commit('UPDATE_LOCALE', language)
+
+    localStorage.setItem('theme', this.$store.state.theme)
+    localStorage.setItem('language', this.$store.state.language)
   }
 }
 </script>
