@@ -46,6 +46,8 @@ export default {
   flex-direction: row-reverse;
 }
 .publicationContents {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 92px;
   flex: 1;
 }
@@ -124,8 +126,6 @@ export default {
   .publication {
     margin-top: -12px;
     flex-direction: column;
-  }
-  .publicationContents {
   }
   .filters {
     position: sticky;

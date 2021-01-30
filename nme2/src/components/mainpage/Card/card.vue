@@ -21,5 +21,10 @@ export default {
   @include cardy();
   padding: 12px;
   margin-bottom: 12px;
+  &.disable-hover {
+    &:hover {
+      background: var(--foreground);
+    }
+  }
 }
 </style>

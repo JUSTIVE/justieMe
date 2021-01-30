@@ -6,17 +6,11 @@
       <div class="cardSubTitle">{{ publication.journal }}</div>
       <div class="cardSubTitle">{{ publication.author }}</div>
       <div>
-        <a
-          v-for="(quoteItem, index) in Object.entries(publication.quote)"
-          :key="index"
-          :href="quoteItem[1]"
-          :v-if="quoteItem[2] !== ''"
-          class="quotelink"
-        >
-          <span class="quote">
+        <span v-for="(quoteItem, index) in Object.entries(publication.quote)" :key="index" class="quotelink">
+          <span class="quote" v-if="quoteItem[1] !== ''">
             {{ quoteItem[0] }}
           </span>
-        </a>
+        </span>
       </div>
     </div>
   </div>

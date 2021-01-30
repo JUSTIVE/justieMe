@@ -1,6 +1,6 @@
 <template>
   <div class="Overview">
-    <Card>
+    <Card class="disable-hover">
       <Calendar slot="content" />
     </Card>
     <Card style="height:2000px" />

@@ -5,6 +5,7 @@ import en_US from "../i18n/en-US.json";
 import ko_KR from "../i18n/ko-KR.json";
 
 import { publications } from "./publications.js";
+import { projects } from "./projects.js";
 
 Vue.use(Vuex);
 
@@ -41,12 +42,18 @@ export default new Vuex.Store({
       }
     ],
     calendar: { total: 0, contributions: {} },
-    publications: publications,
-    publicationFilter: {
-      0: true,
-      1: true,
-      2: true,
-      3: true
+    publicationTab: {
+      publications: publications,
+      publicationFilter: {
+        0: true,
+        1: true,
+        2: true,
+        3: true
+      }
+    },
+    projectTab: {
+      projects: projects,
+      languageFilter: {}
     }
   },
   getters: {
@@ -62,17 +69,19 @@ export default new Vuex.Store({
       return state.langpack[state.language];
     },
     publicationAll(state) {
-      return state.publications.data
-        .filter((x, i) => state.publicationFilter[i])
+      return state.publicationTab.publications.data
+        .filter((x, i) => state.publicationTab.publicationFilter[i])
         .flatMap(x => x);
     },
     publicationFilters(state) {
-      return Object.values(state.publicationFilter).map((x, i) => {
-        return {
-          title: state.langpack[state.language].Publications.category[i],
-          enabled: x
-        };
-      });
+      return Object.values(state.publicationTab.publicationFilter).map(
+        (x, i) => {
+          return {
+            title: state.langpack[state.language].Publications.category[i],
+            enabled: x
+          };
+        }
+      );
     }
   },
   mutations: {
@@ -90,7 +99,8 @@ export default new Vuex.Store({
       state.calendar = data;
     },
     UPDATE_PUBLICATION_FILTER(state, data) {
-      state.publicationFilter[data] = !state.publicationFilter[data];
+      state.publicationTab.publicationFilter[data] = !state.publicationTab
+        .publicationFilter[data];
     }
   },
   actions: {
