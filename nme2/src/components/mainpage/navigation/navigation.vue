@@ -33,6 +33,7 @@ export default {
 @media (max-width: 768px) {
   .navigation {
     width: 100%;
+    height: 51px;
     border-radius: 0px;
     flex-direction: row;
     margin-bottom: 12px;

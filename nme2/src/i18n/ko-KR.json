@@ -24,6 +24,10 @@
     "overview": "개요",
     "profile": "프로필",
     "project": "프로젝트",
+    "publication": "출간",
     "contact": "연락처"
+  },
+  "Publications": {
+    "category": ["국제 저널", "국내 저널", "국제 컨퍼런스", "국내 컨퍼런스"]
   }
 }

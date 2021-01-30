@@ -24,6 +24,10 @@
     "overview": "Overview",
     "profile": "Profile",
     "project": "Project",
+    "publication": "Publication",
     "contact": "Contact"
+  },
+  "Publications": {
+    "category": ["Intl. Journal", "Dom. Journal", "Intl. Conference", "Dom. Conference"]
   }
 }

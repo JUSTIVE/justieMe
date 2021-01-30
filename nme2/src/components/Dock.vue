@@ -67,7 +67,7 @@ export default {
   margin-bottom: 10px;
   padding: 0px 400px;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .dock {
     width: calc(100% - 400px);
     padding: 0px 200px;

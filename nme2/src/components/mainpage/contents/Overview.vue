@@ -15,14 +15,15 @@ export default {
     Card,
     Calendar
   },
-  async mounted() {
+  mounted() {
     console.log('activated')
     let axios = require('axios')
 
-    let response = await axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE')
-    console.log(response.data)
-    this.$store.commit('UPDATE_CALENDAR', response.data)
-    console.log(this.$route)
+    axios.get('https://githubapi.ryanchristian.dev/user/JUSTIVE').then((response) => {
+      console.log(response.data)
+      this.$store.commit('UPDATE_CALENDAR', response.data)
+      console.log(this.$route)
+    })
   }
 }
 </script>

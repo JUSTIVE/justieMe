@@ -16,10 +16,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/theme.scss';
 .Card {
-  background: var(--foreground);
-  border-radius: var(--global-radius);
-  box-shadow: var(--elevation1);
+  @include cardy();
   padding: 12px;
   margin-bottom: 12px;
 }

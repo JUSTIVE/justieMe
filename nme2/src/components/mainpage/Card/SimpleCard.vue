@@ -24,14 +24,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/theme.scss';
 .simpleCard {
+  @include cardy();
   display: flex;
   padding: 12px;
   margin-bottom: 12px;
-  background: var(--foreground);
-  border-radius: var(--global-radius);
-  box-shadow: var(--elevation1);
-  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .cardHero {
   width: 48px;

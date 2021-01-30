@@ -156,12 +156,12 @@ export default {
     width: calc(min(100% / 53, 11px));
   }
   .day {
-    width: 7px;
-    height: 7px;
+    width: 5px;
+    height: 5px;
     margin: 0.5px 0px;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .dayTag {
     margin-bottom: 10px;
   }
@@ -176,14 +176,14 @@ export default {
 }
 @media (max-width: 1200px) {
   .dayTag {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .week {
     width: calc(min(100% / 53, 8px));
   }
   .day {
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     margin: 0.5px 0px;
   }
 }

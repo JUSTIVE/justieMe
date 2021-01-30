@@ -4,6 +4,8 @@ import Vuex from "vuex";
 import en_US from "../i18n/en-US.json";
 import ko_KR from "../i18n/ko-KR.json";
 
+import { publications } from "./publications.js";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -28,12 +30,24 @@ export default new Vuex.Store({
         path: "project"
       },
       {
+        name: "Publication",
+        icon: "menu_book",
+        path: "publication"
+      },
+      {
         name: "Contact",
         icon: "alternate_email",
         path: "contact"
       }
     ],
-    calendar: { total: 0, contributions: {} }
+    calendar: { total: 0, contributions: {} },
+    publications: publications,
+    publicationFilter: {
+      0: true,
+      1: true,
+      2: true,
+      3: true
+    }
   },
   getters: {
     calendar(state) {
@@ -46,6 +60,19 @@ export default new Vuex.Store({
     },
     lang(state) {
       return state.langpack[state.language];
+    },
+    publicationAll(state) {
+      return state.publications.data
+        .filter((x, i) => state.publicationFilter[i])
+        .flatMap(x => x);
+    },
+    publicationFilters(state) {
+      return Object.values(state.publicationFilter).map((x, i) => {
+        return {
+          title: state.langpack[state.language].Publications.category[i],
+          enabled: x
+        };
+      });
     }
   },
   mutations: {
@@ -61,6 +88,9 @@ export default new Vuex.Store({
     },
     UPDATE_CALENDAR(state, data) {
       state.calendar = data;
+    },
+    UPDATE_PUBLICATION_FILTER(state, data) {
+      state.publicationFilter[data] = !state.publicationFilter[data];
     }
   },
   actions: {
@@ -72,6 +102,9 @@ export default new Vuex.Store({
     },
     UPDATE_CALENDAR({ commit }, data) {
       commit("UPDATE_CALENDAR", data);
+    },
+    UPDATE_PUBLICATION_FILTER({ commit }, data) {
+      commit("UPDATE_PUBLICATION_FILTER", data);
     }
   },
   modules: {}
