@@ -187,4 +187,17 @@ export default {
     margin: 0.5px 0px;
   }
 }
+@media (max-width: 400px) {
+  .dayTag {
+    margin-bottom: 2px;
+  }
+  .week {
+    width: calc(min(100% / 53, 8px));
+  }
+  .day {
+    width: 1px;
+    height: 1px;
+    margin: 0.5px 0px;
+  }
+}
 </style>

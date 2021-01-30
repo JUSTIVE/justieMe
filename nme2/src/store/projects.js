@@ -1,5 +1,17 @@
 export const projects = [
   {
+    link: "http://codemind.co.kr/eng/coyote.php",
+    name: "Coyote",
+    description: "Automated SW Testing Tool",
+    language: ["vue", "javascript", "java", "scala", "fsharp"]
+  },
+  {
+    link: "http://codemind.co.kr/eng/hanacode.php",
+    name: "HanaCode",
+    description: "SQL migration tool",
+    language: ["vue", "javascript", "java"]
+  },
+  {
     link: "https://github.com/JUSTIVE/Position-Based-Dynamics",
     name: "Position Based Dynamics",
     description: "Position Based Dynamics in Unity, but with GPGPU approach",

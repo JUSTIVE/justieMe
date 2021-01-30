@@ -75,6 +75,7 @@ export default {
   align-items: center;
   opacity: 0.5;
   transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: var(--font-size6);
   filter: saturate(0);
   &:hover {
     cursor: pointer;
@@ -141,6 +142,15 @@ export default {
     width: initial;
     display: inline-flex;
     flex: 1;
+  }
+}
+@media (max-width: 400px) {
+  .publicationFilter {
+    flex-direction: column-reverse;
+  }
+  .highlighter {
+    margin-top: 4px;
+    margin-right: 0px;
   }
 }
 </style>
