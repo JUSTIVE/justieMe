@@ -24,13 +24,21 @@
           />
         </div>
       </div>
-      <div v-if="current !== undefined" class="currentDayCommit">
-        <div class="date">{{ current.date }}</div>
-        <div class="commits">{{ current.count }}</div>
+      <div class="currentDayCommit">
+        <div>
+          <span>{{ $store.getters.lang.Overview.todayCommit.title }}</span>
+          <span class="value">{{ $store.getters.lang.Overview.todayCommit.value[todayCommit] }}</span>
+        </div>
+        <div class="date" v-if="current !== undefined">
+          <span>{{ $store.getters.lang.Overview.currentCommit.date }}</span>
+          <span class="value">{{ current.date }}</span>
+        </div>
+        <div class="commits" v-if="current !== undefined">
+          <span>{{ $store.getters.lang.Overview.currentCommit.commits }}</span>
+          <span class="value">{{ current.count }}</span>
+        </div>
       </div>
     </div>
-
-    {{ todayCommit }}
   </div>
 </template>
 
@@ -130,6 +138,14 @@ export default {
   &.d4 {
     background: var(--github4);
     transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+}
+.currentDayCommit {
+  height: 34px;
+  font-size: var(--font-size6);
+  .value {
+    color: var(--accent);
+    margin-left: 4px;
   }
 }
 @media (max-width: 2000px) {

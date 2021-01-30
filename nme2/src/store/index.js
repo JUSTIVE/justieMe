@@ -43,6 +43,9 @@ export default new Vuex.Store({
       let lastWeek =
         state.calendar.contributions[state.calendar.contributions.length - 1];
       return lastWeek[lastWeek.length - 1].count > 0;
+    },
+    lang(state) {
+      return state.langpack[state.language];
     }
   },
   mutations: {

@@ -1,13 +1,7 @@
 <template>
   <div class="link column">
-    <SimpleCard :title="$store.state.langpack[$store.state.language].Contacts.Github" subtitle="JUSTIVE">
-      <a
-        href="https://github.com/JUSTIVE"
-        id="github"
-        @mouseover="hover('github')"
-        class="contact-icons"
-        slot="cardHero"
-      >
+    <SimpleCard :title="$store.getters.lang.Contacts.Github" subtitle="JUSTIVE">
+      <a href="https://github.com/JUSTIVE" id="github" class="contact-icons" slot="cardHero">
         <svg viewBox="0 0 24 24" class="contact-icons">
           <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#1B1817" />
           <path
@@ -19,8 +13,8 @@
         </svg>
       </a>
     </SimpleCard>
-    <SimpleCard :title="$store.state.langpack[$store.state.language].Contacts.GMail" subtitle="Ben Kim">
-      <a href="mailto:ben399399@gmail.com" id="mail" @mouseover="hover('mail')" class="contact-icons" slot="cardHero">
+    <SimpleCard :title="$store.getters.lang.Contacts.GMail" subtitle="Ben Kim">
+      <a href="mailto:ben399399@gmail.com" id="mail" class="contact-icons" slot="cardHero">
         <svg viewBox="0 0 24 24" class="contact-icons">
           <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#fff" />
           <path
@@ -56,14 +50,8 @@
         </svg>
       </a>
     </SimpleCard>
-    <SimpleCard :title="$store.state.langpack[$store.state.language].Contacts.Unsplash" subtitle="JUSTIVE">
-      <a
-        href="https://unsplash.com/@justive_"
-        id="unsplash"
-        @mouseover="hover('unsplash')"
-        class="contact-icons"
-        slot="cardHero"
-      >
+    <SimpleCard :title="$store.getters.lang.Contacts.Unsplash" subtitle="JUSTIVE">
+      <a href="https://unsplash.com/@justive_" id="unsplash" class="contact-icons" slot="cardHero">
         <svg viewBox="0 0 24 24">
           <rect xmlns="http://www.w3.org/2000/svg" width="24" height="24" rx="15%" fill="#1B1817" />
           <path
@@ -74,23 +62,18 @@
         </svg>
       </a>
     </SimpleCard>
+    <SimpleCard :title="$store.getters.lang.Contacts.Duolingo" subtitle="JUSTIV">
+      <a href="https://www.duolingo.com/profile/JUSTIV" id="duolingo" class="contact-icons" slot="cardHero">
+        <img src="@/assets/image/duolingo.webp" class="contact-icons-webp" />
+      </a>
+    </SimpleCard>
   </div>
 </template>
 
 <script>
 import SimpleCard from '../Card/SimpleCard.vue'
 export default {
-  components: { SimpleCard },
-  data() {
-    return {
-      hoverItem: ''
-    }
-  },
-  methods: {
-    hover(value) {
-      this.hoverItem = value
-    }
-  }
+  components: { SimpleCard }
 }
 </script>
 
@@ -115,5 +98,11 @@ export default {
 .contact-icons {
   width: 48px;
   height: 48px;
+}
+.contact-icons-webp {
+  width: 36px;
+  height: 36px;
+  margin: 6px;
+  border-radius: var(--global-radius);
 }
 </style>

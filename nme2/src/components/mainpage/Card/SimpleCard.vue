@@ -31,6 +31,7 @@ export default {
   background: var(--foreground);
   border-radius: var(--global-radius);
   box-shadow: var(--elevation1);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .cardHero {
   width: 48px;
@@ -46,10 +47,11 @@ export default {
 .cardTitle {
   font-size: var(--font-size5);
   color: var(--text-color);
+  font-weight: bold;
 }
 .cardSubTitle {
-  font-size: var(--font-size5);
+  font-size: var(--font-size6);
   color: var(--text-color);
-  opacity: 0.8;
+  opacity: 0.6;
 }
 </style>
