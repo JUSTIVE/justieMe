@@ -73,7 +73,8 @@ export default new Vuex.Store({
         .filter((x, i) => state.publicationTab.publicationFilter[i])
         .map((x, i) => {
           return x.map(y => {
-            y.category = i;
+            y.category =
+              state.langpack[state.language].Publications.category[i];
             return y;
           });
         })
