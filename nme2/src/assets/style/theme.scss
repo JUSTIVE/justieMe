@@ -39,6 +39,12 @@
   .html-lang {
     background: #e34c26;
   }
+  .vue-lang {
+    background: #2c3e50;
+  }
+  .fsharp-lang {
+    background: #b845fc;
+  }
 }
 [data-theme^='dark'] {
   --accent: hsl(42, 100%, 51%);
@@ -46,7 +52,10 @@
   --background: #121212;
   --dock-tint: #fff;
   --foreground: #242424;
+  --foreground2: #424242;
   --foreground-hover: #363636;
+
+  --project-token: #0d1117;
 
   --sky: hsl(251, 23%, 36%);
   --star: hsl(42, 100%, 51%);
@@ -64,9 +73,12 @@
   --background: #f2f2f2;
   --dock-tint: #222;
   --foreground: white;
+  --foreground2: #f2f2f2;
   --foreground-hover: #f2f2f2;
 
-  --sky: hsl(215, 100%, 70%);
+  --project-token: #f2f2f2;
+
+  --sky: hsl(215, 100%, 78%);
   --star: #ffd75e;
 
   --github-hue: 125;
