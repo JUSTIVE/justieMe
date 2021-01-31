@@ -43,7 +43,7 @@ export default {
   scrollbar-width: none; /* Firefox */
 }
 .navigation {
-  z-index: 1;
+  z-index: 2;
 }
 .content {
   flex: 1;
