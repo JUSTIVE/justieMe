@@ -37,6 +37,7 @@ export default {
     border-radius: 0px;
     flex-direction: row;
     margin-bottom: 12px;
+    overflow: visible;
   }
 }
 </style>

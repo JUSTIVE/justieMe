@@ -145,11 +145,20 @@ export default {
   }
 }
 @media (max-width: 400px) {
+  .filters {
+    height: 60px !important;
+  }
   .publicationFilter {
     flex-direction: column-reverse;
+    height: 40px;
+    padding-top: 6px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+    text-align: center;
   }
   .highlighter {
-    margin-top: 4px;
+    height: 2px;
+    width: 18px;
     margin-right: 0px;
   }
 }

@@ -73,7 +73,8 @@ export default new Vuex.Store({
         .filter((x, i) => state.publicationTab.publicationFilter[i])
         .map((x, i) => {
           return x.map(y => {
-            y.category = i;
+            y.category =
+              state.langpack[state.language].Publications.category[i];
             return y;
           });
         })
@@ -88,6 +89,20 @@ export default new Vuex.Store({
           };
         }
       );
+    },
+    projectAll(state) {
+      return state.projectTab.projects.filter(
+        x =>
+          !Object.entries(state.projectTab.languageFilter)
+            .filter(e => !e[1])
+            .map(e => e[0])
+            .some(y => x.includes(y[0]))
+      );
+    },
+    projectLanguages(state) {
+      return [
+        ...new Set(state.projectTab.projects.flatMap(x => x.language))
+      ].sort();
     }
   },
   mutations: {
@@ -122,6 +137,5 @@ export default new Vuex.Store({
     UPDATE_PUBLICATION_FILTER({ commit }, data) {
       commit("UPDATE_PUBLICATION_FILTER", data);
     }
-  },
-  modules: {}
+  }
 });

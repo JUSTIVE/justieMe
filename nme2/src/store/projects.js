@@ -27,7 +27,7 @@ export const projects = [
     link: "https://github.com/JUSTIVE/ElectronTube-Music",
     name: "Electotube Music",
     description: "Electron version of YouTubeMusic",
-    langauge: ["javascript", "html"]
+    language: ["javascript", "html"]
   },
   {
     link: "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",
@@ -118,7 +118,7 @@ export const projects = [
     link: "https://github.com/JUSTIVE/ElectronTube-Music",
     name: "Electotube Music",
     description: "Electron version of YouTubeMusic",
-    langauge: ["javascript", "html"]
+    language: ["javascript", "html"]
   },
   {
     link: "https://github.com/JUSTIVE/GLRERENDERER_LEGACYCHECKER",

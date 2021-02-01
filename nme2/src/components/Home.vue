@@ -43,7 +43,7 @@ export default {
   scrollbar-width: none; /* Firefox */
 }
 .navigation {
-  z-index: 1;
+  z-index: 2;
 }
 .content {
   flex: 1;
@@ -63,8 +63,12 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .navigation {
+    height: auto;
+  }
   .home {
     width: 100%;
+
     flex-direction: column;
     transform: translateX(0px) translateY(80px);
   }

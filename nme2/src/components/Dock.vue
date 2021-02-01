@@ -36,7 +36,7 @@ export default {
   align-items: center;
   color: white;
   font-weight: bold;
-  z-index: 1;
+  z-index: 2;
   -webkit-user-select: none;
   transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform: rotateZ(90deg);
