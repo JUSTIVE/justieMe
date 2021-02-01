@@ -1,9 +1,11 @@
 <template>
   <div class="project">
     <div class="languageFilters">
-      <span v-for="(item, index) in $store.getters.projectLanguages" :key="index + 'p'" class="languageChip">
-        {{ item }}
-      </span>
+      <div class="languageFiltersInner">
+        <span v-for="(item, index) in $store.getters.projectLanguages" :key="index + 'p'" class="languageChip">
+          {{ item }}
+        </span>
+      </div>
     </div>
     <div class="projectContent">
       <ProjectCard v-for="(item, index) in $store.getters.projectAll" :item="item" :key="index" />
@@ -59,10 +61,35 @@ export default {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 768px) {
+@media (max-width: 499px) {
+  .project {
+    margin-top: -12px;
+    flex-direction: column;
+    height: auto;
+    // height: min-content;
+  }
   .languageFilters {
+    width: 100%;
     top: 51px;
     border-radius: 0px;
+    margin: 0px;
+    overflow: auto;
+    margin-bottom: 12px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .languageFiltersInner {
+    width: fit-content;
+    display: flex;
+    flex: 1;
+  }
+  .languageChip {
+    justify-content: center;
+    padding: 0px;
+    height: 48px;
   }
   .projectContent {
     height: fit-content;

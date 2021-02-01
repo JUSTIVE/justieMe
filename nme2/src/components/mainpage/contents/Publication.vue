@@ -159,7 +159,6 @@ export default {
   .highlighter {
     height: 2px;
     width: 18px;
-    // margin-top: 4px;
     margin-right: 0px;
   }
 }

@@ -63,8 +63,12 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .navigation {
+    height: auto;
+  }
   .home {
     width: 100%;
+
     flex-direction: column;
     transform: translateX(0px) translateY(80px);
   }

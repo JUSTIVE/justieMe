@@ -19,6 +19,38 @@
 export default {
   props: {
     item: Object
+  },
+  data() {
+    return {
+      thumbnail: undefined
+    }
+  },
+  mounted() {
+    // const ogs = require('open-graph-scraper-lite')
+    // const options = {
+    //   url: this.item.link,
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     Vary: 'Origin'
+    //   }
+    // }
+    // ogs(options).then((data) => {
+    //   const { error, result, response } = data
+    //   console.log('error:', error) // This is returns true or false. True if there was a error. The error it self is inside the results object.
+    //   console.log('result:', result) // This contains all of the Open Graph results
+    //   console.log('response:', response) // This contains the HTML of page
+    // })
+    let axios = require('axios')
+
+    axios
+      .fetch(this.item.link, {
+        'Access-Control-Allow-Origin': '*'
+      })
+      .then((response) => {
+        console.log(response.data)
+        // this.$store.commit('UPDATE_CALENDAR', response.data)
+        // console.log(this.$route)
+      })
   }
 }
 </script>
@@ -60,7 +92,6 @@ export default {
   opacity: 0.6;
 }
 .languages {
-  display: flex;
   color: var(--text-color);
   font-size: 10px;
   margin-top: 8px;

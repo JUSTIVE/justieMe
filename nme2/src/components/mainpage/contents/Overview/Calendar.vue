@@ -195,8 +195,8 @@ export default {
     width: calc(min(100% / 53, 8px));
   }
   .day {
-    width: 1px;
-    height: 1px;
+    width: 0.5px;
+    height: 0.5px;
     margin: 0.5px 0px;
   }
 }
