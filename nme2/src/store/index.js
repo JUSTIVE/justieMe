@@ -41,6 +41,7 @@ export default new Vuex.Store({
         path: "contact"
       }
     ],
+    summary: undefined,
     calendar: { total: 0, contributions: {} },
     publicationTab: {
       publications: publications,
@@ -122,6 +123,9 @@ export default new Vuex.Store({
     UPDATE_PUBLICATION_FILTER(state, data) {
       state.publicationTab.publicationFilter[data] = !state.publicationTab
         .publicationFilter[data];
+    },
+    UPDATE_SUMMARY(state, data) {
+      state.summary = data;
     }
   },
   actions: {
@@ -136,6 +140,9 @@ export default new Vuex.Store({
     },
     UPDATE_PUBLICATION_FILTER({ commit }, data) {
       commit("UPDATE_PUBLICATION_FILTER", data);
+    },
+    UPDATE_SUMMARY({ commit }, data) {
+      commit("UPDATE_SUMMARY", data);
     }
   }
 });

@@ -40,17 +40,16 @@ export default {
     //   console.log('result:', result) // This contains all of the Open Graph results
     //   console.log('response:', response) // This contains the HTML of page
     // })
-    let axios = require('axios')
-
-    axios
-      .fetch(this.item.link, {
-        'Access-Control-Allow-Origin': '*'
-      })
-      .then((response) => {
-        console.log(response.data)
-        // this.$store.commit('UPDATE_CALENDAR', response.data)
-        // console.log(this.$route)
-      })
+    // let axios = require('axios')
+    // axios
+    //   .fetch(this.item.link, {
+    //     'Access-Control-Allow-Origin': '*'
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data)
+    //     // this.$store.commit('UPDATE_CALENDAR', response.data)
+    //     // console.log(this.$route)
+    //   })
   }
 }
 </script>

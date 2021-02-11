@@ -3,7 +3,9 @@
     <Card class="disable-hover">
       <Calendar slot="content" />
     </Card>
-    <Card style="height:2000px" />
+    <Card style="height:2000px">
+      <div slot="content"></div>
+    </Card>
   </div>
 </template>
 
@@ -23,6 +25,9 @@ export default {
       console.log(response.data)
       this.$store.commit('UPDATE_CALENDAR', response.data)
       console.log(this.$route)
+    })
+    axios.get('https://profile-summary-for-github.com/api/user/JUSTIVE').then((response) => {
+      this.$store.commit('UPDATE_SUMMARY', response.data)
     })
   }
 }
