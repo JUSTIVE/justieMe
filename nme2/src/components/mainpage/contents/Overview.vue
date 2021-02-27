@@ -3,9 +3,6 @@
     <Card class="disable-hover">
       <Calendar slot="content" />
     </Card>
-    <Card style="height:2000px">
-      <div slot="content"></div>
-    </Card>
   </div>
 </template>
 

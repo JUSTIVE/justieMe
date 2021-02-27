@@ -15,3 +15,22 @@
     background: var(--foreground-hover);
   }
 }
+
+@mixin row($mainAxisAlignment: initial, $crossAxisAlignment: initial) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $mainAxisAlignment;
+  align-items: $crossAxisAlignment;
+}
+
+@mixin column($mainAxisAlignment: initial, $crossAxisAlignment: initial) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $mainAxisAlignment;
+  align-items: $crossAxisAlignment;
+}
+
+@mixin maximize() {
+  width: 100vw;
+  height: 100vh;
+}

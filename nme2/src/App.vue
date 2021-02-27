@@ -1,12 +1,9 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
   <div class="root" :data-theme="$store.state.theme">
-    <Dock />
-
-    <router-view />
+    <div class="innerMain">
+      <Dock />
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +29,7 @@ export default {
 @import './assets/style/theme.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 html {
+  @include maximize;
   background: var(--background);
   overflow: hidden;
 }
@@ -48,14 +46,31 @@ html {
   overflow: hidden;
 }
 body {
+  @include maximize;
+  @include row;
+  background: var(--background);
   margin: 0px;
 }
-.root {
-  background: var(--background);
-  width: 100vw;
-  height: 100vh;
+.innerMain {
+  width: 40vw;
+  height: 80vh;
+  @include column;
+  border-radius: var(--radius3);
+  background: var(--foreground);
+  margin: auto auto;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  box-shadow: var(--elevation1);
+}
+.root {
+  @include column(center, center);
+  @include maximize;
+  margin: auto auto;
+  background: var(--background);
+}
+@media (max-width: 600px) {
+  .innerMain {
+    @include maximize;
+    border-radius: 0px;
+  }
 }
 </style>

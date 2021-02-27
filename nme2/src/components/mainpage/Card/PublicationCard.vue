@@ -48,20 +48,22 @@ export default {
   font-size: var(--font-size6);
   color: var(--text-color);
   opacity: 0.4;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .cardTitle {
   font-size: var(--font-size5);
   color: var(--text-color);
   font-weight: bold;
+  margin-bottom: 12px;
 }
 .cardSubTitle {
   font-size: var(--font-size6);
   color: var(--text-color);
+  line-height: 14px;
   opacity: 0.6;
 }
 .cardQuote {
-  margin-top: 4px;
+  margin-top: 8px;
   display: flex;
 }
 .quotelink {

@@ -54,38 +54,17 @@ export default {
   display: inline-flex;
 }
 
+.left {
+  height: 100%;
+}
 .dock {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 800px);
-  position: absolute;
   height: 80px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background: var(--foreground);
-  margin-bottom: 10px;
-  padding: 0px 400px;
-}
-@media (max-width: 1600px) {
-  .dock {
-    width: calc(100% - 400px);
-    padding: 0px 200px;
-  }
-}
-@media (max-width: 1200px) {
-  .dock {
-    width: calc(100% - 100px);
-    padding: 0px 50px;
-  }
-}
-@media (max-width: 768px) {
-  .dock {
-    width: calc(100% - 24px);
-    padding: 0px 12px;
-  }
-  .right {
-    margin-right: 12px;
-  }
+  padding: 0px 20px;
 }
 </style>

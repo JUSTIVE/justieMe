@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.4",
     "dns": "^0.2.2",
     "github-calendar": "^2.2.6",
     "http2": "^3.3.7",
@@ -22,6 +23,8 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.35",
+    "@swc/core": "^1.2.49",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",

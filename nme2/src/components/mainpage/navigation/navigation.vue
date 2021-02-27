@@ -20,24 +20,13 @@ export default {
 .navigation {
   position: sticky;
   top: 0px;
-  width: 180px;
+  width: 100%;
   margin-right: 12px;
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   height: fit-content;
-  border-radius: var(--global-radius);
   background: var(--foreground);
   overflow: hidden;
   box-shadow: var(--elevation1);
-}
-@media (max-width: 768px) {
-  .navigation {
-    width: 100%;
-    height: 51px;
-    border-radius: 0px;
-    flex-direction: row;
-    margin-bottom: 12px;
-    overflow: visible;
-  }
 }
 </style>

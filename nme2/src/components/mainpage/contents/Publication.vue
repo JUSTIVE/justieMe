@@ -48,7 +48,6 @@ export default {
 .publicationContents {
   display: flex;
   flex-direction: column;
-  padding-bottom: 92px;
   flex: 1;
 }
 .filters {
@@ -63,7 +62,6 @@ export default {
   color: var(--text-color);
   font-weight: normal;
   font-size: var(--font-size5);
-  border-radius: var(--global-radius);
   box-shadow: var(--elevation1);
   overflow: hidden;
 }
@@ -86,6 +84,9 @@ export default {
     filter: saturate(1);
   }
 }
+.filtername {
+  word-break: keep-all;
+}
 .highlighter {
   width: 10px;
   height: 10px;
@@ -103,6 +104,7 @@ export default {
     height: 48px;
     flex-direction: row;
     margin: 0px;
+    border-radius: var(--radius1);
     margin-bottom: 12px;
     justify-content: space-evenly;
     z-index: 1;
