@@ -14,7 +14,7 @@
     "dns": "^0.2.2",
     "github-calendar": "^2.2.6",
     "http2": "^3.3.7",
-    "open-graph-scraper": "^4.7.1",
+    "open-graph-scraper": "^5.0.5",
     "open-graph-scraper-lite": "^1.1.1",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
