@@ -9,6 +9,6 @@
     "dependencies": {
         "file-system": "^2.2.2",
         "fs": "0.0.1-security",
-        "npm": "^9.6.1"
+        "npm": "^10.8.1"
     }
 }
