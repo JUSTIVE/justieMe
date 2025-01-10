@@ -1,24 +1,31 @@
 {
-  "name": "justieme",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port 3000",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@mobily/ts-belt": "next",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ts-pattern": "^5.0.5"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
-  }
+	"name": "justieme",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"dev": "vite --port=3001",
+		"build": "vite build",
+		"serve": "vite preview",
+		"start": "vite",
+		"twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@tanstack/router-plugin": "^1.95.1",
+		"@types/react": "^18.3.18",
+		"@types/react-dom": "^18.3.5",
+		"@vitejs/plugin-react": "^4.3.4",
+		"tailwindcss": "^3.4.17",
+		"vite": "^5.4.11"
+	},
+	"dependencies": {
+		"@tanstack/react-router": "^1.95.1",
+		"@tanstack/router-devtools": "^1.95.1",
+		"i18next": "^24.2.0",
+		"react": "18",
+		"react-dom": "^18.3.1",
+		"react-i18next": "^15.4.0"
+	}
 }
