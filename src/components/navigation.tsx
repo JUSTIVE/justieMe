@@ -26,6 +26,7 @@ export const Navigation = () => {
         </Link>
       </div>
       <button
+        type="button"
         onClick={() => {
           i18n.changeLanguage(currentLanguage === "en" ? "ko" : "en");
         }}
