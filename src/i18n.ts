@@ -7,6 +7,8 @@ const resources = {
       title1: "Want to make the world a better place.",
       title2: "Want to be more happy and fulfilled.",
       title3: "Want to make a product that makes customers happy.",
+      navHome: "Home",
+      navAbout: "About",
     },
   },
   ko: {
@@ -15,6 +17,8 @@ const resources = {
       title1: "더 나은 제품으로 세상을 바꾸고 싶은 개발자.",
       title2: "늘 같이 즐겁게 일하고 싶은 동료.",
       title3: "고객을 위한 제품을 만드는 제작자.",
+      navHome: "홈",
+      navAbout: "소개",
     },
   },
 };

@@ -1,4 +1,5 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { twMerge } from "tailwind-merge";
 import { Navigation } from "../components/navigation";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
@@ -8,9 +9,14 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <div className="mx-auto max-w-screen-lg">
+    <div
+      className={twMerge(
+        "mx-auto max-w-screen-lg min-h-screen",
+        "dark:bg-gray-900",
+      )}
+      data-mode={"dark"}
+    >
       <Navigation />
-      <hr />
       <Outlet />
       {/* <TanStackRouterDevtools position="bottom-right" /> */}
     </div>
