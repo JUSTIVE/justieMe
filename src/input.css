@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  ::view-transition-group(nav) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
   .pt-safe {
     padding-top: env(safe-area-inset-top);
   }

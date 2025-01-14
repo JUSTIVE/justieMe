@@ -21,12 +21,14 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"@mobily/ts-belt": "^4.0.0-rc.5",
 		"@tanstack/react-router": "^1.95.1",
 		"@tanstack/router-devtools": "^1.95.1",
 		"i18next": "^24.2.0",
 		"react": "18",
 		"react-dom": "^18.3.1",
 		"react-i18next": "^15.4.0",
-		"tailwind-merge": "^2.6.0"
+		"tailwind-merge": "^2.6.0",
+		"vaul": "^1.1.2"
 	}
 }

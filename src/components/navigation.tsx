@@ -10,10 +10,11 @@ export const Navigation = () => {
     <>
       <div
         className={twMerge(
-          "fixed my-2 py-2 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-full max-w-[calc(100%-32px)] backdrop-blur-xl bg-white/80 z-[10] rotate-0 transition-transform translate-x-4",
+          "fixed my-4 py-2 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-full max-w-[calc(100%-32px)] backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
           "lg:max-w-screen-lg lg:translate-x-0",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
         )}
+        style={{ viewTransitionName: "nav" }}
       >
         <div className="inline-flex items-center gap-4">
           <Link
