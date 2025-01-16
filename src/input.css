@@ -7,6 +7,10 @@
     border-radius: 1rem;
     overflow: hidden;
   }
+  ::view-transition-group(nav-settings) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
   .pt-safe {
     padding-top: env(safe-area-inset-top);
   }
