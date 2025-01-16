@@ -1,7 +1,7 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { twMerge } from "tailwind-merge";
-import { Navigation } from "../components/navigation";
-import { Footer } from "../components/footer";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { createContext, useState } from "react";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 

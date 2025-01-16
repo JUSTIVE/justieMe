@@ -7,6 +7,15 @@
     border-radius: 1rem;
     overflow: hidden;
   }
+
+  body {
+    background: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+  }
+  body:has([data-mode="dark"]) {
+    background-color: rgb(
+      17 24 39 / var(--tw-bg-opacity, 1)
+    ); /* 예: 다크 모드 배경색 */
+  }
   ::view-transition-group(nav-settings) {
     border-radius: 1rem;
     overflow: hidden;

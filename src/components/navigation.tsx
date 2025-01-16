@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import { flushSync } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { ThemeContext } from "../routes/__root";
+import { ThemeContext } from "@/routes/__root";
+import { Moon, Settings2, Sun } from "lucide-react";
 
 const TranslateButton = () => {
   const { i18n } = useTranslation();
@@ -26,7 +27,7 @@ const TranslateButton = () => {
 };
 
 const ThemeButton = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return (
     <button
       type="button"
@@ -34,12 +35,16 @@ const ThemeButton = () => {
       onClick={() => {
         document.startViewTransition(() => {
           flushSync(() => {
-            setTheme(theme === "dark" ? "light" : "dark");
+            theme?.setTheme(theme?.theme === "dark" ? "light" : "dark");
           });
         });
       }}
     >
-      {theme === "dark" ? "Light" : "Dark"}
+      {(theme?.theme ?? "light") === "light" ? (
+        <Moon key={"moon"} />
+      ) : (
+        <Sun key={"sun"} />
+      )}
     </button>
   );
 };
@@ -62,7 +67,7 @@ export const Navigation = () => {
       />
       <div
         className={twMerge(
-          "fixed my-4 py-2 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-full max-w-[calc(100%-32px)] backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
+          "fixed my-4 py-2 px-4 pr-2 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-full max-w-[calc(100%-32px)] backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
           "lg:max-w-screen-lg lg:translate-x-0",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
         )}
@@ -98,13 +103,17 @@ export const Navigation = () => {
           onClick={() => {
             setShowSettings(!showSettings);
           }}
+          className={twMerge(
+            "p-1 rounded-xl transition-colors",
+            showSettings ? "bg-gray-900/10 dark:bg-white/10" : "",
+          )}
         >
-          설정
+          <Settings2 />
         </button>
       </div>
       <div
         className={twMerge(
-          "fixed my-4 py-2 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-fit backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
+          "fixed my-4 py-3 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-fit backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
           `${showSettings ? "translate-y-16" : "translate-y-0 opacity-0"}`,
           "lg:max-w-screen-lg lg:translate-x-0",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",

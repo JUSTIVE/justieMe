@@ -1,3 +1,4 @@
+import { Github, Image, Instagram, Mail } from "lucide-react";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Drawer } from "vaul";
@@ -11,14 +12,24 @@ const ContactItem = ({ link, label, icon }: ContactItemProps) => {
   return (
     <a
       className={twMerge(
-        "flex items-center gap-4 px-3 py-2 rounded-xl transition-colors",
+        "flex items-center gap-4 px-3 py-2 rounded-xl transition-colors opacity-0",
         "active:bg-gray-200/50",
         "dark:active:bg-gray-700/50",
       )}
       href={link}
       target="_blank"
     >
-      <div className="w-8 h-8 rounded-full bg-gray-200/50" />
+      {icon === "mail" ? (
+        <Mail />
+      ) : icon === "instagram" ? (
+        <Instagram />
+      ) : icon === "github" ? (
+        <Github />
+      ) : icon === "unsplash" ? (
+        <Image />
+      ) : (
+        <></>
+      )}
       <p className="text-sm">{label}</p>
     </a>
   );
