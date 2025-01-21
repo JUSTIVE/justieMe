@@ -12,12 +12,7 @@ function HomeComponent() {
   const { t } = useTranslation();
   return (
     <div className={twMerge("py-5 flex-1 flex flex-col gap-8 pt-12")}>
-      <h2
-        className={twMerge(
-          "px-5 level-2 flex flex-col gap-4",
-          "dark:text-gray-100",
-        )}
-      >
+      <h2 className={twMerge("px-5 level-2 flex flex-col gap-4")}>
         <img
           src={"./src/asset/profile.png"}
           className="mix-blend-luminosity w-1/2 max-w-[280px] self-center"

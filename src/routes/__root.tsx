@@ -29,7 +29,7 @@ function RootComponent() {
           className={twMerge(
             "w-screen level-5",
             "bg-gray-200",
-            "dark:bg-gray-900",
+            "dark:bg-gray-900 dark:text-gray-100",
           )}
           data-mode={theme}
         >

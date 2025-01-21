@@ -23,10 +23,12 @@ const CareerCard = ({ jd, company, duration, products }: CareerType) => {
       </div>
       <div className="flex flex-col gap-2">
         <div className="level-6 flex flex-col gap-2">
-          {products.map((x) => (
+          {products.map(({ name, description }) => (
             <div className="flex flex-col">
-              <div key={x.name}>{x.name}</div>
-              <div className="opacity-50 level-7">{x.description}</div>
+              <div className="opacity-80" key={name}>
+                {name}
+              </div>
+              <div className="opacity-50 level-7">{description}</div>
             </div>
           ))}
         </div>

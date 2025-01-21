@@ -3,7 +3,8 @@ import { flushSync } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { FooterContext, ThemeContext } from "@/routes/__root";
-import { Moon, Settings2, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const TranslateButton = () => {
   const { i18n } = useTranslation();
@@ -80,6 +81,7 @@ const SettingsPane = ({ showSettings }: SettingsPaneProps) => {
       )}
       style={{ viewTransitionName: "nav-settings" }}
     >
+      <Link to={"./posts"}>나의 글</Link>
       <div className="level-4">{t("settings")}</div>
       <div className="flex flex-col gap-6 w-full">
         <SettingsItem labelKey={"language"}>
@@ -156,7 +158,7 @@ export const Navigation = () => {
             showSettings ? "bg-gray-900/10 dark:bg-white/10" : "",
           )}
         >
-          <Settings2 />
+          <Menu />
         </button>
       </div>
       <SettingsPane showSettings={showSettings} />
