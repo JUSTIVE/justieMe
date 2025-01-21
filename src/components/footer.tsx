@@ -1,5 +1,6 @@
+import { FooterContext } from "@/routes/__root";
 import { Github, Image, Instagram, Mail } from "lucide-react";
-import { useState } from "react";
+import { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import { Drawer } from "vaul";
 
@@ -12,7 +13,7 @@ const ContactItem = ({ link, label, icon }: ContactItemProps) => {
   return (
     <a
       className={twMerge(
-        "flex items-center gap-4 px-3 py-2 rounded-xl transition-colors opacity-0",
+        "flex items-center gap-4 px-3 py-2 rounded-xl transition-colors opacity-100 level-5",
         "active:bg-gray-200/50",
         "dark:active:bg-gray-700/50",
       )}
@@ -20,39 +21,25 @@ const ContactItem = ({ link, label, icon }: ContactItemProps) => {
       target="_blank"
     >
       {icon === "mail" ? (
-        <Mail />
+        <Mail size={20} />
       ) : icon === "instagram" ? (
-        <Instagram />
+        <Instagram size={20} />
       ) : icon === "github" ? (
-        <Github />
+        <Github size={20} />
       ) : icon === "unsplash" ? (
-        <Image />
+        <Image size={20} />
       ) : (
         <></>
       )}
-      <p className="text-sm">{label}</p>
+      <p className="">{label}</p>
     </a>
   );
 };
 
 export const Footer = () => {
-  const [openContacts, setOpenContacts] = useState(false);
+  const fo = useContext(FooterContext);
   return (
-    <Drawer.Root open={openContacts} onOpenChange={setOpenContacts}>
-      {/* <Drawer.Trigger asChild> */}
-      <div
-        className={twMerge(
-          "bottom-0 w-full border-t border-gray-200 px-5 py-3 text-start text-gray-900/50",
-          "dark:border-gray-800 dark:text-gray-100/50",
-        )}
-        onClick={(e) => {
-          e.stopPropagation();
-          setOpenContacts(!openContacts);
-        }}
-      >
-        <p className="text-sm">contacts</p>
-      </div>
-
+    <Drawer.Root open={fo?.footerOpen} onOpenChange={fo?.setFooterOpen}>
       <Drawer.Overlay
         className={twMerge(
           "fixed inset-0 bg-black/40 backdrop-blur-md",
@@ -66,7 +53,7 @@ export const Footer = () => {
             "dark:bg-gray-800 dark:border-gray-800 dark:text-gray-100/80",
           )}
         >
-          <div className="px-3 font-bold">contact me</div>
+          <div className="px-3 level-4">contact me</div>
           <div className="flex flex-col gap-2">
             <ContactItem
               label="ben399399@gmail.com"

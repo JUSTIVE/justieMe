@@ -1,4 +1,3 @@
-import { A } from "@mobily/ts-belt";
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
@@ -12,35 +11,50 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
   const { t } = useTranslation();
   return (
-    <div className={twMerge("py-5 flex-1 flex flex-col")}>
+    <div className={twMerge("py-5 flex-1 flex flex-col gap-8 pt-12")}>
       <h2
         className={twMerge(
-          "text-2xl leading-9 tracking-tighter px-5",
+          "px-5 level-2 flex flex-col gap-4",
           "dark:text-gray-100",
         )}
       >
-        {A.intersperse(
-          [
-            <span style={{ viewTransitionName: "title1" }} key="title1">
-              {t("title1")}
-            </span>,
-            <span
-              style={{ viewTransitionName: "title2" }}
-              className="opacity-30"
-              key="title2"
-            >
-              {t("title2")}
-            </span>,
-            <span
-              style={{ viewTransitionName: "title3" }}
-              className="opacity-30"
-              title="title3"
-            >
-              {t("title3")}
-            </span>,
-          ],
-          <>{"  "}</>,
-        )}
+        <img
+          src={"./src/asset/profile.png"}
+          className="mix-blend-luminosity w-1/2 max-w-[280px] self-center"
+          style={{
+            maskImage:
+              "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 120%)",
+            viewTransitionName: "profile",
+          }}
+        />
+        <div
+          style={{ viewTransitionName: "title1" }}
+          key="title1"
+          className="text-balance break-keep font-semibold"
+        >
+          {t("title1")}
+        </div>
+
+        <div className="level-5 opacity-50 whitespace-pre-wrap break-keep">
+          {t("introDescription")}
+        </div>
+
+        {
+          // <span
+          //   style={{ viewTransitionName: "title2" }}
+          //   className="opacity-30"
+          //   key="title2"
+          // >
+          //   {t("title2")}
+          // </span>,
+          // <span
+          //   style={{ viewTransitionName: "title3" }}
+          //   className="opacity-30"
+          //   title="title3"
+          // >
+          //   {t("title3")}
+          // </span>
+        }
       </h2>
       <div>
         <Career />

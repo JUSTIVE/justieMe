@@ -1,9 +1,8 @@
-import { Link } from "@tanstack/react-router";
-import { useContext, useState } from "react";
+import { PropsWithChildren, useContext, useState } from "react";
 import { flushSync } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { ThemeContext } from "@/routes/__root";
+import { FooterContext, ThemeContext } from "@/routes/__root";
 import { Moon, Settings2, Sun } from "lucide-react";
 
 const TranslateButton = () => {
@@ -12,7 +11,7 @@ const TranslateButton = () => {
   return (
     <button
       type="button"
-      className="text-sm"
+      className="level-5"
       onClick={() => {
         document.startViewTransition(() => {
           flushSync(() => {
@@ -31,7 +30,7 @@ const ThemeButton = () => {
   return (
     <button
       type="button"
-      className="text-sm"
+      className=""
       onClick={() => {
         document.startViewTransition(() => {
           flushSync(() => {
@@ -49,15 +48,74 @@ const ThemeButton = () => {
   );
 };
 
+type SettingsItemProps = {
+  labelKey: string;
+};
+
+const SettingsItem = ({
+  labelKey,
+  children,
+}: PropsWithChildren<SettingsItemProps>) => {
+  const { t } = useTranslation();
+  return (
+    <div className="flex gap-4 justify-between w-full items-center">
+      <p className="text-sm">{t(labelKey)}</p>
+      {children}
+    </div>
+  );
+};
+
+type SettingsPaneProps = {
+  showSettings: boolean;
+};
+const SettingsPane = ({ showSettings }: SettingsPaneProps) => {
+  const { t } = useTranslation();
+  return (
+    <div
+      className={twMerge(
+        "fixed my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
+        `${showSettings ? "translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
+        "lg:max-w-screen-lg lg:translate-x-0",
+        "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
+      )}
+      style={{ viewTransitionName: "nav-settings" }}
+    >
+      <div className="level-4">{t("settings")}</div>
+      <div className="flex flex-col gap-6 w-full">
+        <SettingsItem labelKey={"language"}>
+          <TranslateButton />
+        </SettingsItem>
+        <SettingsItem labelKey={"theme"}>
+          <ThemeButton />
+        </SettingsItem>
+      </div>
+    </div>
+  );
+};
+
+const Glass = () => {
+  return (
+    <div className="gradient-blur">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
+};
+
 export const Navigation = () => {
   const { t } = useTranslation();
   const [showSettings, setShowSettings] = useState(false);
+  const fo = useContext(FooterContext);
 
   return (
     <>
       <div
         className={twMerge(
-          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
+          "fixed top-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
           `${showSettings ? "" : "opacity-0 pointer-events-none"}`,
         )}
         style={{ viewTransitionName: "nav-overlay" }}
@@ -65,38 +123,28 @@ export const Navigation = () => {
           setShowSettings(false);
         }}
       />
+      <Glass />
       <div
         className={twMerge(
-          "fixed my-4 py-2 px-4 pr-2 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-full max-w-[calc(100%-32px)] backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
+          "fixed my-4 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-32px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
           "lg:max-w-screen-lg lg:translate-x-0",
-          "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
+          "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-700/50",
         )}
         style={{ viewTransitionName: "nav" }}
       >
         <div className="inline-flex items-center gap-4">
-          <Link
-            to="/"
-            activeProps={{
-              className: "font-bold",
-            }}
+          <button
+            type={"button"}
             style={{
               viewTransitionName: "navHome",
             }}
-            activeOptions={{ exact: true }}
+            onClick={(e) => {
+              fo?.setFooterOpen(true);
+              e.stopPropagation();
+            }}
           >
             {t("name")}
-          </Link>
-          {/* <Link
-            to="/about"
-            activeProps={{
-              className: "font-bold",
-            }}
-            style={{
-              viewTransitionName: "navAbout",
-            }}
-          >
-            {t("navAbout")}
-          </Link> */}
+          </button>
         </div>
 
         <button
@@ -111,18 +159,7 @@ export const Navigation = () => {
           <Settings2 />
         </button>
       </div>
-      <div
-        className={twMerge(
-          "fixed my-4 py-3 px-4 flex gap-2 items-center text-lg justify-between rounded-2xl border border-gray-200 w-fit backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
-          `${showSettings ? "translate-y-16" : "translate-y-0 opacity-0"}`,
-          "lg:max-w-screen-lg lg:translate-x-0",
-          "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
-        )}
-        style={{ viewTransitionName: "nav-settings" }}
-      >
-        <TranslateButton />
-        <ThemeButton />
-      </div>
+      <SettingsPane showSettings={showSettings} />
       <div className="h-16" />
     </>
   );

@@ -4,9 +4,15 @@
     "title1": "A developer who wants to change the world with better products.",
     "title2": "A colleague who always wants to work joyfully together.",
     "title3": "A creator who builds products for customers.",
+    "introDescription": "'Familiar with Novelty'. I am comfortable learning new technologies, have experience using the recently emerging functional programming paradigm, and am a 'learner and sharer' by seeking out and learning what I don't know and sharing what I know with others.\n\nI have knowledge about computer graphics and am interested in systematically configuring GUIs to provide a beautiful user experience.",
     "navHome": "Home",
     "navAbout": "About",
     "now": "Now",
-    "workExperience": "Work Experience"
+    "workExperience": "Work Experience",
+    "marketboro": "Marketboro",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "contributedProducts": "Contributed Products"
   }
 }
