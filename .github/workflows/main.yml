@@ -17,18 +17,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
       - name: Build Page
         run: |
-          cd nme2
-          npm ci
-          npm run build
-          sed -i 's#"/#"./#g' ./dist/index.html
+          bun install
+          bun run build
 
       - name: Resolve Route
         run: |
-          cd nme2
           cp ./dist/index.html ./dist/404.html
 
       - name: Commit report
