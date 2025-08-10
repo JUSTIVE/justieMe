@@ -1,38 +1,38 @@
 {
-	"name": "justieme",
-	"version": "0.0.0",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"typecheck": "tsc --noEmit",
-		"dev": "vite --port=3001",
-		"build": "vite build",
-		"serve": "vite preview",
-		"start": "vite",
-		"twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@tanstack/router-plugin": "^1.131.2",
-		"@types/react": "^18.3.23",
-		"@types/react-dom": "^18.3.7",
-		"@vitejs/plugin-react": "^4.7.0",
-		"tailwindcss": "^3.4.17",
-		"vite": "^7.1.1",
-		"vite-tsconfig-paths": "^5.1.4"
-	},
-	"dependencies": {
-		"@mdx-js/react": "^3.1.0",
-		"@mdx-js/rollup": "^3.1.0",
-		"@mobily/ts-belt": "^4.0.0-rc.5",
-		"@tanstack/react-router": "^1.131.2",
-		"@tanstack/router-devtools": "^1.131.2",
-		"i18next": "^24.2.3",
-		"lucide-react": "^0.471.2",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-i18next": "^15.6.1",
-		"tailwind-merge": "^3.3.1",
-		"vaul": "^1.1.2"
-	}
+  "name": "justieme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "vite --port=3001",
+    "build": "vite build && mv -r ./dist ./docs",
+    "serve": "vite preview",
+    "start": "vite",
+    "twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tanstack/router-plugin": "^1.131.2",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.1",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
+    "@mobily/ts-belt": "^4.0.0-rc.5",
+    "@tanstack/react-router": "^1.131.2",
+    "@tanstack/router-devtools": "^1.131.2",
+    "i18next": "^24.2.3",
+    "lucide-react": "^0.471.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.6.1",
+    "tailwind-merge": "^3.3.1",
+    "vaul": "^1.1.2"
+  }
 }
