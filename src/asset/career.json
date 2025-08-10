@@ -29,7 +29,10 @@
         "Evergreen-doc: LLM 기반의 document autogenerator 제작",
         "e-commerce 도메인을 고려한 graphql schema 주도적 제작",
         "relay를 이용한 효율적인 상태관리, 도메인을 고려한 자동 상태 관리, 타입 기반의 안전한 개발 진행",
-        "개발 생산성 증진 및 휴먼 에러를 방지할 수 있는 eslint rule 및 10+여개의 utility script 개발"
+        "개발 생산성 증진 및 휴먼 에러를 방지할 수 있는 eslint rule 및 10+여개의 utility script 개발",
+        "MALboro : UI 테스트를 위한 relay store editor 개발",
+        "SIT(schema Impact Tracker): 스키마의 특정 타입.필드에 영향받는 nextjs의 페이지, react component를 파악할 수 있는 도구",
+        "biome + gritQL 을 이용한 커스텀 린트 구현"
       ]
     },
     {

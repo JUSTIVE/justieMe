@@ -1,0 +1,22 @@
+{
+  "publicationList": [
+    {
+      "doi": "",
+      "title": "Parallel cloth simulation with effective collision detection for interactive AR application",
+      "author": [
+        "Minsang Kim",
+        "Nak-Jun Sung",
+        "Sang-Joon Kim",
+        "Yong-Jae Choi",
+        "Min-Joo Choi, Min Hong"
+      ],
+      "journal": "Multimedia Tools and Applications , 2018. 05.(SCIE)",
+      "type": "International Journal",
+      "quote": {
+        "AMA": "Kim, M., Sung, N. J., Kim, S. J., Choi, Y. J., & Hong, M. (2018). Parallel cloth simulation with effective collision detection for interactive AR application. Multimedia Tools and Applications, 1-18.",
+        "MLA": "Kim, Minsang, et al. \"Parallel cloth simulation with effective collision detection for interactive AR application.\" Multimedia Tools and Applications (2018): 1-18.",
+        "ISO690": "KIM, Minsang, et al. Parallel cloth simulation with effective collision detection for interactive AR application. Multimedia Tools and Applications, 2018, 1-18."
+      }
+    }
+  ]
+}

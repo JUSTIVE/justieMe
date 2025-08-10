@@ -1,17 +1,18 @@
-import type { Career as CareerType } from "@/data/career";
-import { careerList } from "@/asset/career.json";
+import type { PublicationType } from "@/data/publication";
+import { publicationList } from "@/asset/publication.json";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-const CareerCard = ({
-  company,
-  duration,
-  products,
-  description,
-}: CareerType) => {
-  const { t } = useTranslation();
+const PublicationCard = ({
+  title,
+  author,
+  doi,
+  journal,
+  quote,
+  type,
+}: PublicationType) => {
   const [open, setOpen] = useState(true);
   return (
     <section
@@ -28,22 +29,14 @@ const CareerCard = ({
         }}
       >
         <div className="flex flex-col items-start">
-          <div className="accent">{company.name}</div>
-          <div className="align-baseline opacity-50 level-7 mb-0.5">
-            {company.location}
+          <div className="accent text-start">{title}</div>
+          <div className="align-baseline opacity-50 level-7 mb-0.5 text-start">
+            {author}
           </div>
-          <div className="align-baseline opacity-50 level-7">
-            {duration.start} - {duration.end}
-          </div>
+          <div className="align-baseline opacity-50 level-7">{journal}</div>
         </div>
-        <ChevronDown
-          className={twMerge(
-            "transition-transform",
-            open ? "rotate-180" : "rotate-0",
-          )}
-        />
       </button>
-      {open ? (
+      {/*{open ? (
         <>
           <div className="flex flex-col gap-2">
             <div className="level-7">{t("contributedProducts")}</div>
@@ -72,12 +65,12 @@ const CareerCard = ({
             </ul>
           </div>
         </>
-      ) : null}
+      ) : null}*/}
     </section>
   );
 };
 
-export const Career = () => {
+export const Publication = () => {
   const { t } = useTranslation();
   return (
     <div
@@ -90,9 +83,16 @@ export const Career = () => {
       <div className={twMerge("px-1", "dark:text-white")}>
         {t("workExperience")}
       </div>
-      {careerList.map((career) => {
-        return <CareerCard {...career} key={career.company.name} />;
-      })}
+      <div className="grid grid-cols-2 gap-4">
+        {publicationList.map((publication) => {
+          return (
+            <PublicationCard
+              {...(publication as PublicationType)}
+              key={publication.title}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

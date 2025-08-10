@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { Career } from "@/components/career";
+import { Publication } from "@/components/publication";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -18,7 +19,7 @@ function HomeComponent() {
             style={{
               viewTransitionName: "title1",
               fontSize: "3rem",
-              lineHeight: i18n.language === "en" ? "2rem" : "3.5rem",
+              lineHeight: i18n.language === "en" ? "3rem" : "3.5rem",
             }}
             key="title1"
             className="text-balance break-keep font-semibold accent"
@@ -48,9 +49,9 @@ function HomeComponent() {
           // </span>
         }
       </h2>
-      <div>
+      <div className="flex flex-col gap-8">
         <Career />
-        {/* <Hello /> */}
+        <Publication />
       </div>
     </div>
   );

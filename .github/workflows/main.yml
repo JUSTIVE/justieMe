@@ -2,11 +2,11 @@
 
 name: Deploy
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ deploy ]
+    branches: [neo]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -25,7 +25,7 @@ jobs:
           npm ci
           npm run build
           sed -i 's#"/#"./#g' ./dist/index.html
-          
+
       - name: Resolve Route
         run: |
           cd nme2
@@ -39,5 +39,3 @@ jobs:
           git add *
           git commit -am ":wrench: build page"
           git push
-          
-          
