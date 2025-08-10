@@ -7,7 +7,14 @@
         "start": "2023.04",
         "end": "now"
       },
-
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "TailwindCSS",
+        "Relay",
+        "GraphQL"
+      ],
       "products": [
         {
           "name": "식봄",

@@ -15,6 +15,7 @@ export type Career = {
     start: string;
     end: string;
   };
+  techStack: string[];
   products: Product[];
   description: string[];
 };

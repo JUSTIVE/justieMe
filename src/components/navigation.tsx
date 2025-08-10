@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext, useState } from "react";
+import { type PropsWithChildren, useContext, useState } from "react";
 import { flushSync } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
@@ -80,19 +80,23 @@ const SettingsPane = ({
   return (
     <div
       className={twMerge(
-        "fixed bottom-0 my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
+        "fixed bottom-0 my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden ",
         `${showSettings ? "-translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
         "lg:max-w-screen-lg lg:translate-x-0",
         "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
       )}
       style={{ viewTransitionName: "nav-settings" }}
     >
-      <Link to={"/posts"} onClick={() => setShowSettings(false)}>
-        나의 글
+      <Link
+        to={"/posts"}
+        className="level-5"
+        onClick={() => setShowSettings(false)}
+      >
+        {t("Posts")}
       </Link>
       <button
         type="button"
-        className="level-4 text-start"
+        className="level-5 text-start"
         onClick={() => {
           setShowBottomSheet(true);
           setShowSettings(false);
@@ -100,8 +104,9 @@ const SettingsPane = ({
       >
         {t("Contact me")}
       </button>
-      <div className="level-4">{t("settings")}</div>
-      <div className="flex flex-col gap-6 w-full">
+
+      <div className="flex flex-col gap-4 w-full bg-gray-500/10 px-4 py-3 rounded-lg">
+        <div className="level-5">{t("settings")}</div>
         <SettingsItem labelKey={"language"}>
           <TranslateButton />
         </SettingsItem>
@@ -109,19 +114,6 @@ const SettingsPane = ({
           <ThemeButton />
         </SettingsItem>
       </div>
-    </div>
-  );
-};
-
-const Glass = () => {
-  return (
-    <div className="gradient-blur bottom-0">
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
     </div>
   );
 };
@@ -138,7 +130,7 @@ export const Navigation = () => {
         type="button"
         className={twMerge(
           "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
-          `${showSettings ? "" : "opacity-0 pointer-events-none"}`,
+          `${showSettings ? "pointer-events-auto" : "opacity-0 pointer-events-none"}`,
         )}
         style={{ viewTransitionName: "nav-overlay" }}
         onClick={() => {

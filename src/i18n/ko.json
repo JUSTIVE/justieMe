@@ -8,6 +8,7 @@
     "navHome": "홈",
     "navAbout": "소개",
     "now": "현재",
+    "Contact me": "연락처",
     "workExperience": "저는 이런 것들을 해 왔습니다.",
     "publicationExperience": "저는 이런 글들을 출판한 경험이 있습니다.",
     "marketboro": "마켓보로",
@@ -18,6 +19,7 @@
     "International Journal": "국제 저널",
     "Domestic Journal": "국내 저널",
     "International Conference": "국제 컨퍼런스",
-    "Domestic Conference": "국내 컨퍼런스"
+    "Domestic Conference": "국내 컨퍼런스",
+    "Posts": "나의 글"
   }
 }

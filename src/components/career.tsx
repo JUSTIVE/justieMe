@@ -4,12 +4,14 @@ import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { TechIcon, TechStackKind } from "./techIcons/TechIcon";
 
 const CareerCard = ({
   company,
   duration,
   products,
   description,
+  techStack,
 }: CareerType) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(true);
@@ -44,6 +46,15 @@ const CareerCard = ({
           )}
         />
       </button>
+      <div className="flex flex-row gap-2">
+        {(techStack ?? []).map((tech) => (
+          <TechIcon
+            stack={tech as TechStackKind}
+            className="size-6"
+            key={tech}
+          />
+        ))}
+      </div>
       {open ? (
         <>
           <div className="flex flex-col gap-2">

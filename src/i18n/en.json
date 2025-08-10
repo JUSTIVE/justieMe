@@ -6,6 +6,7 @@
     "title3": "A creator who builds products for customers.",
     "introDescription": "'Familiar with Novelty'. I am comfortable learning new technologies, have experience using the recently emerging functional programming paradigm, and am a 'learner and sharer' by seeking out and learning what I don't know and sharing what I know with others.\n\nI have knowledge about computer graphics and am interested in systematically configuring GUIs to provide a beautiful user experience.",
     "navHome": "Home",
+    "Contact me": "Contact me",
     "navAbout": "About",
     "now": "Now",
     "workExperience": "Work Experience",
@@ -18,6 +19,7 @@
     "International Journal": "International Journal",
     "Domestic Journal": "Domestic Journal",
     "International Conference": "International Conference",
-    "Domestic Conference": "Domestic Conference"
+    "Domestic Conference": "Domestic Conference",
+    "Posts": "Posts"
   }
 }
