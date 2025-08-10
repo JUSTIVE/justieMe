@@ -54,7 +54,7 @@ export const Footer = () => {
           )}
         >
           <div className="px-3 level-4">contact me</div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 pb-16">
             <ContactItem
               label="ben399399@gmail.com"
               link="mailto:ben399399@gmail.com"

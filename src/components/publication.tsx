@@ -19,7 +19,8 @@ const PublicationCard = ({
       className={twMerge(
         "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-4",
         "dark:bg-gray-800/50 dark:text-white/80",
-        "hover:bg-gray-500/10 cursor-pointer",
+        "hover:bg-gray-500/10 cursor-pointer transition-colors",
+        "border border-gray-500/10",
       )}
     >
       <button
@@ -70,7 +71,7 @@ export const Publication = () => {
         "lg:max-w-screen-lg lg:translate-x-0",
       )}
     >
-      <div className={twMerge("px-1", "dark:text-white")}>
+      <div className={twMerge("px-4", "dark:text-white")}>
         {t("publicationExperience")}
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

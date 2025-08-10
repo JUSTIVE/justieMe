@@ -57,12 +57,19 @@
 
   body {
     background: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+    overflow-x: hidden;
+    scrollbar-width: none;
   }
   body:has([data-mode="dark"]) {
     background-color: rgb(
       17 24 39 / var(--tw-bg-opacity, 1)
     ); /* 예: 다크 모드 배경색 */
   }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   ::view-transition-group(nav-settings) {
     border-radius: 1rem;
     overflow: hidden;
@@ -80,8 +87,9 @@
     width: 100%;
     /* inset: auto 0 0 0; */
     height: 80px;
-
+    bottom: 0px;
     pointer-events: none;
+    transform: rotateZ(180deg);
   }
   .gradient-blur > div,
   .gradient-blur::before,

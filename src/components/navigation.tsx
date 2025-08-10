@@ -68,20 +68,38 @@ const SettingsItem = ({
 
 type SettingsPaneProps = {
   showSettings: boolean;
+  setShowSettings: (showSettings: boolean) => void;
+  setShowBottomSheet: (show: boolean) => void;
 };
-const SettingsPane = ({ showSettings }: SettingsPaneProps) => {
+const SettingsPane = ({
+  showSettings,
+  setShowSettings,
+  setShowBottomSheet,
+}: SettingsPaneProps) => {
   const { t } = useTranslation();
   return (
     <div
       className={twMerge(
-        "fixed my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
-        `${showSettings ? "translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
+        "fixed bottom-0 my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden",
+        `${showSettings ? "-translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
         "lg:max-w-screen-lg lg:translate-x-0",
         "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
       )}
       style={{ viewTransitionName: "nav-settings" }}
     >
-      <Link to={"./posts"}>나의 글</Link>
+      <Link to={"/posts"} onClick={() => setShowSettings(false)}>
+        나의 글
+      </Link>
+      <button
+        type="button"
+        className="level-4 text-start"
+        onClick={() => {
+          setShowBottomSheet(true);
+          setShowSettings(false);
+        }}
+      >
+        {t("Contact me")}
+      </button>
       <div className="level-4">{t("settings")}</div>
       <div className="flex flex-col gap-6 w-full">
         <SettingsItem labelKey={"language"}>
@@ -97,13 +115,13 @@ const SettingsPane = ({ showSettings }: SettingsPaneProps) => {
 
 const Glass = () => {
   return (
-    <div className="gradient-blur">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="gradient-blur bottom-0">
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
     </div>
   );
 };
@@ -113,11 +131,13 @@ export const Navigation = () => {
   const [showSettings, setShowSettings] = useState(false);
   const fo = useContext(FooterContext);
 
+  if (!fo) return null;
   return (
     <>
-      <div
+      <button
+        type="button"
         className={twMerge(
-          "fixed top-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
+          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
           `${showSettings ? "" : "opacity-0 pointer-events-none"}`,
         )}
         style={{ viewTransitionName: "nav-overlay" }}
@@ -125,31 +145,28 @@ export const Navigation = () => {
           setShowSettings(false);
         }}
       />
-      <Glass />
+      {/*<Glass />*/}
       <div
         className={twMerge(
-          "fixed my-4 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-32px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-md bg-white/80 z-[10] transition-transform translate-x-4",
-          "lg:max-w-screen-lg lg:translate-x-0",
+          "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-md bg-white/80 z-[10]",
+          "lg:max-w-screen-lg",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-700/50",
         )}
         style={{ viewTransitionName: "nav" }}
       >
         <div className="inline-flex items-center gap-4">
-          <button
-            type={"button"}
+          <Link
+            to={"/"}
             style={{
               viewTransitionName: "navHome",
             }}
-            onClick={(e) => {
-              fo?.setFooterOpen(true);
-              e.stopPropagation();
-            }}
           >
             {t("name")}
-          </button>
+          </Link>
         </div>
 
         <button
+          type="button"
           onClick={() => {
             setShowSettings(!showSettings);
           }}
@@ -161,7 +178,13 @@ export const Navigation = () => {
           <Menu />
         </button>
       </div>
-      <SettingsPane showSettings={showSettings} />
+      <SettingsPane
+        showSettings={showSettings}
+        setShowSettings={setShowSettings}
+        setShowBottomSheet={(newValue) => {
+          fo.setFooterOpen(newValue);
+        }}
+      />
       <div className="h-16" />
     </>
   );

@@ -25,11 +25,11 @@ function RootComponent() {
   const [footerOpen, setFooterOpen] = useState(false);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Helmet themeColor={theme === "dark" ? `rgb(17 24 39)` : "#fff"} />
+      <Helmet themeColor={theme === "dark" ? "rgb(17 24 39)" : "#fff"} />
       <FooterContext.Provider value={{ setFooterOpen, footerOpen }}>
         <div
           className={twMerge(
-            "w-screen level-5",
+            "w-screen level-5 ",
             "bg-gray-200",
             "dark:bg-gray-900 dark:text-gray-100",
           )}
@@ -40,9 +40,9 @@ function RootComponent() {
               "mx-auto max-w-screen-lg min-h-screen flex flex-col",
             )}
           >
-            <Navigation />
             <Outlet />
             <Footer />
+            <Navigation />
 
             {/* <TanStackRouterDevtools position="bottom-right" /> */}
           </div>

@@ -18,6 +18,7 @@ const CareerCard = ({
       className={twMerge(
         "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-4",
         "dark:bg-gray-800/50 dark:text-white/80",
+        "border border-gray-500/10",
       )}
     >
       <button
@@ -87,7 +88,7 @@ export const Career = () => {
         "lg:max-w-screen-lg lg:translate-x-0",
       )}
     >
-      <div className={twMerge("px-1", "dark:text-white")}>
+      <div className={twMerge("px-4", "dark:text-white")}>
         {t("workExperience")}
       </div>
       {careerList.map((career) => {
