@@ -8,6 +8,7 @@ export type PublicationType = {
   author: string[];
   journal: string;
   doi: string;
-  type: PublicationKind;
   quote: Record<Quote, string>;
 };
+
+export type PublicationSet = Record<PublicationKind, PublicationType[]>;

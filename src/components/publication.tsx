@@ -2,8 +2,7 @@ import type { PublicationType } from "@/data/publication";
 import { publicationList } from "@/asset/publication.json";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useClipboard } from "@/hooks/useClipboard";
 
 const PublicationCard = ({
   title,
@@ -11,61 +10,52 @@ const PublicationCard = ({
   doi,
   journal,
   quote,
-  type,
-}: PublicationType) => {
-  const [open, setOpen] = useState(true);
+  kind,
+}: PublicationType & { kind: string }) => {
+  const { copy } = useClipboard();
+  const { t } = useTranslation();
   return (
     <section
       className={twMerge(
         "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-4",
         "dark:bg-gray-800/50 dark:text-white/80",
+        "hover:bg-gray-500/10 cursor-pointer",
       )}
     >
       <button
         type="button"
-        className="flex-1 flex justify-between gap-2 items-center hover:bg-gray-500/10 rounded p-1 cursor-pointer pr-4 transition-colors"
+        className="flex-1 flex justify-between gap-2 items-start  rounded p-1  pr-4 transition-colors"
         onClick={() => {
-          setOpen((x) => !x);
+          copy(doi);
         }}
       >
         <div className="flex flex-col items-start">
+          <div className="level-7 opacity-50">{t(kind)}</div>
           <div className="accent text-start">{title}</div>
           <div className="align-baseline opacity-50 level-7 mb-0.5 text-start">
             {author}
           </div>
-          <div className="align-baseline opacity-50 level-7">{journal}</div>
+          <div className="align-baseline opacity-50 level-7 text-start">
+            {journal}
+          </div>
         </div>
       </button>
-      {/*{open ? (
-        <>
-          <div className="flex flex-col gap-2">
-            <div className="level-7">{t("contributedProducts")}</div>
-            <div className="level-6 flex flex-col gap-2">
-              {products.map(({ name, description }) => (
-                <div className="flex flex-col" key={name}>
-                  <div className="opacity-80" key={name}>
-                    {name}
-                  </div>
-                  <div className="opacity-50 level-7">{description}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <ul className="flex flex-col gap-1.5 opacity-80">
-              {description.map((desc) => (
-                <li
-                  key={desc}
-                  className="level-7 list-disc list-outside ml-[3ch] break-keep"
-                >
-                  {desc}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : null}*/}
+      <div className="flex flex-row gap-2 justify-end">
+        {Object.entries(quote)
+          .filter(([, v]) => v !== "")
+          .map(([key, value]) => (
+            <button
+              type="button"
+              key={key}
+              className="level-7"
+              onClick={() => {
+                copy(value);
+              }}
+            >
+              {key}
+            </button>
+          ))}
+      </div>
     </section>
   );
 };
@@ -81,17 +71,20 @@ export const Publication = () => {
       )}
     >
       <div className={twMerge("px-1", "dark:text-white")}>
-        {t("workExperience")}
+        {t("publicationExperience")}
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        {publicationList.map((publication) => {
-          return (
-            <PublicationCard
-              {...(publication as PublicationType)}
-              key={publication.title}
-            />
-          );
-        })}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {Object.entries(publicationList)
+          .flatMap(([k, v]) => v.map((x) => ({ ...x, kind: k })))
+          .map((publication) => {
+            return (
+              <PublicationCard
+                {...(publication as PublicationType)}
+                kind={publication.kind}
+                key={publication.title}
+              />
+            );
+          })}
       </div>
     </div>
   );

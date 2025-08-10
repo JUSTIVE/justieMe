@@ -9,10 +9,15 @@
     "navAbout": "About",
     "now": "Now",
     "workExperience": "Work Experience",
+    "publicationExperience": "My Publications",
     "marketboro": "Marketboro",
     "settings": "Settings",
     "language": "Language",
     "theme": "Theme",
-    "contributedProducts": "Contributed Products"
+    "contributedProducts": "Contributed Products",
+    "International Journal": "International Journal",
+    "Domestic Journal": "Domestic Journal",
+    "International Conference": "International Conference",
+    "Domestic Conference": "Domestic Conference"
   }
 }
