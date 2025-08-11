@@ -13,7 +13,9 @@
         "Next.js",
         "TailwindCSS",
         "Relay",
-        "GraphQL"
+        "GraphQL",
+
+        "Bun"
       ],
       "products": [
         {
@@ -52,6 +54,15 @@
         "start": "2022.05",
         "end": "2023.02"
       },
+      "techStack": [
+        "React",
+        "Rescript",
+        "Next.js",
+        "TailwindCSS",
+        "Relay",
+        "GraphQL",
+        "Storybook"
+      ],
       "products": [
         {
           "name": "신선하이",
@@ -81,6 +92,7 @@
         "start": "2021.04",
         "end": "2022.05"
       },
+      "techStack": ["React", "Styled Components", "Recoil", "Storybook"],
       "products": [
         {
           "name": "GuardiOne Substation",

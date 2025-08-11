@@ -19,7 +19,7 @@ const PublicationCard = ({
       className={twMerge(
         "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-4",
         "dark:bg-gray-800/50 dark:text-white/80",
-        "hover:bg-gray-500/10 cursor-pointer transition-colors",
+        "active:bg-gray-500/10 cursor-pointer transition-colors",
         "border border-gray-500/10",
       )}
     >

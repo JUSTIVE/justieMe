@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { TechIcon, TechStackKind } from "./techIcons/TechIcon";
+import { TechIcon, type TechStackKind } from "./techIcons/TechIcon";
 
 const CareerCard = ({
   company,
@@ -25,7 +25,7 @@ const CareerCard = ({
     >
       <button
         type="button"
-        className="flex-1 flex justify-between gap-2 items-center hover:bg-gray-500/10 rounded p-1 cursor-pointer pr-4 transition-colors"
+        className="flex-1 flex justify-between gap-2 items-center active:bg-gray-500/10 rounded p-1 cursor-pointer pr-4 transition-colors"
         onClick={() => {
           setOpen((x) => !x);
         }}
@@ -46,13 +46,20 @@ const CareerCard = ({
           )}
         />
       </button>
-      <div className="flex flex-row gap-2">
-        {(techStack ?? []).map((tech) => (
-          <TechIcon
-            stack={tech as TechStackKind}
-            className="size-6"
+      <div className="flex flex-row">
+        {(techStack ?? []).map((tech, i) => (
+          <div
             key={tech}
-          />
+            className="dark:bg-gray-700 bg-gray-100 rounded-full p-1 [&:not(:first-child)]:-ml-3 aspect-square border-[4px] dark:border-gray-900/80 border-gray-200/50 overflow-hidden "
+            style={{
+              zIndex: techStack.length - i,
+            }}
+          >
+            <TechIcon
+              stack={tech as TechStackKind}
+              className={twMerge("size-6")}
+            />
+          </div>
         ))}
       </div>
       {open ? (

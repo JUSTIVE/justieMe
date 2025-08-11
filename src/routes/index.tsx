@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   const { t, i18n } = useTranslation();
-  console.log(i18n.language);
+
   return (
     <div className={twMerge("py-5 flex-1 flex flex-col gap-8 pt-12")}>
       <h2 className={twMerge("px-5 level-2 flex flex-col gap-4")}>
@@ -22,7 +22,7 @@ function HomeComponent() {
               lineHeight: i18n.language === "en" ? "3rem" : "3.5rem",
             }}
             key="title1"
-            className="text-balance break-keep font-semibold accent"
+            className="text-balance break-keep font-semibold accent saturate-150"
           >
             {t("title1")}
           </div>
@@ -31,23 +31,6 @@ function HomeComponent() {
         <div className="level-5 opacity-50 whitespace-pre-wrap break-keep">
           {t("introDescription")}
         </div>
-
-        {
-          // <span
-          //   style={{ viewTransitionName: "title2" }}
-          //   className="opacity-30"
-          //   key="title2"
-          // >
-          //   {t("title2")}
-          // </span>,
-          // <span
-          //   style={{ viewTransitionName: "title3" }}
-          //   className="opacity-30"
-          //   title="title3"
-          // >
-          //   {t("title3")}
-          // </span>
-        }
       </h2>
       <div className="flex flex-col gap-8">
         <Career />

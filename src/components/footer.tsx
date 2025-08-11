@@ -49,12 +49,12 @@ export const Footer = () => {
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-fit">
         <Drawer.Content
           className={twMerge(
-            "max-w-screen-md bg-white w-screen p-4 rounded-t-2xl mx-auto pt-4 flex flex-col gap-4",
+            "max-w-screen-md bg-white w-screen p-4 rounded-t-2xl mx-auto pt-4 flex flex-col gap-4 z-[11]",
             "dark:bg-gray-800 dark:border-gray-800 dark:text-gray-100/80",
           )}
         >
           <div className="px-3 level-4">contact me</div>
-          <div className="flex flex-col gap-2 pb-16">
+          <div className="flex flex-col gap-2">
             <ContactItem
               label="ben399399@gmail.com"
               link="mailto:ben399399@gmail.com"

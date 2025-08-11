@@ -140,9 +140,10 @@ export const Navigation = () => {
       {/*<Glass />*/}
       <div
         className={twMerge(
-          "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-md bg-white/80 z-[10]",
+          "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-sm bg-white/80 z-[10] transition-all",
           "lg:max-w-screen-lg",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-700/50",
+          fo.footerOpen ? "translate-y-20" : "",
         )}
         style={{ viewTransitionName: "nav" }}
       >

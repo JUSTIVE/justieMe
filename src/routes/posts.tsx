@@ -6,12 +6,21 @@ export const Route = createFileRoute("/posts")({
   component: RouteComponent,
 });
 
-const components = {};
-
 function RouteComponent() {
   return (
-    <MDXProvider components={components}>
-      <Hello />
+    <MDXProvider
+      components={{
+        h1(props) {
+          return <h1 {...props} className="level-1" />;
+        },
+        hr() {
+          return <hr className="opacity-50" />;
+        },
+      }}
+    >
+      <div className="p-4">
+        <Hello />
+      </div>
     </MDXProvider>
   );
 }

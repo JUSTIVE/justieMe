@@ -184,4 +184,31 @@
       rgba(0, 0, 0, 1) 100%
     );
   }
+  .overlap-cut {
+    /* 겹치는 양(= 음수 margin-left의 절대값) */
+    --overlap: 16px;
+
+    /* 두 개의 마스크를 합성: 전체(검은 사각형) - 오른쪽 원 = 테두리만 남김 */
+    -webkit-mask: radial-gradient(
+        circle at calc(100% - var(--overlap)) 50%,
+        transparent 51%,
+        #000 52%
+      ),
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    mask: radial-gradient(
+        circle at calc(100% - var(--overlap)) 50%,
+        transparent 51%,
+        #000 52%
+      ),
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  /* 마지막 배지는 잘라내지 않기 */
+  .overlap-cut:last-child {
+    -webkit-mask: none;
+    mask: none;
+  }
 }
