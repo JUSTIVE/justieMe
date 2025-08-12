@@ -1,4 +1,6 @@
-export const RecoilIcon = ({ className }: { className?: string }) => {
+import type { SVGProps } from "react";
+
+export const RecoilIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"
@@ -8,7 +10,7 @@ export const RecoilIcon = ({ className }: { className?: string }) => {
       height="2500"
       width="2500"
       viewBox="30 11 27.5 78"
-      className={className}
+      {...props}
     >
       <rect fill="#007af4" height="95" rx="10" width="90" />
       <circle cx="43.5" cy="18.5" fill="#fff" r="7.5" />

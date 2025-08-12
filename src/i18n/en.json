@@ -1,10 +1,11 @@
 {
   "translation": {
     "name": "Minsang Kim",
-    "title1": "A developer who wants to change the world with better products.",
+    "title1": "A Developer who wants to change the world with better products.",
     "title2": "A colleague who always wants to work joyfully together.",
     "title3": "A creator who builds products for customers.",
-    "introDescription": "'Familiar with Novelty'. I am comfortable learning new technologies, have experience using the recently emerging functional programming paradigm, and am a 'learner and sharer' by seeking out and learning what I don't know and sharing what I know with others.\n\nI have knowledge about computer graphics and am interested in systematically configuring GUIs to provide a beautiful user experience.",
+    "familiarWithNovelty": "Familiar with Novelty",
+    "introductionDescription": "I am comfortable learning new technologies, have experience using the recently emerging <Highlight>functional programming paradigm</Highlight>, and am a <Highlight>learner and sharer</Highlight> by seeking out and learning what I don't know and sharing what I know with others.\n\nI have knowledge about <Highlight>computer graphics</Highlight> and am interested in systematically configuring GUIs to provide a beautiful user experience.",
     "navHome": "Home",
     "Contact me": "Contact me",
     "navAbout": "About",

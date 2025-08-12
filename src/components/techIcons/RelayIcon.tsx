@@ -1,4 +1,6 @@
-export const RelayIcon = ({ className }: { className?: string }) => {
+import type { SVGProps } from "react";
+
+export const RelayIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"
@@ -7,7 +9,7 @@ export const RelayIcon = ({ className }: { className?: string }) => {
       width="50"
       height="50"
       viewBox="0 0 600 600"
-      className={className}
+      {...props}
     >
       <g fill="#F26B00">
         <path d="M142.536 198.858c0 26.36-21.368 47.72-47.72 47.72-26.36 0-47.722-21.36-47.722-47.72s21.36-47.72 47.72-47.72c26.355 0 47.722 21.36 47.722 47.72" />

@@ -11,6 +11,7 @@ import { RecoilIcon } from "./RecoilIcon";
 import { StyledComponentsIcon } from "./StyledComponentIcon";
 import { StorybookIcon } from "./StorybookIcon";
 import { TanStackIcon } from "./TanStackIcon";
+import type { SVGProps } from "react";
 
 export type TechStackKind =
   | "React"
@@ -27,25 +28,22 @@ export type TechStackKind =
   | "Bun";
 export const TechIcon = ({
   stack,
-  className,
+  ...props
 }: {
   stack: TechStackKind;
-  className?: string;
-}) => {
+} & SVGProps<SVGSVGElement>) => {
   return match(stack)
-    .with("React", () => <ReactIcon className={className} />)
-    .with("TypeScript", () => <TypeScriptIcon className={className} />)
-    .with("Next.js", () => <NextJsIcon className={className} />)
-    .with("TailwindCSS", () => <TailwindCSSIcon className={className} />)
-    .with("Relay", () => <RelayIcon className={className} />)
-    .with("GraphQL", () => <GraphQLIcon className={className} />)
-    .with("Rescript", () => <RescriptIcon className={className} />)
-    .with("Bun", () => <BunIcon className={className} />)
-    .with("Recoil", () => <RecoilIcon className={className} />)
-    .with("Storybook", () => <StorybookIcon className={className} />)
-    .with("TanStack", () => <TanStackIcon className={className} />)
-    .with("Styled Components", () => (
-      <StyledComponentsIcon className={className} />
-    ))
+    .with("React", () => <ReactIcon {...props} />)
+    .with("TypeScript", () => <TypeScriptIcon {...props} />)
+    .with("Next.js", () => <NextJsIcon {...props} />)
+    .with("TailwindCSS", () => <TailwindCSSIcon {...props} />)
+    .with("Relay", () => <RelayIcon {...props} />)
+    .with("GraphQL", () => <GraphQLIcon {...props} />)
+    .with("Rescript", () => <RescriptIcon {...props} />)
+    .with("Bun", () => <BunIcon {...props} />)
+    .with("Recoil", () => <RecoilIcon {...props} />)
+    .with("Storybook", () => <StorybookIcon {...props} />)
+    .with("TanStack", () => <TanStackIcon {...props} />)
+    .with("Styled Components", () => <StyledComponentsIcon {...props} />)
     .otherwise(() => <></>);
 };

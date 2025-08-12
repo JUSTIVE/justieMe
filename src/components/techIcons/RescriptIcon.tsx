@@ -1,4 +1,6 @@
-export const RescriptIcon = ({ className }: { className?: string }) => {
+import type { SVGProps } from "react";
+
+export const RescriptIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"
@@ -6,7 +8,7 @@ export const RescriptIcon = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 250 250"
       fill="none"
-      className={className}
+      {...props}
     >
       <g filter="url(#a)">
         <path

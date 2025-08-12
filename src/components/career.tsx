@@ -12,13 +12,14 @@ const CareerCard = ({
   products,
   description,
   techStack,
-}: CareerType) => {
+  idx,
+}: CareerType & { idx: number }) => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <section
       className={twMerge(
-        "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-4",
+        "inline-flex p-4 bg-gray-100/50 rounded-2xl flex-col gap-2",
         "dark:bg-gray-800/50 dark:text-white/80",
         "border border-gray-500/10",
       )}
@@ -31,11 +32,11 @@ const CareerCard = ({
         }}
       >
         <div className="flex flex-col items-start">
-          <div className="accent">{company.name}</div>
-          <div className="align-baseline opacity-50 level-7 mb-0.5">
+          <div className="level-4 mb-0.5">{company.name}</div>
+          <div className="align-baseline level-7 mb-0.5 accent">
             {company.location}
           </div>
-          <div className="align-baseline opacity-50 level-7">
+          <div className="align-baseline opacity-50 level-7 ">
             {duration.start} - {duration.end}
           </div>
         </div>
@@ -50,9 +51,12 @@ const CareerCard = ({
         {(techStack ?? []).map((tech, i) => (
           <div
             key={tech}
-            className="dark:bg-gray-700 bg-gray-100 rounded-full p-1 [&:not(:first-child)]:-ml-3 aspect-square border-[4px] dark:border-gray-900/80 border-gray-200/50 overflow-hidden "
+            className="dark:bg-gray-700 bg-gray-100 rounded-full p-1 [&:not(:first-child)]:-ml-3 aspect-square border-[4px] dark:border-gray-900/80 border-gray-200/50 overflow-hidden opacity-0 animate-fade-in-up"
             style={{
               zIndex: techStack.length - i,
+              animationDelay: `${i * 0.06 + idx * 0.2}s`,
+              animationDuration: "0.5s",
+              animationTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)",
             }}
           >
             <TechIcon
@@ -64,26 +68,26 @@ const CareerCard = ({
       </div>
       {open ? (
         <>
-          <div className="flex flex-col gap-2">
-            <div className="level-7">{t("contributedProducts")}</div>
+          <div className="flex flex-col gap-2 opacity-0 animate-fade-in ease-material transition-all">
+            <div className="level-6">{t("contributedProducts")}</div>
             <div className="level-6 flex flex-col gap-2">
               {products.map(({ name, description }) => (
                 <div className="flex flex-col" key={name}>
-                  <div className="opacity-80" key={name}>
+                  <div className="opacity-80 accent" key={name}>
                     {name}
                   </div>
-                  <div className="opacity-50 level-7">{description}</div>
+                  <div className="opacity-50 level-6">{description}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div>
+          <div className="opacity-0 animate-fade-in ease-material transition-all">
             <ul className="flex flex-col gap-1.5 opacity-80">
               {description.map((desc) => (
                 <li
                   key={desc}
-                  className="level-7 list-disc list-outside ml-[3ch] break-keep"
+                  className="level-6 list-disc list-outside ml-[3ch] break-keep"
                 >
                   {desc}
                 </li>
@@ -109,8 +113,8 @@ export const Career = () => {
       <div className={twMerge("px-4", "dark:text-white")}>
         {t("workExperience")}
       </div>
-      {careerList.map((career) => {
-        return <CareerCard {...career} key={career.company.name} />;
+      {careerList.map((career, idx) => {
+        return <CareerCard {...career} key={career.company.name} idx={idx} />;
       })}
     </div>
   );

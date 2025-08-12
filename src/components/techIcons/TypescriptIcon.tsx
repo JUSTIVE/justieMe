@@ -1,4 +1,6 @@
-export const TypeScriptIcon = ({ className }: { className?: string }) => {
+import type { SVGProps } from "react";
+
+export const TypeScriptIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"
@@ -8,7 +10,7 @@ export const TypeScriptIcon = ({ className }: { className?: string }) => {
       height="256"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      className={className}
+      {...props}
     >
       <path
         d="M20 0h216c11.046 0 20 8.954 20 20v216c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0Z"

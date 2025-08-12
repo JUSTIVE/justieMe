@@ -1,4 +1,6 @@
-export const ReactIcon = ({ className }: { className?: string }) => {
+import type { SVGProps } from "react";
+
+export const ReactIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       role="img"
@@ -8,7 +10,7 @@ export const ReactIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 569 512"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <g fill="none" fillRule="evenodd">
         <g fill="#087EA4" fillRule="nonzero">

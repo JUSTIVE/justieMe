@@ -14,8 +14,8 @@
         "TailwindCSS",
         "Relay",
         "GraphQL",
-
-        "Bun"
+        "Bun",
+        "Storybook"
       ],
       "products": [
         {

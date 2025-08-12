@@ -31,13 +31,13 @@ const PublicationCard = ({
         }}
       >
         <div className="flex flex-col items-start">
-          <div className="level-7 opacity-50">{t(kind)}</div>
-          <div className="accent text-start">{title}</div>
-          <div className="align-baseline opacity-80 level-7 mb-0.5 text-start">
-            {author.join(", ")}
-          </div>
-          <div className="align-baseline opacity-50 level-7 text-start">
+          <div className="align-baseline level-7 text-start accent">
             {journal}
+          </div>
+          {/*<div className="level-7 accent">{t(kind)}</div>*/}
+          <div className=" text-start">{title}</div>
+          <div className="align-baseline level-7 mb-0.5 text-start opacity-50">
+            {author.join(", ")}
           </div>
         </div>
       </button>

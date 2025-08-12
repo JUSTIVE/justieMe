@@ -21,7 +21,7 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [footerOpen, setFooterOpen] = useState(false);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
