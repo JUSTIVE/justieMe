@@ -80,9 +80,10 @@ const SettingsPane = ({
   return (
     <div
       className={twMerge(
-        "fixed bottom-0 my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-32px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity]  translate-x-4 overflow-hidden ",
+        "fixed bottom-0 my-4 py-3 px-4 flex flex-col gap-4 rounded-2xl border border-gray-200 max-w-[calc(100%-48px)] w-full backdrop-blur-md bg-white/80 z-[9] transition-[transform,opacity] overflow-hidden ",
         `${showSettings ? "-translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
-        "lg:max-w-screen-lg lg:translate-x-0",
+        "left-1/2 -translate-x-1/2",
+        "lg:max-w-screen-md",
         "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-800",
       )}
       style={{ viewTransitionName: "nav-settings" }}
@@ -129,7 +130,7 @@ export const Navigation = () => {
       <button
         type="button"
         className={twMerge(
-          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out",
+          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out print:hidden",
           `${showSettings ? "pointer-events-auto" : "opacity-0 pointer-events-none"}`,
         )}
         style={{ viewTransitionName: "nav-overlay" }}
@@ -141,9 +142,10 @@ export const Navigation = () => {
       <div
         className={twMerge(
           "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-sm bg-white/80 z-[10] transition-all",
-          "lg:max-w-screen-lg",
+          "lg:max-w-screen-md",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-700/50",
           fo.footerOpen ? "translate-y-20" : "",
+          "print:hidden",
         )}
         style={{ viewTransitionName: "nav" }}
       >

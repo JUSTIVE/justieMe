@@ -4,6 +4,10 @@ export default {
   darkMode: ["selector", '[data-mode="dark"]'],
   theme: {
     extend: {
+      screens: {
+        print: { raw: "print" },
+        screen: { raw: 'screen' },
+      },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },

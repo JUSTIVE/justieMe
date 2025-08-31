@@ -5,7 +5,8 @@ type Company = {
 
 type Product = {
   name: string;
-  description: string;
+  productDescription: string;
+  description: string[];
 };
 
 export type Career = {

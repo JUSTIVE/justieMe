@@ -30,14 +30,13 @@ function RootComponent() {
         <div
           className={twMerge(
             "w-screen level-5 ",
-            "bg-gray-200",
             "dark:bg-gray-900 dark:text-gray-100",
           )}
           data-mode={theme}
         >
           <div
             className={twMerge(
-              "mx-auto max-w-screen-lg min-h-screen flex flex-col",
+              "mx-auto max-w-screen-md min-h-screen flex flex-col",
             )}
           >
             <Outlet />

@@ -12,10 +12,23 @@ import { StyledComponentsIcon } from "./StyledComponentIcon";
 import { StorybookIcon } from "./StorybookIcon";
 import { TanStackIcon } from "./TanStackIcon";
 import type { SVGProps } from "react";
+import { JavascriptIcon } from "./JavascriptIcon";
+import { VueIcon } from "./VueIcon";
+import { ElectronIcon } from "./ElectronIcon";
+import { FSharpIcon } from "./FsharpIcon";
+import { ScalaIcon } from "./ScalaIcon";
+import { CSharpIcon } from "./CSharpIcon";
+import { UnityIcon } from "./UnityIcon";
 
 export type TechStackKind =
   | "React"
   | "TypeScript"
+  | "Javascript"
+  | "Electron"
+  | "F#"
+  | "C#"
+  | "Scala"
+  | "Vue"
   | "Next.js"
   | "TailwindCSS"
   | "Relay"
@@ -25,6 +38,7 @@ export type TechStackKind =
   | "Styled Components"
   | "Storybook"
   | "TanStack"
+  | "Unity"
   | "Bun";
 export const TechIcon = ({
   stack,
@@ -45,5 +59,12 @@ export const TechIcon = ({
     .with("Storybook", () => <StorybookIcon {...props} />)
     .with("TanStack", () => <TanStackIcon {...props} />)
     .with("Styled Components", () => <StyledComponentsIcon {...props} />)
-    .otherwise(() => <></>);
+    .with("Javascript", () => <JavascriptIcon {...props} />)
+    .with("Vue", () => <VueIcon {...props} />)
+    .with("Electron", () => <ElectronIcon {...props} />)
+    .with("F#", () => <FSharpIcon {...props} />)
+    .with("Scala", () => <ScalaIcon {...props} />)
+    .with("C#", () => <CSharpIcon {...props} />)
+    .with("Unity", () => <UnityIcon {...props} />)
+    .otherwise(() => <>{ }</>);
 };

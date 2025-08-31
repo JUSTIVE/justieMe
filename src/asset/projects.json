@@ -1,0 +1,48 @@
+{
+  "projectLists":[
+    {
+      "year": 2023,
+      "name": "Picomi",
+      "techStack":["Bun","TypeScript"],
+      "description": [
+        "git commit을 할때 사진을 찍어서 커밋 메시지로 기록할 수 있습니다."
+      ]
+    },
+    {
+      "year": 2022,
+      "name": "Storybook Docs",
+      "techStack":[],
+      "description": [
+        "컴포넌트 관리와 검토 도구인 StoryBook의 공식 문서 한글화에 기여하였습니다."
+      ]
+    },
+    {
+      "year": 2021,
+      "name": "우마서포터",
+      "techStack":[
+        "React",
+        "TypeScript",
+        "Styled Components"
+      ],
+      "description": [
+        "게임 '우마무스메'의 플레이를 돕는 웹 서비스의 구현을 수행했습니다."
+      ]
+    },
+    {
+      "year": 2021,
+      "name": "Jameson",
+      "techStack":["F#"],
+      "description": [
+        "A yet another JSON comparing tool"
+      ]
+    },
+    {
+      "year": 2019,
+      "name": "GPU Cloth Simulation",
+      "techStack":["C#", "Unity"],
+      "description": [
+        "A GPGPU-based real-time cross-platform mass-spring simulation"
+      ]
+    }
+  ]
+}

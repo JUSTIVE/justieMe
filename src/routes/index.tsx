@@ -3,6 +3,8 @@ import { useTranslation, Trans } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { Career } from "@/components/career";
 import { Publication } from "@/components/publication";
+import { Educations } from "@/components/education";
+import { Projects } from "@/components/projects";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -12,42 +14,30 @@ function HomeComponent() {
   const { t } = useTranslation();
 
   return (
-    <div className={twMerge("py-5 flex-1 flex flex-col pt-24")}>
-      <h2
-        className={twMerge("px-5 level-1 md:level-0 flex flex-col gap-10 mb-8")}
-      >
-        <div className="min-h-fit flex flex-col gap-4 relative">
-          <div
-            style={{
-              viewTransitionName: "title1",
-            }}
-            key="title1"
-            className="text-balance break-keep accent saturate-150 whitespace-pre-line animate-fade-in-up ease-material font-semibold z-[1]"
-          >
-            {t("title1")}
-          </div>
-          <div className="text-balance break-keep accent whitespace-pre-line animate-fade-in-up ease-material font-semibold absolute !translate-x-1 !translate-y-1 !opacity-40 -hue-rotate-60">
-            {t("title1")}
-          </div>
+    <div className={twMerge("py-5 flex-1 flex flex-col pt-8 gap-12")}>
+      <div className="px-5">
+        <h1 className="level-3 font-semibold">{t("name")}</h1>
+        <div className="level-6 text-gray-500">{t("role")}</div>
+      </div>
+      <div className="level-6 break-keep w-full px-5">
+        <div className="mr-1 level-5 accent font-semibold mb-1.5">
+          {t("familiarWithNovelty")}.
         </div>
-      </h2>
-      <div className="level-5 whitespace-pre-wrap break-keep w-full md:w-[60%] px-5 mb-24 opacity-50 animate-fade-in">
-        <div className="mr-1 accent font-semibold mb-1.5">
-          "{t("familiarWithNovelty")}".
-        </div>
-        <div className="opacity-70">
+        <div className="">
           <Trans
             t={t}
             i18nKey={"introductionDescription"}
             components={{
-              Highlight: <span className="accent" />,
+              Highlight: <span className="accent font-semibold" />,
             }}
           />
         </div>
       </div>
       <div className="flex flex-col gap-20">
         <Career />
+        <Projects />
         <Publication />
+        <Educations />
       </div>
     </div>
   );
