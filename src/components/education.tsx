@@ -26,8 +26,11 @@ const EducationCard = ({
           {degree} / {major}
         </div>
 
-        <div className="align-baseline level-6 text-start whitespace-pre opacity-60">
-          {description.join("\n")}
+        <div className="align-baseline level-6 text-start opacity-60">
+          {description.map((desc) =>
+            <div key={desc} className="break-keep mb-0.5 level-6">{desc}</div>)
+          }
+
         </div>
 
       </div>
