@@ -40,7 +40,7 @@ const ProjectCard = ({
           ))}
         </div>
 
-        <div className="align-baseline level-6 text-start whitespace-pre opacity-60">
+        <div className="align-baseline level-6 text-start opacity-60">
           {description}
         </div>
 
