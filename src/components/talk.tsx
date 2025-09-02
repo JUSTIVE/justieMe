@@ -1,15 +1,13 @@
-import { educationList } from "@/asset/education.json";
+import { talks } from "@/asset/talks.json";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { Education } from "@/data/education";
+import { Talk } from "@/data/talks";
 
-const EducationCard = ({
-  school,
-  major,
-  degree,
-  description,
-  // link,
-}: Education) => {
+const TalkCard = ({
+  title,
+  event,
+  location
+}: Talk) => {
   return <section className={"inline-flex flex-col gap-2 mb-4"}>
     <button
       type="button"
@@ -17,27 +15,27 @@ const EducationCard = ({
     >
       <div className="flex flex-col items-start">
 
-        <div className="level-6 text-start ">{school.name}</div>
+        <div className="level-6 text-start ">{title}</div>
         <div className="align-baseline level-7 text-start text-gray-500 mb-1">
-          {school.location}
+          {event}
         </div>
         <div className="align-baseline level-7 text-start accent mb-2">
-          {degree} / {major}
+          {location}
         </div>
 
-        <div className="align-baseline level-6 text-start opacity-60">
+        {/*<div className="align-baseline level-6 text-start opacity-60">
           {description.map((desc) =>
             <div key={desc} className="break-keep mb-0.5 level-6">{desc}</div>)
           }
 
-        </div>
+        </div>*/}
 
       </div>
     </button>
   </section >
 }
 
-export const Educations = () => {
+export const Talks = () => {
   const { t } = useTranslation();
   return (
     <div
@@ -47,21 +45,21 @@ export const Educations = () => {
       )}
     >
       <div className={twMerge("px-5", "dark:text-white")}>
-        {t("education")}
+        {t("talks")}
       </div>
       <div className="grid grid-cols-1">
         {
-          educationList
-            .map((educations) => (
-              <div key={educations.school.name} className="grid grid-cols-8 gap-2 px-5">
+          talks
+            .map((talk) => (
+              <div key={talk.title} className="grid grid-cols-8 gap-2 px-5">
                 <div className="col-span-2 align-baseline level-6 pt-2">
                   <div className="screen:sticky screen:top-2 text-gray-500">
-                    {educations.duration.start} - {educations.duration.end}
+                    {talk.year}
                   </div>
                 </div>
                 <div className="col-span-6 flex flex-col gap-4">
-                  <EducationCard
-                    {...(educations as Education)}
+                  <TalkCard
+                    {...(talk as unknown as Talk)}
                   />
                 </div>
               </div>

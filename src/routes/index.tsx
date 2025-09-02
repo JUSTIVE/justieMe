@@ -5,6 +5,7 @@ import { Career } from "@/components/career";
 import { Publication } from "@/components/publication";
 import { Educations } from "@/components/education";
 import { Projects } from "@/components/projects";
+import { Talks } from "@/components/talk";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -36,6 +37,7 @@ function HomeComponent() {
       <div className="flex flex-col gap-20">
         <Career />
         <Projects />
+        <Talks />
         <Publication />
         <Educations />
       </div>
