@@ -27,7 +27,6 @@ if (!rootElement.innerHTML) {
       <I18nextProvider i18n={i18n} defaultNS={"translation"}>
         <RouterProvider router={router} />
       </I18nextProvider>
-      ,
     </>,
   );
 }
