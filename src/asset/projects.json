@@ -5,7 +5,7 @@
       "name": "Picomi",
       "techStack":["Bun","TypeScript"],
       "description": [
-        "git commit을 할때 사진을 찍어서 커밋 메시지로 기록할 수 있습니다."
+        "git commit을 할때 사진을 찍어서 커밋 메시지로 기록하는 poc 입니다."
       ]
     },
     {
@@ -33,7 +33,7 @@
       "name": "Jameson",
       "techStack":["F#"],
       "description": [
-        "A yet another JSON comparing tool"
+        "F# 으로 만든 JSON 비교 도구입니다."
       ]
     },
     {
@@ -41,7 +41,7 @@
       "name": "GPU Cloth Simulation",
       "techStack":["C#", "Unity"],
       "description": [
-        "A GPGPU-based real-time cross-platform mass-spring simulation"
+        "GPGPU기반의 실시간 크로스플랫폼 매스-스프링 시뮬레이션입니다."
       ]
     }
   ]

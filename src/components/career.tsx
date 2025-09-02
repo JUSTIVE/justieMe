@@ -1,6 +1,6 @@
 import type { Career as CareerType } from "@/data/career";
 import { careerList } from "@/asset/career.json";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { TechIcon, type TechStackKind } from "./techIcons/TechIcon";
 
@@ -68,7 +68,17 @@ const CareerCard = ({
                 </div>
                 <ul className="flex flex-col opacity-60">
                   {(description ?? []).map((desc) => (
-                    <div key={desc}>{desc}</div>
+                    <div key={desc} >
+                      <Trans
+                        t={t}
+                        i18nKey={desc}
+                        className="break-keep"
+                        components={{
+                          Highlight: <span className="accent" />,
+                        }}
+                      />
+                    </div>
+
                   ))}
                 </ul>
               </div>
