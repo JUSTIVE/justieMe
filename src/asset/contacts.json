@@ -1,0 +1,22 @@
+[
+  {
+    "label": "ben399399@gmail.com",
+    "link": "mailto:ben399399@gmail.com",
+    "icon": "mail"
+  },
+  {
+    "label": "@sunnyside_ben",
+    "link": "https://www.instagram.com/sunnyside_ben/",
+    "icon": "instagram"
+  },
+  {
+    "label": "JUSTIVE",
+    "link": "https://www.github.com/JUSTIVE",
+    "icon": "github"
+  },
+  {
+    "label": "@justive_",
+    "link": "https://unsplash.com/@justive_",
+    "icon": "unsplash"
+  }
+]
