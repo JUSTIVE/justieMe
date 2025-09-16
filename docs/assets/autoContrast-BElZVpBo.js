@@ -3,7 +3,7 @@ import{j as n}from"./index-DfUtXkZV.js";import{u as t}from"./index-B_oxPu2w.js";
 최초의 전자식 컴퓨터가 만들어진 지 4/5세기가 되어가고 있지만 인류는 아직도 색을 표현하는 데에 고민을 하고 있습니다. 물론, 우리가 일반적으로 접하는 화면의 색상 정보는 R,G,B(때로는 W가 더해진)의 색을 낼 수 있는 작은 단위들의 조합이지만, 우리의 눈이 세상을 인지하는 방법과는 또 다른 이야기입니다. (sRGB color gamut에서의 blue-yellow gradient에서의 gray-dead-zone 문제를 보시면 이해가 쉬울 수 있습니다.)`}),`
 `,n.jsx(e.p,{children:"UI를 만드는 과정에서, 배경색(주로 사용자나 다른 이미지로부터 결정되는 배경색)에 따른 적절한 전경색(주로 흰색, 검은색 등의 텍스트 색상)을 결정하는 과정은 흔한 일입니다. 나이브한 방법으로는 hex값의 평균을 통해 RGB 채널에서 grayscale로의 매핑을 통한 후에 이를 기반으로 전경색을 구할 수 있을 것입니다."}),`
 `,n.jsx(e.p,{children:"이를 React에서 간단히 아래와 같이 구현해 보았습니다."}),`
-`,n.jsx(e.pre,{children:n.jsx(e.code,{className:"language-typescript",children:`import { FC } from 'react';
+`,n.jsx(e.pre,{children:n.jsx(e.code,{className:"language-language-typescript",children:`import { FC } from 'react';
 
 import './style.css';
 

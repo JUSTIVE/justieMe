@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { PostMetaData } from "@/data/postMetaData";
 import type { ReactNode } from "react";
 import type { MDXComponents } from "mdx/types";
+import SyntaxHighlighter from "react-syntax-highlighter";
 
 export const Route = createFileRoute("/posts/_posts/$postname")({
   component: RouteComponent,
@@ -24,6 +25,14 @@ function RouteComponent() {
     },
     hr() {
       return <hr className="opacity-50" />;
+    },
+    code({ className, ...props }) {
+      const match = /language-(\w+)/.exec(className || "");
+      return match ? (
+        <SyntaxHighlighter language={match[1]} {...props} />
+      ) : (
+        <code className={className} {...props} />
+      );
     },
   };
   return (
