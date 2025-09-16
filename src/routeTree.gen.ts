@@ -8,9 +8,15 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PostsRouteImport } from './routes/posts'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PostsPostsRouteImport } from './routes/posts/_posts'
+import { Route as PostsPostsIndexRouteImport } from './routes/posts/_posts.index'
+import { Route as PostsPostsPostnameRouteImport } from './routes/posts/_posts.$postname'
+
+const PostsRouteImport = createFileRoute('/posts')()
 
 const PostsRoute = PostsRouteImport.update({
   id: '/posts',
@@ -22,31 +28,57 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PostsPostsRoute = PostsPostsRouteImport.update({
+  id: '/_posts',
+  getParentRoute: () => PostsRoute,
+} as any)
+const PostsPostsIndexRoute = PostsPostsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PostsPostsRoute,
+} as any)
+const PostsPostsPostnameRoute = PostsPostsPostnameRouteImport.update({
+  id: '/$postname',
+  path: '/$postname',
+  getParentRoute: () => PostsPostsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/posts': typeof PostsRoute
+  '/posts': typeof PostsPostsRouteWithChildren
+  '/posts/$postname': typeof PostsPostsPostnameRoute
+  '/posts/': typeof PostsPostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/posts': typeof PostsRoute
+  '/posts': typeof PostsPostsIndexRoute
+  '/posts/$postname': typeof PostsPostsPostnameRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/posts': typeof PostsRoute
+  '/posts': typeof PostsRouteWithChildren
+  '/posts/_posts': typeof PostsPostsRouteWithChildren
+  '/posts/_posts/$postname': typeof PostsPostsPostnameRoute
+  '/posts/_posts/': typeof PostsPostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/posts'
+  fullPaths: '/' | '/posts' | '/posts/$postname' | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/posts'
-  id: '__root__' | '/' | '/posts'
+  to: '/' | '/posts' | '/posts/$postname'
+  id:
+    | '__root__'
+    | '/'
+    | '/posts'
+    | '/posts/_posts'
+    | '/posts/_posts/$postname'
+    | '/posts/_posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PostsRoute: typeof PostsRoute
+  PostsRoute: typeof PostsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +97,57 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/posts/_posts': {
+      id: '/posts/_posts'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof PostsPostsRouteImport
+      parentRoute: typeof PostsRoute
+    }
+    '/posts/_posts/': {
+      id: '/posts/_posts/'
+      path: '/'
+      fullPath: '/posts/'
+      preLoaderRoute: typeof PostsPostsIndexRouteImport
+      parentRoute: typeof PostsPostsRoute
+    }
+    '/posts/_posts/$postname': {
+      id: '/posts/_posts/$postname'
+      path: '/$postname'
+      fullPath: '/posts/$postname'
+      preLoaderRoute: typeof PostsPostsPostnameRouteImport
+      parentRoute: typeof PostsPostsRoute
+    }
   }
 }
 
+interface PostsPostsRouteChildren {
+  PostsPostsPostnameRoute: typeof PostsPostsPostnameRoute
+  PostsPostsIndexRoute: typeof PostsPostsIndexRoute
+}
+
+const PostsPostsRouteChildren: PostsPostsRouteChildren = {
+  PostsPostsPostnameRoute: PostsPostsPostnameRoute,
+  PostsPostsIndexRoute: PostsPostsIndexRoute,
+}
+
+const PostsPostsRouteWithChildren = PostsPostsRoute._addFileChildren(
+  PostsPostsRouteChildren,
+)
+
+interface PostsRouteChildren {
+  PostsPostsRoute: typeof PostsPostsRouteWithChildren
+}
+
+const PostsRouteChildren: PostsRouteChildren = {
+  PostsPostsRoute: PostsPostsRouteWithChildren,
+}
+
+const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PostsRoute: PostsRoute,
+  PostsRoute: PostsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
