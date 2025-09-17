@@ -45,5 +45,6 @@
   "trustedDependencies": [
     "@biomejs/biome",
     "esbuild"
-  ]
+  ],
+  "packageManager": "bun@1.2.22"
 }
