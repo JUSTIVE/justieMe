@@ -24,11 +24,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    },
-    "types": ["node"]
+      "@/*": ["./src/*"],
+      "*": ["./*"]
+    }
+    // "types": ["node"]
   },
   "include": ["src", "src/**/*.mdx"],
   "references": [

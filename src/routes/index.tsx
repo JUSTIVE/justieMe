@@ -15,11 +15,15 @@ function HomeComponent() {
   const { t } = useTranslation();
 
   return (
-    <div className={twMerge("py-5 flex-1 flex flex-col pt-8 gap-12 print:saturate-150")}>
+    <div
+      className={twMerge(
+        "py-5 flex-1 flex flex-col pt-8 gap-12 print:saturate-150",
+      )}
+    >
       <div className="px-5">
         <h1 className="level-3 font-semibold">{t("name")}</h1>
         <div className="level-6 text-gray-500">{t("role")}</div>
-        <div className="screen:hidden text-gray-500 level-6 mt-2 grid grid-cols-[64px_1fr]" >
+        <div className="screen:hidden text-gray-500 level-6 mt-2 grid grid-cols-[64px_1fr]">
           <div className="font-semibold">phone</div>
           <div>+82 10 9757 3783</div>
           <div className="font-semibold">email</div>
