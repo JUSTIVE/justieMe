@@ -6,7 +6,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev": "vite --port=3001",
-    "build": "vite build && cp ./docs/CNAME CNAME && rm -rf ./docs && mv ./dist ./docs && mv ./CNAME ./docs",
+    "build": "vite build",
     "serve": "vite preview",
     "start": "vite",
     "twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
