@@ -7,7 +7,7 @@ export const PostTag = ({ tag }: { tag: string }) => {
       search={{
         tag,
       }}
-      className="rounded bg-gray-200 px-2 py-1 text-sm"
+      className="rounded bg-gray-200 px-2 py-1 text-sm dark:bg-gray-700"
     >
       {tag}
     </Link>

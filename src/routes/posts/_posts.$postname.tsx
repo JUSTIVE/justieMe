@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import type { MDXComponents } from "mdx/types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { twMerge } from "tailwind-merge";
+import { PostTags } from "@/components/postTags";
 
 export const Route = createFileRoute("/posts/_posts/$postname")({
   component: RouteComponent,
@@ -21,10 +22,11 @@ const posts = await Promise.all(
 
 function RouteComponent() {
   const postname = Route.useParams().postname;
+
   const components: MDXComponents = {
     h1(props) {
       return (
-        <h1
+        <div
           {...props}
           className="level-1 mb-4"
           style={{
@@ -48,13 +50,21 @@ function RouteComponent() {
       );
     },
   };
+
+  const post = posts.find((x) => x.metaData.link === postname);
   return (
     <div className="flex flex-col gap-4">
-      {postname ? (
-        posts.find((x) => x.metaData.link === postname)?.default({ components })
-      ) : (
-        <></>
-      )}
+      <div
+        className="level-1 mb-4"
+        style={{
+          viewTransitionName: post?.metaData.link,
+        }}
+      >
+        {post?.metaData.title}
+      </div>
+      <PostTags tags={post?.metaData.tags ?? []} />
+
+      {post ? post?.default({ components }) : <></>}
     </div>
   );
 }

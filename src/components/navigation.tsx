@@ -133,7 +133,6 @@ export const Navigation = () => {
           "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out print:hidden",
           `${showSettings ? "pointer-events-auto" : "opacity-0 pointer-events-none"}`,
         )}
-        style={{ viewTransitionName: "nav-overlay" }}
         onClick={() => {
           setShowSettings(false);
         }}
