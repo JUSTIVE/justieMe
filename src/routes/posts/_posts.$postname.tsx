@@ -35,6 +35,16 @@ function RouteComponent() {
         />
       );
     },
+    h2(props) {
+      return (
+        <div {...props} className={twMerge(props.className, "level-2 font-semibold")} id={props.defaultValue} />
+      )
+    },
+    h3(props) {
+      return (
+        <div {...props} className={twMerge(props.className, "level-3")} />
+      )
+    },
     hr() {
       return <hr className="opacity-50" />;
     },
@@ -49,6 +59,9 @@ function RouteComponent() {
         <code className={className} {...props} />
       );
     },
+    img(props) {
+      return <img {...props} className="w-full text-center" />;
+    }
   };
 
   const post = posts.find((x) => x.metaData.link === postname);
@@ -62,7 +75,7 @@ function RouteComponent() {
       >
         {post?.metaData.title}
       </div>
-      <PostTags tags={post?.metaData.tags ?? []} />
+      <PostTags tags={post?.metaData.tags ?? []} viewTransition />
 
       {post ? post?.default({ components }) : <></>}
     </div>

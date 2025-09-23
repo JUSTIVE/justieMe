@@ -35,7 +35,7 @@ const PostItem = ({ title, date, tags, link }: PostMetaData) => {
       <div style={{ viewTransitionName: link }} className="level-5">
         {title}
       </div>
-      <PostTags tags={tags} />
+      <PostTags tags={tags} viewTransition={false} />
       <div className="text-sm text-gray-500 flex flex-row items-center gap-1">
         <Clock className="size-3" />
         {date}
@@ -51,13 +51,13 @@ const Title = () => {
     .with([P.string, P.intersection(P.string, P.not(""))], ([tag, keyword]) => (
       <div className="flex flex-row items-center gap-2 h-7">
         <span className="font-semibold accent">{`"${keyword}"`}</span>
-        <PostTag tag={tag} />
+        <PostTag tag={tag} viewTransition />
         검색 결과
       </div>
     ))
     .with([P.string, P._], ([tag]) => (
       <div className="flex flex-row items-center gap-2 h-7">
-        <PostTag tag={tag} />
+        <PostTag tag={tag} viewTransition />
         검색 결과
       </div>
     ))
@@ -80,7 +80,7 @@ const PostLists = () => {
       return x.metaData.title.includes(keyword);
     }
     return true;
-  });
+  }).toSorted((a, b) => Number(new Date(b.metaData.date)) - Number(new Date(a.metaData.date)));
 
   return (
     <div className="">
