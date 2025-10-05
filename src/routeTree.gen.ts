@@ -11,6 +11,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsPostsRouteImport } from './routes/posts/_posts'
 import { Route as PostsPostsIndexRouteImport } from './routes/posts/_posts.index'
@@ -21,6 +22,11 @@ const PostsRouteImport = createFileRoute('/posts')()
 const PostsRoute = PostsRouteImport.update({
   id: '/posts',
   path: '/posts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CvRoute = CvRouteImport.update({
+  id: '/cv',
+  path: '/cv',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -45,18 +51,21 @@ const PostsPostsPostnameRoute = PostsPostsPostnameRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/posts': typeof PostsPostsRouteWithChildren
   '/posts/$postname': typeof PostsPostsPostnameRoute
   '/posts/': typeof PostsPostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/posts': typeof PostsPostsIndexRoute
   '/posts/$postname': typeof PostsPostsPostnameRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/posts': typeof PostsRouteWithChildren
   '/posts/_posts': typeof PostsPostsRouteWithChildren
   '/posts/_posts/$postname': typeof PostsPostsPostnameRoute
@@ -64,12 +73,13 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/posts' | '/posts/$postname' | '/posts/'
+  fullPaths: '/' | '/cv' | '/posts' | '/posts/$postname' | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/posts' | '/posts/$postname'
+  to: '/' | '/cv' | '/posts' | '/posts/$postname'
   id:
     | '__root__'
     | '/'
+    | '/cv'
     | '/posts'
     | '/posts/_posts'
     | '/posts/_posts/$postname'
@@ -78,6 +88,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CvRoute: typeof CvRoute
   PostsRoute: typeof PostsRouteWithChildren
 }
 
@@ -88,6 +99,13 @@ declare module '@tanstack/react-router' {
       path: '/posts'
       fullPath: '/posts'
       preLoaderRoute: typeof PostsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cv': {
+      id: '/cv'
+      path: '/cv'
+      fullPath: '/cv'
+      preLoaderRoute: typeof CvRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -147,6 +165,7 @@ const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CvRoute: CvRoute,
   PostsRoute: PostsRouteWithChildren,
 }
 export const routeTree = rootRouteImport

@@ -54,6 +54,9 @@
 }
 
 @layer utilities {
+  .no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+  }
   ::view-transition-group(nav) {
     border-radius: 1rem;
     overflow: hidden;

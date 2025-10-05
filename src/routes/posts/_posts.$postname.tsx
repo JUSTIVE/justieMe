@@ -37,13 +37,15 @@ function RouteComponent() {
     },
     h2(props) {
       return (
-        <div {...props} className={twMerge(props.className, "level-2 font-semibold")} id={props.defaultValue} />
-      )
+        <div
+          {...props}
+          className={twMerge(props.className, "level-2 font-semibold")}
+          id={props.defaultValue as string}
+        />
+      );
     },
     h3(props) {
-      return (
-        <div {...props} className={twMerge(props.className, "level-3")} />
-      )
+      return <div {...props} className={twMerge(props.className, "level-3")} />;
     },
     hr() {
       return <hr className="opacity-50" />;
@@ -53,15 +55,15 @@ function RouteComponent() {
     },
     code({ className, ...props }) {
       const match = /language-(\w+)/.exec(className || "");
-      return match?.[1] ? (
-        <SyntaxHighlighter language={match[1]} {...props} />
-      ) : (
-        <code className={className} {...props} />
-      );
+      if (match?.[1]) {
+        //@ts-ignore
+        return <SyntaxHighlighter language={match[1]} {...props} />;
+      }
+      return <code className={className} {...props} />;
     },
     img(props) {
-      return <img {...props} className="w-full text-center" />;
-    }
+      return <img {...props} className="w-full text-center" alt="" />;
+    },
   };
 
   const post = posts.find((x) => x.metaData.link === postname);
