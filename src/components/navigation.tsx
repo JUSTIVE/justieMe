@@ -169,7 +169,7 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
   return (
     <div
       className={twMerge(
-        "fixed bottom-0 my-4 flex flex-col gap-4 rounded-2xl  max-w-[calc(100%-48px)] w-full backdrop-blur-md  z-[9] transition-[transform,opacity] overflow-hidden  ",
+        "fixed bottom-0 my-4 flex flex-col gap-4 rounded-2xl  max-w-[calc(100%-48px)] w-full z-[9] transition-[transform,opacity] overflow-hidden  ",
         `${showMenu ? "-translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
         "left-1/2 -translate-x-1/2",
         "lg:max-w-screen-md",
@@ -202,7 +202,7 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
           type="button"
           className={twMerge(
             "level-5 text-start transition-[transform,colors] ",
-            subMenu === "contact" ? "translate-x-2 accent" : "translate-x-0",
+            subMenu === "contact" ? "translate-x-1 accent" : "translate-x-0",
           )}
           onClick={() => {
             setSubMenu((x) => (x === "contact" ? "none" : "contact"));
@@ -214,7 +214,7 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
           type="button"
           className={twMerge(
             "level-5 text-start transition-[transform,colors] ",
-            subMenu === "settings" ? "translate-x-4 accent" : "translate-x-0",
+            subMenu === "settings" ? "translate-x-1 accent" : "translate-x-0",
           )}
           onClick={() => {
             setSubMenu((x) => (x === "settings" ? "none" : "settings"));
@@ -277,6 +277,9 @@ export const Navigation = () => {
             to={"/"}
             style={{
               viewTransitionName: "navHome",
+            }}
+            onClick={() => {
+              setShowSettings(false);
             }}
           >
             {t("name")}

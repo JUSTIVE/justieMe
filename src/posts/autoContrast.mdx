@@ -1,9 +1,14 @@
+import img1 from "./imgs/autocontrast-1.gif";
+import img2 from "./imgs/autocontrast-2.png";
+import img3 from "./imgs/autocontrast-2.png";
 export const metaData = {
     title: '배경색에 맞춰 자동으로 고대비를 가지는 전경색을 구하는 방법',
     date: '2024-02-29',
     link: 'autoContrast',
     tags: ['색상이론', '배경색', '전경색'],
 }
+
+<img src={img1} alt="색상이론" class="w-full" />
 
 색과 관련된 문제들은 늘 쉬워 보이면서도 어려운 문제입니다. 당장의 말초적인 감각으로 인지할 수 있기에 직관적으로 풀어낼 수 있을 것 같지만, 더 깊게 들어갈수록 깔려있는 개념들의 복잡함에 질색을 하곤 합니다.
 최초의 전자식 컴퓨터가 만들어진 지 4/5세기가 되어가고 있지만 인류는 아직도 색을 표현하는 데에 고민을 하고 있습니다. 물론, 우리가 일반적으로 접하는 화면의 색상 정보는 R,G,B(때로는 W가 더해진)의 색을 낼 수 있는 작은 단위들의 조합이지만, 우리의 눈이 세상을 인지하는 방법과는 또 다른 이야기입니다. (sRGB color gamut에서의 blue-yellow gradient에서의 gray-dead-zone 문제를 보시면 이해가 쉬울 수 있습니다.)
@@ -66,4 +71,54 @@ export const App: FC<{ name: string }> = ({ name }) => {
     </div>
   );
 };
+```
+
+그러나 이 방법에는 문제가 있습니다. 초록 계열 색상에서 충분한 대비를 만들지 못하는 것입니다.
+
+<img src={img2} alt="색상이론" class="w-full" />
+우리의 안구에는 원추세포와 간상세포가 위치해 있고, 이들은 외부에서 들어오는 빛의 자극의 정도를 전기 신호로 변환하여 뇌로 전달합니다.
+
+<img src={img3} alt="색상이론" class="w-full" />
+그리고 이 중 색의 인지를 담당하는 원추세포에는 세 종류가 있는데, 이들의 수는 같지 않습니다. 따라서 뇌가 인지하는 밝기에는 이를 고려한 내용을 반영해야 합니다. CIE XYZ(혹은 CIE 1931) 모델은 평균적인 인간의 시야각 2' 내외의 원추세포의 반응(표준 색 관찰자)을 기준으로 설계되었습니다. 이는 RGB를 계산되어지는 색상 공간보다 더 우리가 인지하는 색을 잘 표현할 수 있습니다. RGB에서 CIE XYZ로의 변환 식은 다음과 같습니다.
+
+ $$ \begin{bmatrix} X \\ Y \\ Z \end{bmatrix} = \begin{bmatrix} S_rX_r & S_gX_g & S_bX_b \\ S_rY_r & S_gY_g & S_bY_b \\ S_rZ_r & S_gZ_g & S_bZ_b \end{bmatrix} \begin{bmatrix} R \\ G \\ B \end{bmatrix} $$
+
+
+아래의 사이트에서 가운데 들어갈 3x3 행렬의 가중치를 구할 수 있습니다. 본문에서는 sRGB를 예시로 들겠습니다. 그리고, 우리가 필요한 색상의 밝기에 해당하는 것은 Y의 값 뿐이므로, 다음의 코드와 같이 구할 수 있습니다.
+
+```typescript
+ /*matrix for sRGB to XYZ
+ 0.4124564  0.3575761  0.1804375
+ 0.2126729  0.7151522  0.0721750
+ 0.0193339  0.1191920  0.9503041
+ */
+const luminanceFromRGB = ([red,green,blue]:[number,number,number])=>
+  0.2126729 * red + 0.7151522 * green + 0.0721750 * blue
+```
+
+
+이러한 변환은 luma coding이라 합니다. 이 값의 중간값(127)을 기준으로, 전경색을 결정할 수 있습니다.
+
+```typescript
+const XYZRenderBox = ({
+  bgColor,
+  label,
+}: RenderBoxProps & { label?: boolean }) => {
+  const xyz = rgbToluminance(hexToRGB(bgColor));
+
+  const foregroundColor = xyz > 127 ? '#000000' : '#ffffff';
+
+  return (
+    <div
+      className={'box'}
+      style={{
+        backgroundColor: bgColor,
+        color: foregroundColor,
+      }}
+    >
+      {(label ?? true) && 'foreground'}
+    </div>
+  );
+};
+
 ```

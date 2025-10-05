@@ -6,7 +6,7 @@ export const Route = createFileRoute("/posts/_posts")({
 
 function RouteComponent() {
   return (
-    <div className="pt-8 px-5">
+    <div className="pt-8 px-5 pb-16">
       <Outlet />
     </div>
   );

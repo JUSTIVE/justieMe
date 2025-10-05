@@ -1,10 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { PostMetaData } from "@/data/postMetaData";
-import type { ReactNode } from "react";
+import { useContext, type ReactNode } from "react";
 import type { MDXComponents } from "mdx/types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { twMerge } from "tailwind-merge";
 import { PostTags } from "@/components/postTags";
+import {
+  atomOneDark,
+  atomOneLight,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { ThemeContext } from "../__root";
 
 export const Route = createFileRoute("/posts/_posts/$postname")({
   component: RouteComponent,
@@ -22,6 +27,8 @@ const posts = await Promise.all(
 
 function RouteComponent() {
   const postname = Route.useParams().postname;
+  const theme = useContext(ThemeContext);
+  if (!theme) return <></>;
 
   const components: MDXComponents = {
     h1(props) {
@@ -57,7 +64,19 @@ function RouteComponent() {
       const match = /language-(\w+)/.exec(className || "");
       if (match?.[1]) {
         //@ts-ignore
-        return <SyntaxHighlighter language={match[1]} {...props} />;
+        return (
+          <SyntaxHighlighter
+            language={match[1]}
+            {...props}
+            style={theme.theme === "dark" ? atomOneDark : atomOneLight}
+            showLineNumbers
+            PreTag={"div"}
+            customStyle={{
+              borderRadius: "12px",
+              backgroundColor: theme.theme === "dark" ? "#1f2937" : "#f3f4f6",
+            }}
+          />
+        );
       }
       return <code className={className} {...props} />;
     },
