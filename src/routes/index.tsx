@@ -5,9 +5,5 @@ export const Route = createFileRoute("/")({
 });
 
 function HomeComponent() {
-  return (
-    <div>
-      <Link to={"/cv"}>CV</Link>
-    </div>
-  );
+  return <div>{"🚧 under construction 🚧"}</div>;
 }

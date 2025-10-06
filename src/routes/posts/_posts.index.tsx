@@ -6,6 +6,7 @@ import { type KeyboardEvent, type ReactNode, Suspense } from "react";
 import { match, P } from "ts-pattern";
 import { z } from "zod";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
+import { useTranslation } from "react-i18next";
 
 const postSearchSchema = z.object({
   tag: fallback(z.string(), "").default(""),
@@ -41,6 +42,7 @@ const PostItem = ({ title, date, tags, link }: PostMetaData) => {
 
 const Title = () => {
   const { tag, keyword } = Route.useSearch();
+  const { t } = useTranslation();
 
   return match([tag, keyword])
     .with(
@@ -67,7 +69,7 @@ const Title = () => {
         <span className="font-semibold accent">{`"${keyword}"`}</span>검색 결과
       </div>
     ))
-    .otherwise(() => <div className="font-bold h-7">Posts</div>);
+    .otherwise(() => <div className="font-bold h-7">{t("Posts")}</div>);
 };
 
 const PostLists = () => {

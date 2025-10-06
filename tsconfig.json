@@ -30,10 +30,5 @@
     }
     // "types": ["node"]
   },
-  "include": ["src", "src/**/*.mdx"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "include": ["src", "src/**/*.mdx"]
 }

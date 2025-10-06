@@ -14,12 +14,8 @@ export const Route = createFileRoute("/cv")({
 function RouteComponent() {
   const { t } = useTranslation();
   return (
-    <div
-      className={twMerge(
-        "py-5 flex-1 flex flex-col pt-8 gap-12 print:saturate-150",
-      )}
-    >
-      <div className="px-5">
+    <div className={twMerge("flex-1 flex flex-col gap-12 print:saturate-150")}>
+      <div className="">
         <h1 className="level-3 font-semibold">{t("name")}</h1>
         <div className="level-6 text-gray-500">{t("role")}</div>
         <div className="screen:hidden text-gray-500 level-6 mt-2 grid grid-cols-[64px_1fr]">
@@ -31,7 +27,7 @@ function RouteComponent() {
           <div>JUSTIVE</div>
         </div>
       </div>
-      <div className="level-6 break-keep w-full px-5">
+      <div className="level-6 break-keep w-full">
         <div className="mr-1 level-5 accent font-semibold mb-1.5">
           {t("familiarWithNovelty")}.
         </div>

@@ -153,6 +153,35 @@ const SubMenuItem = ({
 
 type SubMenuKind = "settings" | "contact" | "none";
 
+type MenuPaneItemProps = {
+  subMenu: SubMenuKind;
+  setSubMenu: (fn: (kind: SubMenuKind) => SubMenuKind) => void;
+  kind: SubMenuKind;
+  labelKey: string;
+};
+const MenuPaneItem = ({
+  subMenu,
+  kind,
+  setSubMenu,
+  labelKey,
+}: MenuPaneItemProps) => {
+  const { t } = useTranslation();
+  return (
+    <button
+      type="button"
+      className={twMerge(
+        "level-5 text-start transition-[transform,colors] ",
+        subMenu === kind ? "translate-x-1 accent" : "translate-x-0",
+      )}
+      onClick={() => {
+        setSubMenu((x) => (x === kind ? "none" : kind));
+      }}
+    >
+      {t(labelKey)}
+    </button>
+  );
+};
+
 type MenuPaneProps = {
   showMenu: boolean;
   setShowMenu: (showSettings: boolean) => void;
@@ -180,7 +209,7 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
         className={twMerge(
           "py-3 px-4 flex flex-col  gap-4 bg-white rounded-2xl z-[1] transition-transform border border-gray-200",
           "dark:text-white/80 dark:bg-gray-800 dark:border-gray-800",
-          subMenu === "none" ? "translate-y-16" : "translate-y-0",
+          subMenu === "none" ? "translate-y-16" : "translate-y-2",
         )}
       >
         <Link
@@ -198,30 +227,26 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
         >
           CV
         </Link>
-        <button
-          type="button"
-          className={twMerge(
-            "level-5 text-start transition-[transform,colors] ",
-            subMenu === "contact" ? "translate-x-1 accent" : "translate-x-0",
-          )}
+        <Link
+          to={"/gallery"}
           onClick={() => {
-            setSubMenu((x) => (x === "contact" ? "none" : "contact"));
+            setShowMenu(false);
           }}
         >
-          {t("Contact me")}
-        </button>
-        <button
-          type="button"
-          className={twMerge(
-            "level-5 text-start transition-[transform,colors] ",
-            subMenu === "settings" ? "translate-x-1 accent" : "translate-x-0",
-          )}
-          onClick={() => {
-            setSubMenu((x) => (x === "settings" ? "none" : "settings"));
-          }}
-        >
-          {t("settings")}
-        </button>
+          {t("Gallery")}
+        </Link>
+        <MenuPaneItem
+          subMenu={subMenu}
+          setSubMenu={setSubMenu}
+          kind="contact"
+          labelKey="Contact me"
+        />
+        <MenuPaneItem
+          subMenu={subMenu}
+          setSubMenu={setSubMenu}
+          kind="settings"
+          labelKey="settings"
+        />
       </div>
       <div
         className={twMerge(

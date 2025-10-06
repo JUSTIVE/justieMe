@@ -6,6 +6,7 @@ import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import Pages from "vite-plugin-pages";
+import path from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,5 +29,8 @@ export default defineConfig({
 
     react({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),
   ],
+  resolve: {
+    alias: { "@": path.resolve(__dirname, "src") },
+  },
   assetsInclude: ["src/posts/imgs/**/*.{png,jpg,jpeg,gif,svg}"],
 });

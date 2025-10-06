@@ -16,7 +16,7 @@ const CareerCard = ({
   const { t } = useTranslation();
 
   return (
-    <div className="grid grid-cols-8 p-5 gap-x-2">
+    <div className="grid grid-cols-8 py-5 gap-x-2">
       <div className="align-baseline level-6 pt-2 col-span-2">
         <div className="screen:sticky screen:top-2 text-gray-500">
           {duration.start} - {duration.end}
@@ -68,7 +68,7 @@ const CareerCard = ({
                 </div>
                 <ul className="flex flex-col opacity-60">
                   {(description ?? []).map((desc) => (
-                    <div key={desc} >
+                    <div key={desc}>
                       <Trans
                         t={t}
                         i18nKey={desc}
@@ -78,7 +78,6 @@ const CareerCard = ({
                         }}
                       />
                     </div>
-
                   ))}
                 </ul>
               </div>
@@ -107,12 +106,8 @@ export const Career = () => {
   const { t } = useTranslation();
 
   return (
-    <div
-      className={twMerge("flex flex-col")}
-    >
-      <div className={twMerge("px-5", "dark:text-white")}>
-        {t("workExperience")}
-      </div>
+    <div className={twMerge("flex flex-col")}>
+      <div className={twMerge("dark:text-white")}>{t("workExperience")}</div>
       {careerList.map((career, idx) => {
         return <CareerCard {...career} key={career.company.name} idx={idx} />;
       })}

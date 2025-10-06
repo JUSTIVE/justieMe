@@ -8,20 +8,16 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PostsPostsRouteImport } from './routes/posts/_posts'
 import { Route as PostsPostsIndexRouteImport } from './routes/posts/_posts.index'
 import { Route as PostsPostsPostnameRouteImport } from './routes/posts/_posts.$postname'
 
-const PostsRouteImport = createFileRoute('/posts')()
-
-const PostsRoute = PostsRouteImport.update({
-  id: '/posts',
-  path: '/posts',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CvRoute = CvRouteImport.update({
@@ -34,54 +30,49 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PostsPostsRoute = PostsPostsRouteImport.update({
-  id: '/_posts',
-  getParentRoute: () => PostsRoute,
-} as any)
 const PostsPostsIndexRoute = PostsPostsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => PostsPostsRoute,
+  id: '/posts/_posts/',
+  path: '/posts/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PostsPostsPostnameRoute = PostsPostsPostnameRouteImport.update({
-  id: '/$postname',
-  path: '/$postname',
-  getParentRoute: () => PostsPostsRoute,
+  id: '/posts/_posts/$postname',
+  path: '/posts/$postname',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
-  '/posts': typeof PostsPostsRouteWithChildren
+  '/gallery': typeof GalleryRoute
   '/posts/$postname': typeof PostsPostsPostnameRoute
-  '/posts/': typeof PostsPostsIndexRoute
+  '/posts': typeof PostsPostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
-  '/posts': typeof PostsPostsIndexRoute
+  '/gallery': typeof GalleryRoute
   '/posts/$postname': typeof PostsPostsPostnameRoute
+  '/posts': typeof PostsPostsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
-  '/posts': typeof PostsRouteWithChildren
-  '/posts/_posts': typeof PostsPostsRouteWithChildren
+  '/gallery': typeof GalleryRoute
   '/posts/_posts/$postname': typeof PostsPostsPostnameRoute
   '/posts/_posts/': typeof PostsPostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cv' | '/posts' | '/posts/$postname' | '/posts/'
+  fullPaths: '/' | '/cv' | '/gallery' | '/posts/$postname' | '/posts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cv' | '/posts' | '/posts/$postname'
+  to: '/' | '/cv' | '/gallery' | '/posts/$postname' | '/posts'
   id:
     | '__root__'
     | '/'
     | '/cv'
-    | '/posts'
-    | '/posts/_posts'
+    | '/gallery'
     | '/posts/_posts/$postname'
     | '/posts/_posts/'
   fileRoutesById: FileRoutesById
@@ -89,16 +80,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CvRoute: typeof CvRoute
-  PostsRoute: typeof PostsRouteWithChildren
+  GalleryRoute: typeof GalleryRoute
+  PostsPostsPostnameRoute: typeof PostsPostsPostnameRoute
+  PostsPostsIndexRoute: typeof PostsPostsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/posts': {
-      id: '/posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsRouteImport
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cv': {
@@ -115,58 +108,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/posts/_posts': {
-      id: '/posts/_posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsPostsRouteImport
-      parentRoute: typeof PostsRoute
-    }
     '/posts/_posts/': {
       id: '/posts/_posts/'
-      path: '/'
-      fullPath: '/posts/'
+      path: '/posts'
+      fullPath: '/posts'
       preLoaderRoute: typeof PostsPostsIndexRouteImport
-      parentRoute: typeof PostsPostsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/posts/_posts/$postname': {
       id: '/posts/_posts/$postname'
-      path: '/$postname'
+      path: '/posts/$postname'
       fullPath: '/posts/$postname'
       preLoaderRoute: typeof PostsPostsPostnameRouteImport
-      parentRoute: typeof PostsPostsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface PostsPostsRouteChildren {
-  PostsPostsPostnameRoute: typeof PostsPostsPostnameRoute
-  PostsPostsIndexRoute: typeof PostsPostsIndexRoute
-}
-
-const PostsPostsRouteChildren: PostsPostsRouteChildren = {
-  PostsPostsPostnameRoute: PostsPostsPostnameRoute,
-  PostsPostsIndexRoute: PostsPostsIndexRoute,
-}
-
-const PostsPostsRouteWithChildren = PostsPostsRoute._addFileChildren(
-  PostsPostsRouteChildren,
-)
-
-interface PostsRouteChildren {
-  PostsPostsRoute: typeof PostsPostsRouteWithChildren
-}
-
-const PostsRouteChildren: PostsRouteChildren = {
-  PostsPostsRoute: PostsPostsRouteWithChildren,
-}
-
-const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CvRoute: CvRoute,
-  PostsRoute: PostsRouteWithChildren,
+  GalleryRoute: GalleryRoute,
+  PostsPostsPostnameRoute: PostsPostsPostnameRoute,
+  PostsPostsIndexRoute: PostsPostsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -53,10 +53,10 @@ export const Projects = () => {
   const { t } = useTranslation();
   return (
     <div className={twMerge("flex flex-col gap-4", "transition-transform")}>
-      <div className={twMerge("px-5", "dark:text-white")}>{t("projects")}</div>
+      <div className={twMerge("dark:text-white")}>{t("projects")}</div>
       <div className="grid grid-cols-1">
         {projectLists.map((projects, idx) => (
-          <div key={projects.name} className="grid grid-cols-8 gap-2 px-5">
+          <div key={projects.name} className="grid grid-cols-8 gap-2 ">
             <div className="col-span-2 align-baseline level-6 pt-2">
               <div className="screen:sticky screen:top-2 text-gray-500">
                 {projects.year}
