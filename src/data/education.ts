@@ -10,6 +10,6 @@ export type Education = {
     end: string;
   };
   major: string;
-  degree: string
+  degree: string;
   description: string[];
 };

@@ -60,7 +60,7 @@ const Helmet: React.FC<HelmetProps> = ({
       }
       (metaThemeColor as HTMLMetaElement).content = themeColor;
     }
-  }, [title, description, keywords]);
+  }, [title, description, keywords, themeColor]);
 
   return null; // This component does not render any visible UI
 };

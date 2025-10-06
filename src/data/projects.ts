@@ -1,5 +1,3 @@
-
-
 export type Projects = {
   techStack: string[];
   year: number;

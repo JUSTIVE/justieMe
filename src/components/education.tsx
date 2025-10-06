@@ -1,7 +1,7 @@
 import { educationList } from "@/asset/education.json";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { Education } from "@/data/education";
+import type { Education } from "@/data/education";
 
 const EducationCard = ({
   school,

@@ -9,7 +9,9 @@
     "build": "vite build",
     "serve": "vite preview",
     "start": "vite",
-    "twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css"
+    "twc": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+    "format": "bun biome format --write",
+    "lint": "bun biome lint --fix"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

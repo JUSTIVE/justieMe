@@ -1,7 +1,7 @@
 import { talks } from "@/asset/talks.json";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
-import { Talk } from "@/data/talks";
+import type { Talk } from "@/data/talks";
 
 const TalkCard = ({ title, event, location }: Talk) => {
   return (

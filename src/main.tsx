@@ -23,10 +23,8 @@ const rootElement = document.getElementById("app")!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
-    <>
-      <I18nextProvider i18n={i18n} defaultNS={"translation"}>
-        <RouterProvider router={router} />
-      </I18nextProvider>
-    </>,
+    <I18nextProvider i18n={i18n} defaultNS={"translation"}>
+      <RouterProvider router={router} />
+    </I18nextProvider>,
   );
 }

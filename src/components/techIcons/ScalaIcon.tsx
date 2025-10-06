@@ -8,6 +8,7 @@ export const ScalaIcon = (props: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 256 416"
       {...props}
     >
+      <title>Scala</title>
       <defs>
         <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="scala-a">
           <stop stopColor="#4F4F4F" offset="0%" />

@@ -11,6 +11,7 @@ export const FSharpIcon = (props: SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <title>F#</title>
       <defs id="defs2" />
       <g id="layer1">
         <path

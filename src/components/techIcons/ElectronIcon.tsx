@@ -8,6 +8,7 @@ export const ElectronIcon = (props: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 128 128"
       {...props}
     >
+      <title>Electron</title>
       <circle cx="64" cy="64" r="64" fill="#2F3242" />
       <path
         fill="#A2ECFB"

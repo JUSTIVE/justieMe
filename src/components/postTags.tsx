@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 
-export const PostTag = ({ tag, viewTransition }: { tag: string, viewTransition: boolean }) => {
+export const PostTag = ({
+  tag,
+  viewTransition,
+}: { tag: string; viewTransition: boolean }) => {
   return (
     <Link
       to={"/posts"}
@@ -9,11 +12,12 @@ export const PostTag = ({ tag, viewTransition }: { tag: string, viewTransition: 
       }}
       className="rounded bg-gray-200 px-2 py-1 text-sm dark:bg-gray-700"
       style={
-        viewTransition ? {
-          viewTransitionName: tag
-        } : {
-
-        }}
+        viewTransition
+          ? {
+              viewTransitionName: tag,
+            }
+          : {}
+      }
       viewTransition
     >
       {tag}
@@ -21,7 +25,10 @@ export const PostTag = ({ tag, viewTransition }: { tag: string, viewTransition: 
   );
 };
 
-export const PostTags = ({ tags, viewTransition }: { tags: string[], viewTransition: boolean }) => {
+export const PostTags = ({
+  tags,
+  viewTransition,
+}: { tags: string[]; viewTransition: boolean }) => {
   return (
     <div className="flex flex-wrap gap-2">
       {tags.map((x) => (

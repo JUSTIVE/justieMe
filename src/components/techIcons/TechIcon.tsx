@@ -66,5 +66,5 @@ export const TechIcon = ({
     .with("Scala", () => <ScalaIcon {...props} />)
     .with("C#", () => <CSharpIcon {...props} />)
     .with("Unity", () => <UnityIcon {...props} />)
-    .otherwise(() => <>{ }</>);
+    .otherwise(() => <>{}</>);
 };

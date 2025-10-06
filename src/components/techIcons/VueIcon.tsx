@@ -10,6 +10,7 @@ export const VueIcon = (props: SVGProps<SVGSVGElement>) => {
       preserveAspectRatio="xMidYMid"
       {...props}
     >
+      <title>Vue</title>
       <path
         d="M204.8 0H256L128 220.8 0 0h97.92L128 51.2 157.44 0h47.36Z"
         fill="#41B883"

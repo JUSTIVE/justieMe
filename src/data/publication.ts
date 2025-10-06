@@ -21,7 +21,7 @@ export type AcademicPublication = {
 export type NormalPublication = {
   __typename: "NormalPublication";
   description: string;
-  link?: string
+  link?: string;
 } & PublicationType;
 
 export type PublicationSet = (AcademicPublication | NormalPublication)[];

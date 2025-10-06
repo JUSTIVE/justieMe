@@ -6,7 +6,7 @@ export default {
     extend: {
       screens: {
         print: { raw: "print" },
-        screen: { raw: 'screen' },
+        screen: { raw: "screen" },
       },
       keyframes: {
         fadeIn: {
