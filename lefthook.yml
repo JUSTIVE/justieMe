@@ -23,7 +23,7 @@ pre-commit:
       run: bun format && bun lint
 
     - name: thumbgen
-      run: bun .scripts/thumbgen.ts && git add src/asset/gallery/thumbs/*
+      run: bun .scripts/thumbgen.ts && git add public/asset/gallery/thumbs/*
 #   parallel: true
 #   jobs:
 #     - run: yarn eslint {staged_files}

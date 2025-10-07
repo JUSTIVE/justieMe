@@ -10,6 +10,9 @@ import path from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    manifest: true,
+  },
   plugins: [
     TanStackRouterVite({}),
     tsconfigPaths(),

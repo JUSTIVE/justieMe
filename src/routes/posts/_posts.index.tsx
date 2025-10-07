@@ -69,7 +69,7 @@ const Title = () => {
         <span className="font-semibold accent">{`"${keyword}"`}</span>검색 결과
       </div>
     ))
-    .otherwise(() => <div className="font-bold h-7">{t("Posts")}</div>);
+    .otherwise(() => <div className="font-semibold h-7">{t("Posts")}</div>);
 };
 
 const PostLists = () => {

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/gallery/$detail")({
   component: RouteComponent,
@@ -8,9 +8,9 @@ function RouteComponent() {
   const { detail } = Route.useParams();
   const filename = detail.split("/").at(-1)?.split(".")[0] ?? "";
   return (
-    <div>
+    <Link to={"/gallery"} viewTransition replace>
       <img
-        src={`${detail.replaceAll("/thumbs", "")}.jpg`}
+        src={`/asset/gallery/${detail}.jpg`}
         alt={filename}
         style={{
           viewTransitionName: detail.split("/").at(-1)?.split(".")[0] ?? "",
@@ -18,6 +18,6 @@ function RouteComponent() {
         className="rounded-2xl"
         loading="eager"
       />
-    </div>
+    </Link>
   );
 }

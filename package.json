@@ -50,10 +50,6 @@
     "vite-plugin-pages": "^0.33.1",
     "zod": "^4.1.9"
   },
-  "trustedDependencies": [
-    "@biomejs/biome",
-    "esbuild",
-    "lefthook"
-  ],
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook"],
   "packageManager": "bun@1.2.22"
 }

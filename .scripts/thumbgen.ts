@@ -4,13 +4,13 @@ import { exec, execSync } from "node:child_process";
 
 console.log(os.platform(), os.arch());
 
-const GALLERY_DIR = "./src/asset/gallery";
-const THUMB_DIR = "./src/asset/gallery/thumbs";
+const GALLERY_DIR = "./public/asset/gallery";
+const THUMB_DIR = "./public/asset/gallery/thumbs";
 
 const thumbs = fs.readdirSync(THUMB_DIR);
 
 const images = fs
-  .readdirSync("./src/asset/gallery")
+  .readdirSync(GALLERY_DIR)
   .filter((x) => !fs.statSync(`${GALLERY_DIR}/${x}`).isDirectory())
   .filter((x) => x !== ".DS_Store")
   .filter((x) => !thumbs.includes(x.replaceAll(".jpg", ".webp")));
