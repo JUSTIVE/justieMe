@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 
-const images = Object.values(
-  import.meta.glob("@/asset/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
+const thumbnails = Object.values(
+  import.meta.glob("@/asset/gallery/*.{webp}", {
     eager: true,
     as: "url",
   }),
 );
+
+const images = thumbnails.map((x) => x.replaceAll(".webp", ".png"));
 
 export const Route = createFileRoute("/gallery")({
   component: RouteComponent,
@@ -18,7 +20,7 @@ function RouteComponent() {
     <>
       <div className="font-bold h-7">{t("Gallery")}</div>
       <div className="grid grid-cols-3 gap-0 rounded-2xl overflow-hidden">
-        {images.map((image) => {
+        {thumbnails.map((image) => {
           return (
             <img
               src={image}
@@ -28,6 +30,7 @@ function RouteComponent() {
               style={{
                 viewTransitionName: image,
               }}
+              loading="lazy"
             />
           );
         })}
