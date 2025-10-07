@@ -10,7 +10,7 @@ function RouteComponent() {
   return (
     <Link to={"/gallery"} viewTransition replace>
       <img
-        src={`/asset/gallery/${detail}.jpg`}
+        src={`/asset/gallery/thumb/${detail}.webp`}
         alt={filename}
         style={{
           viewTransitionName: detail.split("/").at(-1)?.split(".")[0] ?? "",
