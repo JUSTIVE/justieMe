@@ -17,7 +17,13 @@
 #         - security
 #       run: bundle audit
 #
-# pre-commit:
+pre-commit:
+  jobs:
+    - name: biome format & lint
+      run: bun format && bun lint
+
+    - name: thumbgen
+      run: bun .scripts/thumbgen.ts && git add src/asset/gallery/thumbs/*
 #   parallel: true
 #   jobs:
 #     - run: yarn eslint {staged_files}

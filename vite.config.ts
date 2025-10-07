@@ -32,5 +32,5 @@ export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(__dirname, "src") },
   },
-  assetsInclude: ["src/posts/imgs/**/*.{png,jpg,jpeg,gif,svg}"],
+  assetsInclude: ["src/posts/imgs/**/*.{png,jpg,jpeg,gif,svg,webp}"],
 });
