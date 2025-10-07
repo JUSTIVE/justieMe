@@ -53,14 +53,14 @@ const Title = () => {
       ([tag, keyword]) => (
         <div className="flex flex-row items-center gap-2 h-7">
           <span className="font-semibold accent">{`"${keyword}"`}</span>
-          <PostTag tag={tag} viewTransition />
+          <PostTag tag={tag} viewTransition closeEnabled />
           검색 결과
         </div>
       ),
     )
     .with([P.intersection(P.string, P.not("")), P._], ([tag]) => (
       <div className="flex flex-row items-center gap-2 h-7">
-        <PostTag tag={tag} viewTransition />
+        <PostTag tag={tag} viewTransition closeEnabled />
         검색 결과
       </div>
     ))

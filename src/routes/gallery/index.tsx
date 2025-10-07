@@ -12,6 +12,9 @@ const GalleryItem = ({ filename, title }: GalleryPhoto) => {
       }}
       className="relative group cursor-pointer"
       viewTransition
+      style={{
+        viewTransitionName: filename,
+      }}
     >
       <div className="absolute w-full h-full top-0 left-0 z-[2] opacity-0 group-hover:opacity-100 grid place-items-center p-4 pointer-events-none transition-opacity text-center level-7 italic break-keep">
         {title}
@@ -20,10 +23,7 @@ const GalleryItem = ({ filename, title }: GalleryPhoto) => {
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
-        className="aspect-square object-cover transition-all  "
-        style={{
-          viewTransitionName: filename,
-        }}
+        className=" aspect-square object-cover transition-all  "
         loading="lazy"
       />
     </Link>
