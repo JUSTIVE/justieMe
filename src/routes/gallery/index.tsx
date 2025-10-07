@@ -3,14 +3,6 @@ import { useTranslation } from "react-i18next";
 import { gallery } from "@/asset/gallery.json";
 import type { PhotoGroup } from "@/data/gallery";
 
-// const images = Object.values(
-//   import.meta.glob("@/asset/gallery/thumbs/*.webp", {
-//     eager: true,
-//     query: "?url",
-//     import: "default",
-//   }),
-// ) as string[];
-
 const GalleryItem = ({ filepath }: { filepath: string }) => {
   return (
     <Link
@@ -20,7 +12,6 @@ const GalleryItem = ({ filepath }: { filepath: string }) => {
       }}
       className="relative group cursor-pointer"
       viewTransition
-      replace
     >
       <div className="absolute w-full h-full top-0 left-0 group-hover:backdrop-blur-sm z-[1] group-hover:brightness-50" />
       <img
@@ -39,7 +30,7 @@ const GalleryItem = ({ filepath }: { filepath: string }) => {
 const PhotoGroupE = ({ name, datetime, photos }: PhotoGroup) => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <div className="font-semibold">{name}</div>
         <div className="opacity-50 level-6">{datetime}</div>
       </div>

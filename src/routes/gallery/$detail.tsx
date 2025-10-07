@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { flushSync } from "node_modules/@types/react-dom";
 
 export const Route = createFileRoute("/gallery/$detail")({
   component: RouteComponent,
@@ -6,18 +7,24 @@ export const Route = createFileRoute("/gallery/$detail")({
 
 function RouteComponent() {
   const { detail } = Route.useParams();
+
   const filename = detail.split("/").at(-1)?.split(".")[0] ?? "";
   return (
-    <Link to={"/gallery"} viewTransition replace>
+    <button
+      type="button"
+      onClick={() => {
+        window.history.back();
+      }}
+      className="border border-gray-100 rounded-2xl overflow-hidden dark:border-gray-600"
+    >
       <img
         src={`/asset/gallery/${detail}.webp`}
         alt={filename}
         style={{
           viewTransitionName: detail.split("/").at(-1)?.split(".")[0] ?? "",
         }}
-        className="rounded-2xl"
         loading="eager"
       />
-    </Link>
+    </button>
   );
 }

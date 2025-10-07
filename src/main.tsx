@@ -8,6 +8,8 @@ import { I18nextProvider } from "react-i18next";
 const router = createRouter({
   routeTree,
   defaultPreload: "intent",
+  scrollRestoration: true,
+  defaultViewTransition: true,
 });
 
 // Register things for typesafety
