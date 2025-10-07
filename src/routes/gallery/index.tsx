@@ -22,11 +22,11 @@ const GalleryItem = ({ filepath }: { filepath: string }) => {
       viewTransition
       replace
     >
-      <div className="absolute w-full h-full top-0 left-0 group-hover:backdrop-blur-sm z-[1]" />
+      <div className="absolute w-full h-full top-0 left-0 group-hover:backdrop-blur-sm z-[1] group-hover:brightness-50" />
       <img
         src={`/asset/gallery/thumbs/${filepath}.webp`}
         alt=""
-        className="aspect-square object-cover transition-all group-hover:brightness-50 "
+        className="aspect-square object-cover transition-all  "
         style={{
           viewTransitionName: filepath,
         }}

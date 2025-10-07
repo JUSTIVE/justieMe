@@ -2,7 +2,7 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { twMerge } from "tailwind-merge";
 import { Navigation } from "@/components/navigation";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Helmet } from "@/components/helmet";
 
 export const ThemeContext = createContext<{
@@ -16,8 +16,22 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   const [theme, setTheme] = useState<"dark" | "light">("light");
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme as "dark" | "light");
+    }
+  }, []);
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        setTheme: (newValue) => {
+          localStorage.setItem("theme", newValue);
+          setTheme(newValue);
+        },
+      }}
+    >
       <Helmet themeColor={theme === "dark" ? "rgb(17 24 39)" : "#fff"} />
 
       <div
