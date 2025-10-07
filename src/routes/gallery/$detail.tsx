@@ -15,7 +15,7 @@ function RouteComponent() {
       onClick={() => {
         window.history.back();
       }}
-      className="border border-gray-100 rounded-2xl overflow-hidden dark:border-gray-600"
+      className="border border-gray-100 rounded-2xl overflow-hidden dark:border-gray-600 w-full"
       style={{ viewTimelineName: "photoFrame" }}
     >
       <img

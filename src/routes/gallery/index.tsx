@@ -23,7 +23,7 @@ const GalleryItem = ({ filename, title }: GalleryPhoto) => {
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
-        className="aspect-square object-cover"
+        className="object-cover w-full aspect-square "
         loading="lazy"
       />
     </Link>
