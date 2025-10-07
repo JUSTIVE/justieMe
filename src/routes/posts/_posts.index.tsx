@@ -28,7 +28,7 @@ export const posts = await Promise.all(
 const PostItem = ({ title, date, tags, link }: PostMetaData) => {
   return (
     <div className="flex flex-col">
-      <div style={{ viewTransitionName: link }} className="level-5">
+      <div style={{ viewTransitionName: link }} className="level-5 w-fit">
         {title}
       </div>
       <PostTags tags={tags} viewTransition={false} />
@@ -97,7 +97,7 @@ const PostLists = () => {
 
         <input
           type="text"
-          className="border rounded border-gray-100 focus:outline-none px-2 py-1 dark:bg-gray-700 dark:border-gray-600"
+          className="border rounded bg-gray-100/80 border-gray-100/80 focus:outline-none px-2 py-1 dark:bg-gray-700 dark:border-gray-600"
           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
             if (e.key === "Enter") {
               e.preventDefault();

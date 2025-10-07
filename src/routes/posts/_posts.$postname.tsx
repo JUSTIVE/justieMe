@@ -35,7 +35,7 @@ function RouteComponent() {
       return (
         <div
           {...props}
-          className="level-1 mb-4"
+          className="level-1 mb-4 w-fit"
           style={{
             viewTransitionName: postname,
           }}

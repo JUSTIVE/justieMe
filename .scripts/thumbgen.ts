@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import os from "node:os";
-import { exec } from "node:child_process";
+import { exec, execSync } from "node:child_process";
 
 console.log(os.platform(), os.arch());
 
@@ -19,7 +19,10 @@ const convert = async (filename: string): Promise<void> => {
   console.log(filename);
   const imagePath = `${GALLERY_DIR}/${filename}`;
   const thumbPath = `${THUMB_DIR}/${filename.replaceAll(".jpg", ".webp")}`;
-  const command = `.scripts/cwebp -q 100 -m 6 -quiet -lossless -resize 256 0 ${imagePath} -o ${thumbPath}`;
+  const command = [
+    `.scripts/cwebp -q 100 -m 6 -quiet -lossless -resize 256 0 ${imagePath} -o ${thumbPath}`,
+  ].join(" && ");
+
   return new Promise((resolve, reject) =>
     exec(command, (error, stdout, stderr) => {
       if (error) {
