@@ -1,25 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { gallery } from "@/asset/gallery.json";
-import type { PhotoGroup } from "@/data/gallery";
+import type { GalleryPhoto, PhotoGroup } from "@/data/gallery";
 
-const GalleryItem = ({ filepath }: { filepath: string }) => {
+const GalleryItem = ({ filename, title }: GalleryPhoto) => {
   return (
     <Link
       to={"/gallery/$detail"}
       params={{
-        detail: filepath,
+        detail: filename,
       }}
       className="relative group cursor-pointer"
       viewTransition
     >
-      <div className="absolute w-full h-full top-0 left-0 group-hover:backdrop-blur-sm z-[1] group-hover:brightness-50" />
+      <div className="absolute w-full h-full top-0 left-0 z-[2] opacity-0 group-hover:opacity-100 grid place-items-center p-4 pointer-events-none transition-opacity text-center level-7 italic break-keep">
+        {title}
+      </div>
+      <div className="absolute w-full h-full top-0 left-0 z-[1] group-hover:backdrop-blur-sm group-hover:brightness-50 pointer-events-none" />
       <img
-        src={`/asset/gallery/thumbs/${filepath}.webp`}
+        src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
         className="aspect-square object-cover transition-all  "
         style={{
-          viewTransitionName: filepath,
+          viewTransitionName: filename,
         }}
         loading="lazy"
       />
@@ -31,15 +34,16 @@ const PhotoGroupE = ({ name, datetime, photos }: PhotoGroup) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-center">
-        <div className="font-semibold">{name}</div>
-        <div className="opacity-50 level-6">{datetime}</div>
+        <div className="font-semibold level-6">{name}</div>
+        <div className="opacity-50 level-7">{datetime}</div>
       </div>
-      <div className="grid grid-cols-3 gap-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
-        {photos
-          .map((x) => x.filename)
-          .map((image) => {
-            return <GalleryItem filepath={image} key={image} />;
-          })}
+      <div
+        className="grid grid-cols-3 gap-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-600"
+        style={{ viewTimelineName: "photoFrame" }}
+      >
+        {photos.map((image) => {
+          return <GalleryItem {...image} key={image.filename} />;
+        })}
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ function RouteComponent() {
         window.history.back();
       }}
       className="border border-gray-100 rounded-2xl overflow-hidden dark:border-gray-600"
+      style={{ viewTimelineName: "photoFrame" }}
     >
       <img
         src={`/asset/gallery/${detail}.webp`}
