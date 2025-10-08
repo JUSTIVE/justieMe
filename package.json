@@ -30,7 +30,6 @@
     "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
     "@mobily/ts-belt": "^4.0.0-rc.5",
-    "@remark-embedder/core": "^3.0.3",
     "@tanstack/react-router": "^1.131.2",
     "@tanstack/router-devtools": "^1.131.2",
     "@tanstack/zod-adapter": "^1.132.37",

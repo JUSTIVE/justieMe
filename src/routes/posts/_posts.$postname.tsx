@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { PostMetaData } from "@/data/postMetaData";
-import { type ReactElement, useContext } from "react";
 import type { MDXComponents } from "mdx/types";
+import { type ReactElement, useContext } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { twMerge } from "tailwind-merge";
-import { PostTags } from "@/components/postTags";
 import {
   atomOneDark,
   atomOneLight,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { twMerge } from "tailwind-merge";
+import { PostTags } from "@/components/postTags";
+import type { PostMetaData } from "@/data/postMetaData";
 import { ThemeContext } from "../__root";
 
 export const Route = createFileRoute("/posts/_posts/$postname")({
@@ -31,18 +31,20 @@ function RouteComponent() {
   if (!theme) return null;
 
   const components: MDXComponents = {
-    a({ ref, ...props }) {
+    a(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <a
-          {...props}
+          {...rest}
           className="accent underline decoration-2 decoration-orange-500"
         />
       );
     },
-    h1({ ref, ...props }) {
+    h1(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <div
-          {...props}
+          {...rest}
           className="level-1 mb-4 w-fit accent"
           style={{
             viewTransitionName: postname,
@@ -50,39 +52,41 @@ function RouteComponent() {
         />
       );
     },
-    h2({ ref, ...props }) {
+    h2(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <div
-          {...props}
+          {...rest}
           className={twMerge(props.className, "level-2 font-semibold accent")}
           id={props.children as string}
         />
       );
     },
-    h3({ ref, ...props }) {
+    h3(props) {
+      const { ref: _ref, ...rest } = props;
+
       return (
-        <div
-          {...props}
-          className={twMerge(props.className, "level-3 accent")}
-        />
+        <div {...rest} className={twMerge(props.className, "level-3 accent")} />
       );
     },
     hr() {
       return <hr className="opacity-50" />;
     },
 
-    p({ ref, ...props }) {
+    p(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <p
-          {...props}
+          {...rest}
           className={twMerge(props.className, "mb-4 [blockquote_&]:mb-0")}
         />
       );
     },
-    blockquote({ ref, className, ...props }) {
+    blockquote(props) {
+      const { ref: _ref, className, ...rest } = props;
       return (
         <blockquote
-          {...props}
+          {...rest}
           className={twMerge(
             className,
             "bg-gray-100 dark:bg-gray-800 p-2 italic border-l border-l-4  border-l-orange-500 break-keep rounded",
@@ -90,13 +94,14 @@ function RouteComponent() {
         />
       );
     },
-    code({ className, ref, children, ...props }) {
+    code(props) {
+      const { className, ref: _ref, children, ...rest } = props;
       const match = /language-(\w+)/.exec(className || "");
       if (match?.[1]) {
         return (
           <SyntaxHighlighter
             language={match[1]}
-            {...props}
+            {...rest}
             style={theme.theme === "dark" ? atomOneDark : atomOneLight}
             showLineNumbers
             PreTag={"div"}
@@ -111,7 +116,7 @@ function RouteComponent() {
       }
       return (
         <code
-          {...props}
+          {...rest}
           className={twMerge(
             className,
             "bg-gray-100 dark:bg-gray-700 p-1 rounded level-6 accent ",
@@ -121,27 +126,31 @@ function RouteComponent() {
         </code>
       );
     },
-    table({ ref, ...props }) {
+    table(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <table
-          {...props}
+          {...rest}
           className="mb-4 w-full bg-gray-100 dark:bg-gray-800 rounded overflow-hidden"
         />
       );
     },
-    th({ ref, ...props }) {
+    th(props) {
+      const { ref: _ref, ...rest } = props;
       return (
         <th
-          {...props}
+          {...rest}
           className="p-2 text-left font-semibold bg-gray-100 dark:bg-gray-800"
         />
       );
     },
-    td({ ref, ...props }) {
-      return <td {...props} className="p-2 opacity-50" />;
+    td(props) {
+      const { ref: _ref, ...rest } = props;
+      return <td {...rest} className="p-2 opacity-50" />;
     },
-    img({ ref, ...props }) {
-      return <img {...props} className="w-full text-center" alt="" />;
+    img(props) {
+      const { ref: _ref, ...rest } = props;
+      return <img {...rest} className="w-full text-center" alt="" />;
     },
   };
 

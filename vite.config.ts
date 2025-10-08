@@ -8,7 +8,7 @@ import remarkMath from "remark-math";
 import { defineConfig } from "vite";
 import Pages from "vite-plugin-pages";
 import tsconfigPaths from "vite-tsconfig-paths";
-import fauxRemarkEmbedder from "@remark-embedder/core";
+// import remarkEmbedder from "@remark-embedder/core";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,7 +30,7 @@ export default defineConfig({
         include: /\.(mdx|md)$/,
         providerImportSource: "@mdx-js/react",
         rehypePlugins: [rehypeKatex],
-        remarkPlugins: [remarkMath, remarkGfm, fauxRemarkEmbedder],
+        remarkPlugins: [remarkMath, remarkGfm],
       }),
     },
 
