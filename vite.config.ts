@@ -14,7 +14,9 @@ export default defineConfig({
     manifest: true,
   },
   plugins: [
-    TanStackRouterVite({}),
+    TanStackRouterVite({
+      autoCodeSplitting: true,
+    }),
     tsconfigPaths(),
     Pages({
       dirs: ["src/posts"],
