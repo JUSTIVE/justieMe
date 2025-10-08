@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { PostMetaData } from "@/data/postMetaData";
-import { useContext, type ReactNode } from "react";
+import { type ReactElement, useContext } from "react";
 import type { MDXComponents } from "mdx/types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { twMerge } from "tailwind-merge";
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/posts/_posts/$postname")({
 const posts = await Promise.all(
   Object.values(import.meta.glob("../../posts/*.mdx"))?.map(
     async (x) =>
-      (await x()) as unknown as ReactNode & {
+      (await x()) as unknown as ReactElement & {
         metaData: PostMetaData;
-        default: (mdxComponents: MDXComponents) => ReactNode;
+        default: (mdxComponents: MDXComponents) => ReactElement;
       },
   ) ?? [],
 );
@@ -28,10 +28,10 @@ const posts = await Promise.all(
 function RouteComponent() {
   const postname = Route.useParams().postname;
   const theme = useContext(ThemeContext);
-  if (!theme) return <></>;
+  if (!theme) return null;
 
   const components: MDXComponents = {
-    h1(props) {
+    h1({ ref, ...props }) {
       return (
         <div
           {...props}
@@ -42,7 +42,7 @@ function RouteComponent() {
         />
       );
     },
-    h2(props) {
+    h2({ ref, ...props }) {
       return (
         <div
           {...props}
@@ -51,19 +51,18 @@ function RouteComponent() {
         />
       );
     },
-    h3(props) {
+    h3({ ref, ...props }) {
       return <div {...props} className={twMerge(props.className, "level-3")} />;
     },
     hr() {
       return <hr className="opacity-50" />;
     },
-    p(props) {
+    p({ ref, ...props }) {
       return <p {...props} className={twMerge(props.className, "mb-4")} />;
     },
-    code({ className, ...props }) {
+    code({ className, ref, children, ...props }) {
       const match = /language-(\w+)/.exec(className || "");
       if (match?.[1]) {
-        //@ts-ignore
         return (
           <SyntaxHighlighter
             language={match[1]}
@@ -75,12 +74,14 @@ function RouteComponent() {
               borderRadius: "12px",
               backgroundColor: theme.theme === "dark" ? "#1f2937" : "#f3f4f6",
             }}
-          />
+          >
+            {children as string | string[]}
+          </SyntaxHighlighter>
         );
       }
       return <code className={className} {...props} />;
     },
-    img(props) {
+    img({ ref, ...props }) {
       return <img {...props} className="w-full text-center" alt="" />;
     },
   };
@@ -98,7 +99,7 @@ function RouteComponent() {
       </div>
       <PostTags tags={post?.metaData.tags ?? []} viewTransition />
 
-      {post ? post?.default({ components }) : <></>}
+      {post ? post?.default({ components }) : null}
     </div>
   );
 }

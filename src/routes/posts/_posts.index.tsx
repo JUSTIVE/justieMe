@@ -2,7 +2,7 @@ import { PostTag, PostTags } from "@/components/postTags";
 import type { PostMetaData } from "@/data/postMetaData";
 import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { Clock } from "lucide-react";
-import { type KeyboardEvent, type ReactNode, Suspense } from "react";
+import { type KeyboardEvent, type ReactElement, Suspense } from "react";
 import { match, P } from "ts-pattern";
 import { z } from "zod";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/posts/_posts/")({
 export const posts = await Promise.all(
   Object.values(import.meta.glob("../../posts/*.mdx"))?.map(
     async (x) =>
-      (await x()) as unknown as ReactNode & { metaData: PostMetaData },
+      (await x()) as unknown as ReactElement & { metaData: PostMetaData },
   ) ?? [],
 );
 
@@ -104,7 +104,7 @@ const PostLists = () => {
               router.navigate({
                 pathname: "/posts",
                 search: {
-                  //@ts-ignore
+                  //@ts-expect-error
                   keyword: e.currentTarget.value,
                 },
               });

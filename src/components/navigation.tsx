@@ -15,16 +15,7 @@ type ContactItemProps = {
 };
 const ContactItem = ({ link, label, icon }: ContactItemProps) => {
   return (
-    <SubMenuItem
-      labelKey={label}
-      __type="link"
-      to={link}
-      // className={twMerge(
-      //   "flex items-center gap-4 px-3 py-2 rounded-xl transition-colors opacity-100 level-5",
-      //   "active:bg-gray-200/50",
-      //   "dark:active:bg-gray-700/50",
-      // )}
-    >
+    <SubMenuItem labelKey={label} __type="link" to={link}>
       {icon === "mail" ? (
         <Mail size={16} />
       ) : icon === "instagram" ? (
@@ -33,9 +24,7 @@ const ContactItem = ({ link, label, icon }: ContactItemProps) => {
         <SiGithub size={16} />
       ) : icon === "unsplash" ? (
         <Image size={16} />
-      ) : (
-        <></>
-      )}
+      ) : null}
     </SubMenuItem>
     // <a
     //   className={twMerge(
@@ -259,7 +248,7 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
       >
         {subMenu === "settings" && <SettingsSubMenu />}
         {subMenu === "contact" && (
-          // biome-ignore lint/complexity/noUselessFragments: <explanation>
+          // biome-ignore lint/complexity/noUselessFragments: <necessary fragment>
           <>
             {contacts.map((contact) => (
               <ContactItem key={contact.label} {...contact} />

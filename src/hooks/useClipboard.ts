@@ -13,7 +13,7 @@ export function useClipboard(timeout = 1500) {
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), timeout);
         return true;
-      } catch (err) {
+      } catch (_err) {
         // fallback
         try {
           const textarea = document.createElement("textarea");

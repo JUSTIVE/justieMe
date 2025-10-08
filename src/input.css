@@ -72,7 +72,10 @@
 		scrollbar-width: none;
 	}
 	body:has([data-mode="dark"]) {
-		background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); /* 예: 다크 모드 배경색 */
+		background-color: rgb(
+			17 24 39 /
+			var(--tw-bg-opacity, 1)
+		); /* 예: 다크 모드 배경색 */
 	}
 
 	html::-webkit-scrollbar {
@@ -187,21 +190,27 @@
 		content: "";
 		z-index: 8;
 		backdrop-filter: blur(64px);
-		mask: linear-gradient(to top, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%);
+		mask: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0) 87.5%,
+			rgba(0, 0, 0, 1) 100%
+		);
 	}
 	.overlap-cut {
 		/* 겹치는 양(= 음수 margin-left의 절대값) */
 		--overlap: 16px;
 
 		/* 두 개의 마스크를 합성: 전체(검은 사각형) - 오른쪽 원 = 테두리만 남김 */
-		-webkit-mask: radial-gradient(
+		-webkit-mask:
+			radial-gradient(
 				circle at calc(100% - var(--overlap)) 50%,
 				transparent 51%,
 				#000 52%
 			), linear-gradient(#000 0 0);
 		-webkit-mask-composite: xor;
 
-		mask: radial-gradient(
+		mask:
+			radial-gradient(
 				circle at calc(100% - var(--overlap)) 50%,
 				transparent 51%,
 				#000 52%

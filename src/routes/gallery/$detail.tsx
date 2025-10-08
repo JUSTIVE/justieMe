@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { flushSync } from "node_modules/@types/react-dom";
 
 export const Route = createFileRoute("/gallery/$detail")({
   component: RouteComponent,

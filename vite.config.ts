@@ -30,7 +30,12 @@ export default defineConfig({
       }),
     },
 
-    react({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),
+    react({
+      include: /\.(jsx|js|mdx|md|tsx|ts)$/,
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
   ],
   resolve: {
     alias: { "@": path.resolve(__dirname, "src") },

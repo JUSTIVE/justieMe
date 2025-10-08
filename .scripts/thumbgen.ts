@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import os from "node:os";
-import { exec, execSync } from "node:child_process";
+import { exec } from "node:child_process";
 
 console.log(os.platform(), os.arch());
 
@@ -25,7 +25,7 @@ const convert = async (filename: string): Promise<void> => {
   ].join(" && ");
 
   return new Promise((resolve, reject) =>
-    exec(command, (error, stdout, stderr) => {
+    exec(command, (error, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         return reject(error);
@@ -40,4 +40,4 @@ const convert = async (filename: string): Promise<void> => {
   );
 };
 
-const res = await Promise.allSettled(images.map(convert));
+const _res = await Promise.allSettled(images.map(convert));
