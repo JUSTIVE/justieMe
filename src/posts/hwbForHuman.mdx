@@ -1,19 +1,21 @@
+import { YouTube } from "@/components/Youtube";
+import { Tweet } from 'mdx-embed'
 export const metaData = {
     title: 'HWB: 사람을 위한 색의 표기',
     date: '2024-02-23',
-    link: 'hwb',
-    tags: ['색상이론', '배경색', '전경색'],
+    link: 'hwbForHuman',
+    tags: ['색상이론', "hwb"],
 }
 
 최근 인터넷에서 색상과 관련하여 큰 화제가 된 주제가 있었다.
 
-`일반적인 가산 혼합에서의 선형 보간으로 이루어지는 linear gradient 에서, 노란색과 파란색의 선형 그레디언트를 적용할 때에, 중간값은 회색이다`
+> 일반적인 가산 혼합에서의 선형 보간으로 이루어지는 linear gradient 에서, 노란색과 파란색의 선형 그레디언트를 적용할 때에, 중간값은 회색이다
 
 흰골파검에 이은, 색에 관한 충격적인 사실이었다.
 
-[Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안](https://apption.co/embeds/dddaf3b0)
+<Tweet tweetLink="erikdkennedy/status/1364603966349135874" style={{margin:"0 auto"}} align="center"/>
 
-Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안
+<caption>Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안</caption>
 
 그동안 수많은 디자인 도구들을 사용하면서 한번도 가져 본 적이 없던 의문이었다. 현실 세계에서의 파랑과 노랑 물감을 섞으면, 초록이 될 것이라는 것을 자연스럽게 알고 있었지만, 디지털 세계에서는 현실 세계와는 다를 것이라는 막연한 생각으로 무시하고 있었지만, 곰곰이 생각해보니 그렇지도 않을 것이었다. 어쩌면 그저 `내 문제가 아니길 바래` 라는 생각으로 무시해왔던 것일 수도 있다.
 
@@ -32,7 +34,7 @@ Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안
 어쩌다가 노란색과 파란색을 선형 보간 하면 회색이 나올까? 너무 간단하게도 일반적인 24-bit rgb color model의 경우, 다음과 같이 색을 표현한다.
 
 | 색상 | 비트 수 | 범위 |
-| --- | --- | --- |
+|:--- |:--- |:--- |
 | Red | 8 | 0~255 |
 | Green | 8 | 0~255 |
 | Blue | 8 | 0~255 |
@@ -40,12 +42,14 @@ Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안
 이 경우, 선형 보간이 되는 과정은 다음과 같다.
 
 | 색상 | 비트 표현 | red | green | blue |
-| --- | --- | --- | --- | --- |
+|:--- |:--- |:--- |:---  |:--- |
 | Yellow | 1111 1111 1111 1111 0000 0000 | 255 | 255 | 0 |
 | Gray? | 0111 1111 0111 1111 0111 1111 | 127 | 127 | 127 |
 | Blue | 0000 0000 0000 0000 1111 1111 | 0 | 0 | 255 |
 
-[사실 Károly Zsolnai-Fehér님의 2분논문에서도 다룬 주제였다](https://www.youtube.com/watch?v=b2D_5G_npVI)
+<YouTube id="b2D_5G_npVI" />
+
+
 
 사실 Károly Zsolnai-Fehér님의 2분논문에서도 다룬 주제였다
 

@@ -31,11 +31,19 @@ function RouteComponent() {
   if (!theme) return null;
 
   const components: MDXComponents = {
+    a({ ref, ...props }) {
+      return (
+        <a
+          {...props}
+          className="accent underline decoration-2 decoration-orange-500"
+        />
+      );
+    },
     h1({ ref, ...props }) {
       return (
         <div
           {...props}
-          className="level-1 mb-4 w-fit"
+          className="level-1 mb-4 w-fit accent"
           style={{
             viewTransitionName: postname,
           }}
@@ -46,19 +54,41 @@ function RouteComponent() {
       return (
         <div
           {...props}
-          className={twMerge(props.className, "level-2 font-semibold")}
-          id={props.defaultValue as string}
+          className={twMerge(props.className, "level-2 font-semibold accent")}
+          id={props.children as string}
         />
       );
     },
     h3({ ref, ...props }) {
-      return <div {...props} className={twMerge(props.className, "level-3")} />;
+      return (
+        <div
+          {...props}
+          className={twMerge(props.className, "level-3 accent")}
+        />
+      );
     },
     hr() {
       return <hr className="opacity-50" />;
     },
+
     p({ ref, ...props }) {
-      return <p {...props} className={twMerge(props.className, "mb-4")} />;
+      return (
+        <p
+          {...props}
+          className={twMerge(props.className, "mb-4 [blockquote_&]:mb-0")}
+        />
+      );
+    },
+    blockquote({ ref, className, ...props }) {
+      return (
+        <blockquote
+          {...props}
+          className={twMerge(
+            className,
+            "bg-gray-100 dark:bg-gray-800 p-2 italic border-l border-l-4  border-l-orange-500 break-keep rounded",
+          )}
+        />
+      );
     },
     code({ className, ref, children, ...props }) {
       const match = /language-(\w+)/.exec(className || "");
@@ -79,7 +109,36 @@ function RouteComponent() {
           </SyntaxHighlighter>
         );
       }
-      return <code className={className} {...props} />;
+      return (
+        <code
+          {...props}
+          className={twMerge(
+            className,
+            "bg-gray-100 dark:bg-gray-700 p-1 rounded level-6 accent ",
+          )}
+        >
+          {children}
+        </code>
+      );
+    },
+    table({ ref, ...props }) {
+      return (
+        <table
+          {...props}
+          className="mb-4 w-full bg-gray-100 dark:bg-gray-800 rounded overflow-hidden"
+        />
+      );
+    },
+    th({ ref, ...props }) {
+      return (
+        <th
+          {...props}
+          className="p-2 text-left font-semibold bg-gray-100 dark:bg-gray-800"
+        />
+      );
+    },
+    td({ ref, ...props }) {
+      return <td {...props} className="p-2 opacity-50" />;
     },
     img({ ref, ...props }) {
       return <img {...props} className="w-full text-center" alt="" />;

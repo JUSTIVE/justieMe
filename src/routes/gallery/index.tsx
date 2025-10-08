@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { gallery } from "@/asset/gallery.json";
 import type { GalleryPhoto, PhotoGroup } from "@/data/gallery";
 
-const GalleryItem = ({ filename, title }: GalleryPhoto) => {
+const GalleryItem = ({ filename }: GalleryPhoto) => {
   return (
     <Link
       to={"/gallery/$detail"}

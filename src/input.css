@@ -2,225 +2,229 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-	* {
-		font-family:
-			"Pretendard Variable",
-			Pretendard,
-			-apple-system,
-			BlinkMacSystemFont,
-			system-ui,
-			Roboto,
-			"Helvetica Neue",
-			"Segoe UI",
-			"Apple SD Gothic Neo",
-			"Noto Sans KR",
-			"Malgun Gothic",
-			"Apple Color Emoji",
-			"Segoe UI Emoji",
-			"Segoe UI Symbol",
-			sans-serif;
-	}
-	/*::view-transition-group(*) {
+  * {
+    font-family:
+      "Pretendard Variable",
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      "Helvetica Neue",
+      "Segoe UI",
+      "Apple SD Gothic Neo",
+      "Noto Sans KR",
+      "Malgun Gothic",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      sans-serif;
+  }
+  code > * {
+    font-family: "Geist Mono";
+  }
+  /*::view-transition-group(*) {
     animation-duration: 0.2s;
     animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
   }*/
 }
 
 @layer components {
-	.level-0 {
-		@apply text-[3.5rem] tracking-tight font-semibold leading-[3.5rem];
-	}
-	.level-1 {
-		@apply text-3xl tracking-tight font-semibold;
-	}
-	.level-2 {
-		@apply text-2xl tracking-tighter;
-	}
-	.level-3 {
-		@apply text-xl tracking-tight;
-	}
-	.level-4 {
-		@apply text-lg tracking-tight;
-	}
-	.level-5 {
-		@apply text-base tracking-wide;
-	}
-	.level-6 {
-		@apply text-sm tracking-wide;
-	}
-	.level-7 {
-		@apply text-xs tracking-wide leading-3;
-	}
+  .level-0 {
+    @apply text-[3.5rem] tracking-tight font-semibold leading-[3.5rem];
+  }
+  .level-1 {
+    @apply text-3xl tracking-tight font-semibold;
+  }
+  .level-2 {
+    @apply text-2xl tracking-tighter;
+  }
+  .level-3 {
+    @apply text-xl tracking-tight;
+  }
+  .level-4 {
+    @apply text-lg tracking-tight;
+  }
+  .level-5 {
+    @apply text-base tracking-wide;
+  }
+  .level-6 {
+    @apply text-sm tracking-wide;
+  }
+  .level-7 {
+    @apply text-xs tracking-wide leading-3;
+  }
 }
 
 @layer utilities {
-	.no-scrollbar {
-		@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
-	}
-	::view-transition-group(nav) {
-		border-radius: 1rem;
-		overflow: hidden;
-	}
-	.accent {
-		@apply text-orange-500;
-	}
+  .no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+  }
+  ::view-transition-group(nav) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .accent {
+    @apply text-orange-500;
+  }
 
-	body {
-		background: white;
-		/*background: rgb(229 231 235 / var(--tw-bg-opacity, 1));*/
-		overflow-x: hidden;
-		scrollbar-width: none;
-	}
-	body:has([data-mode="dark"]) {
-		background-color: rgb(
-			17 24 39 /
-			var(--tw-bg-opacity, 1)
-		); /* 예: 다크 모드 배경색 */
-	}
+  body {
+    background: white;
+    /*background: rgb(229 231 235 / var(--tw-bg-opacity, 1));*/
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  body:has([data-mode="dark"]) {
+    background-color: rgb(
+      17 24 39 / var(--tw-bg-opacity, 1)
+    ); /* 예: 다크 모드 배경색 */
+  }
 
-	html::-webkit-scrollbar {
-		display: none; /* Chrome, Safari, Opera */
-	}
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 
-	::view-transition-group(nav-settings) {
-		border-radius: 1rem;
-		overflow: hidden;
-	}
-	.pt-safe {
-		padding-top: env(safe-area-inset-top);
-	}
+  ::view-transition-group(nav-settings) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
 
-	.pb-safe {
-		padding-bottom: env(safe-area-inset-bottom);
-	}
-	.gradient-blur {
-		position: fixed;
-		z-index: 5;
-		width: 100%;
-		/* inset: auto 0 0 0; */
-		height: 80px;
-		bottom: 0px;
-		pointer-events: none;
-		transform: rotateZ(180deg);
-	}
-	.gradient-blur > div,
-	.gradient-blur::before,
-	.gradient-blur::after {
-		position: absolute;
-		inset: 0;
-	}
-	.gradient-blur::before {
-		content: "";
-		z-index: 1;
-		backdrop-filter: blur(0.5px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 0%,
-			rgba(0, 0, 0, 1) 12.5%,
-			rgba(0, 0, 0, 1) 25%,
-			rgba(0, 0, 0, 0) 37.5%
-		);
-	}
-	.gradient-blur > div:nth-of-type(1) {
-		z-index: 2;
-		backdrop-filter: blur(1px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 12.5%,
-			rgba(0, 0, 0, 1) 25%,
-			rgba(0, 0, 0, 1) 37.5%,
-			rgba(0, 0, 0, 0) 50%
-		);
-	}
-	.gradient-blur > div:nth-of-type(2) {
-		z-index: 3;
-		backdrop-filter: blur(2px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 25%,
-			rgba(0, 0, 0, 1) 37.5%,
-			rgba(0, 0, 0, 1) 50%,
-			rgba(0, 0, 0, 0) 62.5%
-		);
-	}
-	.gradient-blur > div:nth-of-type(3) {
-		z-index: 4;
-		backdrop-filter: blur(4px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 37.5%,
-			rgba(0, 0, 0, 1) 50%,
-			rgba(0, 0, 0, 1) 62.5%,
-			rgba(0, 0, 0, 0) 75%
-		);
-	}
-	.gradient-blur > div:nth-of-type(4) {
-		z-index: 5;
-		backdrop-filter: blur(8px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 50%,
-			rgba(0, 0, 0, 1) 62.5%,
-			rgba(0, 0, 0, 1) 75%,
-			rgba(0, 0, 0, 0) 87.5%
-		);
-	}
-	.gradient-blur > div:nth-of-type(5) {
-		z-index: 6;
-		backdrop-filter: blur(16px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 62.5%,
-			rgba(0, 0, 0, 1) 75%,
-			rgba(0, 0, 0, 1) 87.5%,
-			rgba(0, 0, 0, 0) 100%
-		);
-	}
-	.gradient-blur > div:nth-of-type(6) {
-		z-index: 7;
-		backdrop-filter: blur(32px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 75%,
-			rgba(0, 0, 0, 1) 87.5%,
-			rgba(0, 0, 0, 1) 100%
-		);
-	}
-	.gradient-blur::after {
-		content: "";
-		z-index: 8;
-		backdrop-filter: blur(64px);
-		mask: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0) 87.5%,
-			rgba(0, 0, 0, 1) 100%
-		);
-	}
-	.overlap-cut {
-		/* 겹치는 양(= 음수 margin-left의 절대값) */
-		--overlap: 16px;
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .gradient-blur {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    /* inset: auto 0 0 0; */
+    height: 80px;
+    bottom: 0px;
+    pointer-events: none;
+    transform: rotateZ(180deg);
+  }
+  .gradient-blur > div,
+  .gradient-blur::before,
+  .gradient-blur::after {
+    position: absolute;
+    inset: 0;
+  }
+  .gradient-blur::before {
+    content: "";
+    z-index: 1;
+    backdrop-filter: blur(0.5px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 12.5%,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 0) 37.5%
+    );
+  }
+  .gradient-blur > div:nth-of-type(1) {
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 12.5%,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 1) 37.5%,
+      rgba(0, 0, 0, 0) 50%
+    );
+  }
+  .gradient-blur > div:nth-of-type(2) {
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 1) 37.5%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 62.5%
+    );
+  }
+  .gradient-blur > div:nth-of-type(3) {
+    z-index: 4;
+    backdrop-filter: blur(4px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 37.5%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1) 62.5%,
+      rgba(0, 0, 0, 0) 75%
+    );
+  }
+  .gradient-blur > div:nth-of-type(4) {
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1) 62.5%,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 0) 87.5%
+    );
+  }
+  .gradient-blur > div:nth-of-type(5) {
+    z-index: 6;
+    backdrop-filter: blur(16px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 62.5%,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 1) 87.5%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  .gradient-blur > div:nth-of-type(6) {
+    z-index: 7;
+    backdrop-filter: blur(32px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 1) 87.5%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  .gradient-blur::after {
+    content: "";
+    z-index: 8;
+    backdrop-filter: blur(64px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 87.5%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  .overlap-cut {
+    /* 겹치는 양(= 음수 margin-left의 절대값) */
+    --overlap: 16px;
 
-		/* 두 개의 마스크를 합성: 전체(검은 사각형) - 오른쪽 원 = 테두리만 남김 */
-		-webkit-mask:
-			radial-gradient(
-				circle at calc(100% - var(--overlap)) 50%,
-				transparent 51%,
-				#000 52%
-			), linear-gradient(#000 0 0);
-		-webkit-mask-composite: xor;
+    /* 두 개의 마스크를 합성: 전체(검은 사각형) - 오른쪽 원 = 테두리만 남김 */
+    -webkit-mask:
+      radial-gradient(
+        circle at calc(100% - var(--overlap)) 50%,
+        transparent 51%,
+        #000 52%
+      ),
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
 
-		mask:
-			radial-gradient(
-				circle at calc(100% - var(--overlap)) 50%,
-				transparent 51%,
-				#000 52%
-			), linear-gradient(#000 0 0);
-		mask-composite: exclude;
-	}
+    mask:
+      radial-gradient(
+        circle at calc(100% - var(--overlap)) 50%,
+        transparent 51%,
+        #000 52%
+      ),
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
 
-	/* 마지막 배지는 잘라내지 않기 */
-	.overlap-cut:last-child {
-		-webkit-mask: none;
-		mask: none;
-	}
+  /* 마지막 배지는 잘라내지 않기 */
+  .overlap-cut:last-child {
+    -webkit-mask: none;
+    mask: none;
+  }
 }

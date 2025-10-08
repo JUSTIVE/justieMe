@@ -1,12 +1,14 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import mdx from "@mdx-js/rollup";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
-import Pages from "vite-plugin-pages";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import react from "@vitejs/plugin-react";
 import path from "node:path";
+import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import { defineConfig } from "vite";
+import Pages from "vite-plugin-pages";
+import tsconfigPaths from "vite-tsconfig-paths";
+import fauxRemarkEmbedder from "@remark-embedder/core";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,7 +16,7 @@ export default defineConfig({
     manifest: true,
   },
   plugins: [
-    TanStackRouterVite({
+    tanstackRouter({
       autoCodeSplitting: true,
     }),
     tsconfigPaths(),
@@ -28,7 +30,7 @@ export default defineConfig({
         include: /\.(mdx|md)$/,
         providerImportSource: "@mdx-js/react",
         rehypePlugins: [rehypeKatex],
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [remarkMath, remarkGfm, fauxRemarkEmbedder],
       }),
     },
 
