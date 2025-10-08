@@ -20,7 +20,7 @@ const convert = async (filename: string): Promise<void> => {
   const imagePath = `${GALLERY_DIR}/${filename}`;
   const thumbPath = `${THUMB_DIR}/${filename.replaceAll(".jpg", ".webp")}`;
   const command = [
-    `.scripts/cwebp -q 100 -m 6 -quiet -resize 128 0 ${imagePath} -o ${thumbPath}`,
+    `.scripts/cwebp -q 100 -m 6 -quiet -resize 256 0 ${imagePath} -o ${thumbPath}`,
     `.scripts/cwebp -q 90 -m 6 -quiet -resize 1024 0 ${imagePath} -o ${imagePath.replaceAll(".jpg", ".webp")}`,
   ].join(" && ");
 
