@@ -16,14 +16,6 @@ const GalleryItem = ({ filename, title }: GalleryPhoto) => {
         viewTransitionName: filename,
       }}
     >
-      <div
-        className="absolute w-full h-full top-0 left-0 z-[2] opacity-0 group-hover:opacity-100 grid place-items-center p-4 pointer-events-none transition-opacity text-white text-center level-7 italic whitespace-pre-line"
-        style={{
-          viewTransitionName: title,
-        }}
-      >
-        {title}
-      </div>
       <div className="absolute w-full h-full top-0 left-0 z-[1] group-hover:backdrop-blur-sm group-hover:brightness-50 pointer-events-none" />
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
@@ -43,7 +35,7 @@ const PhotoGroupE = ({ name, datetime, photos }: PhotoGroup) => {
         <div className="opacity-50 level-7">{datetime}</div>
       </div>
       <div
-        className="grid grid-cols-3 gap-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-600"
+        className="grid grid-cols-3 gap-0 rounded overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-600"
         style={{ viewTimelineName: "photoFrame" }}
       >
         {photos.map((image) => {
