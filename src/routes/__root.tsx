@@ -43,7 +43,7 @@ function RootComponent() {
       >
         <div
           className={twMerge(
-            "mx-auto max-w-screen-md min-h-screen flex flex-col pt-8 px-5 min-h-screen ",
+            "mx-auto max-w-screen-md min-h-screen flex flex-col pt-8 px-5",
           )}
         >
           <Outlet />

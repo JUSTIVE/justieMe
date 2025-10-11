@@ -79,6 +79,22 @@
       17 24 39 / var(--tw-bg-opacity, 1)
     ); /* 예: 다크 모드 배경색 */
   }
+  .galleryImage {
+    view-transition-name: attr(id type(<custom-ident>), match-element);
+    view-transition-class: galleryImage;
+  }
+
+  ::view-transition-image-pair(.galleryImage) {
+    ::view-transition-old(.galleryImage) {
+      /*margin-top: 50%;*/
+    }
+  }
+  ::view-transition-old(.galleryImage),
+  ::view-transition-new(.galleryImage) {
+    object-fit: cover;
+  }
+  /*::view-transition-new(.galleryImage) {
+  }*/
 
   html::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */

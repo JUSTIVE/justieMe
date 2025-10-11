@@ -11,11 +11,17 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
         detail: filename,
       }}
       className="relative group cursor-pointer"
+      onClick={() => {
+        const element = document.getElementById(filename);
+        if (element) {
+          element.style.viewTransitionName;
+        }
+      }}
       viewTransition
     >
       <div className="absolute w-full h-full top-0 left-0 z-[1] group-hover:backdrop-blur-sm group-hover:brightness-50 pointer-events-none" />
       <img
-        className="hidden w-px h-px"
+        className="w-px h-px absolute"
         alt=""
         src={`/asset/gallery/${filename}.webp`}
         loading="lazy"
@@ -23,12 +29,9 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
-        className="object-cover w-full aspect-square group-hover:z-[1]"
+        className="object-cover w-full aspect-square group-hover:z-[10] galleryImage"
         loading="lazy"
-        id={filename}
-        style={{
-          viewTransitionName: filename,
-        }}
+        id={`gallery-${filename}`}
       />
     </Link>
   );
@@ -42,7 +45,7 @@ const PhotoGroupE = ({ name, datetime, photos }: PhotoGroup) => {
         <div className="opacity-50 level-7">{datetime}</div>
       </div>
       <div
-        className="grid grid-cols-3 gap-0 rounded overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-600"
+        className="grid grid-cols-3 gap-0 overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-600"
         style={{ viewTimelineName: "photoFrame" }}
       >
         {photos.map((image) => {

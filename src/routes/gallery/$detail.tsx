@@ -38,7 +38,7 @@ function RouteComponent() {
   if (!file) return null;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col flex-1 h-full overflow-hidden max-h-[calc(100dvh_-_8rem)]">
       <div
         style={{ viewTimelineName: file.title }}
         className="whitespace-pre-line py-2 text-start level-6 flex items-end justify-between gap-2"
@@ -49,24 +49,26 @@ function RouteComponent() {
           <div className="w-max font-semibold">{file.location}</div>
         </div>
       </div>
-      <button
+      {/*<button
         type="button"
+
+        className="overflow-hidden flex-1 flex justify-center items-center size-full"
+        style={{ viewTimelineName: "photoFrame" }}
+      >*/}
+      <img
+        src={`/asset/gallery/${detail}.webp`}
         onClick={() => {
           window.history.back();
         }}
-        className="border border-gray-100 rounded overflow-hidden dark:border-gray-600 w-full"
-        style={{ viewTimelineName: "photoFrame" }}
-      >
-        <img
-          src={`/asset/gallery/${detail}.webp`}
-          alt={detail}
-          id={detail}
-          style={{
-            viewTransitionName: detail,
-          }}
-          loading="eager"
-        />
-      </button>
+        onKeyDown={() => {
+          window.history.back();
+        }}
+        alt={detail}
+        id={`gallery-${detail}`}
+        className="galleryImage aspect-auto flex-1 min-h-0 min-w-0 border border-gray-100 dark:border-gray-600 mx-auto object-contain cursor-pointer"
+        loading="eager"
+      />
+      {/*</button>*/}
       <div
         style={{ viewTimelineName: file.title }}
         className="whitespace-pre-line py-2 italic text-start level-7"

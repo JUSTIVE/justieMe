@@ -5,7 +5,7 @@ import { exec } from "node:child_process";
 console.log(os.platform(), os.arch());
 
 const GALLERY_DIR = "./public/asset/gallery";
-const THUMB_DIR = "./public/asset/gallery/thumbs";
+const THUMB_DIR = `${GALLERY_DIR}/thumbs`;
 
 const thumbs = fs.readdirSync(THUMB_DIR);
 
