@@ -77,7 +77,15 @@ const SettingsSubMenu = () => {
         action={() => {
           document.startViewTransition(() => {
             flushSync(() => {
-              theme?.setTheme(theme?.theme === "dark" ? "light" : "dark");
+              const newTheme = theme?.theme === "dark" ? "light" : "dark";
+              document
+                .querySelector("meta[name='theme-color']")
+                ?.setAttribute(
+                  "content",
+                  newTheme === "dark" ? "#111827" : "#ffffff",
+                );
+
+              theme?.setTheme(newTheme);
             });
           });
         }}
