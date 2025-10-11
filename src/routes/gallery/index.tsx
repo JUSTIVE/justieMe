@@ -32,6 +32,9 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
         className="object-cover w-full aspect-square group-hover:z-[10] galleryImage"
         loading="lazy"
         id={`gallery-${filename}`}
+        style={{
+          viewTransitionName: filename,
+        }}
       />
     </Link>
   );
