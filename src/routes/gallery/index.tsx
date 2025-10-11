@@ -12,16 +12,23 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
       }}
       className="relative group cursor-pointer"
       viewTransition
-      style={{
-        viewTransitionName: filename,
-      }}
     >
       <div className="absolute w-full h-full top-0 left-0 z-[1] group-hover:backdrop-blur-sm group-hover:brightness-50 pointer-events-none" />
+      <img
+        className="hidden w-px h-px"
+        alt=""
+        src={`/asset/gallery/${filename}.webp`}
+        loading="lazy"
+      />
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
         className="object-cover w-full aspect-square group-hover:z-[1]"
         loading="lazy"
+        id={filename}
+        style={{
+          viewTransitionName: filename,
+        }}
       />
     </Link>
   );

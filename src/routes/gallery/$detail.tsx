@@ -60,6 +60,7 @@ function RouteComponent() {
         <img
           src={`/asset/gallery/${detail}.webp`}
           alt={detail}
+          id={detail}
           style={{
             viewTransitionName: detail,
           }}
