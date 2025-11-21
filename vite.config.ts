@@ -8,7 +8,6 @@ import remarkMath from "remark-math";
 import { defineConfig } from "vite";
 import Pages from "vite-plugin-pages";
 import tsconfigPaths from "vite-tsconfig-paths";
-import tailwindcss from "@tailwindcss/vite";
 // import remarkEmbedder from "@remark-embedder/core";
 
 // https://vitejs.dev/config/
@@ -17,7 +16,6 @@ export default defineConfig({
     manifest: true,
   },
   plugins: [
-    tailwindcss(),
     tanstackRouter({
       autoCodeSplitting: true,
     }),
