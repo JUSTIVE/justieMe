@@ -18,7 +18,7 @@ export const PostTag = ({
       search={{
         tag: closeEnabled && isEnabled ? undefined : tag,
       }}
-      className="rounded bg-gray-200 px-2 py-1 text-sm dark:bg-gray-700 flex items-center gap-2"
+      className="rounded-sm bg-gray-200 px-2 py-1 text-sm dark:bg-gray-700 flex items-center gap-2"
       style={
         viewTransition
           ? {

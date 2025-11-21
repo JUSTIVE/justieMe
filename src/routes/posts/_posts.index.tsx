@@ -97,7 +97,7 @@ const PostLists = () => {
 
         <input
           type="text"
-          className="border rounded bg-gray-100/80 border-gray-100/80 focus:outline-none px-2 py-1 dark:bg-gray-700 dark:border-gray-600"
+          className="border rounded-sm bg-gray-100/80 border-gray-100/80 focus:outline-hidden px-2 py-1 dark:bg-gray-700 dark:border-gray-600"
           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
             if (e.key === "Enter") {
               e.preventDefault();

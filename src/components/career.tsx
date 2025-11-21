@@ -40,7 +40,7 @@ const CareerCard = ({
           {(techStack ?? []).map((tech, i) => (
             <div
               key={tech}
-              className="dark:bg-gray-700 bg-gray-100 rounded-full p-1 [&:not(:first-child)]:-ml-3 aspect-square border-[4px] dark:border-gray-900/80 border-gray-200/50 overflow-hidden opacity-0 animate-fade-in-up"
+              className="dark:bg-gray-700 bg-gray-100 rounded-full p-1 not-first:-ml-3 aspect-square border-4 dark:border-gray-900/80 border-gray-200/50 overflow-hidden opacity-0 animate-fade-in-up"
               style={{
                 zIndex: techStack.length - i,
                 animationDelay: `${i * 0.06 + idx * 0.2}s`,

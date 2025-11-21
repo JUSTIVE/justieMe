@@ -38,7 +38,7 @@ function RouteComponent() {
   if (!file) return null;
 
   return (
-    <div className="flex flex-col flex-1 h-full overflow-hidden max-h-[calc(100dvh_-_8rem)]">
+    <div className="flex flex-col flex-1 h-full overflow-hidden max-h-[calc(100dvh-8rem)]">
       <div
         style={{ viewTimelineName: file.title }}
         className="whitespace-pre-line py-2 text-start level-6 flex items-end justify-between gap-2"

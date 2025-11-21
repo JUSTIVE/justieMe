@@ -195,16 +195,16 @@ const MenuPane = ({ showMenu, setShowMenu }: MenuPaneProps) => {
   return (
     <div
       className={twMerge(
-        "fixed bottom-0 my-4 flex flex-col gap-4 rounded-2xl  max-w-[calc(100%-48px)] w-full z-[9] transition-[transform,opacity] overflow-hidden  ",
+        "fixed bottom-0 my-4 flex flex-col gap-4 rounded-2xl  max-w-[calc(100%-48px)] w-full z-9 transition-[transform,opacity] overflow-hidden  ",
         `${showMenu ? "-translate-y-16" : "translate-y-0 opacity-0 pointer-events-none"}`,
         "left-1/2 -translate-x-1/2",
-        "lg:max-w-screen-md",
+        "lg:max-w-(--breakpoint-md)",
       )}
       style={{ viewTransitionName: "nav-settings" }}
     >
       <div
         className={twMerge(
-          "py-3 px-4 flex flex-col  gap-4 bg-white rounded-2xl z-[1] transition-transform border border-gray-200",
+          "py-3 px-4 flex flex-col  gap-4 bg-white rounded-2xl z-1 transition-transform border border-gray-200",
           "dark:text-white/80 dark:bg-gray-800 dark:border-gray-800",
           subMenu === "none" ? "translate-y-16" : "translate-y-2",
         )}
@@ -277,7 +277,7 @@ export const Navigation = () => {
       <button
         type="button"
         className={twMerge(
-          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-[8] transition-all duration-300 ease-out print:hidden",
+          "fixed bottom-0 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md w-screen h-screen z-8 transition-all duration-300 ease-out print:hidden",
           `${showSettings ? "pointer-events-auto" : "opacity-0 pointer-events-none"}`,
         )}
         onClick={() => {
@@ -287,8 +287,8 @@ export const Navigation = () => {
       {/*<Glass />*/}
       <div
         className={twMerge(
-          "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-sm bg-white/90 z-[10] transition-all",
-          "lg:max-w-screen-md",
+          "fixed bottom-4 left-1/2 -translate-x-1/2 py-2 px-4 pr-2 flex gap-2 items-center max-w-[calc(100%-48px)] justify-between rounded-2xl border border-gray-200 w-full backdrop-blur-xs bg-white/90 z-10 transition-all",
+          "lg:max-w-(--breakpoint-md)",
           "dark:text-white/80 dark:bg-gray-800/80 dark:border-gray-700/50",
           "print:hidden",
         )}

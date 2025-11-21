@@ -78,7 +78,7 @@ function RouteComponent() {
       return (
         <p
           {...rest}
-          className={twMerge(props.className, "mb-4 [blockquote_&]:mb-0")}
+          className={twMerge(props.className, "mb-4 in-[blockquote]:mb-0")}
         />
       );
     },
@@ -89,7 +89,7 @@ function RouteComponent() {
           {...rest}
           className={twMerge(
             className,
-            "bg-gray-100 dark:bg-gray-800 p-2 italic border-l border-l-4  border-l-orange-500 break-keep rounded",
+            "bg-gray-100 dark:bg-gray-800 p-2 italic border-l border-l-4  border-l-orange-500 break-keep rounded-sm",
           )}
         />
       );
@@ -119,7 +119,7 @@ function RouteComponent() {
           {...rest}
           className={twMerge(
             className,
-            "bg-gray-100 dark:bg-gray-700 p-1 rounded level-6 accent ",
+            "bg-gray-100 dark:bg-gray-700 p-1 rounded-sm level-6 accent ",
           )}
         >
           {children}
@@ -131,7 +131,7 @@ function RouteComponent() {
       return (
         <table
           {...rest}
-          className="mb-4 w-full bg-gray-100 dark:bg-gray-800 rounded overflow-hidden"
+          className="mb-4 w-full bg-gray-100 dark:bg-gray-800 rounded-sm overflow-hidden"
         />
       );
     },

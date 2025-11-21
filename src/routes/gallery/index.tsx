@@ -19,7 +19,7 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
       }}
       viewTransition
     >
-      <div className="absolute w-full h-full top-0 left-0 z-[1] group-hover:backdrop-blur-sm group-hover:brightness-50 pointer-events-none" />
+      <div className="absolute w-full h-full top-0 left-0 z-1 group-hover:backdrop-blur-xs group-hover:brightness-50 pointer-events-none" />
       <img
         className="w-px h-px absolute"
         alt=""
@@ -29,7 +29,7 @@ const GalleryItem = ({ filename }: GalleryPhoto) => {
       <img
         src={`/asset/gallery/thumbs/${filename}.webp`}
         alt=""
-        className="object-cover w-full aspect-square group-hover:z-[10] galleryImage"
+        className="object-cover w-full aspect-square group-hover:z-10 galleryImage"
         loading="lazy"
         id={`gallery-${filename}`}
         style={{
