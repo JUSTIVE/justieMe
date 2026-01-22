@@ -3,7 +3,7 @@ export const YouTube = ({ id }: { id: string }) => {
     <div>
       <iframe
         className="aspect-video w-full"
-        src={"https://www.youtube.com/embed/" + id}
+        src={`https://www.youtube.com/embed/${id}`}
         title="YouTube Video Player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
