@@ -19,7 +19,9 @@ export const Route = createRootRoute({
 function RootComponent() {
   const isDriveQuery = Object.hasOwn(useSearch({ from: Route.id }), "00");
 
-  const isDriveMode = localStorage.getItem("drive");
+  const [isDriveMode, setIsDriveMode] = useState(
+    localStorage.getItem("drive") === "true",
+  );
   const [theme, setTheme] = useState<"dark" | "light">("light");
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -29,7 +31,10 @@ function RootComponent() {
   }, []);
 
   useEffect(() => {
-    if (isDriveQuery) localStorage.setItem("drive", "true");
+    if (isDriveQuery) {
+      localStorage.setItem("drive", "true");
+      setIsDriveMode(true);
+    }
   }, [isDriveQuery]);
 
   return (
