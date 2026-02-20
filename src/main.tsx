@@ -3,6 +3,7 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import i18n from "./i18n";
 import { I18nextProvider } from "react-i18next";
+import { Cursor } from "./components/Cursor";
 
 // Set up a Router instance
 const router = createRouter({
@@ -26,6 +27,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <I18nextProvider i18n={i18n} defaultNS={"translation"}>
+      <Cursor />
       <RouterProvider router={router} />
     </I18nextProvider>,
   );
