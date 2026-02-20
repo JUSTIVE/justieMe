@@ -136,6 +136,7 @@ export function Cursor() {
   const ref = useRef<HTMLImageElement>(null);
 
   const [isTransAm, setIsTransAm] = useState(false);
+
   useEffect(() => {
     function mouseMove(e: MouseEvent) {
       if (ref.current) {
@@ -174,7 +175,6 @@ export function Cursor() {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
-  1;
 
   return (
     <>
@@ -184,8 +184,8 @@ export function Cursor() {
         width="40px"
         height="40px"
         className={twMerge(
-          "z-[998] fixed pointer-events-none",
-          isTransAm ? "hue-rotate-140 saturate-500" : "",
+          "z-[998] fixed pointer-events-none w-10 h-10 origin-center",
+          isTransAm ? "hue-rotate-180 saturate-500" : "",
         )}
         alt=""
       />

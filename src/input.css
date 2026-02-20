@@ -86,10 +86,6 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-* {
-  cursor: none !important;
-}
-
 @utility gradient-blur {
   position: fixed;
   z-index: 5;
@@ -230,6 +226,10 @@
   }
 }
 
+html:has(#gn-layer),
+html:has(#gn-layer) * {
+  cursor: none !important;
+}
 @layer base {
   * {
     font-family:
@@ -259,6 +259,9 @@
 }
 
 @layer utilities {
+  ::view-transition-group(*) {
+    z-index: 50;
+  }
   ::view-transition-group(nav) {
     border-radius: 1rem;
     overflow: hidden;

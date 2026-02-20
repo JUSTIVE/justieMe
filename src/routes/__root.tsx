@@ -1,9 +1,11 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { twMerge } from "tailwind-merge";
 import { Navigation } from "@/components/navigation";
+import { useSearch } from "@tanstack/react-router";
 
 import { createContext, useEffect, useState } from "react";
 import { Helmet } from "@/components/helmet";
+import { Cursor } from "@/components/Cursor";
 
 export const ThemeContext = createContext<{
   theme: "dark" | "light";
@@ -15,6 +17,9 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const isDriveQuery = Object.hasOwn(useSearch({ from: Route.id }), "00");
+
+  const isDriveMode = localStorage.getItem("drive");
   const [theme, setTheme] = useState<"dark" | "light">("light");
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -22,6 +27,11 @@ function RootComponent() {
       setTheme(storedTheme as "dark" | "light");
     }
   }, []);
+
+  useEffect(() => {
+    if (isDriveQuery) localStorage.setItem("drive", "true");
+  }, [isDriveQuery]);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -33,6 +43,7 @@ function RootComponent() {
       }}
     >
       <Helmet themeColor={theme === "dark" ? "rgb(17 24 39)" : "#fff"} />
+      {isDriveMode && <Cursor />}
 
       <div
         className={twMerge(
