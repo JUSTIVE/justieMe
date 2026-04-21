@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility level-0 {
+  @apply text-[3.5rem] tracking-tight font-semibold leading-14;
+}
+
+@utility level-1 {
+  @apply text-3xl tracking-tight font-semibold;
+}
+
+@utility level-2 {
+  @apply text-2xl tracking-tighter;
+}
+
+@utility level-3 {
+  @apply text-xl tracking-tight;
+}
+
+@utility level-4 {
+  @apply text-lg tracking-tight;
+}
+
+@utility level-5 {
+  @apply text-base tracking-wide;
+}
+
+@utility level-6 {
+  @apply text-sm tracking-wide;
+}
+
+@utility level-7 {
+  @apply text-xs tracking-wide leading-3;
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@utility accent {
+  @apply text-orange-500;
+}
+
+@utility galleryImage {
+  view-transition-name: attr(id type(<custom-ident>), match-element);
+  view-transition-class: galleryImage;
+
+  ::view-transition-image-pair(&) {
+    ::view-transition-old(.galleryImage) {
+      /*margin-top: 50%;*/
+    }
+  }
+  ::view-transition-old(&) {
+    object-fit: cover;
+  }
+
+  ::view-transition-new(&) {
+    object-fit: cover;
+  }
+}
+
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility gradient-blur {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  /* inset: auto 0 0 0; */
+  height: 80px;
+  bottom: 0px;
+  pointer-events: none;
+  transform: rotateZ(180deg);
+  & > div {
+    position: absolute;
+    inset: 0;
+  }
+  &::before {
+    position: absolute;
+    inset: 0;
+  }
+  &::after {
+    position: absolute;
+    inset: 0;
+  }
+  &::before {
+    content: "";
+    z-index: 1;
+    backdrop-filter: blur(0.5px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 12.5%,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 0) 37.5%
+    );
+  }
+  & > div:nth-of-type(1) {
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 12.5%,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 1) 37.5%,
+      rgba(0, 0, 0, 0) 50%
+    );
+  }
+  & > div:nth-of-type(2) {
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 1) 37.5%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 62.5%
+    );
+  }
+  & > div:nth-of-type(3) {
+    z-index: 4;
+    backdrop-filter: blur(4px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 37.5%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1) 62.5%,
+      rgba(0, 0, 0, 0) 75%
+    );
+  }
+  & > div:nth-of-type(4) {
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1) 62.5%,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 0) 87.5%
+    );
+  }
+  & > div:nth-of-type(5) {
+    z-index: 6;
+    backdrop-filter: blur(16px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 62.5%,
+      rgba(0, 0, 0, 1) 75%,
+      rgba(0, 0, 0, 1) 87.5%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  & > div:nth-of-type(6) {
+    z-index: 7;
+    backdrop-filter: blur(32px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 1) 87.5%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  &::after {
+    content: "";
+    z-index: 8;
+    backdrop-filter: blur(64px);
+    mask: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 87.5%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+@utility overlap-cut {
+  /* 겹치는 양(= 음수 margin-left의 절대값) */
+  --overlap: 16px;
+
+  /* 두 개의 마스크를 합성: 전체(검은 사각형) - 오른쪽 원 = 테두리만 남김 */
+  -webkit-mask:
+    radial-gradient(
+      circle at calc(100% - var(--overlap)) 50%,
+      transparent 51%,
+      #000 52%
+    ),
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    radial-gradient(
+      circle at calc(100% - var(--overlap)) 50%,
+      transparent 51%,
+      #000 52%
+    ),
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  /* 마지막 배지는 잘라내지 않기 */
+  &:last-child {
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+html:has(#gn-layer),
+html:has(#gn-layer) * {
+  cursor: none !important;
+}
+@layer base {
+  * {
+    font-family:
+      "Pretendard Variable",
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      "Helvetica Neue",
+      "Segoe UI",
+      "Apple SD Gothic Neo",
+      "Noto Sans KR",
+      "Malgun Gothic",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      sans-serif;
+  }
+  code > * {
+    font-family: "Geist Mono";
+  }
+  /*::view-transition-group(*) {
+    animation-duration: 0.2s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }*/
+}
+
+@layer utilities {
+  ::view-transition-group(*) {
+    z-index: 50;
+  }
+  ::view-transition-group(nav) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  body {
+    background: white;
+    /*background: rgb(229 231 235 / var(--tw-bg-opacity, 1));*/
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  body:has([data-mode="dark"]) {
+    background-color: rgb(
+      17 24 39 / var(--tw-bg-opacity, 1)
+    ); /* 예: 다크 모드 배경색 */
+  }
+  /*::view-transition-new(.galleryImage) {
+  }*/
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  ::view-transition-group(nav-settings) {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}

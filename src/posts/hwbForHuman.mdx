@@ -1,0 +1,80 @@
+import { YouTube } from "@/components/Youtube";
+import { Tweet } from 'mdx-embed'
+export const metaData = {
+    title: 'HWB: 사람을 위한 색의 표기',
+    date: '2024-02-23',
+    link: 'hwbForHuman',
+    tags: ['색상이론', "hwb"],
+}
+
+최근 인터넷에서 색상과 관련하여 큰 화제가 된 주제가 있었다.
+
+> 일반적인 가산 혼합에서의 선형 보간으로 이루어지는 linear gradient 에서, 노란색과 파란색의 선형 그레디언트를 적용할 때에, 중간값은 회색이다
+
+흰골파검에 이은, 색에 관한 충격적인 사실이었다.
+
+<Tweet tweetLink="erikdkennedy/status/1364603966349135874" style={{margin:"0 auto"}} align="center"/>
+
+<caption>Erik D. Kennedy의 Gray dead zone의 제시와 이를 개선한 도구 제안</caption>
+
+그동안 수많은 디자인 도구들을 사용하면서 한번도 가져 본 적이 없던 의문이었다. 현실 세계에서의 파랑과 노랑 물감을 섞으면, 초록이 될 것이라는 것을 자연스럽게 알고 있었지만, 디지털 세계에서는 현실 세계와는 다를 것이라는 막연한 생각으로 무시하고 있었지만, 곰곰이 생각해보니 그렇지도 않을 것이었다. 어쩌면 그저 `내 문제가 아니길 바래` 라는 생각으로 무시해왔던 것일 수도 있다.
+
+![초 차원적 사면 양자 클라인 다양체? 그런 게 있긴 한 거야?
+난 그냥 세 종류의 원추세포와 간상세포가 있을 뿐이야...
+그냥 버튼 색이 좀 더 이뻤으면 좋겠는데..
+오, 제발 이게 내가 풀어야 할 문제가 아니길 바라... ](https://imgs.xkcd.com/comics/color_models.png)
+
+초 차원적 사면 양자 클라인 다양체? 그런 게 있긴 한 거야?
+난 그냥 세 종류의 원추세포와 간상세포가 있을 뿐이야...
+그냥 버튼 색이 좀 더 이뻤으면 좋겠는데..
+오, 제발 이게 내가 풀어야 할 문제가 아니길 바라...
+
+### 왜?
+
+어쩌다가 노란색과 파란색을 선형 보간 하면 회색이 나올까? 너무 간단하게도 일반적인 24-bit rgb color model의 경우, 다음과 같이 색을 표현한다.
+
+| 색상 | 비트 수 | 범위 |
+|:--- |:--- |:--- |
+| Red | 8 | 0~255 |
+| Green | 8 | 0~255 |
+| Blue | 8 | 0~255 |
+
+이 경우, 선형 보간이 되는 과정은 다음과 같다.
+
+| 색상 | 비트 표현 | red | green | blue |
+|:--- |:--- |:--- |:---  |:--- |
+| Yellow | 1111 1111 1111 1111 0000 0000 | 255 | 255 | 0 |
+| Gray? | 0111 1111 0111 1111 0111 1111 | 127 | 127 | 127 |
+| Blue | 0000 0000 0000 0000 1111 1111 | 0 | 0 | 255 |
+
+<YouTube id="b2D_5G_npVI" />
+
+
+
+사실 Károly Zsolnai-Fehér님의 2분논문에서도 다룬 주제였다
+
+그러면 여기서 드는 막연한 생각. HSL/HSB/HSV의 cone-based color model 이라면, 이런 문제가 없지 않을까? 라는 생각을 했다. 실제로도 그럴 것이었다.
+
+### HSL의 회고와 HWB
+
+그러던 와중, 과거에 배웠던 색상 모델들을 다시 돌아보던 와중, 짤막하면서 재밌는 글을 하나 보았다.
+
+[https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/#:~:text=hwb() – a color notation "easier for humans to work,it is interpreted as degrees](https://www.stefanjudis.com/blog/hwb-a-color-notation-for-humans/#:~:text=hwb()%20%E2%80%93%20a%20color%20notation%20%22easier%20for%20humans%20to%20work,it%20is%20interpreted%20as%20degrees).
+
+HSL 모델을 처음 배웠을 때에, 이 모델은 보다 인간이 색을 직관적으로 인지하게끔 하는 것에 있다고 했다. 현실 세계의 수채화와 같이 원색에 무채색을 섞는 과정을 통해 다양한 색을 표현하는 과정과 같다고도 했다. 실제로도, 색을 표현할 때에 가급적이면 직관적인 HSL 모델을 사용하려 한다. 색을 고르고, 쨍하면 Saturation을 줄이고, 화하면 Luminance를 줄이는 식으로 말이다. 그리고 언젠가부터 색이라는 개념은 내 머리속에서는 HSL의 쌍원뿔 구조에서 크게 벗어나지 않은 상태였다. 그런데 맨 처음 배웠을 때에는 원색에 무채색을 섞는다던 그 개념은 온데 간데없고 색조와 채도, 조도를 이용하여 색을 표현하고 있었다. 뭔가 괴리가 있어 보였다.
+
+그러던 와중 위의 글을 읽어보았다. HWB 색상 모델은 `literally` 원색과 흰색 검은색의 조합으로 표현한다. 원색에서 어떤 무채색을 섞게 되건, 채도는 낮아질 것이 자명하고 HSL 모델의 원래 의도를 잘 살린 느낌이었다. 사실 이는 HSL 쌍원뿔 모델의 단면과도 같다.
+
+심지어 이 색상 모델은 최신 브라우저(Safari 15+, Firefox 96+)에서는 css로 사용할 수도 있다. (Chrome은 미지원,101부터 지원함!)
+
+[CanIUse ... HWB?](https://caniuse.com/?search=hwb)
+
+CanIUse ... HWB?
+
+물론 없다고 해서 사용하지 못하는 것은 아니고, 다른 색상 모델로 변환하여 사용할 수 있다.
+
+[](https://wikimedia.org/api/rest_v1/media/math/render/svg/da29e686de85a292fdb1e0d1bb87a93dcc203841)
+
+P.S. 비교적 최근에 Sarifuddin의 연구와 HCL 색상 모델에 관한 토막 글을 본 적이 있다. 다음에 기회가 되면 다룰 예정이다.
+
+이처럼 색상 모델은 21세기 초 까지도 꾸준히 연구되고 발전되던 분야이다. 우리가 인지하는 색이란 무엇일까? 다시금 생각해보는 시간을 잠시 가졌다.

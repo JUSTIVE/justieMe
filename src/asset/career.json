@@ -1,0 +1,172 @@
+{
+  "careerList": [
+    {
+      "company": { "name": "마켓보로", "location": "판교동, 경기도 성남시" },
+      "jd": "프론트엔드 엔지니어",
+      "duration": {
+        "start": "2023.04",
+        "end": "2025.10"
+      },
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "TailwindCSS",
+        "Relay",
+        "GraphQL",
+        "Bun",
+        "Storybook"
+      ],
+      "products": [
+        {
+          "name": "식봄",
+          "productDescription": "식당 사장님들을 위한 식자재 e-commerce 플랫폼",
+          "description": [
+            "<Highlight>MAL(Modifier and Linker)</Highlight>: UI 테스트를 위한 relay store editor 개발",
+            "<Highlight>SIT(Schema Impact Tracker)</Highlight>: 스키마의 특정 (타입.필드)에 영향받는 nextjs의 페이지들과 영향을 받는 react component 트리를 파악할 수 있는 도구",
+            "Nextjs 기반의 React 서비스 구현 및 운영",
+            "e-commerce 도메인을 고려한 graphql schema 주도적 제작",
+            "biome + gritQL을 이용한 커스텀 린트, eslint custom rule 구현",
+            "개발 생산성 증진 및 휴먼 에러를 방지할 수 있는 <Highlight>30+여개의 utility script</Highlight> 개발"
+          ]
+        },
+        {
+          "name": "보로콜리",
+          "productDescription": "식봄 서비스의 관리자 보조도구",
+          "description": [
+            "Tanstack Router 기반의 React SPA 서비스 구현 및 운영",
+            "빠른 서비스 내 이동을 위한 디자인 설계 및 구현"
+          ]
+        },
+        {
+          "name": "마켓봄",
+          "productDescription": "식자재 유통사를 위한 ERP 서비스",
+          "description": [
+            "<Highlight>Liborory</Highlight>: 유통업 도메인 로직 라이브러리 개발",
+            "<Highlight>Evergreen-doc</Highlight>: LLM 기반의 document autogenerator 제작",
+            "사내 디자인 시스템 <Highlight>boronui</Highlight> 개발 참여, 파운데이션 재구축, 컴포넌트 구조 설계 주도",
+            "스크롤 기반 애니메이션을 적용한 랜딩 페이지 구현"
+          ]
+        }
+      ],
+      "description": [
+        "ts-belt, ts-pattern을 이용한 강력한 타입 기반의 함수형 프로그래밍 도입 및 전파",
+        "PHP-> Nextjs + Typescript로의 서비스 마이그레이션 경험",
+        "Growthbook을 이용한 A/B 테스트 구축 및 적용",
+        "relay를 이용한 효율적인 상태관리, 도메인을 고려한 자동 상태 관리, 타입 기반의 안전한 개발 진행"
+      ]
+    },
+    {
+      "company": {
+        "name": "그린랩스",
+        "location": "문정동, 서울시 송파구"
+      },
+      "jd": "프론트엔드 엔지니어",
+      "duration": {
+        "start": "2022.05",
+        "end": "2023.02"
+      },
+      "techStack": [
+        "React",
+        "Rescript",
+        "Next.js",
+        "TailwindCSS",
+        "Relay",
+        "GraphQL",
+        "Storybook"
+      ],
+      "products": [
+        {
+          "name": "신선하이",
+          "productDescription": "농민들을 위한 농산물 직거래 e-commerce 플랫폼",
+          "description": [
+            "피쳐플래그를 이용한 trunk based development 프로세스 도입",
+            "신선하이 서비스의 전체적인 디자인 리뉴얼",
+            "Atlassian StatusPage를 이용한 점검 안내 페이지 구현",
+            "서비스 내 사용되는 아이콘 애셋을 모아 볼 수 있는 아이콘 카탈로그 구현"
+          ]
+        },
+        {
+          "name": "팜모닝",
+          "productDescription": "농민들을 위한 커뮤니티 플랫폼",
+          "description": []
+        }
+      ],
+      "description": [
+        "사내 디자인 시스템 Formula 개발 참여",
+        "rescript-react snippet 제작 및 배포"
+      ]
+    },
+    {
+      "company": {
+        "name": "원프레딕트",
+        "location": "강남구, 서울시"
+      },
+      "jd": "프론트엔드 소프트웨어 엔지니어",
+      "duration": {
+        "start": "2021.04",
+        "end": "2022.05"
+      },
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Styled Components",
+        "Recoil",
+        "Storybook"
+      ],
+      "products": [
+        {
+          "name": "GuardiOne Substation",
+          "productDescription": "변압설비 예지보전 솔루션",
+          "description": [
+            "Apache Echarts를 이용한 데이터 시각화 구현",
+            "Virtual Scroll 기반의 대용량 데이터 시각화 최적화",
+            "서비스 내 i18n 적용"
+          ]
+        },
+        {
+          "name": "GuardiOne Motor",
+          "productDescription": "모터 설비 예지보전 솔루션",
+          "description": [
+            "자제 제작 함수형 라이브러리 개발",
+            "다국어 리소스 정합성 검사 도구 제작",
+            "HTML Canvas를 이용한 데이터 시각화",
+            "사용자 지정 가능 테마 시스템 구현",
+            "Storybook을 이용한 컴포넌트 단위 시각화 테스트",
+            "아토믹 디자인을 이용한 컴포넌트 단위 디자인 설계"
+          ]
+        }
+      ],
+      "description": []
+    },
+    {
+      "company": {
+        "name": "코드마인드",
+        "location": "구로구, 서울시"
+      },
+      "jd": "선임연구원",
+      "duration": {
+        "start": "2019.04",
+        "end": "2021.04"
+      },
+      "techStack": ["Vue", "Javascript", "Electron", "F#", "Scala"],
+      "products": [
+        {
+          "name": "COYOTE",
+          "productDescription": "C++, C 언어를 위한 콘콜릭 테스팅 도구",
+          "description": []
+        },
+        {
+          "name": "HANACode",
+          "productDescription": "Oracle SQL to HANA SQL 트랜스파일러",
+          "description": []
+        }
+      ],
+      "description": [
+        "UI 시스템 디자인 설계 및 구현",
+        "F# 언어를 이용한 유틸리티 개발 경험",
+        "Java & Scala를 기반의 API 서버 구현"
+      ]
+    }
+  ]
+}

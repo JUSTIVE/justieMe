@@ -1,0 +1,43 @@
+{
+  "talks": [
+    {
+      "id": "5Ky0cR75BPqYD4qBTjYA",
+      "year": "2019",
+      "heading": "한번 쓰고 우려먹는 플러터 at Google Developer Group Campus Korea",
+      "url": null,
+      "collaborators": [],
+      "description": null,
+      "attachments": [],
+      "type": "talk",
+      "title": "한번 쓰고 우려먹는 플러터",
+      "event": "Google Developer Group Campus Korea",
+      "location": "Guro, Seoul"
+    },
+    {
+      "id": "CVaBnY7LqYS3yXunQswl",
+      "year": "2019",
+      "heading": "2019년의 플러터: 모바일을 넘어 at Google I/O Extended Suwon",
+      "url": null,
+      "collaborators": [],
+      "description": null,
+      "attachments": [],
+      "type": "talk",
+      "title": "2019년의 플러터: 모바일을 넘어",
+      "event": "Google I/O Extended Suwon",
+      "location": "Suwon, Gyeonggi-do"
+    },
+    {
+      "id": "Nll4W0ZGTLT3cGVhXKMO",
+      "year": "2019",
+      "heading": "Flutter in 2019: Beyond Mobile at Google I/O Extended Pangyo",
+      "url": null,
+      "collaborators": [],
+      "description": null,
+      "attachments": [],
+      "type": "talk",
+      "title": "Flutter in 2019: Beyond Mobile",
+      "event": "Google I/O Extended Pangyo",
+      "location": "Pangyo, Gyeonggi-do"
+    }
+  ]
+}
