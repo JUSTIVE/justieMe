@@ -7,8 +7,8 @@ export const Route = createFileRoute("/realhome")({
 });
 
 const SCENES = [
-  { id: "workroom", label: "workroom", splat: "/asset/workroom.ply" },
-  { id: "homept1", label: "homept1", splat: "/asset/homept1.ply" },
+  { id: "workroom", label: "workroom", splat: "/asset/workroom.splat" },
+  { id: "homept1", label: "homept1", splat: "/asset/homept1.splat" },
 ] as const;
 
 function RealHomeComponent() {

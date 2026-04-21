@@ -47,10 +47,18 @@ export function GaussianSplatViewer({ splatUrl, className }: Props) {
           viewer.renderer?.domElement?.height,
         );
 
+        const ext = splatUrl.split(".").pop()?.toLowerCase();
+        const format =
+          ext === "splat"
+            ? GaussianSplats3D.SceneFormat.Splat
+            : ext === "ksplat"
+              ? GaussianSplats3D.SceneFormat.KSplat
+              : GaussianSplats3D.SceneFormat.Ply;
+
         await viewer.addSplatScene(splatUrl, {
           progressiveLoad: true,
           showLoadingUI: true,
-          format: GaussianSplats3D.SceneFormat.Ply,
+          format,
           onProgress: (percent: number) => {
             if (!disposed) setProgress(Math.round(percent));
           },
