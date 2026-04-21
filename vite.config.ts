@@ -1,4 +1,5 @@
 import mdx from "@mdx-js/rollup";
+import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
@@ -18,6 +19,7 @@ export default defineConfig({
   },
 
   plugins: [
+    tailwindcss(),
     tanstackRouter({
       autoCodeSplitting: true,
     }),

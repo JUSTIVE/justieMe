@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RealhomeRouteImport } from './routes/realhome'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GalleryIndexRouteImport } from './routes/gallery/index'
@@ -16,6 +17,11 @@ import { Route as GalleryDetailRouteImport } from './routes/gallery/$detail'
 import { Route as PostsPostsIndexRouteImport } from './routes/posts/_posts.index'
 import { Route as PostsPostsPostnameRouteImport } from './routes/posts/_posts.$postname'
 
+const RealhomeRoute = RealhomeRouteImport.update({
+  id: '/realhome',
+  path: '/realhome',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CvRoute = CvRouteImport.update({
   id: '/cv',
   path: '/cv',
@@ -50,6 +56,7 @@ const PostsPostsPostnameRoute = PostsPostsPostnameRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/realhome': typeof RealhomeRoute
   '/gallery/$detail': typeof GalleryDetailRoute
   '/gallery': typeof GalleryIndexRoute
   '/posts/$postname': typeof PostsPostsPostnameRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/realhome': typeof RealhomeRoute
   '/gallery/$detail': typeof GalleryDetailRoute
   '/gallery': typeof GalleryIndexRoute
   '/posts/$postname': typeof PostsPostsPostnameRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/realhome': typeof RealhomeRoute
   '/gallery/$detail': typeof GalleryDetailRoute
   '/gallery/': typeof GalleryIndexRoute
   '/posts/_posts/$postname': typeof PostsPostsPostnameRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cv'
+    | '/realhome'
     | '/gallery/$detail'
     | '/gallery'
     | '/posts/$postname'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cv'
+    | '/realhome'
     | '/gallery/$detail'
     | '/gallery'
     | '/posts/$postname'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cv'
+    | '/realhome'
     | '/gallery/$detail'
     | '/gallery/'
     | '/posts/_posts/$postname'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CvRoute: typeof CvRoute
+  RealhomeRoute: typeof RealhomeRoute
   GalleryDetailRoute: typeof GalleryDetailRoute
   GalleryIndexRoute: typeof GalleryIndexRoute
   PostsPostsPostnameRoute: typeof PostsPostsPostnameRoute
@@ -110,6 +123,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/realhome': {
+      id: '/realhome'
+      path: '/realhome'
+      fullPath: '/realhome'
+      preLoaderRoute: typeof RealhomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cv': {
       id: '/cv'
       path: '/cv'
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CvRoute: CvRoute,
+  RealhomeRoute: RealhomeRoute,
   GalleryDetailRoute: GalleryDetailRoute,
   GalleryIndexRoute: GalleryIndexRoute,
   PostsPostsPostnameRoute: PostsPostsPostnameRoute,

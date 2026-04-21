@@ -3,6 +3,7 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import i18n from "./i18n";
 import { I18nextProvider } from "react-i18next";
+import "./input.css";
 
 // Set up a Router instance
 const router = createRouter({
